@@ -1,0 +1,863 @@
+{
+  "CSGE602012": {
+    "code": "CSGE602012",
+    "name": "Aljabar Linier",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Mata ajar Aljabar Linear membekali mahasiswa keterampilan pemecahan masalah terkait dengan aljabar vektor dan meningkatkan penalaran matematis (logis, konsisten, jelas, seksama) yang merupakan disposisi dan keterampilan berpikir kritis. Bahan kajian meliputi sistem persamaan linear, aljabar matriks, determinan, ruang vektor dan hasil kali dalam, nilai dan vektor eigen, serta transformasi linear.",
+    "topics": [
+      "Sistem persamaan linear",
+      "Matriks",
+      "Determinan",
+      "Ruang vektor",
+      "Ruang hasil kali dalam",
+      "Nilai eigen dan vektor eigen",
+      "Transformasi linear"
+    ],
+    "learningOutcomes": [
+      "Mahasiswa mampu menerapkan operasi aritmetika matriks dan determinan, menggunakan metode-metode penyelesaian sistem persamaan linear, serta dapat menentukan dan menerapkan metode penyelesaian sistem persamaan linear yang efektif.",
+      "Mahasiswa mampu menjelaskan ruang vektor umum, dapat menentukan basis dan dimensi ruang vektor umum, dan mengonstruksi subruang berdasarkan matriks yang diberikan.",
+      "Mahasiswa mampu mengonstruksi ruang hasil kali dalam, menentukan panjang, jarak, sudut, dan ortogonalitas komplemen, serta dapat menerapkannya dalam menentukan metode hampiran kuadrat terkecil.",
+      "Mahasiswa mampu menentukan nilai eigen, dan ruang eigen matriks persegi serta dapat menerapkannya untuk mendiagonalisasi matriks dan menentukan basis R^n yang terdiri atas vektor-vektor eigen.",
+      "Mahasiswa mampu mengidentifikasi apakah suatu fungsi merupakan transformasi linear, menentukan matriks standar, rank, nulitas, nilai dan vektor eigen transformasi linear di ruang Euclid, serta dapat menginterpretasikan secara geometris transformasi linear pada bidang dan ruang."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Elementary Linear Algebra; 11th Edition (Anton, Howard)",
+      "Linear Algebra and Its Application; 2nd Edition (Lay, David C.)",
+      "Introduction to Linear Algebra (Johnson, Lee W., R. Dean Riess, Jimmy T. Arnold)"
+    ],
+    "prerequisites": []
+  },
+  "CSCM603117": {
+    "code": "CSCM603117",
+    "name": "Analisis Numerik",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini membahas dasar-dasar penerapan komputasi ilmiah untuk ilmu komputer. Topik yang dibahas meliputi prinsip-prinsip matematika dasar serta algoritma analisis numerik sampai pada isu-isu praktis seperti reliabilitas perangkat lunak dan kinerja pada perangkat keras mutakhir; dan juga teknik optimisasi yang relevan dengan isu machine learning yang populer akhir-akhir. Peserta dilatih untuk memecahkan persoalan terkait tema-tema analisis numerik. Beberapa latihan dibuat dengan pembuatan program dengan bahasa apapun, namun dianjurkan C, Python, Octave atau tools open source lainnya.",
+    "topics": [
+      "Pengantar: komputasi dalam presisi terbatas: representasi angka pada mesin, perambatan dan analisis kesalahan, stabilitas dan akurasi numerik",
+      "Sistem persamaan linear: tinjauan teori aljabar linear yang relevan, faktorisasi segitiga, strategi pemutaran (pivoting)",
+      "Sistem persamaan linear: sistem linear khusus",
+      "Masalah Kuadrat Terkecil (Least Squares Problems)",
+      "Persamaan non-linear",
+      "Optimisasi",
+      "Interpolasi",
+      "Integrasi Numerik",
+      "Masalah nilai awal dalam persamaan diferensial biasa"
+    ],
+    "learningOutcomes": [
+      "Mampu implementasi sistem yang memanfaatkan metode numerik untuk menyelesaikan masalah yang membutuhkan pemodelan matematika yang kompleks."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Scientific Computing - An introductory survey, 2nd Ed (Michael T. Heath)"
+    ],
+    "prerequisites": [
+      "CSGE602012",
+      "CSCM601213"
+    ]
+  },
+  "CSGE602070": {
+    "code": "CSGE602070",
+    "name": "Basis Data",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Kuliah ini membahas konsep dasar pengelolaan basis data, meliputi aspek pemodelan dan perancangan, bahasa, fasilitas, implementasi, dan aplikasi dari basis data.",
+    "topics": [
+      "Konsep dan Arsitektur Sistem Basis Data",
+      "Pemodelan menggunakan Entity Relationship",
+      "Perancangan DB Relasional",
+      "Pemetaan ER/EER ke relasional",
+      "Model data relasional & batasan DB relasional",
+      "SQL-DDL Sisip/Ubah/Hapus (Insert/Update/Delete)",
+      "Kueri SQL Dasar & Lanjutan",
+      "SQL - Pengindeksan, Trigger, dan Stored Procedure",
+      "Ketergantungan Fungsional dan Normalisasi"
+    ],
+    "learningOutcomes": [
+      "Mampu merancang, implementasi, dan mengelola basis data sesuai kebutuhan."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Database Systems, 6th Edition (Elmasri, et al.)",
+      "Database Systems, 5th Edition (Connolly, et al.)"
+    ],
+    "prerequisites": [
+      "CSGE601021"
+    ]
+  },
+  "CSGE601020": {
+    "code": "CSGE601020",
+    "name": "Dasar-Dasar Pemrograman 1",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Dasar-Dasar Pemrograman 1 (DDP 1) adalah mata kuliah yang bertujuan untuk mengajarkan konsep-konsep dasar serta teknik untuk membuat program komputer dalam konteks pengenalan ilmu komputasi dan problem solving. Kuliah ini disampaikan dalam bentuk kombinasi kuliah tatap-muka dan hands-on latihan pemrograman di Laboratorium. Pemrograman bukan hal utama yang ditekankan melainkan logika pemecahan masalah.",
+    "topics": [
+      "Pengantar komputer dan pemrograman",
+      "Tipe Data",
+      "Alur Kontrol",
+      "Struktur Data dan Fungsi",
+      "Pengantar pemrograman berorientasi objek",
+      "Berkas (Files)",
+      "Pengecualian (Exceptions)",
+      "Rekursi",
+      "Antarmuka Pengguna Grafis (GUI)"
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan konsep fondasi pemrograman untuk melakukan abstraksi dan menyelesaikan permasalahan komputasi sederhana."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Introduction to Computing using Python, 2nd Edition (L. Perkovic)",
+      "The Practices of Computing using Python, 3rd Edition (W. Punch and R. Enbody)"
+    ],
+    "prerequisites": []
+  },
+  "CSGE601021": {
+    "code": "CSGE601021",
+    "name": "Dasar-Dasar Pemrograman 2",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Kuliah ini merupakan bagian kedua dari rangkaian dua kuliah 'Dasar-Dasar Pemrograman' dan dirancang untuk membangun pengetahuan dan pengalaman yang didapatkan dari Dasar-Dasar Pemrograman 1 untuk meningkatkan kemampuan pemrograman mahasiswa. Kuliah ini secara khusus berfokus pada paradigma pemrograman berorientasi objek dan menekankan penggunaan paradigma ini dalam pemecahan masalah.",
+    "topics": [
+      "Kelas & Objek",
+      "Tipe Data Fundamental: Tipe Primitif & Objek",
+      "Alur Kontrol (Keputusan dan Perulangan)",
+      "Metode & Spesifikasi Akses",
+      "Pengantar Objek dan Kelas",
+      "Array, Array dari Objek",
+      "Array List",
+      "Pengurutan dan Pencarian",
+      "Rekursi Lanjutan",
+      "Pewarisan (Inheritance)",
+      "Polimorfisme: Kelas Abstrak, Interface, dll.",
+      "Antarmuka Pengguna Grafis (GUI)",
+      "Input/Output dan Penanganan Pengecualian",
+      "Koleksi Generik: List, Map, Set, Stack, Queue",
+      "Pemrograman Generik: Kelas & Metode Generik",
+      "Pengujian Unit (Unit Testing)"
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan konsep fondasi pemrograman untuk melakukan abstraksi dan menyelesaikan permasalahan komputasi sederhana."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Introduction to Java Programming and Data Structures, Comprehensive Version, 11th Edition (Liang, Y. Daniel)"
+    ],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSCM603142": {
+    "code": "CSCM603142",
+    "name": "Desain dan Analisis Algoritma",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Kuliah ini membahas tentang cara merancang dan menganalisis algoritma untuk memecahkan masalah yang diberikan. Kuliah ini berfokus pada dua isu utama, yaitu kebenaran dan kompleksitas algoritma. Beberapa teknik dan pendekatan akan dibahas, termasuk pemrograman dinamis (dynamic programming), algoritma greedy, algoritma graf, algoritma aproksimasi, dan NP-completeness.",
+    "topics": [
+      "Pengantar algoritma: bubble sort, insertion sort, selection sort, pencarian",
+      "Pertumbuhan fungsi",
+      "Analisis algoritma: worst-case, best-case, average-case",
+      "Divide and conquer",
+      "Quicksort dan Mergesort",
+      "Fast Fourier Transform",
+      "Relasi rekurensi: master method, metode substitusi, pohon rekursi",
+      "Heapsort dan batas bawah pengurutan berbasis perbandingan",
+      "Pengurutan linear: bucket sort, radix sort, counting sort",
+      "Statistik orde: masalah pemilihan",
+      "Pemrograman dinamis: LCS, perkalian rantai matriks",
+      "Algoritma greedy: fractional knapsack, penjadwalan aktivitas, MST",
+      "Backtracking: 0/1 Knapsack, branch and bound",
+      "Algoritma graf: BFS, DFS, jalur terpendek, aliran maksimum",
+      "Jaringan pengurutan, algoritma paralel, algoritma aproksimasi, NP-completeness"
+    ],
+    "learningOutcomes": [
+      "Mampu menganalisis masalah dan merancang algoritma untuk permasalahan tersebut, serta mengevaluasi rancangan algoritma yang dipilih, baik melalui evaluasi analitis maupun pengujian."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Introduction to Algorithms (Cormen, Leiserson, Rivest, Stein)"
+    ],
+    "prerequisites": [
+      "CSGE602040"
+    ]
+  },
+  "CSCM603154": {
+    "code": "CSCM603154",
+    "name": "Jaringan Komputer",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Kuliah ini membahas tentang prinsip-prinsip jaringan komputer, internet, dan keamanan. Kuliah ini menekankan pendekatan top-down dari model jaringan komputer dan internet, dimulai dari lapisan aplikasi di bagian atas dan membahas semua lapisan, mulai dari lapisan aplikasi, lapisan transport, lapisan jaringan, lapisan data link, hingga lapisan fisik. Di bagian akhir, kuliah ini juga membahas topik keamanan, termasuk keamanan dalam jaringan komputer dan metode kriptografi untuk mengamankan komunikasi dalam jaringan komputer.",
+    "topics": [
+      "Jaringan Komputer dan Internet",
+      "Lapisan Aplikasi (Application Layer)",
+      "Lapisan Transpor (Transport Layer)",
+      "Lapisan Jaringan: bidang data (data plane)",
+      "Lapisan Jaringan: bidang kontrol (control plane)",
+      "Lapisan Data Link dan LAN",
+      "Keamanan dalam jaringan komputer: Prinsip kriptografi",
+      "Otentikasi dan Integritas Pesan serta Tanda Tangan Digital",
+      "Mengamankan email dan koneksi TCP (TLS)",
+      "Keamanan operasional: firewall"
+    ],
+    "learningOutcomes": [
+      "Mampu menganalisis permasalahan sistem dan komputasi yang melibatkan jaringan komputer.",
+      "Mampu merancang jaringan komputer menggunakan pengetahuan tentang konsep layer dan keamanan pada sebuah jaringan komputer."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Computer Networking: A Top-down Approach 8th Ed (James Kurose and Keith Ross)"
+    ],
+    "prerequisites": [
+      "CSGE601020",
+      "CSCM602055"
+    ]
+  },
+  "CSGE601012": {
+    "code": "CSGE601012",
+    "name": "Kalkulus 1",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Kuliah ini membahas konsep dasar kalkulus dengan menekankan kepada kegunaan kalkulus untuk menyelesaikan permasalahan sains dan untuk memberikan basis dari banyak teknik dan metode yang ada di bidang komputasi.",
+    "topics": [
+      "Sistem bilangan riil",
+      "Bilangan kompleks",
+      "Pertidaksamaan dan nilai mutlak",
+      "Fungsi satu variabel dan grafiknya",
+      "Fungsi dan operasinya",
+      "Limit dan kontinuitas fungsi satu variabel",
+      "Turunan dan aplikasinya",
+      "Fungsi eksponensial dan logaritma",
+      "Konsep integrasi",
+      "Teknik-teknik integrasi",
+      "Aplikasi integral tentu"
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan konsep-konsep dasar kalkulus, dan penalaran yang sesuai dengan pengaplikasiannya pada bidang ilmu komputer."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Calculus with Differential Equations. 9th Edition (Varberg, Dale E., Edwin Joseph Purcell, and Steven E. Rigdon)"
+    ],
+    "prerequisites": []
+  },
+  "CSCM601213": {
+    "code": "CSCM601213",
+    "name": "Kalkulus 2",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "Kuliah ini menyampaikan topik-topik lanjutan dari Kalkulus 1 yang sudah disampaikan sebelumnya pada kuliah terpisah. Serupa dengan Kalkulus 1, Kalkulus 2 berguna untuk menyelesaikan permasalahan sains dan untuk memberikan basis dari banyak teknik dan metode yang ada di bidang komputasi.",
+    "topics": [
+      "Teknik integrasi lanjutan",
+      "Bentuk tak tentu dari limit",
+      "Integral tak wajar",
+      "Deret dan barisan tak hingga",
+      "Vektor dan Geometri Ruang",
+      "Integral lipat (Multiple integral)",
+      "Aplikasi integral lanjutan",
+      "Persamaan Diferensial Biasa"
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan konsep-konsep dasar kalkulus, dan penalaran yang sesuai dengan pengaplikasiannya pada bidang ilmu komputer."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Calculus with Differential Equations. 9th Edition (Varberg, Dale E., Edwin Joseph Purcell, and Steven E. Rigdon)"
+    ],
+    "prerequisites": [
+      "CSGE601012"
+    ]
+  },
+  "CSGE603130": {
+    "code": "CSGE603130",
+    "name": "Kecerdasan Artifisial & Sains Data Dasar",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Kuliah ini mengenalkan konsep dan teknik dasar kecerdasan buatan (AI) dan sains data. Peserta kuliah ini akan dilengkapi dengan pemahaman teoritis dasar dan keterampilan praktis untuk memecahkan masalah kecerdasan buatan dan sains data. Selain itu, mereka juga akan dilengkapi dengan pemahaman tentang bagaimana sains data menjadi prinsip dasar kecerdasan buatan untuk memproses pengetahuan dari data.",
+    "topics": [
+      "Kecerdasan Artifisial, Sains Data, dan Pemelajaran Mesin: Pengantar dan Terminologi",
+      "Penyelesaian Masalah: Search & CSP",
+      "Pengetahuan, Penalaran, dan Perencanaan (Knowledge, Reasoning, Planning)",
+      "Analisis Data Eksploratif (EDA)",
+      "Persiapan Data dan Reduksi Dimensi",
+      "Pengklasteran (K-means, hierarkis)",
+      "Pohon Klasifikasi, Regresi, dan Random Forest",
+      "Evaluasi Model, Metrik Kinerja, Bias-Variance Tradeoff",
+      "Klasifikasi dan Regresi K-Nearest Neighbor",
+      "Naïve Bayes Classifier",
+      "Regresi Linear, Logistik, Softmax, Ridge, dan Lasso",
+      "Support Vector Machines (SVM)",
+      "Klasifikasi Data tidak Seimbang (Imbalanced Classification)",
+      "Jaringan Saraf Tiruan (Neural Networks)"
+    ],
+    "learningOutcomes": [
+      "Jika diberikan problem dunia nyata berskala sederhana yang membutuhkan solusi kecerdasan artifisial dan sains data, peserta mampu memilih model kecerdasan artifisial dan sains data yang sesuai untuk problem tersebut dan menerapkannya dalam bentuk solusi dengan kinerja yang baik."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Artificial Intelligence: A Modern Approach, 3rd Edition (Stuart Russell & Peter Norvig)",
+      "An Introduction to Statistical Learning with Applications in R (Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani)",
+      "Data Science from Scratch (Joel Grus)"
+    ],
+    "prerequisites": [
+      "CSCM602013",
+      "CSGE602040",
+      "CSGE602012"
+    ]
+  },
+  "CSGE604097": {
+    "code": "CSGE604097",
+    "name": "Kerja Praktik",
+    "credits": 6,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini memberikan kesempatan kepada mahasiswa untuk memperoleh pengalaman dalam penyelesaian permasalahan yang terdapat pada sebuah organisasi menggunakan pengetahuan dan keterampilan di bidang Ilmu Komputer serta Teknologi Informasi dan Komunikasi (TIK) dengan cara terjun secara langsung ke dunia kerja.",
+    "topics": [
+      "Disesuaikan dengan jenis pekerjaan di tempat Kerja Praktik."
+    ],
+    "learningOutcomes": [
+      "Mampu berkomunikasi secara tertulis dan oral dengan menggunakan standar di bidang komputasi.",
+      "Mampu bekerja sama dengan orang-orang dari bidang yang berbeda.",
+      "Mampu untuk menilai dan menjalankan pekerjaan sendiri secara tepat selama kolaborasi tim.",
+      "Mampu untuk mengidentifikasi dan mengusulkan kontribusi yang sesuai bagi anggota tim lainnya selama kolaborasi.",
+      "Mampu untuk melakukan pembelajaran mandiri untuk pengembangan berkelanjutan sebagai seorang profesional di bidang komputasi.",
+      "Mampu mengaplikasikan disiplin ilmu lain yang relevan seperti proses bisnis organisasi, keuangan, kesehatan, dan Teknik.",
+      "Mampu menerapkan fondasi pengembangan perangkat lunak untuk kebutuhan Perusahaan."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Disesuaikan dengan jenis pekerjaan di tempat Kerja Praktik."
+    ],
+    "prerequisites": []
+  },
+  "CSGE614093": {
+    "code": "CSGE614093",
+    "name": "Komputer & Masyarakat",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini bertujuan untuk meningkatkan kesadaran dan kepekaan mahasiswa terhadap berbagai permasalahan sosial dan ekonomi yang terkait dengan implementasi teknologi komputer dalam kehidupan sehari-hari. Mahasiswa akan dihadapkan pada beberapa isu terkait IT dan dituntut untuk menganalisis isu tersebut serta merekomendasikan solusi dari sudut pandang mereka sebagai mahasiswa ilmu komputer. Kuliah ini disampaikan dalam Bahasa Inggris untuk mengasah kemampuan komunikasi Mahasiswa dalam bahasa lingua franca.",
+    "topics": [
+      "Memahami sejarah dan asal mula komputasi",
+      "Memahami dampak sosial dari teknologi komputer",
+      "Memahami tanggung jawab ilmuwan komputer",
+      "Menghadapi perkembangan teknologi baru",
+      "Memahami isu hak kekayaan intelektual (HAKI)"
+    ],
+    "learningOutcomes": [
+      "Mampu berkomunikasi secara tertulis dan oral dengan Bahasa Inggris.",
+      "Mampu berkomunikasi secara efektif ketika membawa isu sosial & budaya pada konteks bidang Ilmu Komputer.",
+      "Mampu memahami isu terkait prinsip legal, seperti copyright.",
+      "Mampu memahami isu terkait prinsip etika."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Ethics and computing (K.W. Bowyer)",
+      "Information technology in business (JA Senn)",
+      "Engineering Ethics, 3rd ed. (C.B. Fleddermann)",
+      "Ethics in Information Technology, 2nd ed. (G. Reynolds)",
+      "Engineering Ethics - Concepts & Cases (C.E. Harris, et al.)"
+    ],
+    "prerequisites": []
+  },
+  "UIGE600004": {
+    "code": "UIGE600004",
+    "name": "Mata Kuliah Pengembangan Kepribadian (MPK) Agama",
+    "credits": 2,
+    "state": "Wajib Universitas",
+    "description": "Setelah selesai mengikuti perkuliahan MPK Agama, mahasiswa mampu menganalisis berbagai permasalahan yang terjadi di masyarakat berdasarkan ajaran agama. Mata kuliah ini disajikan dengan pendekatan Active Learning dengan materi pembelajarannya meliputi sejarah dan makna agama, pokok-pokok ajaran agama, agama dan budaya, serta analisis kasus-kasus nyata yang terjadi di masyarakat. Proses pembelajaran dilakukan dengan menggunakan bahasa Indonesia.",
+    "topics": [
+      "Sejarah dan makna agama",
+      "Pokok-pokok ajaran agama",
+      "Hubungan agama dan budaya",
+      "Kasus-kasus yang terjadi di masyarakat berdasarkan ajaran agama",
+      "Konstruksi nilai-nilai ajaran agamanya dalam kehidupan sehari-hari"
+    ],
+    "learningOutcomes": [
+      "Mampu mengidentifikasi permasalahan Masyarakat dan bangsa dan menganalisis masalah tersebut dalam sudut pandang nilai moral dan keagamaan."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Buku Ajar MPK Agama"
+    ],
+    "prerequisites": []
+  },
+  "UIGE600003": {
+    "code": "UIGE600003",
+    "name": "Mata Kuliah Pengembangan Kepribadian (MPK) Bahasa Inggris",
+    "credits": 2,
+    "state": "Wajib Universitas",
+    "description": "Mata Kuliah Pengembangan Kepribadian Bahasa Inggris ditujukan untuk melatih kemampuan komunikasi mahasiswa baik secara lisan maupun tulisan, utamanya dalam lingkungan akademis.",
+    "topics": [
+      "Materi ajar Bahasa Inggris untuk komunikasi secara verbal dan tertulis, utamanya untuk kegiatan akademis."
+    ],
+    "learningOutcomes": [
+      "Mampu berkomunikasi secara tertulis dan oral dengan Bahasa Inggris."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Materi pembelajaran Bahasa Inggris untuk komunikasi akademis dan non-akademis."
+    ],
+    "prerequisites": []
+  },
+  "UIGE600007": {
+    "code": "UIGE600007",
+    "name": "Mata Kuliah Pengembangan Kepribadian (MPK) Terintegrasi",
+    "credits": 6,
+    "state": "Wajib Universitas",
+    "description": "Mata Kuliah Pengembangan Kepribadian Terintegrasi (MPKT) adalah bagian dari Penyelenggaraan Kuliah Pengembangan Kepribadian Pendidikan Tinggi (PKPKPT) yang diselenggarakan bagi mahasiswa mengandung unsur internalisasi nilai dasar kehidupan, keterampilan interaksi/berelasi, berbangsa dan keterampilan akademik sebagai dasar kepribadian mahasiswa menjalankan pembelajaran sesuai disiplin ilmu. Menggunakan pendekatan student centered learning (SCL) melalui proyek akhir.",
+    "topics": [
+      "Jatidiriku sebagai Cendekia: Karakter, Filsafat, Logika dan Etika",
+      "Modul Bahasa Indonesia dan Latihan",
+      "Penanaman dan Internalisasi Nilai Pancasila",
+      "Materi kuliah kewarganegaraan",
+      "Kewirausahaan & social entrepreneurship",
+      "Revolusi Industri",
+      "Manusia sebagai pengelola Kesehatan diri sendiri dan lingkungan"
+    ],
+    "learningOutcomes": [
+      "Mampu berkomunikasi secara efektif menggunakan Bahasa Indonesia ketika membawa isu sosial-budaya.",
+      "Mampu menunjukkan keterampilan resolusi konflik dan empati ketika bekerja sama dalam tim, serta disiplin diri secara kolaboratif melalui pengelolaan belajar mandiri.",
+      "Mampu bekerja sama dengan orang-orang dari bidang yang berbeda."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Materi Ajar MPKT",
+      "Materi Ajar/Modul Bahasa Indonesia dan Latihan",
+      "Materi ajar Kewirausahaan berupa video dan dokumen",
+      "Materi ajar Pancasila berupa video dan media pendukung lain",
+      "Berbagai MOOCs pilihan mahasiswa sesuai kebutuhan penyelesaian proyek akhir"
+    ],
+    "prerequisites": []
+  },
+  "CSGE601010": {
+    "code": "CSGE601010",
+    "name": "Matematika Diskret 1",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Kuliah ini membahas berbagai topik dalam Matematika Diskret yang memberikan landasan teori untuk mendukung studi lanjutan di bidang Ilmu Komputer. Kuliah ini juga akan membahas penerapan masing-masing topik tersebut dalam Ilmu Komputer.",
+    "topics": [
+      "Logika proposisional (Propositional logic)",
+      "Logika predikat orde pertama (First-order predicate logic)",
+      "Metode Pembuktian (Proofs)",
+      "Himpunan dan Fungsi (Sets and Functions)",
+      "Induksi Matematika",
+      "Barisan dan Deret (Sequences, Progressions)",
+      "Prinsip Rumah Burung Merpati (Pigeonhole principle)",
+      "Permutasi dan Kombinasi"
+    ],
+    "learningOutcomes": [
+      "Mampu membangun argumentasi secara logis dan menerapkan struktur-struktur diskret untuk merepresentasikan objek-objek diskret dan menggunakannya untuk memecahkan problem kombinatorik secara sistematis dan logis."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Discrete Mathematics and Its Applications, 7th Ed (Kenneth H. Rosen)"
+    ],
+    "prerequisites": []
+  },
+  "CSGE601011": {
+    "code": "CSGE601011",
+    "name": "Matematika Diskret 2",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Kuliah ini merupakan kelanjutan dari Matematika Diskret 1 yang memberikan landasan teori untuk mendukung studi lanjutan di bidang Ilmu Komputer. Topik-topik di Matematika Diskret 2 meliputi teori bilangan dan relasi rekurensi, serta pembahasan seputar struktur diskret yang fundamental di Ilmu Komputer, yaitu relasi, graf, dan pohon.",
+    "topics": [
+      "Teori Bilangan Bulat (Theory of Integers)",
+      "Relasi Rekurensi (Recurrence Relations)",
+      "Relasi (Relations)",
+      "Graf (Graphs)",
+      "Pohon (Trees)"
+    ],
+    "learningOutcomes": [
+      "Mampu membangun argumentasi secara logis dan menerapkan struktur-struktur diskret untuk merepresentasikan objek-objek diskret dan menggunakannya untuk memecahkan problem kombinatorik secara sistematis dan logis."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Discrete Mathematics and Its Applications, 7th Ed (Kenneth H. Rosen)"
+    ],
+    "prerequisites": []
+  },
+  "CSGE603091": {
+    "code": "CSGE603091",
+    "name": "Metodologi Penelitian dan Penulisan Ilmiah",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini berfokus pada metodologi penelitian dan penulisan ilmiah pada bidang Ilmu Komputer, Sistem Informasi, dan Teknologi Informasi (CS/SI/TI). Mata kuliah ini akan mengajarkan peserta untuk memiliki cara berpikir proses yang sistematis dan logis, secara ilmiah. Dalam mata kuliah ini peserta diminta untuk melakukan penelitian mini dan menulis karya ilmiah sebagai proses terintegrasi, di bidang CS/SI/TI.",
+    "topics": [
+      "Gambaran Umum Kuliah & Model Inkuiri Ilmiah",
+      "Identifikasi Masalah & Hipotesis, Berpikir Logis",
+      "Tinjauan Pustaka: membandingkan, mengontraskan, mengkritik, menyintesis, dan merangkum makalah",
+      "Penulisan Ilmiah: disertasi, tesis, makalah, dll.",
+      "Menulis Proposal & Laporan Penelitian; Desain Penelitian",
+      "Presentasi Kelas",
+      "Penelitian Eksperimental di bidang CS, IS, dan IT",
+      "Penelitian Survei di bidang IT",
+      "Pengumpulan Data, Analisis Data, dan Presentasi Data"
+    ],
+    "learningOutcomes": [
+      "Mampu berkomunikasi secara tertulis dan oral dengan menggunakan standar di bidang komputasi.",
+      "Mampu untuk menilai dan menjalankan pekerjaan sendiri secara tepat selama kolaborasi tim.",
+      "Mampu untuk mengidentifikasi dan mengusulkan kontribusi yang sesuai bagi anggota tim lainnya selama kolaborasi.",
+      "Mampu untuk melakukan pembelajaran mandiri untuk pengembangan berkelanjutan sebagai seorang profesional di bidang komputasi."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Research Methods for Business: A Skill-Building Approach (Sekaran, Uma)",
+      "An Introduction to Scientific Research Methods (Wilson Jr., E.B.)",
+      "Experimental methodology, Pearson, 9th Edition (Christensen, Larry B.)",
+      "Practical research methods (Tan, Willie)",
+      "Qualitative Research in Information Systems: a reader (Myers, Michel D.)"
+    ],
+    "prerequisites": []
+  },
+  "CSGE602022": {
+    "code": "CSGE602022",
+    "name": "Pemrograman Berbasis Platform",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Pemrograman Berbasis Platform (PBP) merupakan mata ajar yang melatih dan memberikan pengalaman pengembangan aplikasi berbasis platform baik dari sisi server maupun di sisi client, memperkenalkan pengembangan platform Web dan platform Mobile. Peserta perkuliahan juga dituntut untuk bisa melakukan pemrograman dengan bahasa Python, Dart, Java, HTML, CSS, dan JavaScript.",
+    "topics": [
+      "Pengantar Pemrograman Berbasis Platform",
+      "Framework Pengembangan Platform Web; Pengujian, Model, View, Template & Aset",
+      "Pengiriman data HTML, XML, dan JSON",
+      "Form, POST & GET, session, cookie, otentikasi, otorisasi",
+      "Navigasi, tata letak (layouting), HTML template, CSS, aset",
+      "Pemrograman sisi klien dengan JQuery",
+      "Framework pengembangan platform seluler menggunakan Flutter; Antarmuka Pengguna",
+      "Pengiriman aplikasi seluler",
+      "Aspek Keamanan pada Pengembangan Web: Cross Site Request Forgery, Cross Site Scripting"
+    ],
+    "learningOutcomes": [
+      "Mampu mengimplementasikan sistem berbasis komputer pada dua platform berbeda: Web & Mobile.",
+      "Mampu untuk mengidentifikasi dan mengusulkan kontribusi yang sesuai bagi anggota tim lainnya selama kolaborasi.",
+      "Mampu untuk menilai dan menjalankan pekerjaan sendiri secara tepat selama kolaborasi tim.",
+      "Mampu bekerja sama dengan orang-orang dari bidang yang berbeda."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Internet & World Wide Web How to Program 5th Edition (Deitel)",
+      "Test-Driven Development with Python 1st Edition (Percival)",
+      "Head First, Android Development, A Brain-Friendly Guide (Dawn Griffiths and David Griffiths)"
+    ],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSCM602223": {
+    "code": "CSCM602223",
+    "name": "Pemrograman Lanjut",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini merupakan mata kuliah lanjutan dari mata kuliah Dasar-dasar Pemrograman. Mata kuliah Pemrograman Lanjut akan menyajikan teknik dalam pemrograman menggunakan topik terbaru dan terkini yang sedang berkembang di dalam dunia industri. Selain teori, mata kuliah ini juga mengajarkan mahasiswa untuk beradaptasi dalam menggunakan teknik pemrograman skala enterprise sehingga dapat membantu mahasiswa untuk mendesain, mengimplementasikan dan menjaga sistem yang kompleks. Dibantu dengan Agile software development methodology, mahasiswa belajar mengenai siklus pengembangan perangkat lunak.",
+    "topics": [
+      "Standar Pengodean (Coding Standards)",
+      "Integrasi Berkelanjutan & DevOps (Continuous Integration & DevOps)",
+      "Keterpeliharaan (Maintainability), Prinsip Berorientasi Objek (OO Principles)",
+      "Test Driven Development & Refactoring",
+      "Konkurensi (Concurrency), Pola Desain (Design Patterns)",
+      "Arsitektur Perangkat Lunak (Software Architectures)",
+      "High-Level Networking, Pemrograman Asinkron (Asynchronous Programming)",
+      "Deployment & Monitoring"
+    ],
+    "learningOutcomes": [
+      "Mampu untuk menilai dan menjalankan pekerjaan sendiri secara tepat selama kolaborasi tim.",
+      "Mampu untuk mengidentifikasi dan mengusulkan kontribusi yang sesuai bagi anggota tim lainnya selama kolaborasi.",
+      "Mampu menspesifikasikan, mengimplementasikan, dan menguji komponen-komponen perangkat lunak.",
+      "Mampu membuat perangkat lunak berkualitas tinggi, dapat diandalkan, memiliki keterbacaan yang tinggi, mempunyai dokumentasi yang lengkap.",
+      "Mampu menerapkan rancangan menjadi perangkat lunak yang berfungsi, serta melakukan pengujian perangkat lunak sesuai best practice.",
+      "Mampu untuk mengadaptasi dan menerapkan teknik, sumber daya, dan perangkat komputasi modern untuk mengimplementasikan perangkat lunak."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Head First Design Patterns A Brain-Friendly Guide (Freeman, E., et al.)",
+      "Clean Code: A Handbook of Agile Software Craftsmanship (Martin, R.)",
+      "Building Microservices (Newman, S.)",
+      "Java Performance The Definitive Guide (Oaks, S.)",
+      "Concurrency in C# Cookbook: Asynchronous, Parallel, and Multithreaded Programming (Clearly, S.)",
+      "Refactoring: Improving the Design of Existing Code (Fowler, M.)",
+      "Fundamental of Software Architecture: An Engineering Approach (Mark Richards, Neal Ford)"
+    ],
+    "prerequisites": [
+      "CSGE601021",
+      "CSGE602022"
+    ]
+  },
+  "CSGE602023": {
+    "code": "CSGE602023",
+    "name": "Pengantar Keamanan Perangkat Lunak",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Di era digital ini, keamanan siber menjadi semakin penting. Kuliah ini akan memperkenalkan mahasiswa pada konsep dan praktik penting dalam keamanan perangkat lunak, membantu mahasiswa memahami ancaman yang dihadapi perangkat lunak, dan memberi alat untuk mengembangkan perangkat lunak yang lebih tahan terhadap serangan.",
+    "topics": [
+      "Prinsip Keamanan (Security Principles)",
+      "Merancang Model Fungsional dan Objek yang Aman",
+      "Merancang Model Dinamis dan Sistem yang Aman",
+      "Pemodelan Ancaman (Threat Modelling)",
+      "Otentikasi dan Otorisasi (Authentication and Authorization)",
+      "Validasi dan Sanitasi Input",
+      "Kerentanan Standar Aplikasi Web",
+      "Keamanan Basis Data (Database Security)",
+      "Pengujian Unit & Pengujian Regresi",
+      "Pengujian Integrasi, Sistem, dan Penerimaan",
+      "Software Penetration Testing",
+      "Kejahatan Siber (Cyber Crime)"
+    ],
+    "learningOutcomes": [
+      "Mampu mengidentifikasi dan menganalisis berbagai jenis kerentanan keamanan dalam perangkat lunak.",
+      "Mampu menerapkan berbagai teknik keamanan perangkat lunak untuk mencegah dan memitigasi kerentanan."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Security-Driven Software Development (Aspen Olmsted)",
+      "Hands-On Security in DevOps (Tony Hsu)"
+    ],
+    "prerequisites": [
+      "CSGE601021"
+    ]
+  },
+  "CSCM601252": {
+    "code": "CSCM601252",
+    "name": "Pengantar Organisasi Komputer",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "Kuliah ini memberikan landasan organisasi komputer sekuensial yang terdiri dari input, output, memori, dan prosesor (jalur kontrol dan data). Pemahaman tentang konsep-konsep ini juga akan didukung dengan beberapa latihan pemrograman menggunakan bahasa tingkat rendah (low-level languages), misalnya bahasa assembly.",
+    "topics": [
+      "Kinerja (Performance)",
+      "RISC vs CISC",
+      "Bahasa Assembly MIPS",
+      "Unit Aritmetika (Arithmetic Unit)",
+      "Prosesor: Datapath dan Kontrol",
+      "Prosesor: Pipeline",
+      "Sistem Memori: RAM, ROM, Memori Cache",
+      "Pengantar AVR dan Bahasa Assembly Berbasis AVR",
+      "Organisasi Input/Output"
+    ],
+    "learningOutcomes": [
+      "Mampu merancang sistem digital yang merupakan dasar perangkat keras komputer."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Computer organization and design: the hardware/software interface (Patterson, David A., and John L. Hennessy)"
+    ],
+    "prerequisites": [
+      "CSCM601150"
+    ]
+  },
+  "CSCM601150": {
+    "code": "CSCM601150",
+    "name": "Pengantar Sistem Digital",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Kuliah ini memberikan pemahaman dasar dan aspek praktis dalam merancang sistem digital menggunakan bahasa pemrograman tingkat tinggi, seperti VHDL. Mahasiswa akan mempelajari konsep dasar dalam merancang sirkuit digital, seperti representasi biner, aljabar Boolean, mesin keadaan hingga (finite-state-machine), dan prosesor set instruksi (instruction set processor).",
+    "topics": [
+      "Sistem Pengangkaan (Biner, Oktal, Desimal, Heksadesimal) - Komplemen Dua & Operasi Aritmetika",
+      "Bilangan Floating Point & Mekanisme Deteksi Kesalahan",
+      "Aljabar Boolean: manipulasi aljabar, bentuk kanonik",
+      "Gerbang logika digital, Implementasi gerbang, IC",
+      "Sirkuit Logika, n-bit Full Adder/Subtractor",
+      "Peta Karnaugh (Karnaugh Map)",
+      "Metode Tabulasi",
+      "Selektor, Dekoder",
+      "Shifter, Rotator, Ekstensi Aritmetika dan Logika",
+      "ALU, ROM yang Dapat Diprogram, PLA",
+      "Flip-flop, Tabel Keadaan, Diagram Keadaan, Diagram Waktu",
+      "Analisis dan sintesis logika sekuensial",
+      "RAM, Stack & Queue, Register, Memori",
+      "Datapath Sederhana: Akumulator & Pencacah Satu",
+      "Gambaran Umum Organisasi Komputer"
+    ],
+    "learningOutcomes": [
+      "Mampu merancang sistem digital yang merupakan dasar perangkat keras komputer."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Logic and computer design fundamentals (Mano, M. Morris, Charles R. Kime, and Tom Martin)",
+      "Digital Logic Design (Tan, Aaron Tuck Choy)",
+      "Digital design and computer architecture. 2nd Edition (Harris, David, and Sarah Harris)"
+    ],
+    "prerequisites": []
+  },
+  "CSCM603228": {
+    "code": "CSCM603228",
+    "name": "Proyek Perangkat Lunak",
+    "credits": 6,
+    "state": "Wajib Program Studi",
+    "description": "Mata Kuliah ini memberikan pengalaman, keterampilan, dan pengetahuan pengembangan perangkat lunak dari awal hingga fase deployment dan bisa digunakan oleh pengguna, sebagai satu kesatuan kerja tim dengan menggunakan alat bantu pengembangan dan teknologi maupun metodologi terkini. Menggunakan kerja kelompok dengan proyek nyata bersumber dari mitra industri IT sebagai pemilik produk.",
+    "topics": [
+      "Scrum Software, Arsitektur, Clean Code, Pengujian QA, Automatic Deployment, Product Pitching",
+      "Deployment pengembangan, integrasi berkelanjutan (CI/CD)",
+      "Desain Antarmuka Pengguna (UI)",
+      "Kerja tim dan keterampilan komunikasi",
+      "Pengujian Perangkat Lunak, cakupan pengujian, jaminan kualitas perangkat lunak",
+      "Keterpeliharaan, manajemen perubahan, Keamanan, privasi",
+      "Dokumentasi, Skalabilitas, profiling; Product Pitching"
+    ],
+    "learningOutcomes": [
+      "Mampu membuat perangkat lunak berkualitas tinggi, dapat diandalkan, memiliki keterbacaan yang tinggi, mempunyai dokumentasi yang lengkap.",
+      "Mampu untuk mengadaptasi dan menerapkan teknik, sumber daya, dan perangkat komputasi modern untuk mengimplementasikan perangkat lunak.",
+      "Mampu menerapkan rancangan menjadi perangkat lunak yang berfungsi, serta menerapkan standard best practice dari quality assurance.",
+      "Mampu mengaplikasikan disiplin ilmu lain yang relevan seperti proses bisnis organisasi, keuangan, kesehatan, dan teknik.",
+      "Mampu menerapkan ilmu dan teknologi informasi dalam proses penyelesaian masalah untuk menjawab kebutuhan Masyarakat.",
+      "Mampu untuk menjalankan tanggung jawab profesional, termasuk hubungan antara teknologi dengan pemahaman tentang isu sosial, lingkungan, dan budaya.",
+      "Mampu untuk mengidentifikasi dan mengusulkan kontribusi yang sesuai bagi anggota tim lainnya selama kolaborasi.",
+      "Mampu untuk menilai dan menjalankan pekerjaan sendiri secara tepat selama kolaborasi tim.",
+      "Mampu berkomunikasi secara tertulis dan oral dengan menggunakan standar di bidang pengembangan perangkat lunak."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Test Driven Development with Python (Harry Percival)",
+      "Clean Code: A Handbook of Agile Software Craftsmanship (Robert C. Martin)",
+      "Software Engineering: A Practitioner’s Approach 6th ed (Pressman, Roger S.)",
+      "Software Engineering Competency Model (SWECOM), IEEE Computer Society",
+      "Usability Goals (Rogers, Preece, & Sharp)",
+      "Eight Golden Rules of Interface Design (Shneiderman & Plaissance)"
+    ],
+    "prerequisites": [
+      "CSCM603125",
+      "CSGE602070",
+      "CSCM602223"
+    ]
+  },
+  "CSCM603125": {
+    "code": "CSCM603125",
+    "name": "Rekayasa Perangkat Lunak",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "Mata Kuliah ini mencakup materi tentang konsep pengembangan perangkat lunak, mulai dari tahapan analisis sampai dengan pengujian. Mahasiswa akan diperkenalkan dengan teknik pemodelan kebutuhan sistem dan juga pemodelan desain sistem, dengan menggunakan notasi Unified Modeling Language (UML).",
+    "topics": [
+      "Pengantar Rekayasa Perangkat Lunak: Kategori Perangkat Lunak, Evolusi Perangkat Lunak",
+      "Proses Perangkat Lunak: Model Proses Generik, Model Proses Preskriptif, Pengembangan Tangkas (Agile)",
+      "Analisis Pemodelan & Desain: Analisis Kebutuhan, Diagram Use Case, Diagram Kelas, Diagram Interaksi, Desain Arsitektur, Desain Kelas & Metode, Pola Desain (Design Pattern)",
+      "Manajemen Perangkat Lunak",
+      "Manajemen Kualitas: Strategi Pengujian Perangkat Lunak, Pengujian Aplikasi Konvensional"
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan berbagai teknik pengujian perangkat lunak.",
+      "Mampu memodelkan spesifikasi sistem dalam tahap perancangan.",
+      "Mampu memodelkan spesifikasi sistem dalam tahap requirement gathering dan analisis.",
+      "Mampu memilih model proses yang sesuai dengan situasi dan kondisi dalam mengembangkan perangkat lunak.",
+      "Mampu untuk mengidentifikasi dan mengusulkan kontribusi yang sesuai bagi anggota tim lainnya selama kolaborasi.",
+      "Mampu untuk menilai dan menjalankan pekerjaan sendiri secara tepat selama kolaborasi tim.",
+      "Mampu berkomunikasi secara tertulis dan oral dengan menggunakan standar di bidang pengembangan perangkat lunak."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Software Engineering: A Practitioner’s Approach, 7th Edition (Pressman, Roger S.)",
+      "Software Engineering, 8th Edition (Sommerville, Ian)",
+      "Systems Analysis and Design for the Global Enterprise. 7th ed. (Bentley, Lonnie D., Jeffrey L. Whitten, and Gary Randolph)",
+      "System Analysis and Design with UML 3rd Edition (Dennis, Alan, et al.)"
+    ],
+    "prerequisites": [
+      "CSGE601021"
+    ]
+  },
+  "CSGE602040": {
+    "code": "CSGE602040",
+    "name": "Struktur Data dan Algoritma",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Kuliah ini membahas tentang teknik dasar untuk abstraksi data dan manipulasi struktur abstrak tersebut melalui algoritma yang tepat. Kuliah ini juga membahas tentang analisis kompleksitas alokasi ruang dan waktu dalam implementasi algoritma.",
+    "topics": [
+      "Tipe Data Abstrak (Abstract Data Types)",
+      "Model data linear: list, stack, queue, set",
+      "Pencarian (Searching)",
+      "Pengurutan (Sorting)",
+      "Model data hierarkis: Pohon (Tree)",
+      "Pohon Pencarian Biner (Binary Search Trees)",
+      "Pohon AVL (AVL Tree)",
+      "B-Tree",
+      "Binary Heap, Huffman Coding",
+      "Tabel Hash (Hash table)",
+      "Representasi dan algoritma Graf"
+    ],
+    "learningOutcomes": [
+      "Mampu untuk menerapkan struktur data yang sesuai dan merancang algoritma dengan struktur data tersebut untuk mengabstraksikan masalah dan menyelesaikannya."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Data Structures and Problem Solving Using Java (4th edition) (Mark Allen Weiss)"
+    ],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSCE604038": {
+    "code": "CSCE604038",
+    "name": "Deep Learning",
+    "credits": 4,
+    "state": "Pilihan Program Studi",
+    "description": "Kuliah ini dirancang untuk memberikan pemahaman yang kuat tentang konsep-konsep dasar dan teknik-teknik mutakhir dalam bidang deep learning. Mata kuliah ini akan membahas mulai dari teori dasar probabilitas, informasi, dan optimasi hingga arsitektur jaringan saraf dalam dan aplikasinya pada berbagai jenis data.",
+    "topics": [
+      "Teori Keputusan (Decision Theory)",
+      "Teori Informasi (Information Theory)",
+      "Algoritma Optimasi",
+      "Regresi Logistik dan Regresi Linear",
+      "Jaringan Saraf Linear untuk Klasifikasi",
+      "Jaringan Saraf Dalam untuk Data Terstruktur",
+      "Jaringan Saraf Dalam untuk Citra/Gambar",
+      "Jaringan Saraf Dalam untuk Sekuens/Urutan",
+      "Jaringan Saraf Konvolusional Modern (CNN)",
+      "Jaringan Saraf Berulang Modern (RNN)",
+      "Panduan Pembangun (lapisan, manajemen parameter, lazy initialization, lapisan kustom)",
+      "Mekanisme Atensi (Attention Mechanisms) dan Transformers"
+    ],
+    "learningOutcomes": [
+      "Mampu memilih dan merancang arsitektur neural networks yang sesuai untuk berbagai jenis masalah.",
+      "Mampu melatih model deep learning, melakukan evaluasi kinerja, dan melakukan tuning hyperparameter.",
+      "Mampu menganalisis hasil prediksi model dan memberikan interpretasi yang relevan.",
+      "Mampu mengidentifikasi masalah yang dapat diselesaikan dengan deep learning dan menerapkan teknik yang sesuai."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Probabilistic Machine Learning: An Introduction (Murphy, Kevin P.)",
+      "Probabilistic Machine Learning: Advanced Topics (Murphy, Kevin P.)",
+      "Dive Into Deep Learning (Aston Zhang, Zachary C. Lipton, Mu Li, Alexander J. Smola)"
+    ],
+    "prerequisites": [
+      "CSGE603130"
+    ]
+  },
+  "CSCE604078": {
+    "code": "CSCE604078",
+    "name": "Internet of Things",
+    "credits": 3,
+    "state": "Pilihan Program Studi",
+    "description": "Mata kuliah ini memberikan pemahaman komprehensif tentang konsep, teknologi, dan aplikasi Internet of Things (IoT). Mahasiswa akan mempelajari tentang komponen-komponen utama IoT, mulai dari sensor dan aktuator hingga jaringan komunikasi dan platform. Selain itu, kuliah ini juga membahas aspek-aspek penting seperti keamanan, privasi, dan analisis data IoT.",
+    "topics": [
+      "Gambaran umum konsep dan aplikasi IoT",
+      "Evolusi teknologi IoT; Ekosistem IoT dan para pemangku kepentingan",
+      "Low Power Short Range Area Network",
+      "Low Power Long Range Area Network",
+      "Low Latency IoT",
+      "Node sensor, edge computing, dan infrastruktur cloud",
+      "Protokol komunikasi (misal: MQTT, CoAP, HTTP)",
+      "Platform IoT dan middleware",
+      "Pengantar mikrokontroler (misal: Arduino, Raspberry Pi)",
+      "Jenis sensor dan antarmukanya; Aktuator dan perangkat output",
+      "Bahasa pemrograman untuk IoT (misal: Python, JavaScript)",
+      "Pengantar framework dan pustaka IoT; Latihan pemrograman IoT langsung",
+      "Lanskap ancaman dan tantangan keamanan di IoT; Protokol keamanan dan best practices",
+      "Pertimbangan privasi dan kepatuhan regulasi",
+      "Smart home dan consumer IoT; IoT Industri (IIoT) dan smart cities",
+      "Kesehatan, pertanian, dan domain IoT lainnya",
+      "Pengantar alat dan teknik analitika data; Metode visualisasi untuk data IoT"
+    ],
+    "learningOutcomes": [
+      "Mampu memahami konsep dasar IoT, komponen-komponennya, dan aplikasinya dalam berbagai sektor.",
+      "Mampu memilih teknologi jaringan yang tepat (LPWAN, LPAN, Low Latency IoT) berdasarkan kebutuhan aplikasi.",
+      "Mampu mendesain dan mengembangkan sistem IoT menggunakan sensor, aktuator, dan mikrokontroler.",
+      "Mampu memahami protokol komunikasi IoT (MQTT, CoAP, HTTP) dan menerapkannya dalam sistem.",
+      "Mampu mengimplementasikan keamanan dan privasi dalam sistem IoT.",
+      "Mampu menganalisis data IoT menggunakan alat dan teknik yang sesuai."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Internet of Things: A Hands-on Approach (Arshdeep Bahga dan Vijay Madisetti)",
+      "Designing the Internet of Things (Adrian McEwen)",
+      "Building the Internet of Things with Python (Matt Richardson dan Shawn Wallace)",
+      "IoT Fundamentals: Networking Technologies, Protocols, and Platforms (David Hanes, Gonzalo Salgueiro, and Bradley Dickinson)"
+    ],
+    "prerequisites": [
+      "CSCM603154"
+    ]
+  }
+}

@@ -1,0 +1,516 @@
+{
+  "CSGE601012": {
+    "code": "CSGE601012",
+    "name": "Kalkulus 1",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Kalkulus merupakan mata ajaran wajib di Fasilkom dengan materi utama Kalkulus Dasar. Ada dua masalah dasar dalam Kalkulus, yaitu masalah garis singgung dan luas. Masalah garis singgung adalah bagaimana menentukan gradien garis singgung di suatu titik pada kurva. Sedangkan masalah luas adalah bagaimana menentukan luas daerah bidang di antara suatu kurva sumbu-x pada interval [a, b]. Kedua masalah tersebut melibatkan grafik fungsi bernilai nyata y=f(x), dan jawabannya merupakan limit perubahan dan jumlahan, yang kemudian kita kenal sebagai turunan dan integral. Oleh karena itu, Kalkulus sering disebut sebagai ilmu yang mempelajari limit. Jawaban dua masalah geometris tersebut merupakan kunci dari berbagai masalah terapan dalam ilmu pengetahuan dan teknologi.",
+    "topics": [
+      "Review: sistem bilangan dan fungsi",
+      "Limit dan kekontinuan",
+      "Turunan",
+      "Aplikasi Turunan: Optimization and L'Hopital",
+      "Indefinite Integral",
+      "Teknik pengintegralan",
+      "Definite Integral",
+      "Aplikasi Integral: luas bawah kurva dan volume"
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan konsep-konsep dasar kalkulus, dan penalaran yang sesuai dengan pengaplikasiannya pada bidang ilmu komputer/sistem informasi"
+    ],
+    "sublearningOutcomes": [
+      "Terampil memecahkan masalah yang berkaitan dengan Kalkulus",
+      "Dapat melakukan logical reasoning dan membuat abstraksi matematika dari permasalahan yang terkait kalkulus."
+    ],
+    "resources": [],
+    "prerequisites": []
+  },
+  "CSGE601010": {
+    "code": "CSGE601010",
+    "name": "Matematika Diskret 1",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Mata ajar ini memperkenalkan topik-topik dasar matematika diskrit, antara lain logika, struktur diskrit dasar, dan analisis kombinatorik, yang menjadi dasar bagi topik-topik lanjutan dan aplikasinya pada ilmu komputer/sistem informasi.",
+    "topics": [
+      "Intro to Discrete Math",
+      "Propositional Logic",
+      "Applications of Propositional Logic",
+      "Satisfiability",
+      "Equivalence",
+      "Predicate Logic: Motivation & Introduction",
+      "Predicate Logic: Nested Quantifiers, Translating Sentences",
+      "Inference rules",
+      "Proving Methods: Direct Proof",
+      "Proving Methods: Indirect Proof",
+      "Set, Function, Sequence, Cardinality",
+      "Mathematical Inductions",
+      "Mathematical Inductions, Strong Induction",
+      "Counting: basic rules & pigeonhole principles",
+      "Counting: permutations, combinations, variations of permutation and combination, binomial coefficient"
+    ],
+    "learningOutcomes": [
+      "Mampu menganalisa, memformulasikan, serta memecahkan masalah kombinatorik dengan pola pikir komputasional serta membangun argumentasi penalarannya secara logis, kritis, dan sistematis melalui penerapan struktur-struktur diskret dasar sebagai representasi objek-objek diskret."
+    ],
+    "sublearningOutcomes": [
+      "Mampu menjelaskan proposisi, membangun proposisi menggunakan operator logika proposisi, dan menentukan nilai kebenaran kalimat logika proposisi menggunakan tabel kebenaran.",
+      "Mampu menerapkan logika proposisi untuk memecahkan logic puzzles, menyatakan kalimat dalam bahasa alami, dan memeriksa konsistensi spesifikasi sebuah sistem.",
+      "Mampu menerapkan hukum ekivalensi untuk memeriksa ekivalensi dari dua kalimat logika proposisi dan menentukan apakah kalimat logika proposisi merupakan tautologi, kontradiksi, atau satisfiable.",
+      "Mampu menjelaskan predikat dan membangun kalimat logika predikat menggunakan operator logika dan kuantor.",
+      "Mampu menentukan ekivalensi dari dua kalimat logika predikat.",
+      "Mampu menyatakan kalimat dalam bahasa alami ke dalam kalimat logika predikat dan membedakan arti kalimat logika predikat berdasarkan pengkuantoran."
+    ],
+    "resources": [],
+    "prerequisites": []
+  },
+  "CSGE601011": {
+    "code": "CSGE601011",
+    "name": "Matematika Diskret 2",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini merupakan kelanjutan dari Matematika Diskrit 1 dan memberikan landasan teoritis untuk ilmu komputer.",
+    "topics": [
+      "Number Theory: Divisibility, Modular Arithmetic, Integer Representations",
+      "Number Theory: Primes, Greatest Common Divisors (GCD), Least Common Multiples (LCM), Linear Congruences",
+      "Advanced Counting Techniques: Modeling with Recurrence Relations",
+      "Advanced Counting Techniques: Generating Functions",
+      "Advanced Counting Techniques: Using Generating Functions to Solve Recurrence Relations",
+      "Relations: Relations and their properties, Representing Relations, n-ary relations and their applications",
+      "Relations: Closures of Relations",
+      "Equivalence Relations",
+      "Relations: Equivalence Relations",
+      "Relations: Partial Order",
+      "Graphs: Graphs and Graph Models, Graph Terminology and Special Types of Graphs, Representing Graphs",
+      "Graphs: Representing Graphs, Connectivity",
+      "Graphs: Euler and Hamilton Paths",
+      "Graphs: Graph Isomorphism, Bipartite and Matching"
+    ],
+    "learningOutcomes": [
+      "Mampu menganalisa, memformulasikan, serta memecahkan masalah kombinatorik dengan pola pikir komputasional serta membangun argumentasi penalarannya secara logis, kritis, dan sistematis melalui penerapan struktur-struktur diskret dasar sebagai representasi objek-objek diskret."
+    ],
+    "sublearningOutcomes": [
+      "Mampu memodelkan hubungan keterkaitan setiap permasalahan dan memodelkan permasalahan dalam bentuk graf dan tree yang selanjutnya dapat dicari solusi optimal."
+    ],
+    "resources": [],
+    "prerequisites": [
+      "CSGE601010"
+    ]
+  },
+  "CSGE601020": {
+    "code": "CSGE601020",
+    "name": "Dasar-Dasar Pemrograman 1",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini bertujuan untuk mengajarkan konsep-konsep dasar serta teknik untuk membuat program komputer menggunakan Bahasa Pemrograman Python. Mata kuliah ini diajarkan melalui kombinasi kuliah tatap muka serta sesi latihan pemrograman dengan setiap peserta kuliah mengakses PC yang tersambung ke Internet.",
+    "topics": [
+      "Pengenalan pemrograman & sistem komputer",
+      "Variable, tipe data, dan sistem bilangan",
+      "Selections and Loops",
+      "Strings",
+      "Text Files & Exception Handlings",
+      "Functions and Lists",
+      "Tuples, Mutability, Sets, and Dictionaries",
+      "Recursion",
+      "Classes and Objects",
+      "Graphical User Interfaces"
+    ],
+    "learningOutcomes": [
+      "Mampu menjabarkan konsep-konsep dasar pemrograman, menerapkannya untuk abstraksi permasalahan serta pemecahannya secara logis dan komputasional, dan mengenal beberapa paradigma pemrograman."
+    ],
+    "sublearningOutcomes": [
+      "Menguasai konsep-konsep dan teknik-teknik dasar pemrograman dalam konteks pengenalan ilmu komputer.",
+      "Mampu membuat program komputer berorientasi obyek dengan benar dan sistematis."
+    ],
+    "resources": [
+      "Python"
+    ],
+    "prerequisites": []
+  },
+  "CSGE601021": {
+    "code": "CSGE601021",
+    "name": "Dasar-Dasar Pemrograman 2",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini merupakan lanjutan dari Dasar-Dasar Pemrograman 1, yang berfokus pada paradigma pengembangan perangkat lunak skala medium, terutama dengan paradigma pemrograman berorientasi objek. Bahasa pemrograman yang digunakan adalah Java.",
+    "topics": [
+      "Elementary Programming",
+      "Selections and Loops",
+      "Methods and Recursion",
+      "Arrays",
+      "Generics",
+      "Objects and Classes",
+      "Object-Oriented Thinking",
+      "Inheritance and Polymorphism",
+      "Abstract Classes & Interfaces",
+      "Exception Handling & IO",
+      "GUI"
+    ],
+    "learningOutcomes": [
+      "Mampu menjabarkan konsep-konsep dasar pemrograman, menerapkannya untuk abstraksi permasalahan serta pemecahannya secara logis dan komputasional, dan mengenal beberapa paradigma pemrograman."
+    ],
+    "sublearningOutcomes": [
+      "Menguasai konsep-konsep dan teknik-teknik dasar pemrograman dalam konteks pengenalan ilmu komputer serta berorientasi objek."
+    ],
+    "resources": [
+      "Java"
+    ],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSGE602022": {
+    "code": "CSGE602022",
+    "name": "Pemrograman Berbasis Platform",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini akan membahas pengembangan perangkat lunak pada berbagai macam platform. Materi yang dipelajari berhubungan dengan berbagai macam konsep dan peraturan pemrograman yang diterapkan pada suatu platform. Sebagai contoh pemrograman pada platform yang relevan saat ini adalah perangkat bergerak (mobile), web, robotik dan kecerdasan buatan, perangkat tertanam, dan gaming.",
+    "topics": [
+      "Introduction to Platform-Based Programming",
+      "Web Platform Development Framework",
+      "Test, Models, Views Templates & assets",
+      "Data delivery HTML, XML, dan JSON",
+      "Form, POST & GET, session, cookie, authentication, authorization",
+      "Navigation, layouting, HTML template, CSS, assets",
+      "Client-side programming with Jquery",
+      "Mobile platform development framework using Flutter",
+      "Antarmuka pengguna grafis",
+      "Mobile application delivery"
+    ],
+    "learningOutcomes": [
+      "Mampu mengimplementasikan sistem berbasis komputer termasuk aplikasi berbasis platform."
+    ],
+    "sublearningOutcomes": [
+      "Mahasiswa mampu merancang website dan mengimplementasikan aplikasi berbasis platform yang memuat koneksi database dengan interface sesuai standar yang berlaku secara internasional.",
+      "Mampu berkomunikasi dan bekerja sama dalam kelompok untuk pengembangan aplikasi berbasis platform."
+    ],
+    "resources": [
+      "Flutter",
+      "jQuery",
+      "GitLab"
+    ],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSGE602040": {
+    "code": "CSGE602040",
+    "name": "Struktur Data & Algoritma",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini mengajarkan teknik-teknik dasar untuk abstraksi struktur data, algoritma-algoritma akses dan manipulasi struktur-struktur abstraksi tersebut; serta pengantar analisis kompleksitas eksekusi algoritma-algoritma tersebut.",
+    "topics": [
+      "Analisis Algoritma",
+      "Abstract Data Type",
+      "Recursion simple",
+      "Recursion",
+      "Sorting",
+      "Linked-list beserta variannya (singly, doubly, dan circular) dan operasi di dalamnya",
+      "Tree",
+      "Binary Search Tree",
+      "AVL Tree",
+      "Binary Heap",
+      "Graph",
+      "Hash Table"
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan struktur data yang tepat dan merancang algoritma dengan struktur data tersebut dalam melakukan abstraksi permasalahan dan pemecahannya."
+    ],
+    "sublearningOutcomes": [
+      "Mahasiswa mampu melakukan formalisasi permasalahan dalam bentuk logika.",
+      "Mampu melakukan pembuktian terhadap suatu permasalahan dengan menggunakan teknik-teknik pembuktian.",
+      "Dapat menjelaskan himpunan dan fungsi serta memodelkan permasalahan berhitung.",
+      "Dapat memodelkan hubungan keterkaitan setiap permasalahan dalam bentuk graf dan tree untuk mencari solusi optimal."
+    ],
+    "resources": [],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSGE602012": {
+    "code": "CSGE602012",
+    "name": "Aljabar Linier",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini membekali mahasiswa keterampilan pemecahan masalah terkait dengan aljabar vektor dan meningkatkan penalaran matematis (logis, konsisten, jelas, seksama) yang merupakan disposisi dan keterampilan berpikir kritis. Bahan kajian meliputi sistem persamaan linear, aljabar matriks, ruang vektor dan hasil kali dalam, nilai dan vektor eigen, serta transformasi linear.",
+    "topics": [
+      "Sistem persamaan linier",
+      "Aljabar matriks",
+      "Menghitung determinan: OBE & Cramer",
+      "Vektor pada bidang dan ruang",
+      "Ruang Vektor",
+      "Ruang hasil kali dalam",
+      "Eigenvector & Eigenvalues & Diagonalisasi Matriks",
+      "Aplikasi Diagonalisasi untuk PCA (computing)",
+      "Transformasi linier"
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan konsep-konsep dasar aljabar linear, dan penalaran yang sesuai dengan pengaplikasiannya pada bidang ilmu komputer/sistem informasi"
+    ],
+    "sublearningOutcomes": [
+      "Dapat menyelesaikan masalah yang terkait dengan aljabar matriks dan vektor dengan strategi yang paling efektif.",
+      "Dapat melakukan logical reasoning dan membuat abstraksi matematika dari permasalahan yang terkait aljabar matriks dan vektor."
+    ],
+    "resources": [],
+    "prerequisites": []
+  },
+  "CSIM601190": {
+    "code": "CSIM601190",
+    "name": "Manajemen Bisnis",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "Kuliah ini bertujuan untuk meningkatkan pengetahuan dan kemampuan mahasiswa terkait aspek bisnis dan manajemen di dalam organisasi. Melalui contoh dan studi kasus, mahasiswa akan memahami konsep dasar organisasi bisnis serta membangun keterampilan analisis manajerial yang dibutuhkan lulusan sistem informasi.",
+    "topics": [
+      "Taking Risk and Making Profit within Dynamics Business Environment",
+      "Understanding Economics and How It Affect Business",
+      "Demanding ethical and socially responsible behavior",
+      "How to form a business",
+      "Entrepreneurship and Starting a Small business",
+      "Business Model, Value Proposition Canvas, and Testing Business Idea",
+      "Marketing: Helping buyers buy",
+      "Developing and pricing goods and services",
+      "Distributing products",
+      "Using effective promotions",
+      "Understanding accounting and financial information",
+      "Financial management",
+      "Managing personal finance",
+      "Managers in the Workplace",
+      "Making Decisions",
+      "Constraints on Managers & Managing Change",
+      "Global Management",
+      "Planning and Goal-Setting",
+      "Strategic Planning",
+      "Organization Design",
+      "Organizing Around Team",
+      "Human Resources Management",
+      "Organizational Behavior",
+      "Leadership",
+      "Motivation",
+      "Controlling Activities and Operation"
+    ],
+    "learningOutcomes": [
+      "Mampu membuat dan mengajukan usulan cetak biru proposal bisnis sederhana dengan mempertimbangkan aspek manajemen dan bisnis di dalam sebuah organisasi."
+    ],
+    "sublearningOutcomes": [
+      "Mampu memahami konsep dasar bisnis dan tren dunia bisnis terkini.",
+      "Menjelaskan tipe kepemilikan bisnis dan menerapkan tipe yang tepat untuk kasus tertentu.",
+      "Menjelaskan inti bisnis menggunakan business model canvas.",
+      "Menerapkan proses marketing yang tepat untuk sebuah bisnis.",
+      "Mampu menganalisis sumber keuangan dan melakukan pengelolaan keuangan sederhana.",
+      "Mampu menjelaskan peran, tantangan, dan fungsi manajer (planning, organizing, leading, controlling).",
+      "Mampu membuat dan mengajukan usulan blue print bisnis sederhana dengan menggunakan business model."
+    ],
+    "resources": [],
+    "prerequisites": []
+  },
+  "CSIM601280": {
+    "code": "CSIM601280",
+    "name": "Prinsip-prinsip Sistem Informasi",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini mengajarkan mahasiswa terkait aspek dan pengetahuan dasar serta prinsip-prinsip sistem informasi.",
+    "topics": [
+      "Konsep informasi",
+      "Pengantar teori organisasi dan manajemen",
+      "Sistem informasi dan pemodelan sistem informasi",
+      "Teknologi informasi",
+      "Internet, Intranet, dan Ekstranet",
+      "Business information system",
+      "Development process & toolkits",
+      "System conception, analysis, and design",
+      "System construction, implementation, and maintenance",
+      "Knowledge management",
+      "Learning organization"
+    ],
+    "learningOutcomes": [
+      "Mampu menganalisis komponen, elemen, operasi dan dampak sistem informasi di dalam suatu organisasi."
+    ],
+    "sublearningOutcomes": [
+      "Mampu menjelaskan konsep sistem informasi dan menggunakan metode analisa sistem.",
+      "Mampu menjelaskan konsep teknologi informasi dan menggunakan teknik system thinking.",
+      "Mampu menjelaskan sistem informasi bisnis serta proses pengembangan dan pengelolaan sistem informasi."
+    ],
+    "resources": [],
+    "prerequisites": []
+  },
+  "CSGE602070": {
+    "code": "CSGE602070",
+    "name": "Basis Data",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini membahas konsep dasar dari manajemen database yang mencakup aspek pemodelan dan desain, bahasa dan fasilitas, implementasi dan penggunaan database.",
+    "topics": [
+      "Konsep dan arsitektur sistem basis data",
+      "Pemodelan data menggunakan model ER",
+      "Relational DB design; ER/EER to relational mapping",
+      "Relational data model & relational DB constraint",
+      "SQL-DDL Insert/Update/Delete",
+      "SQL Basic & Advanced Query",
+      "SQL-Indexing",
+      "Trigger and Stored Procedure",
+      "Functional Dep. and Normalization",
+      "Practical Query Optimization",
+      "Non-relational DB: No-SQL"
+    ],
+    "learningOutcomes": [
+      "Mampu merancang dan mengelola basis data sesuai konteks permasalahan."
+    ],
+    "sublearningOutcomes": [
+      "Setelah diberikan requirement, mahasiswa dapat membuat rancangan logical dan physical basis data dengan baik.",
+      "Mahasiswa dapat membuat aplikasi basis data dengan DBMS yang terhubung ke interface ke end-user."
+    ],
+    "resources": [],
+    "prerequisites": [
+      "CSGE601021"
+    ]
+  },
+  "CSIM603183": {
+    "code": "CSIM603183",
+    "name": "Analisis dan Perancangan Sistem Informasi",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini akan membahas konsep analisis dan perancangan sistem informasi (ANAPERANCIS), metodologi tentang bagaimana cara memperoleh kebutuhan pengguna sehingga rancangan SI dapat memenuhi kebutuhan organisasi. Perancangan SI harus dapat mencerminkan SI yang dapat membawa daya saing dan mempertahankan posisi strategis sebuah organisasi.",
+    "topics": [
+      "Introduction to Systems Analysis & Design",
+      "Project Identification and Selection",
+      "Project Management",
+      "Requirement Analysis",
+      "Use Case Analysis",
+      "Class Diagrams",
+      "Interaction Diagram",
+      "Process Modelling & Data Modelling",
+      "User Interface Design",
+      "Architecture Design",
+      "System Testing and Installation"
+    ],
+    "learningOutcomes": [
+      "Mampu merancang dan mengajukan usulan sistem informasi dalam sebuah proyek pengembangan sistem informasi sesuai dengan kebutuhan organisasi."
+    ],
+    "sublearningOutcomes": [
+      "Mampu menjelaskan berbagai konsep, teknik, dan metode dalam setiap tahapan pengembangan sistem informasi.",
+      "Mampu menentukan kebutuhan bisnis dan permasalahan yang dihadapi oleh suatu organisasi terkait pengembangan sistem informasi.",
+      "Mampu menerapkan konsep, teknik, dan metode pengumpulan dan analisis kebutuhan fungsional dan non fungsional dari sistem informasi.",
+      "Mampu menganalisis dan mengajukan usulan kebutuhan fungsional melalui pemodelan fungsional, struktural, perilaku dan proses dalam sebuah studi kasus.",
+      "Mampu menganalisis arsitektur sistem informasi yang terdiri atas deployment diagram dan spesifikasi hardware dan software.",
+      "Mampu mengevaluasi rencana uji (test plan) dan rencana instalasi serta merancang antarmuka sistem."
+    ],
+    "resources": [],
+    "prerequisites": [
+      "CSGE602070",
+      "CSIM601280"
+    ]
+  },
+  "CSIM603026": {
+    "code": "CSIM603026",
+    "name": "Arsitektur dan Pemrograman Aplikasi Perusahaan",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini memperkenalkan teknologi pengembangan aplikasi enterprise terkini. Dimulai dari konsep pengembangan aplikasi, framework pengembangan terbaru, penggunaan database dan studi kasus yang dituangkan dalam tugas proyek berkelompok.",
+    "topics": [
+      "Introduction to Enterprise Application & Application Architecture",
+      "Layering",
+      "Development Using Framework & MVC Pattern",
+      "Organizing Domain Logic and Service Layer",
+      "Mapping to Relational Database",
+      "Presentation Layer Design",
+      "REST API",
+      "Unit Testing & UAT",
+      "Clean Coding",
+      "Microservice Architecture (webservice)",
+      "Application Security",
+      "Architectural Style",
+      "Containerized WebApp with Docker",
+      "Load Balancing",
+      "Static code analysis",
+      "CI/CD with docker dan gitlab"
+    ],
+    "learningOutcomes": [
+      "Mampu mengembangkan/mengimplementasi aplikasi perusahaan dalam skala enterprise menggunakan berbagai teknik, tools, dan framework."
+    ],
+    "sublearningOutcomes": [
+      "Mampu menjelaskan konsep layering, MVC, dan software pattern dalam pengembangan enterprise application.",
+      "Mampu menjelaskan konsep dan kelebihan/kekurangan dari architecture style seperti microservice dan event-driven.",
+      "Mampu melakukan unit testing, load testing, dan monitoring menggunakan tools (JUnit, JMeter, Postman, curl).",
+      "Mampu menjelaskan konsep application security, secure programming, static code analysis, dan concurrency control.",
+      "Mengevaluasi efisiensi/performance sebuah SQL query dan mengoptimasinya.",
+      "Dapat mengembangkan aplikasi sampai terinstall (CI/CD) menggunakan server dengan teknologi container dan load balancer."
+    ],
+    "resources": [
+      "Docker",
+      "GitLab",
+      "JUnit",
+      "JMeter",
+      "Postman"
+    ],
+    "prerequisites": [
+      "CSGE602040"
+    ]
+  },
+  "CSIM603229": {
+    "code": "CSIM603229",
+    "name": "Proyek Pengembangan Sistem Informasi",
+    "credits": 6,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini mengajarkan mahasiswa terkait pengembangan suatu proyek sistem informasi. Proses pengembangan mencakup beberapa tahapan umum yaitu inisialisasi, perencanaan, analisis, desain, serta implementasi.",
+    "topics": [
+      "Project Initialization",
+      "Project Plan and Management",
+      "System Requirement Process",
+      "System Design",
+      "Project Implementation",
+      "Software Testing",
+      "System Delivery"
+    ],
+    "learningOutcomes": [
+      "Mampu berkomunikasi antar pemangku kepentingan dalam pengembangan sistem informasi sesuai dengan kebutuhan pengguna dalam sebuah tim proyek (team-based project).",
+      "Mampu mengembangkan sistem informasi sesuai dengan kebutuhan pengguna dalam sebuah tim proyek (team-based project)."
+    ],
+    "sublearningOutcomes": [
+      "Mampu bekerja sama mengidentifikasi dan menganalisis permasalahan (problem statement) dalam sebuah organisasi yang dapat diselesaikan dengan solusi TI.",
+      "Mampu bekerja sama mengidentifikasi alternatif solusi yang ada dan dapat mengajukan pilihan solusi yang tepat (bespoke atau package).",
+      "Mampu bekerja sama merumuskan ruang lingkup proyek (project scope) dengan mempertimbangkan waktu dan SDM yang terlibat.",
+      "Mampu bekerja sama dalam menyusun perencanaan mendetail, sehingga proyek feasible untuk dikerjakan.",
+      "Mendokumentasikan dengan jelas, akurat, efektif, dan efisien dari setiap aktivitas dalam pengembangan sistem.",
+      "Mengumpulkan requirement yang lebih lengkap dari klien."
+    ],
+    "resources": [],
+    "prerequisites": [
+      "CSGE602024",
+      "CSGE602070",
+      "CSIM603183",
+      "CSIM603026"
+    ]
+  },
+  "CSIE604182": {
+    "code": "CSIE604182",
+    "name": "Tata Kelola SI/TI (IT Governance)",
+    "credits": 3,
+    "state": "Pilihan",
+    "description": "Kuliah ini memperkenalkan konsep dan kerangka kerja tata kelola teknologi informasi (IT governance) yang dibutuhkan suatu organisasi untuk memastikan bahwa penerapan teknologi informasi (TI) dapat selaras dengan strategi bisnis/organisasi, memberikan manfaat, risikonya terkendali, kinerjanya disempurnakan berdasarkan pengukuran, dan sumber dayanya digunakan secara optimal.",
+    "topics": [
+      "IT governance concepts",
+      "How IT management issues affect organisations",
+      "Strategies to apply the principles of IT Governance",
+      "How IT Governance helps address IT management issues",
+      "Who should be responsible for IT Governance",
+      "The need for a control framework driven by the need for IT Governance",
+      "How COBIT meets the requirement for an IT Governance Framework",
+      "How COBIT is used with other standards and best practices",
+      "The COBIT Framework and all the components of COBIT",
+      "How to apply COBIT in a practical situation",
+      "Ways to achieve effective governance with COBIT",
+      "The products and support that ITGI provides"
+    ],
+    "learningOutcomes": [
+      "Mampu mengevaluasi penerapan konsep tata kelola teknologi informasi di sebuah organisasi."
+    ],
+    "sublearningOutcomes": [
+      "Mahasiswa diharapkan dapat mengevaluasi penerapan tata kelola TI di suatu organisasi dan dapat menyusun rencana penerapan/penyempurnaan tata kelola TI secara tepat sasaran."
+    ],
+    "resources": [
+      "COBIT",
+      "ITGI"
+    ],
+    "prerequisites": [
+      "CSIM603182"
+    ]
+  }
+}
