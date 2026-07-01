@@ -103,7 +103,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         course.prerequisites.forEach((prereq) => {
           // Prerequisite connects to current course
           if (courses[prereq]) {
-            dagreGraph.setEdge(prereq, course.code, { weight: 2 });
+            dagreGraph.setEdge(prereq, course.code);
           }
         });
       }
