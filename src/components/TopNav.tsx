@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, HelpCircle, X } from 'lucide-react';
+import { Search, HelpCircle, X, User } from 'lucide-react';
 import { useCurriculumStore } from '@/store/useCurriculumStore';
 import { useReactFlow } from 'reactflow';
 
@@ -10,6 +10,7 @@ export const TopNav: React.FC = () => {
   const setSearchQuery = useCurriculumStore((state) => state.setSearchQuery);
   const { fitView } = useReactFlow();
   const [isFaqOpen, setIsFaqOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const handleMajorChange = (major: 'CS' | 'IS') => {
     setActiveMajor(major);
@@ -48,7 +49,7 @@ export const TopNav: React.FC = () => {
         <div className="flex items-center gap-6">
           {/* Brand/Faculty Logo */}
           <div className="text-xl font-sans font-bold text-[#F8FAFC]">
-            CSUI <span className="text-[#C5A059] font-normal">Peta Mata Kuliah</span>
+            Peta Mata Kuliah <span className="text-[#C5A059] font-normal">Fasilkom UI</span>
           </div>
 
           {/* Major Selector Segmented Control */}
@@ -100,6 +101,16 @@ export const TopNav: React.FC = () => {
             <HelpCircle className="w-4 h-4" />
             <span>FAQ</span>
           </button>
+
+          {/* Contact Developer Button */}
+          <button
+            onClick={() => setIsContactOpen(true)}
+            className="px-4 py-2 border border-[#333333] hover:border-[#C5A059] text-xs font-bold text-[#E2E8F0] hover:text-[#C5A059] bg-[#2A2A2A] hover:bg-[#333333] rounded-[4px] transition-all duration-200 flex items-center gap-2 min-h-[44px] cursor-pointer"
+            aria-label="Hubungi Developer"
+          >
+            <User className="w-4 h-4" />
+            <span>Kontak</span>
+          </button>
         </div>
       </header>
 
@@ -131,6 +142,76 @@ export const TopNav: React.FC = () => {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Contact Developer Modal */}
+      {isContactOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+          <div className="bg-[#1E1E1E] border border-[#333333] w-full max-w-md rounded-[4px] shadow-2xl p-6 relative flex flex-col animate-in fade-in zoom-in-95 duration-200">
+            <button
+              onClick={() => setIsContactOpen(false)}
+              className="absolute top-4 right-4 text-[#E2E8F0] hover:text-[#C5A059] p-2 rounded hover:bg-[#333333] transition-colors cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label="Tutup Kontak"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <h3 className="font-sans text-xl font-bold text-[#F8FAFC] border-b border-[#333333] pb-3.5 mb-4">
+              Hubungi Developer
+            </h3>
+            
+            <div className="space-y-4 text-[#E2E8F0]">
+              <div className="flex items-center gap-3 p-3 bg-[#2A2A2A] rounded border border-[#333333]">
+                <div className="w-10 h-10 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/25 flex items-center justify-center text-[#C5A059] font-sans font-bold shrink-0">
+                  AR
+                </div>
+                <div>
+                  <h4 className="font-sans font-bold text-sm text-[#F8FAFC]">Aldebaran Rahman Adhitya</h4>
+                  <span className="text-xs text-[#E2E8F0]/65">Developer</span>
+                </div>
+              </div>
+              
+              <div className="space-y-3.5 pt-2">
+                <a
+                  href="mailto:aldebaran26adhitya@gmail.com"
+                  className="flex items-center gap-3 text-sm hover:text-[#C5A059] transition-colors group"
+                >
+                  <span className="font-sans font-bold text-[#C5A059] w-20 shrink-0">Email:</span>
+                  <span>aldebaran26adhitya@gmail.com</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/aldebaran-adhitya-118840210/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm hover:text-[#C5A059] transition-colors group"
+                >
+                  <span className="font-sans font-bold text-[#C5A059] w-20 shrink-0">LinkedIn:</span>
+                  <span>linkedin.com/in/aldebaran-adhitya-118840210/</span>
+                </a>
+
+                <a
+                  href="https://x.com/wholovesmaths"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm hover:text-[#C5A059] transition-colors group"
+                >
+                  <span className="font-sans font-bold text-[#C5A059] w-20 shrink-0">X:</span>
+                  <span>wholovesmaths</span>
+                </a>
+
+                <a
+                  href="https://instagram.com/aldebaran26adhitya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm hover:text-[#C5A059] transition-colors group"
+                >
+                  <span className="font-sans font-bold text-[#C5A059] w-20 shrink-0">Instagram:</span>
+                  <span>aldebaran26adhitya</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
