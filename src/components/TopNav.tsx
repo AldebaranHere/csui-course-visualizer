@@ -40,6 +40,10 @@ export const TopNav: React.FC = () => {
     {
       q: 'Bagaimana cara memperbesar, memperkecil, atau menggeser graf?',
       a: 'Gunakan scroll mouse atau cubit trackpad untuk memperbesar/memperkecil (zoom). Klik dan geser (drag) di area kosong pada layar untuk memindahkan (pan) tampilan peta kurikulum.'
+    },
+    {
+      q: 'Apa arti dari label "PR" di pojok kanan bawah beberapa kotak mata kuliah?',
+      a: '"PR" merupakan singkatan dari Prasyarat (Prerequisites). Angka di sebelah label "PR" menunjukkan total jumlah mata kuliah prasyarat yang wajib diselesaikan sebelum Anda dapat mengambil mata kuliah tersebut.'
     }
   ];
 
