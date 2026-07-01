@@ -103,7 +103,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         course.prerequisites.forEach((prereq) => {
           // Prerequisite connects to current course
           if (courses[prereq]) {
-            dagreGraph.setEdge(prereq, course.code);
+            dagreGraph.setEdge(prereq, course.code, { weight: 2 });
           }
         });
       }
@@ -142,7 +142,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
               id: `${prereq}-${course.code}`,
               source: prereq,
               target: course.code,
-              type: 'smoothstep',
+              type: 'default',
               animated: isHighlightedEdge && selectedCourseId === prereq,
               style: {
                 stroke: isHighlightedEdge ? '#C5A059' : '#333333',
