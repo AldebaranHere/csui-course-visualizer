@@ -88,7 +88,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     dagreGraph.setDefaultEdgeLabel(() => ({}));
     
     // Configure Dagre layout: Top-to-Bottom, node spacing, rank spacing
-    dagreGraph.setGraph({ rankdir: 'TB', nodesep: 60, ranksep: 100 });
+    dagreGraph.setGraph({ rankdir: 'TB', nodesep: 90, ranksep: 140 });
 
     const courseList = Object.values(courses);
 
@@ -142,7 +142,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
               id: `${prereq}-${course.code}`,
               source: prereq,
               target: course.code,
-              type: 'straight',
+              type: 'smoothstep',
               animated: isHighlightedEdge && selectedCourseId === prereq,
               style: {
                 stroke: isHighlightedEdge ? '#C5A059' : '#333333',
