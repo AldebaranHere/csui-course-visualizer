@@ -175,6 +175,13 @@ export const TopNav: React.FC = () => {
               </div>
               
               <div className="space-y-3.5 pt-2">
+                <a href="https://aldebaran-portfolio.web.app/"
+                target="_blank"
+                className="flex items-center gap-3 text-sm hover:text-[#C5A059] transition-colors group"
+                >
+                  <span className="font-sans font-bold text-[#C5A059] w-20 shrink-0">Portfolio:</span>
+                  <span>aldebaran-portfolio.web.app</span>
+                </a>
                 <a
                   href="mailto:aldebaran26adhitya@gmail.com"
                   className="flex items-center gap-3 text-sm hover:text-[#C5A059] transition-colors group"
