@@ -142,7 +142,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
               id: `${prereq}-${course.code}`,
               source: prereq,
               target: course.code,
-              type: 'smoothstep',
+              type: 'straight',
               animated: isHighlightedEdge && selectedCourseId === prereq,
               style: {
                 stroke: isHighlightedEdge ? '#C5A059' : '#333333',
