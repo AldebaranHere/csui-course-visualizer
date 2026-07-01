@@ -3,7 +3,7 @@
     "code": "CSGE602012",
     "name": "Aljabar Linier",
     "credits": 3,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Mata ajar Aljabar Linear membekali mahasiswa keterampilan pemecahan masalah terkait dengan aljabar vektor dan meningkatkan penalaran matematis (logis, konsisten, jelas, seksama) yang merupakan disposisi dan keterampilan berpikir kritis. Bahan kajian meliputi sistem persamaan linear, aljabar matriks, determinan, ruang vektor dan hasil kali dalam, nilai dan vektor eigen, serta transformasi linear.",
     "topics": [
       "Linear equation systems, matrices, determinant, vector spaces, inner product spaces, Eigen value and Eigen vector, and linear transformation."
@@ -27,7 +27,7 @@
     "code": "CSCM603117",
     "name": "Analisis Numerik",
     "credits": 3,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini membahas dasar-dasar penerapan komputasi ilmiah untuk ilmu komputer. Topik yang dibahas meliputi prinsip-prinsip matematika dasar serta algoritma analisis numerik sampai pada isu-isu praktis seperti reliabilitas perangkat lunak dan kinerja pada perangkat keras mutakhir; dan juga teknik optimisasi yang relevan dengan isu machine learning yang populer akhir-akhir. Peserta dilatih untuk memecahkan persoalan terkait tema-tema analisis numerik. Beberapa latihan dibuat dengan pembuatan program dengan bahasa apapun, namun dianjurkan C, Python, Octave atau tools open source lainnya.",
     "topics": [
       "(1) Introduction: computation in finite precision: machine representation numbers, errors propagation and analysis, numerical stability and accuracy (2) System of linear equations: review relevant theory of linear algebra, triangular factorization, pivoting strategies (3) System of linear equations: special linear system (4) Least Squares Problems (5) Nonlinear equation (6) Optimization (7) Interpolation (8) Numerical Integration (9) Initial value problems in ordinary differential equations."
@@ -48,7 +48,7 @@
     "code": "CSGE602070",
     "name": "Basis Data",
     "credits": 4,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Kuliah ini membahas konsep dasar pengelolaan basis data, meliputi aspek pemodelan dan perancangan, bahasa, fasilitas, implementasi, dan aplikasi dari basis data.",
     "topics": [
       "Concept and Architecture of Database System, Modelling using Entity Relationship, Relational DB design; ER/EER to relational mapping, Relational data model & relational DB constraint, SQL-DDL Insert/Update/Delete, SQL Basic & Advanced Query, SQL - Indexing, Trigger and Stored Procedure, Functional Dep. and Normalization"
@@ -69,7 +69,7 @@
     "code": "CSGE601020",
     "name": "Dasar-Dasar Pemrograman 1",
     "credits": 4,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Dasar-Dasar Pemrograman 1 (DDP 1) adalah mata kuliah yang bertujuan untuk mengajarkan konsep-konsep dasar serta teknik untuk membuat program komputer dalam konteks pengenalan ilmu komputasi dan problem solving. Kuliah ini disampaikan dalam bentuk kombinasi kuliah tatap-muka dan hands-on latihan pemrograman di Laboratorium. Perlu diperhatikan bahwa Bahasa pemrograman bukan hal yang penting di kuliah DDP1 ini.",
     "topics": [
       "Introduction to computers and programming; Data Types; Control; Data Structures and Functions; Introduction to object-oriented programming; Files; Exceptions; Recursion; Graphical User Interface (GUI)."
@@ -88,7 +88,7 @@
     "code": "CSGE601021",
     "name": "Dasar-Dasar Pemrograman 2",
     "credits": 4,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Kuliah ini merupakan bagian kedua dari rangkaian dua kuliah \"Dasar-Dasar Pemrograman\" dan dirancang untuk membangun pengetahuan dan pengalaman yang didapatkan dari Dasar-Dasar Pemrograman 1 untuk meningkatkan kemampuan pemrograman mahasiswa. Kuliah ini secara khusus berfokus pada paradigma pemrograman berorientasi objek dan menekankan penggunaan paradigma ini dalam pemecahan masalah.",
     "topics": [
       "Classes & Objects; Fundamental Data Types: Primitive & Object Types; Control Flow (Decision and Loop); Methods & Access Specifier; Introduction to Objects and Classes; Arrays, Arrays of Objects; Array Lists; Sorting and Searching; Advanced Recursion; Inheritance; Polymorphism: Abstract Class, Interfaces, etc; Graphical User Interfaces; Input/Output and Exception Handling; Generic Collections: List, Map, Set, Stack, Queue; Generic Programming: Generic Classes & Methods; Unit Testing."
@@ -108,7 +108,7 @@
     "code": "CSCM603142",
     "name": "Desain dan Analisis Algoritma",
     "credits": 4,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Kuliah ini membahas tentang cara merancang dan menganalisis algoritma untuk memecahkan masalah yang diberikan. Kuliah ini berfokus pada dua isu utama, yaitu kebenaran dan kompleksitas algoritma. Beberapa teknik dan pendekatan akan dibahas, termasuk pemrograman dinamis (dynamic programming), algoritma greedy, algoritma graf, algoritma aproksimasi, dan NP-completeness.",
     "topics": [
       "Introduction to algorithms: bubble sort, insertion sort, selection sort, searching; Growth of functions; Algorithm analysis: worst -case, best-case, average-case; Divide and conquer; Quicksort; Mergesort; Fast Fourier Transform; Recurrence relation: master method, method of substitution, recursion tree; Heap sort; Lower bound of comparison based sorting; Linear sorting: bucket sort, radix sort, counting sort; Order statistics: selection problem; Dynamic programming: LCS, Matrix -chain multiplication; Greedy algorithm: fractional knapsack, job scheduling, MST; Backtracking: 0/1 Knapsack; Backtracking, branch and bound; Graph algorithms: BFS, DFS, shortest path, maximum flow; Sorting networks, parallel algorithms; Approximation algorithms, NP-completeness."
@@ -128,7 +128,7 @@
     "code": "CSCM603154",
     "name": "Jaringan Komputer",
     "credits": 3,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Kuliah ini membahas tentang prinsip-prinsip jaringan komputer, internet, dan keamanan. Kuliah ini menekankan pendekatan top-down dari model jaringan komputer dan internet, dimulai dari lapisan aplikasi di bagian atas dan membahas semua lapisan, mulai dari lapisan aplikasi, lapisan transport, lapisan jaringan, lapisan data link, hingga lapisan fisik. Di bagian akhir, kuliah ini juga membahas topik keamanan, termasuk keamanan dalam jaringan komputer dan metode kriptografi untuk mengamankan komunikasi dalam jaringan komputer.",
     "topics": [
       "Computer Networks and the Internet, Application layer, Transport layer, Network layer: data plane, Network layer: data and control plane, Link layer and LAN, Security in computer networks: Principles of cryptography, Security in computer networks: Authentication, Security in computer networks: Message integrity and digital signature, Security in computer networks: Securing email, Security in computer networks: Securing TCP connection: TLS, Security in computer networks: Operational security: firewall"
@@ -150,7 +150,7 @@
     "code": "CSGE601012",
     "name": "Kalkulus 1",
     "credits": 3,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Kuliah ini membahas konsep dasar kalkulus dengan menekankan kepada kegunaan kalkulus untuk menyelesaikan permasalahan sains dan untuk memberikan basis dari banyak teknik dan metode yang ada di bidang komputasi.",
     "topics": [
       "Real numbers, complex number, inequalities and absolute values, one variable functions, graphs, function and its operations, limits and continuity of the functions of one variable, derivative and its applications, exponential and logarithmic functions, the notion of the integration, the techniques of integral calculations, the applications of the definite integral, and techniques of integrations."
@@ -168,7 +168,7 @@
     "code": "CSCM601213",
     "name": "Kalkulus 2",
     "credits": 3,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Kuliah ini menyampaikan topik-topik lanjutan dari Kalkulus 1 yang sudah disampaikan sebelumnya pada kuliah terpisah. Serupa dengan Kalkulus 1, Kalkulus 2 berguna untuk menyelesaikan permasalahan sains dan untuk memberikan basis dari banyak teknik dan metode yang ada di bidang komputasi",
     "topics": [
       "Further techniques of Integration; Indeterminate forms of limits; Improper integral; Infinite sequences and series; Vector and Geometry Space; Multiple integral; Further Applications of Integral; Ordinary Differential Equations."
@@ -188,7 +188,7 @@
     "code": "CSGE603130",
     "name": "Kecerdasan Artifisial dan Sains Data Dasar",
     "credits": 4,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Kuliah ini mengenalkan konsep dan teknik dasar kecerdasan buatan (AI) dan sains data. Peserta kuliah ini akan dilengkapi dengan pemahaman teoritis dasar dan keterampilan praktis untuk memecahkan masalah kecerdasan buatan dan sains data. Selain itu, mereka juga akan dilengkapi dengan pemahaman tentang bagaimana sains data menjadi prinsip dasar kecerdasan buatan untuk memproses pengetahuan dari data.",
     "topics": [
       "Artificial Intelligence, Data Science, and Machine Learning: Introduction and Terminology, Problem Solving: Search & CSP, Knowledge, Reasoning, and Planning, Exploratory Data Analysis (EDA), Data Preparation and Dimensionality Reduction, Clustering (K-means, hierarchical), Classification and Regression Trees, and Random Forest, Model Evaluation, Performance Metric, Bias-Variance Tradeoff, K-Nearest Neighbor Classification and Regression, Naïve Bayes Classifier, Linear Regression, Logistic Regression, Softmax Regression, Ridge Regression, Lasso Regression, Support Vector Machines, Imbalanced Classification, Neural Networks."
@@ -212,7 +212,7 @@
     "code": "CSGE604097",
     "name": "Kerja Praktik",
     "credits": 6,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini memberikan kesempatan kepada mahasiswa untuk memperoleh pengalaman dalam penyelesaian permasalahan yang terdapat pada sebuah organisasi menggunakan pengetahuan dan keterampilan di bidang Ilmu Komputer serta Teknologi Informasi dan Komunikasi (TIK) dengan cara terjun secara langsung ke dunia kerja.",
     "topics": [
       "Disesuaikan dengan jenis pekerjaan di tempat Kerja Praktik."
@@ -238,7 +238,7 @@
     "code": "CSGE614093",
     "name": "Komputer & Masyarakat",
     "credits": 3,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini bertujuan untuk meningkatkan kesadaran dan kepekaan mahasiswa terhadap berbagai permasalahan sosial dan ekonomi yang terkait dengan implementasi teknologi komputer dalam kehidupan sehari-hari. Mahasiswa akan dihadapkan pada beberapa isu terkait IT dan dituntut untuk menganalisis isu tersebut serta merekomendasikan solusi dari sudut pandang mereka sebagai mahasiswa ilmu komputer. Kuliah ini disampaikan dalam Bahasa Inggris untuk mengasah kemampuan komunikasi Mahasiswa dalam bahasa lingua franca.",
     "topics": [
       "Understanding the history and origin of computing; Understanding the social impacts of computer’s technology; Understanding computer scientists’ responsibility; Dealing with evolving new technology; Understanding the intellectual property issues."
@@ -265,7 +265,7 @@
     "code": "UIGE600004",
     "name": "Mata Kuliah Pengembangan Kepribadian (MPK) Agama",
     "credits": 2,
-    "state": "University Mandatory",
+    "state": "Wajib Universitas",
     "description": "Setelah selesai mengikuti perkuliahan MPK Agama, mahasiswa mampu menganalisis berbagai permasalahan yang terjadi di masyarakat berdasarkan ajaran agama. Mata kuliah ini disajikan dengan pendekatan Active Learning dengan materi pembelajarannya meliputi sejarah dan makna agama, pokok-pokok ajaran agama, agama dan budaya, serta analisis kasus-kasus nyata yang terjadi di masyarakat. Proses pembelajaran dilakukan dengan menggunakan bahasa Indonesia.",
     "topics": [
       "Sejarah dan makna agama; Pokok-pokok ajaran agama; Hubungan agama dan budaya; Kasus- kasus yang terjadi di masyarakat berdasarkan ajaran agama; Konstruksi nilai-nilai ajaran agamanya dalam kehidupan sehari-hari."
@@ -283,7 +283,7 @@
     "code": "UIGE600003",
     "name": "Mata Kuliah Pengembangan Kepribadian (MPK) Bahasa Inggris",
     "credits": 2,
-    "state": "University Mandatory",
+    "state": "Wajib Universitas",
     "description": "Mata Kuliah Pengembangan Kepribadian",
     "topics": [
       "Materi ajar Bahasa Inggris untuk komunikasi secara verbal dan tertulis, utamanya untuk kegiatan akademis."
@@ -301,7 +301,7 @@
     "code": "UIGE600007",
     "name": "Mata Kuliah Pengembangan Kepribadian (MPK) Terintegrasi",
     "credits": 6,
-    "state": "University Mandatory",
+    "state": "Wajib Universitas",
     "description": "Mata Kuliah Pengembangan Kepribadian Terintegrasi (MPKT) adalah bagian dari Penyelenggaraan Kuliah Pengembangan Kepribadian Pendidikan Tinggi (PKPKPT) yang diselenggarakan bagi mahasiswa yang mengandung unsur internalisasi nilai dasar kehidupan, keterampilan interaksi/berelasi, berbangsa dan keterampilan akademik sebagai dasar kepribadian mahasiswa menjalankan pembelajaran sesuai disiplin ilmu. MPKT dilaksanakan berupa serangkaian kegiatan pembelajaran di luar kelas formal, kegiatan yang dilakukan meliputi keikutsertaan dalam ceramah/ seminar, magang, praktik kerja lapangan, kerja sosial, aktivitas olah raga dan/ atau kesenian dan bentuk kegiatan lain yang memiliki sasaran utama membekali mahasiswa dengan soft skills dan dibuktikan dengan dokumen portofolio. Bentuk kegiatan pembelajaran ini berbeda dengan mata kuliah MPKT yang telah dijalankan di UI sebelumnya. Materi yang diberikan pada MPKT bertujuan untuk membentuk pola berpikir manusia dengan nilai dan moral untuk mewujudkan manusia yang berkepribadian dengan memiliki cara berpikir kritis, logis, kreatif, inovatif, serta memiliki keingintahuan intelektual dan jiwa kewirausahaan. Materi yang diberikan meliputi 9 nilai UI, nilai-nilai kebangsaan, negara, dan warga negara berdasarkan Pancasila. Pemecahan masalah dalam sains, teknologi, kesehatan, dan manusia sebagai manajer alam dengan menggunakan penalaran dan memanfaatkan Teknologi Informasi dan Komunikasi (TIK) untuk mencapai tujuan akhir modul ini. Kegiatan perkuliahan dilakukan dengan pendekatan student centered learning (SCL) secara daring yang dapat menggunakan metode: experiential learning (EL), collaborative learning (CL), problem-based learning (PBL), question-based learning, dan project based learning. Penggunaan berbagai metode tersebut dilakukan melalui kegiatan diskusi kelompok, latihan tugas mandiri, presentasi, pembuatan makalah dengan Bahasa Indonesia dan diskusi interaktif dalam forum diskusi daring. Bahasa pengantar dalam perkuliahan ini menggunakan Bahasa Indonesia.",
     "topics": [
       "Materi Ajar MPKT: “Jatidiriku sebagai Cendekia: Karakter, Filsafat, Logika dan Etika”. (2017), Universitas Indonesia; Materi Ajar/Modul Bahasa Indonesia dan Latihan; Materi tentang Penanaman dan Internalisasi Nilai Pancasila dari BPIP; Materi kuliah kewarganegaraan; Materi kuliah mengenai kewirausahaan & social entrepreneurship; Revolusi Industri; Kuliah dan rujukan terkait Manusia sebagai pengelola Kesehatan diri sendiri dan lingkungan."
@@ -325,7 +325,7 @@
     "code": "CSGE601010",
     "name": "Matematika Diskret 1",
     "credits": 3,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Kuliah ini membahas berbagai topik dalam Matematika Diskret yang memberikan landasan teori untuk mendukung studi lanjutan di bidang Ilmu Komputer. Kuliah ini juga akan membahas penerapan masing-masing topik tersebut dalam Ilmu Komputer.",
     "topics": [
       "Propositional logic, First-order predicate logic, Proofs, Sets and Functions, Mathematical induction, Sequences, Progressions, the Pigeonhole principle, Permutations, Combinations."
@@ -343,7 +343,7 @@
     "code": "CSGE601011",
     "name": "Matematika Diskret 2",
     "credits": 3,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Kuliah ini merupakan kelanjutan dari Matematika Diskret 1 yang memberikan landasan teori untuk mendukung studi lanjutan di bidang Ilmu Komputer. Topik-topik di Matematika Diskret 2 meliputi teori bilangan dan relasi rekurensi, serta pembahasan seputar struktur diskret yang fundamental di Ilmu Komputer, yaitu relasi, graf, dan pohon.",
     "topics": [
       "Theory of Integers, Recurrence Relations, Relations, Graphs, and Trees."
@@ -361,7 +361,7 @@
     "code": "CSGE603091",
     "name": "Metodologi Penelitian dan Penulisan Ilmiah",
     "credits": 3,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini berfokus pada metodologi penelitian dan penulisan ilmiah pada bidang Ilmu Komputer, Sistem Informasi, dan Teknologi Informasi (CS/SI/TI). Mata kuliah ini akan mengajarkan peserta untuk memiliki cara berpikir proses yang sistematis dan logis, secara ilmiah. Dalam mata kuliah ini peserta diminta untuk melakukan penelitian mini dan menulis karya ilmiah sebagai proses terintegrasi, di bidang CS/SI/TI. Secara garis besar, mata kuliah ini membahas bagaimana melakukan penelitian di bidang CS/SI/TI, sehingga “peneliti” dapat mengelola sumber dayanya secara optimal dan menulis laporan penelitian secara ilmiah. Selain itu, mata kuliah ini akan mengeksplorasi peran penelitian sebagai fungsi inti dalam mendorong pemahaman tentang pengetahuan, keterampilan, dan sikap baru di bidang pengembangan CS/SI/TI. Mata kuliah ini akan membahas topik-topik seperti alasan melakukan penelitian, memahami proses penelitian di bidang pengembangan CS/SI/TI, mengeksplorasi berbagai pendekatan untuk melakukan penelitian termasuk penggunaan berbagai pendekatan, teori, teknik dan metode. Mata kuliah ini juga akan membahas bagaimana menginterpretasikan hasil penelitian dengan pendekatan kualitatif dan kuantitatif serta menulis tinjauan kritis atas hasil penelitian tersebut. Mata kuliah ini akan membahas perbedaan dan persamaan antara penelitian dasar, penelitian terapan, karya pengembangan - (artistik / teknis), dan bentuk terkait lainnya. Beberapa paradigma sentral dan metodena terutama akan diperlukan dalam bidang CS/SI/TI. Evaluasi akan didasarkan pada partisipasi kelas, partisipasi online, penulisan paragraf ide, kuis, review kritis, review makalah, artikel penelitian yang dapat dipublikasikan, penulisan proyek penelitian, pelaksanaan penelitian mini, dan laporan penelitian.",
     "topics": [
       "Course Overview; Introduction to research methodology and A Model of Scientific Inquiry; Problem identification & Hypothesis, Logical Thinking; Review of Literature: compare, contrast, criticize, synthesize, and summarize papers; Scientific Writing: dissertation, thesis, papers, etc; Writing Research Proposals & Reports; Research Design; Research Design; Class presentation; Class"
@@ -387,7 +387,7 @@
     "code": "CSGE602022",
     "name": "Pemrograman Berbasis Platform",
     "credits": 4,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Pemrograman Berbasis Platform (PBP) merupakan mata ajar yang melatih dan memberikan pengalaman pengembangan aplikasi berbasis platform baik dari sisi server maupun di sisi client, memperkenalkan pengembangan platform Web dan platform Mobile. Peserta perkuliahan juga dituntut untuk bisa melakukan pemrograman dengan bahasa Python, Dart, Java, HTML, CSS, dan JavaScript.",
     "topics": [
       "Introduction to Platform-Based Programming; Web Platform Development Framework; Test, Models, Views Templates & assets; Data delivery HTML, XML, dan JSON; Form, POST & GET, session, cookie, authentication, authorization; Navigation, layoutting, HTML template, CSS, assets; Client side programming with JQuery; Mobile platform development framework using Flutter; User Interfaces; Mobile application delivery; Security Aspects on Web Development: Cross Site Request Forgery, Cross Site Scripting"
@@ -411,7 +411,7 @@
     "code": "CSCM602223",
     "name": "Pemrograman Lanjut",
     "credits": 4,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini merupakan mata kuliah lanjutan dari mata kuliah Dasar-dasar Pemrograman. Mata kuliah Pemrograman Lanjut akan menyajikan teknik dalam pemrograman menggunakan topik terbaru dan terkini yang sedang berkembang di dalam dunia industri. Selain teori, mata kuliah ini juga mengajarkan mahasiswa untuk beradaptasi dalam menggunakan teknik pemrograman skala enterprise sehingga dapat membantu mahasiswa untuk mendesain, mengimplementasikan dan menjaga sistem yang kompleks. Dibantu dengan Agile software development methodology, mahasiswa belajar mengenai siklus pengembangan perangkat lunak. Ruang lingkup mata kuliah ini mencakup Object Oriented Analysis & Design, Applying OO Principles, Test-driven Development, Software Packaging and Deployment, Scaling up Software, Design Patterns, Continuous Integration, Concurrency, High-level Networking, Familiarity with Cloud Deployment, dan Web Services. Bahasa pengantar yang dipakai untuk kelas reguler yaitu bahasa Indonesia sedangkan kelas internasional bahasa Inggris. Mata kuliah ini memanfaatkan beberapa media teknologi untuk bantu menyukseskan jalannya perkuliahan yaitu: (1) Scele sebagai LMS, (2) Gitlab sebagai repository code masing-masing mahasiswa, (3) Java Spring, (4) Rust.",
     "topics": [
       "Coding Standards, Continuous Integration & DevOps, Maintainability, OO Principles, Test Driven Development & Refactoring, Concurrency, Design Patterns, Software Architectures, High-Level Networking, Asynchronous Programming, Deployment & Monitoring"
@@ -443,7 +443,7 @@
     "code": "CSGE602023",
     "name": "Pengantar Keamanan Perangkat Lunak",
     "credits": 3,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Di era digital ini, keamanan siber menjadi semakin penting. Kuliah ini akan memperkenalkan mahasiswa pada konsep dan praktik penting dalam keamanan perangkat lunak, membantu mahasiswa memahami ancaman yang dihadapi perangkat lunak, dan memberi alat untuk mengembangkan perangkat lunak yang lebih tahan terhadap serangan. Kuliah ini akan menggabungkan kegiatan tatap-muka, diskusi, dan latihan langsung untuk membantu memahami konsep dan menerapkannya pada situasi dunia nyata.",
     "topics": [
       "Security Principles; Designing a Secure Functional and Object Model; Designing a Secure Dynamic and System Model; Threat Modelling; Authentication and Authorization; Input Validation and Sanitization; Standard Web Application Vulnerabilities; Database Security; Unit Testing; Regression Testing; Integration, System, and Acceptance Testing; Software Penetration Testing; Cyber Crime"
@@ -465,7 +465,7 @@
     "code": "CSCM601252",
     "name": "Pengantar Organisasi Komputer",
     "credits": 3,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Kuliah ini memberikan landasan organisasi komputer sekuensial yang terdiri dari input, output, memori, dan prosesor (jalur kontrol dan data). Pemahaman tentang konsep-konsep ini juga akan didukung dengan beberapa latihan pemrograman menggunakan bahasa tingkat rendah (low-level languages), misalnya bahasa assembly.",
     "topics": [
       "(1) Performance (2) RISC vs CISC (3) MIPS Assembly Language (4) Arithmetic Unit (5) Processor: Datapath and Control (6) Processor: Pipeline (7) Memory System: RAM, ROM, Cache Memory (8) Introduction to AVR (9) Assembly Language Based on AVR (10) Input /Output Organization"
@@ -485,7 +485,7 @@
     "code": "CSCM601150",
     "name": "Pengantar Sistem Digital",
     "credits": 4,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Kuliah ini memberikan pemahaman dasar dan aspek praktis dalam merancang sistem digital menggunakan bahasa pemrograman tingkat tinggi, seperti VHDL. Mahasiswa akan mempelajari konsep dasar dalam merancang sirkuit digital, seperti representasi biner, aljabar Boolean, mesin keadaan hingga (finite-state-machine), dan prosesor set instruksi (instruction-set processor). Selain itu, mahasiswa juga akan mempelajari komponen dasar untuk perancangan pada berbagai tingkat abstraksi, seperti transistor, gerbang logika (gate), flip- flop, adder, multiplier, register, memori, dan prosesor.",
     "topics": [
       "(1) Numbering Systems (Binary, Octal, Decimal, Hexadecimal) - Two’s complement & Arithmetic Operations (2) Floating Point Numbers & Error detection mechanism (3) Boolean Algebra: algebra manipulation, canonical form (4) Digital logic gates, Gate implementation, IC (5) Logic Circuits, n - bit Full Adder/Subtractor (6) Karnaugh Map (7) Tabulation Method (8) Selector, Decoder (9) Shifter, Rotator, Arithmetic and Logic Extension (10) ALU, Programmable ROM, PLA, (11) Flip -flop (12) State Table, State Diagram, Timing Diagram (13) Sequential logic ana lysis and synthesis (14) RAM, Stack & Queue (15) Registers (16) Memory (17) Simple Data paths: Accumulators & One’s Counter (18) Datapath(8) Computer Organization Overview"
@@ -505,7 +505,7 @@
     "code": "CSCM603228",
     "name": "Proyek Perangkat Lunak",
     "credits": 6,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Mata Kuliah ini memberikan pengalaman, keterampilan, dan pengetahuan pengembangan perangkat lunak dari awal hingga fase deployment dan bisa digunakan oleh pengguna, sebagai satu kesatuan kerja tim dengan menggunakan alat bantu pengembangan dan teknologi maupun metodologi terkini. Mata kuliah Proyek Perangkat Lunak (PPL) menggunakan metode pembelajaran kooperatif, mahasiswa akan dibagi ke dalam beberapa kelompok untuk mengerjakan pengembangan perangkat lunak bekerja sama dengan perwakilan dari industri IT sebagai pemilik produk. Pada mata kuliah ini mahasiswa dilatih untuk mengaplikasikan best practice techniques dan soft skill dari rekayasa perangkat lunak dan manajemen proyek IT, membuat produk berjalan yang berkualitas tinggi, dan menulis pengetahuan yang mereka dapatkan ke dalam blog. Beberapa metode pembelajaran yang diterapkan di Proyek Perangkat Lunak adalah: Scrum (kerangka kerja untuk proyek IT), Blog (menuliskan pengetahuan berdasarkan pengalaman), Konsultasi (klarifikasi pengetahuan untuk pengalaman mengerjakan proyek IT, disiplin implementasi best practices techniques), Kuliah Interaktif, Pitching & Exhibition.",
     "topics": [
       "Scrum Software, Architecture, Clean Code, QA Testing, Automatic Deployment, Product Pitching; Development deployment, continuous integration; User Interface Design; Scrum, Working in team, communication skill; Working in team, communication skill, User Interface Design, Scrum Development and deployment, continuous integration; Software Testing, test coverage, software quality assurance Maintainability, changes management Security, privacy Documentation Scalability, profiling; Product Pitching."
@@ -541,7 +541,7 @@
     "code": "CSCM603125",
     "name": "Rekayasa Perangkat Lunak",
     "credits": 3,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Mata Kuliah ini mencakup materi tentang konsep pengembangan perangkat lunak, mulai dari tahapan analisis sampai dengan pengujian. Mahasiswa akan diperkenalkan dengan teknik pemodelan kebutuhan sistem dan juga pemodelan desain sistem, dengan menggunakan notasi Unified Modeling Language (UML). Materi akan mencakup Proses Model, Manajemen Proyek (Dasar), Analisis Kebutuhan Sistem, Desain Sistem, Strategi dan Teknik Pengujian Sistem.",
     "topics": [
       "Introduction to Software Engineering: Software category, Software evolution; The Software Process: Generic Process Model, Prescriptive Process Model, Agile Development; Modeling Analysis & Design: Requirement Analysis, Use Case Diagrams, Class Diagrams, Interaction Diagrams, Architecture Design, Class & Method Design, Design Pattern; Software Management; Quality Management: Software Testing Strategies, Testing Conventional Application."
@@ -570,7 +570,7 @@
     "code": "CSGE602024",
     "name": "Sistem Interaksi",
     "credits": 3,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Kuliah ini berfokus pada konsep desain antarmuka untuk perangkat lunak. Dalam kuliah ini, mahasiswa diajarkan bagaimana menerapkan prinsip-prinsip interaksi manusia-komputer dalam pengembangan aplikasi, dan menawarkan desain interaksi alternatif yang lebih baik. Materi disampaikan melalui metode pembelajaran aktif, seperti: diskusi kelompok kecil, pembelajaran berbasis proyek, dan penggunaan sistem manajemen pembelajaran elektronik. Cakupan yang dibahas dalam kuliah ini meliputi: konteks sejarah interaksi manusia-komputer (HCI), desain interaksi, kognisi, teknik dalam HCI, aspek sosial HCI, pengumpulan dan analisis data, proses desain interaksi, pembuatan prototipe, dan evaluasi.",
     "topics": [
       "Introduction to Human-Computer Interaction; Basic principles of psychology (cognition); Social interaction; Interfaces; Interaction Design Process; Data Collection (Data Gathering); Data analysis; Defining Requirements; Prototyping and System Construction; System Evaluation."
@@ -594,7 +594,7 @@
     "code": "CSCM602055",
     "name": "Sistem Operasi",
     "credits": 4,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Ini adalah pengantar untuk kuliah sistem operasi modern. Kuliah ini akan mencakup gambaran umum, tinjauan arsitektur komputer, gambaran umum sistem operasi, GNU/Linux CLI, scripting, pengantar bahasa C, proteksi, keamanan, privasi, systemd, I/O, pengalamatan dan pointer, manajemen memori, proses dan thread, memori virtual, sinkronisasi, mutual exclusion, deadlock, algoritma penjadwalan CPU, sistem file, dan pemrograman I/O. Kuliah ini berpusat pada siswa dan tanggung jawab ada di tangan siswa. Mahasiswa diharapkan untuk siap menghadapi pertemuan kelas. Mahasiswa akan memiliki pemahaman menyeluruh tentang bagaimana GNU/Linux menyediakan layanan dengan menggunakan Command Line Interface.",
     "topics": [
       "Introduction & computer systems overview: processor, instruction execution, interrupts, memory hierarchy, cache memory and I/O communications; Operating System Overview: operating systems objective and functions, history, design, interface, system calls, virtual machines, generation and boot; Process: concept and threads; Process: CPU scheduling; Process: process synchronization; Process: deadlocks; Memory: background, swapping, paging, segmentation; Virtual memory: background, demand - paging, copy-on-write, page replacement; Virtual memory: allocation of frames, trashing, memory-mapped files and allocating kernel memory; Input/Output and Disk Management; File Management; Protection and Security; Distributed Systems."
@@ -616,7 +616,7 @@
     "code": "CSCM602013",
     "name": "Statistika dan Probabilitas",
     "credits": 3,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Kuliah ini berorientasi pada aplikasi, dengan fokus pada bagaimana menggunakan konsep probabilitas dan statistik untuk memecahkan masalah nyata di bidang ilmu komputer.",
     "topics": [
       "Introduction; Descriptive Statistics; Sampling Techniques; Elements of Probability: Events and outcomes. Probability rules. Conditional probability. Independence; Bayes’ rule; Random variables and their distribution; Discrete random variables. Special Discrete distributions: Bernoulli, Binomial, Geometric; Negative Binomial, Poisson; Continuous distribution and probability densities; Continuous distribution: Uniform, Exponential, Normal; Expectation; Central Limit Theorem; Statistical inference. Parameter and statistics; Maximum Likelihood Estimation, Maximum A Posteori; Distribution of Sampling Statistics; Parameter estimation and hypothesis testing; Applications to Computing."
@@ -638,7 +638,7 @@
     "code": "CSGE602040",
     "name": "Struktur Data dan Algoritma",
     "credits": 4,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Kuliah ini membahas tentang teknik dasar untuk abstraksi data dan manipulasi struktur abstrak tersebut melalui algoritma yang tepat. Kuliah ini juga membahas tentang analisis kompleksitas alokasi ruang dan waktu dalam implementasi algoritma.",
     "topics": [
       "The topics covered are: Abstract Data Types; Linear data model: lists, stacks, queues, sets; Searching; Sorting; Hierarchical data model: Tree; Binary Search Trees; AVL Tree; B-Tree; Binary Heap, Huffman Coding; Hash table; Graph representation and algorithms."
@@ -658,7 +658,7 @@
     "code": "CSCM602241",
     "name": "Teori Bahasa & Automata",
     "credits": 4,
-    "state": "Program Study Mandatory",
+    "state": "Wajib Program Studi",
     "description": "Kuliah ini membahas model teoretis dari konsep komputasi dan bahasa formal. Pembahasan di kuliah ini meliputi konsep dasar dari teori komputasi, beberapa mesin komputasi abstrak sebagai model komputasi, termasuk turing machine dan bahasa formal seperti context-free grammar. Kuliah ini juga membahas batasan-batasan yang ada ketika membacarkan konsep komputasi.",
     "topics": [
       "(1) Introduction: mathematical foundations, basic terminology of languages, mathematical inductions, recursive definitions (2) Regular languages (3) Regular expressions (4) Deterministic Finite automata dan Nondeterministic finite automata (5) Kleene’s theorem dan Myhill -Nerode theorem (6) Pumping lemma for regular languages (7) Context-free grammars (8) Push-down automata PDA (9) Context-free languages CFL (10) Equivalence between PDA and CFL (11) Turing machines and its variants (12) Recursive and recursively enumerable languages (13) Chomsky hierarchy (14) Decision problems, (un) decidability."
@@ -681,7 +681,7 @@
     "code": "CSGE604099",
     "name": "Tugas Akhir Individu",
     "credits": 6,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini adalah mata kuliah wajib yang bertujuan melatih kemampuan mahasiswa untuk menerapkan pengetahuan dalam bidang ilmu komputer dan/atau sistem informasi pada satu kegiatan penelitian maupun penyelesaian masalah di suatu organisasi, industri dan masyarakat. Setelah mengikuti mata kuliah ini mahasiswa dapat menghasilkan tulisan ilmiah berbahasa Indonesia maupun Inggris dalam bentuk skripsi, makalah maupun technical report. Kegiatan dilakukan secara mandiri di bawah bimbingan oleh minimal seorang dosen.",
     "topics": [
       "Disesuaikan dengan topik Tugas Akhir, dan dibahas bersama pembimbing."
@@ -706,7 +706,7 @@
     "code": "CSGE604098",
     "name": "Tugas Akhir Proyek Kelompok",
     "credits": 4,
-    "state": "Faculty Mandatory",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini adalah mata kuliah wajib yang bertujuan melatih kemampuan mahasiswa untuk menerapkan pengetahuan dalam bidang ilmu komputer dan/atau sistem informasi pada satu kegiatan penelitian maupun penyelesaian masalah di suatu organisasi, industri dan masyarakat. Setelah mengikuti mata kuliah ini mahasiswa dapat menghasilkan tulisan ilmiah berbahasa Indonesia maupun Inggris dalam bentuk skripsi, makalah maupun technical report. Kegiatan dilakukan secara berkelompok dengan maksimal terdiri dari 3 mahasiswa di bawah bimbingan oleh minimal seorang dosen.",
     "topics": [
       "Disesuaikan dengan topik Tugas Akhir, dan dibahas bersama pembimbing."
@@ -733,7 +733,7 @@
     "code": "CSIE604274",
     "name": "Administrasi Sistem",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Kuliah ini membahas administrasi jaringan dan sistem. Metode pengajaran diberikan melalui teori dan praktek di lab. Selain itu, untuk meningkatkan pemahaman dan keahlian, peserta kuliah akan mendapatkan beberapa tugas yang harus dikerjakan secara individu maupun kelompok.",
     "topics": [
       "Introduction to Network and TCP/IP IP Addressing and Subnetting; Routing Vlan; Access Control List DHCP & NAT; Management & Maintenance Network Design; LAN Redundancy Link Aggregation; Wireless LAN WAN & PPP; Broadband & Security Troubleshooting; Introduction to Linux Network & Package Management; Shell Programming User & Group Management; Startup & Services Storage Management; DNS & Linux DHCP Backup & Logging; LDAP NFS & SAMBA; Proxy & Web; Firewall"
@@ -761,7 +761,7 @@
     "code": "CSCE604271",
     "name": "Arsitektur Aplikasi Web",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memberikan pemahaman mendalam tentang arsitektur aplikasi web modern, dengan fokus pada gaya arsitektur yang mendukung pengembangan sistem yang skalabel, fleksibel, dan responsif. Mahasiswa akan mempelajari konsep dasar arsitektur aplikasi web, serta berbagai pola desain dan teknologi yang digunakan dalam membangun sistem yang kompleks.",
     "topics": [
       "Architectural Thinking; Modularity; Fundamental Patterns; Monolithic Versus Distributed Architectures; Layered Architecture Style; Pipeline Architecture Style; Service-Based Architecture Style; Web Service; Service Oriented Architecture; Microservices Architecture; Event-Driven Architecture Style; Asynchronous Communication; Orchestration-Driven Service-Oriented Architecture; Service Orchestration & Choreography; Service Deployment & Monitoring"
@@ -785,7 +785,7 @@
     "code": "CSCE604174",
     "name": "Basis Data Lanjut",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memperkenalkan kepada mahasiswa tentang teknologi terkini dan metode yang digunakan dalam sistem dan manajemen basis data. Mahasiswa akan mempelajari lebih dalam terkait teknik-teknik yang digunakan oleh DBMS (Database Management System) untuk memproses, mengoptimasi, dan mengeksekusi query pada multi-user system. Topik umum yang diajarkan antara lain: storage and file structure; indexing, query planning and optimization; transaction processing and concurrency control; data recovery; data warehouse and data mining; distributed database; big data management; dan teori-teori manajemen basis data lainnya. Mata kuliah ini diajarkan melalui kuliah dan beberapa tutorial (praktikum).",
     "topics": [
       "Storage and File Structure; Indexing; Query Processing; Query Optimization; Monitoring and Tuning; Transaction Processing; Concurrency Control; Database Recovery; Data Warehouse; Data Mining; Distributed Databases; Big Data"
@@ -806,7 +806,7 @@
     "code": "CSCE604230",
     "name": "Bioinformatika",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Bioinformatika adalah mata kuliah yang bertujuan untuk memberikan pemahaman mendalam tentang algoritma dasar yang digunakan dalam bioinformatika. Kuliah ini akan membahas prinsip-prinsip algoritmik dan struktur data yang relevan dengan analisis data biologis, serta penerapannya dalam menjawab pertanyaan-pertanyaan biologis yang fundamental. Mahasiswa akan diajarkan untuk merancang, menganalisis, dan mengimplementasikan algoritma untuk menyelesaikan masalah-masalah bioinformatika yang kompleks. Fokus utama adalah pada pengembangan kemampuan berpikir komputasional dan pemecahan masalah dalam konteks biologi molekuler.",
     "topics": [
       "Where in the Genome Does DNA Replication Begin?; Which DNA Patterns Play the Role of Molecular Clocks?; How Do We Assemble Genomes?; How Do We Sequence Antibiotics?; How Do We Compare Genes?; Are There Fragile Regions in the Human Genome?; Which Animal Gave Us SARS?; How Did Yeast Become a Wine Maker?; How Do We Locate Disease-Causing Mutations?; Why Have Biologists Still Not Developed an HIV Vaccine?"
@@ -828,7 +828,7 @@
     "code": "CSCE604133",
     "name": "Computer Vision",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini membahas penggunaan data citra 2 dimensi untuk memahami scene 3 dimensi yang terkandung di dalamnya. Computer vision atau penglihatan mesin berusaha mengadaptasi kemampuan mata manusia melihat persepsi dan memahami informasi yang terkandung di dalamnya melalui teknik matematika. Tugas computer vision ini dapat dibagi menjadi 3 jenis tugas, yaitu: Recognition, yang berusaha mengenali apa yang terkandung di dalam citra; Reconstruction, yang berusaha merekonstruksi citra ke bentuk lainnya; dan Reorganization, yang berusaha me-registrasi citra dari berbagai domain sesuai aslinya. Untuk mencapai hal ini, akan dipelajari konsep di balik penglihatan manusia (human vision) dan korelasinya di dalam penglihatan mesin (computer vision); berbagai teknik pengolahan citra dasar, baik di domain spasial maupun frekuensi. Selanjutnya akan dibahas beberapa aplikasi computer vision, dengan pendekatan solusi berupa teknik konvensional berbasis fitur maupun deep learning. Terakhir, akan disampaikan aplikasi state-of-the-art dalam bidang computer vision dalam beberapa studi kasus. Mahasiswa juga akan dilatih melalui hands-on session pemrograman menggunakan Python secara individu, dan mengerjakan proyek akhir secara berkelompok.",
     "topics": [
       "Applications, goals, tasks in computer vision, Light and the electromagnetic spectrum, human vision, perception, image understanding, color vision, color images, Digital image acquisition, the digital camera, digital image formation, geometric primitives, 2D to 3D transformation, digital image anatomy, Point operators, filtering, edge detection, subsampling dan super-resolution, morphological processing, Frequency domain, Discrete Fourier Transform, Wavelet Transform, Frequency Filtering, Monocular vs binocular, Stereo vision, photometric and multi-view stereo, Image Features, Feature selection and enhancement, Feature matching, RANSAC, image alignment, Template matching, SIFT, Convolutional neural networks, CNNs for image classification and object detection in images, Point, line, and edge-based segmentation; Thresholding. Region-based segmentation; region growing, split and merge; The use of segmentation in applications., Degradation models. Several image restoration applications and filters, Image Quality Assessment, Regression, Image translation, image restoration,"
@@ -849,7 +849,7 @@
     "code": "CSCE604038",
     "name": "Deep Learning",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Kuliah ini dirancang untuk memberikan pemahaman yang kuat tentang konsep-konsep dasar dan teknik-teknik mutakhir dalam bidang deep learning. Mata kuliah ini akan membahas mulai dari teori dasar probabilitas, informasi, dan optimasi hingga arsitektur jaringan saraf dalam dan aplikasinya pada berbagai jenis data. Mahasiswa akan diajarkan untuk memahami prinsip-prinsip kerja algoritma deep learning, serta mampu merancang, membangun, dan mengevaluasi model-model deep learning untuk menyelesaikan permasalahan dunia nyata. Kuliah ini juga akan menekankan pada pemahaman matematis dan algoritmik yang mendasari teknik-teknik deep learning, sehingga mahasiswa dapat mengembangkan kemampuan untuk melakukan penelitian dan inovasi di bidang ini.",
     "topics": [
       "Decision Theory; Information Theory; Optimization Algorithm; Logistic Regression; Linear Regression; Linear Neural Networks for Classification; Deep Neural Networks for Structured Data; Deep Neural Networks for Images; Deep Neural Networks for Sequences; Modern Convolutional Neural Networks; Modern Recurrent Neural Networks; Builder's Guide (layers, parameter management, lazy initialization, custom layers); Attention Mechanisms and Transformers."
@@ -872,7 +872,7 @@
     "code": "CSCE604258",
     "name": "Ethical Hacking",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini membahas tentang teknik-teknik eksploitasi program binary. Topik-topik yang akan dibahas adalah sebagai berikut: konsep dasar memori dan eksekusi program, bahasa assembly, C, debugger, disassembler, atau decompiler, stack overflow, heap-based overflow, teknik-teknik pertahanan dan contoh kerentanan di dunia nyata.",
     "topics": [
       "Konsep dasar memori dan eksekusi program (Intel Architecture), elf format; Bahasa pemograman: Assembly; Bahasa pemograman: C; Tools: Hex Editor, Debugger, Dissassembler, Decompiler; Stack Overflows; Basic Heap-based overflow; Format Strings; Shellcode; Return Oriented Programming; Heap Exploitation; Countermeasures/Protections; Advanced Topics: Real vulnerabilities"
@@ -899,7 +899,7 @@
     "code": "CSCE604156",
     "name": "Forensik Digital",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Kuliah ini memberikan pemahaman tentang proses-proses dalam cyber forensic dan kaitannya dengan bidang forensic yang lain, menjelaskan tentang teknologi yang digunakan dalam bidang cyber forensic serta tantangannya, serta perancangan penggunaan forensic di korporasi maupun dalam pemerintahan. Selain itu, kuliah ini akan membahas mengenai pencegahan fraud, serta topik topik penelitian dalam bidang ini.",
     "topics": [
       "Peran forensic dalam pengadilan; Cara kerja komputer; Metoda akuisisi data; Teknik forensic pada berbagai OS dan perangkat, analisa malware; Kerangka kerja cyber forensic, anti forensic dan forensic readiness; Fraud prevention, e-discovery; Metode penelitian cyber forensic"
@@ -925,7 +925,7 @@
     "code": "CSCE604021",
     "name": "Game Development",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memberikan mahasiswa lingkungan kreatif untuk menghasilkan sebuah game serta memperkenalkan mereka pada praktik dan proses pengembangan game. Mata kuliah ini mencakup diskusi mengenai desain dan implementasi video game digital. Isu-isu relevan dalam desain game seperti elemen game, tema, mekanisme, keseimbangan, narasi, dunia, dan estetika dibahas dalam kuliah dan sesi tutorial. Aspek teknis seperti teknologi, platform, dan alat juga diperkenalkan. Sepanjang mata kuliah, mahasiswa akan mengerjakan proyek pengembangan game dengan mengikuti metodologi Agile dan menghasilkan 2 (dua) game sederhana.",
     "topics": [
       "Course Overview, Introduction to Games; The Elements of Games: Formal Elements / Tetrad Elements; Introduction to Game Programming; Game Production Pipeline: From Assets to Game Objects; Game Development Process: Conceptualisation & Documenting Design; Game Development Process: Methodology and Management; Getting to Release: Functionality, Completeness, and Playtesting; Getting to Release: Game Balancing; Getting to Release: Game Polishing (Game Feel & Juiciness); Next Actions: Selling Ideas & Pitch / Self-Evaluation & Research in Game Development"
@@ -955,7 +955,7 @@
     "code": "CSCE604045",
     "name": "Geometri Komputasional",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Geometri Komputasional adalah bidang yang sedang berkembang pesat dalam ilmu komputer, berfokus pada penggunaan teknik komputasi untuk memecahkan masalah geometris. Kuliah ini memperkenalkan Anda pada perpaduan menarik antara matematika dan ilmu komputer. Materi yang akan dipelajari meliputi topik fundamental, seperti Convex hull (selubung cembung) - Mencari bentuk cembung terkecil yang memuat sekumpulan titik, Triangulasi Delaunay - Memecah objek menjadi segitiga yang saling terhubung, dan Voronoi diagrams - Membagi ruang menjadi wilayah-wilayah terdekat ke titik tertentu. Selain itu, kuliah ini juga menyentuk topik yang lebih baru, seperti Curve reconstruction - Merekonstruksi kurva dari kumpulan titik sampel. Melalui kuliah ini, Anda akan memahami konsep dasar geometri diskret dan komputasional, mempelajari algoritma untuk memecahkan berbagai masalah geometris, dan melihat bagaimana matematika dan ilmu komputer dapat bekerja sama untuk memecahkan masalah praktis.",
     "topics": [
       "Polygons, Convex Hulls, Triangulations, Voronoi Diagrams, Curves, Polyhedra, Configuration Spaces"
@@ -978,7 +978,7 @@
     "code": "CSCE604131",
     "name": "Graf Pengetahuan",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memperkenalkan konsep Knowledge Graph (KG) dan penerapannya dalam pengelolaan data terstruktur. Anda akan mempelajari prinsip-prinsip KG, perbedaan antara Web tradisional dan Semantic Web, serta model untuk merepresentasikan data dalam bentuk graf.",
     "topics": [
       "Class Overview, Introduction, Web vs. Semantic Web, models for data graphs; Models for data graphs; Persistent identifiers, IRIs, datatypes, existential nodes, RDF as standardized DELG data model; RDF syntax, existential nodes; Representing context: reification and higher arity representation; Querying data graphs, SPARQL; SPARQL; Semantics, RDFS; Linked data publishing; Ontology and Vocabularies; SKOS, Schema.org; SHACL; OWL, modeling with Protégé, reasoning; Reasoning: Rules, Description Logics"
@@ -1002,7 +1002,7 @@
     "code": "CSCE604078",
     "name": "Internet of Things",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memberikan pemahaman komprehensif tentang konsep, teknologi, dan aplikasi Internet of Things (IoT). Mahasiswa akan mempelajari tentang komponen-komponen utama IoT, mulai dari sensor dan aktuator hingga jaringan komunikasi dan platform. Selain itu, kuliah ini juga membahas aspek-aspek penting seperti keamanan, privasi, dan analisis data IoT. Melalui praktikum dan proyek, mahasiswa akan memperoleh pengalaman langsung dalam membangun dan menerapkan sistem IoT.",
     "topics": [
       "Overview of IoT concepts and applications; Evolution of IoT technologies; IoT ecosystem and stakeholders; Low Power Short Range Area Network; Low Power Long Range Area Network; Low Latency IoT; Sensor nodes, edge computing, and cloud infrastructure; Communication protocols (e.g., MQTT, CoAP, HTTP); IoT platforms and middleware; Introduction to microcontrollers (e.g., Arduino, Raspberry Pi); Sensor types and interfaces; Actuators and output devices; Programming languages for IoT (e.g., Python, JavaScript); Introduction to IoT frameworks and libraries; Hands-on IoT programming exercises; Threat landscape and security challenges in IoT; Security protocols and best practices; Privacy considerations and regulatory compliance; Smart home and consumer IoT; Industrial IoT (IIoT) and smart cities; Healthcare, agriculture, and other IoT domains; Introduction to data analytics tools and techniques; Visualization methods for IoT data; Case studies and projects"
@@ -1030,7 +1030,7 @@
     "code": "CSCE604172",
     "name": "Komputasi Awan",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Kuliah ini berisi konsep dan penerapan infrastruktur teknologi informasi berbasis Cloud Computing. Topik yang diajarkan dalam kuliah ini meliputi: IaaS (Infrastructure as a Service), PaaS (Platform as a Service), SaaS (Software as a Service) dan teknologi pendukung terselenggaranya infrastruktur Cloud Computing seperti hypervisor, virtual server dan container. Tujuan kuliah ini untuk memberikan pengetahuan bagi mahasiswa dalam proses perancangan dan penerapan teknologi berbasis cloud computing serta dapat membantu mahasiswa dalam menggabungkan berbagai macam tools dan teknologi dalam melakukan implementasi infrastruktur berbasis cloud computing.",
     "topics": [
       "Konsep Infrastruktur dan Arsitektur TI; Infrastruktur TI Konvensional; Infrastruktur TI berbasis Cloud Computing; Hypervisor dan Cloud Environment; Virtualisasi dan Container; Infrastructure as a Service (IaaS); Platform as a Service (PaaS); Software as a Service (SaaS); Cloud Security; High Availability; Implementasi Cloud Computing di Industri"
@@ -1050,7 +1050,7 @@
     "code": "CSCE604243",
     "name": "Kriptografi dan Keamanan Informasi",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Matakuliah ini mengajarkan kriptografi dan keamanan informasi yang meliputi dasar-dasar matematik, algoritma, protokol, security engineering, beserta aplikasi aplikasinya dalam berbagai aspek.",
     "topics": [
       "Introduction; Classi-cal encryption techniques; Classical encryption techniques; Block ciphers; Data Encryption Standard (DES); Number theory; Finite fields; Advanced Encryption Standard (AES); Block cipher modes of operations; Pseudorandom number generation; Stream ciphers; More number theory; Public-key cryptography; Other public-key cryptosystems; Cryptographic hash functions; Message Authentication Codes; Digital signatures; Key management; User authentication; Security Engineering; Special Topics: Blockchain"
@@ -1074,7 +1074,7 @@
     "code": "CSCE604235",
     "name": "Pemelajaran Mesin",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Kuliah ini membahas dasar-dasar pemelajaran mesin (machine learning), yaitu teknik pengembangan perangkat lunak yang dapat menghasilkan model untuk menjelaskan suatu fenomena kompleks dengan cara mengamati sejumlah data. Metode-metode yang diajarkan berbasis pendekatan statistik untuk pengenalan pola, antara lain perceptron, support vector machines, hidden Markov models, expectation maximization, dan lain-lain.",
     "topics": [
       "Introduction. Linear classification. Perceptron updating rule; Perceptron convergence. Generalization; Maximum margin classification. Classification errors regularization. Logistic & Linear regression; Active learning. Kernels. Kernel regression; Suppoert vector machine (SVM). Kernel Optimization; Model selection. Model selection criteria; Description length. Feature selection; Combining classifiers. Boosting; Margin and complexity. Margin and generalization; Mixtures Model; Expectation maximization (EM) Algorithm. EM regularization; Markov models. Hidden Markov models (HMMs); Bayesian networks. Learning bayesian networks; Probabilistic inference."
@@ -1097,7 +1097,7 @@
     "code": "CSCE604123",
     "name": "Pemrograman Fungsional",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini mengajarkan paradigma pemrograman Fungsional dan melatih ketrampilan pemrograman secara fungsional. Dengan pemahaman ini dan wawasan paradigma pemrograman yang lebih luas, seseorang dapat memberikan penyelesaian pemrograman yang lebih efektif dan efisien disesuaikan dengan karakter permasalahannya. Ruang lingkup bahan kajian meliput konsep-konsep dasar pemrograman fungsional yang memberikan dasar kompetensi untuk menyelesaikan permasalahan nyata dan juga beberapa konsep-konsep lanjutan bagi peserta yang berminat memperdalam software technology seperti membuat bahasa pemrograman baru dan penelitian dibidang bahasa pemrograman lebih khusus teori Pemrograman Fungsional. Mata kuliah ini disajikan dengan metode pembelajaran jarak jauh, baik dilakukan secara formal terjadwal atau secara mandiri informal. Materi akan disajikan melalui berbagai media video, teks dan forum diskusi serta alat bantu lain. Praktikum dilakukan menggunakan fasilitas online baik sinkronus atau asinkronus.",
     "topics": [
       "Course Overview; Introduction to programming paradigms and functional programming; Pengenalan Haskel; Ekspression dan Evaluation; Lambda Calculus, Type System; Partial Evaluation, Currying; Higher Order Function and Lazy Evaluation; React: Functional Component; React: Paradigma Functional dalam Hook; Erlang Fault Tolerance system; Erlang OTP: Process and Concurrency; Advanced Topic: Implementation of Type System"
@@ -1122,7 +1122,7 @@
     "code": "CSCE604226",
     "name": "Pemrograman Kompetitif",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini mempelajari berbagai algoritma dan struktur data tingkat lanjut. Algoritma dan struktur data ini diterapkan pada problem yang ditemukan dalam lomba-lomba pemrograman yang merupakan penerapan dalam problem nyata",
     "topics": [
       "Adhoc Problems, Data Structures; Problem Solving Paradigms: DP, DP optimizations, Greedy; Max Flow; Bipartite Matching; Maximum Independent Set, Minimum Vertex Cover, Minimum Path Cover; String; Range Tree, kd-Tree; Segment tree, Interval Tree; Computational Geometry; Hungarian Algorithm; Edmond’s Blossom; Fast Fourier Transform; Randomized algorithm"
@@ -1146,7 +1146,7 @@
     "code": "CSCE604222",
     "name": "Pemrograman Logika",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini membahas paradigma pemrograman logika, yaitu pemrograman deklaratif yang berbasiskan logika formal. Pembahasan mencakup teori yang mendasari paradigma pemrograman logika dan keterampilan praktis pemrograman dengan menggunakan bahasa pemrograman Prolog untuk memecahkan permasalahan, khususnya yang membutuhkan representasi pengetahuan dan penalaran (knowledge representation and reasoning). Bahasa pengantar yang digunakan dalam pembelajaran adalah Bahasa Indonesia. Moda pembelajaran untuk mata kuliah ini adalah gabungan asinkron dan sinkron secara daring.",
     "topics": [
       "Clause pada program logika: fakta, rule, query; Objek data pada Prolog; Semantik deklaratif program logika & logical entailment; Semantik prosedural program logika & resolusi; List, operator, dan aritmetika pada Prolog; Cut pada Prolog; Negasi pada Prolog; Operasi pada struktur data; Predikat dinamis dan pengumpulan solusi pada Prolog; Manipulasi term dan input/output pada Prolog; Difference list; Last call optimization dan accumulator"
@@ -1169,7 +1169,7 @@
     "code": "CSCE604229",
     "name": "Pemrograman Paralel",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Kuliah ini akan membahas konsep dan Teknik pemrograman parallel, yang mencakup arsitektur dan model pemrograman parallel. BAgaimana mengatasi pemecahan masalah komputasi data besar dengan infrastruktur komputasi kinerja tinggi (IKKT - High Performance Computing). Kuliah ini memberikan mahasiswa pemahaman konsep proses yang membutuhkan infrastruktur KKT, kompetensi untuk menganalisis masalah yang perlu diatasi dengan pendekatan parallel dengan pemrograman di lingkungan klister dan GPU.",
     "topics": [
       "Pengantar High Performance Computing (Komputasi Kinerja Tinggi), milestone di sejarah KKT, beberapa aplikasi KKT; High Performance Computing Architectures: Overview of the major Classes of HPC Architectures and their evolution; MIMD machines; cluster computing and Beowulf PC clusters; Parallel programming models and performance analysis: Parameterisation, modelling, performance analysis, efficiency, and benchmarking of DHCP systems; Programming parallel computers: overview of parallel programming, parallel languages, parallelizing compilers, message passing and data parallel programming models. Data parallel programming paradigm; historical background and use on SIMD machines; array syntax; Shared memory programming, threads and OpenMP ;Use of shared memory machines; threads; mutual exclusion; locks, semaphores and monitors; parallel Java; programming using open MP; Cluster Computing, Message passing programming and MPI; B. historical background and use of MIMD machines; current implementation; programming using the Message Passing Interface, distributed computing middlewares; Introduction to MPI, Data type in MPI, Point-to-point communication, collective communication; Pemecahan masalah di IKKT Klaster; introduction GPGPU with CUDA; CUDA programming models; CUDA threads; CUDA memory; Pemecahan masalah di IKKT GPU."
@@ -1202,7 +1202,7 @@
     "code": "CSCE604227",
     "name": "Pemrograman Sistem",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini akan mendalami konsep-konsep sebuah sistem operasi, khususnya GNU/Linux, dengan penekanan khusus pada kemampuan praktis untuk mengimplementasikan dan memodifikasi program di bawah lapisan aplikasi. Para peserta akan diperkenalkan pada berbagai lapisan implementasi dari sebuah sistem operasi, seperti pengelolaan proses, sistem berkas, IPC, soket jaringan, dan struktur kernel. Latihan dan tugas akan menggunakan bahasa C/C++, serta beberapa perangkat scripting untuk memanipulasi berkas.",
     "topics": [
       "Introduction to System Programming; System Call & Stat System Call; Process & Memory; Make, Stdio, & I/O Buffering; Shells; Signals; Daemon and Sockets; Boot Sequence; Kernel Compilation & Kernel Module; Device Driver"
@@ -1226,7 +1226,7 @@
     "code": "CSCE604032",
     "name": "Pemrosesan Bahasa Lisan",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Pemrosesan Bahasa Lisan adalah bidang ilmu yang berfokus pada pengembangan sistem komputer yang dapat memahami dan menghasilkan bahasa manusia yang diucapkan. Mata kuliah ini akan membahas dasar-dasar teori bahasa lisan, teknik-teknik pengolahan sinyal audio, serta aplikasi-aplikasi praktis dalam bidang ini. Mahasiswa akan diajarkan untuk memahami bagaimana suara manusia diubah menjadi representasi digital, bagaimana komputer dapat mengenali dan menginterpretasikan ucapan manusia, serta bagaimana komputer dapat menghasilkan ucapan yang terdengar alami. Selain itu, mahasiswa juga akan mempelajari tentang sistem dialog berbasis suara yang memungkinkan interaksi manusia- komputer yang lebih natural.",
     "topics": [
       "Pengenalan Pemrosesan Bahasa Lisan; Speech Theory; Fonetik Akustik; Automatic Speech Recognition (Speech-to-text); Speech Synthesis (Text-to-speech); Spoken Language Dialogue system"
@@ -1250,7 +1250,7 @@
     "code": "CSCE604037",
     "name": "Penambangan Data",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memperkenalkan konsep dan teknik fundamental untuk menambang atau menemukan pengetahuan dari data yang diberikan. Peserta akan dibekali pemahaman teoritis yang fundamental dan keterampilan praktis selama mengikuti perkuliahan.",
     "topics": [
       "Data Mining Process; Statistical Limits on Data Mining; Basic Data Types; Basic Attribute Types; Major Building Blocks; Basic Statistical Descriptions; Visualization (tools: Python & R); Correlation Analysis: Chi-Square Correlation, Pearson’s Coefficient, One-Way ANOVA (F-Test); Logistic/Linear Regression Analysis; Data Preprocessing; Data Classification (Advanced Concept); Multilabel Learning; Semi-Supervised Learning; Active Learning; Transfer Learning; Ensemble: Gradient-Boosting & Hill-Climbing; Explainability: LIME & SHAP; Evaluation & Statistical Significance Test; Splitting Datasets for Evaluation; Frequent Itemsets; Similarity & Distances; Cluster Analysis (Advanced Concept); Outlier Analysis; Text Mining; Human Annotation; Mining Discrete Sequences; Graph Mining: Social Network Analysis; Graph Representation Learning; Mining Time Series Data."
@@ -1273,7 +1273,7 @@
     "code": "CSCE604183",
     "name": "Pengajaran Berbantuan Komputer",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata ajar ini membahas dasar-dasar pengajaran dan pembelajaran menggunakan teknologi komputer. Bahan kajian meliputi prinsip dasar pembelajaran, proses pembelajaran dan memori pada manusia, teori pembelajaran (behaviorism, cognitivism, constructivism), metakognisi, self-regulated learning dan berpikir kritis, rancangan pembelajaran daring, pembelajaran kolaboratif daring, konten multimedia pembelajaran, authoring tools, dan learning management system (LMS). Selain itu, dibahas pula isu-isu terkini dalam lingkungan pembelajaran berbasis komputer, seperti Massive Open Online Course (MOOC) dan personalized learning, agen pedagogis, Skydu Academy.",
     "topics": [
       "Tinjauan sejarah mengenai pembelajaran dan teknologi; How People Learn (Learning: From Speculation to Science dan Mind and Brain); Teori Pembelajaran Behaviorism; Teori Pembelajaran Cognitivism; Teori Pembelajaran Constructivism; Metacognition and Self- Regulation; Critical thinking (Berpikir Kritis); Online Collaborative Learning Theory: the Community of Inquiry framework; Disain Matakuliah untuk Pembelajaran Daring; Multimedia Learning; Authoring Tools atau Learning Management Systems."
@@ -1300,7 +1300,7 @@
     "code": "CSCE604031",
     "name": "Pengolahan Bahasa Manusia",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini mempelajari berbagai teknik untuk membangun perangkat lunak yang mengolah bahasa manusia. Secara umum, struktur materi kuliah ini diatur sesuai dengan tingkat representasi bahasa, mulai dari (i) morfologi: finite state, two-level morphology, part of speech tagging, (ii) sintaks: context free grammars, probabilistic parsing, dependency parsing; (iii) semantik: rule-based semantic analysis; (iv) discourse: discourse structure, coreference resolution. Mata kuliah ini fokus pada Natural Language Understanding, tapi juga memperkenalkan secara singkat Natural Language Generation. Kuliah ini membahas pendekatan simbolik dan pendekatan statistik dalam menyelesaikan sejumlah permasalahan NLP. Ada beberapa tugas yang melatih peserta kuliah untuk memahami pemodelan bahasa dan peserta akan membangun sebuah sistem perangkat lunak yang mampu mengolah masukan berupa bahasa manusia. Tujuan tugas yang diberikan adalah untuk mendukung pemahaman konsep, melatih kemampuan praktikal, dan memberikan pengalaman bagi mahasiswa untuk mengenali tool dan resource NLP yang ada.",
     "topics": [
       "Regular Expression; Tokenization, stemming, lemmatization; N-gram language model; Vector Semantics and embeddings; Neural Networks and Neural Language Models; Part-of-Speech Tagging; Named Entity Recognition; Constituency Grammar; Constituency Parsing; Dependency Parsing; Logical Representation of Sentence Meaning; Coreference Resolution; Discourse Coherence; Machine Translation; Information Extraction; Question Answering; Chatbot and Dialogue System"
@@ -1322,7 +1322,7 @@
     "code": "CSCE604126",
     "name": "Penjaminan Mutu Perangkat Lunak",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini membahas isu-isu kualitas sepanjang proses pengembangan perangkat lunak, termasuk desain, implementasi, pengujian, dan pengiriman. Isu-isu terkait aktivitas pra-proyek dan pasca penutupan proyek juga akan dibahas. Standar kualitas yang relevan akan ditinjau. Metode spesifik untuk meningkatkan standar kualitas dalam pengembangan dan proses juga dibahas.",
     "topics": [
       "Course Information, Introduction to Software Quality Assurance (SQA), Challenges in Software Testing, SQA Factors; Corrective and Preventive Action (CAPA), SQA Plan; SOLID, Clean Code, Test-Driven Development (TDD); Clean Code; Behaviour Driven Development (BDD); Secure Coding, SQA Metric; Software Process, Scrum; Review, Quiz, Studi Kasus; Model-Driven Test Design (RIPR model, testing levels, test design process); Test Automation (definitions, components of a test case); Putting Test First (continuous integration); Criteria-Based Testing (test requirement, coverage criteria, subsumption); Input Space Partitioning (input domain modelling, designing characteristics); Graph Coverage (graph theory, control flow graph, coverage criteria), Tool-assisted Combinatorial Testing; Advanced Topics: Advanced Testing Techniques (e.g., test isolation by mock testing; end-to-end/E2E test); Advanced Topics: Stress/Load Testing (non-functional requirements, Apache JMeter/k6); Ops Monitoring & Observability (metrics, PromQL)"
@@ -1345,7 +1345,7 @@
     "code": "CSCE604212",
     "name": "Persamaan Differensial",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini dirancang untuk memberikan pemahaman dan pengetahuan mengenai berbagai jenis persamaan diferensial yang ada, metode penyelesaiannya, serta penerapannya dalam berbagai bidang melalui pemodelan matematika dari persamaan diferensial tersebut. Mata kuliah ini menitikberatkan pemodelan matematika dari berbagai fenomena alam sesuai dengan kaidah hukum alam yang berlaku dengan menggunakan pendekatan persamaan diferensial terutama persamaan diferensial derajat satu atau dua. Peserta dianjurkan untuk terbiasa menggunakan aplikasi komputasi seperti MAPLE, MATLAB, MATHEMATICA, dan yang lain.",
     "topics": [
       "Introduction, overview on modeling with differential equation; 1st order Differential Equation, terminology on solution; 1st order Differential Equation: separable equation, 1st order linear equation, exact differential equation, homogeneous differential equation, method of substitutions; Modeling with 1st order Differential Equation; 2nd order Differential Equation; 2nd order Differential Equation: characteristics of solution; Reduction of order; 2nd order Differential Equation homogeneous – non homogeneous; 2nd order Differential Equation with constant coefficients, method of undetermined coefficients, method of variation of parameters; 2nd order Differential Equation with variable coefficients, homogeneous – non homogeneous; Modeling with 2nd order Differential Equation; Power Series Solution; Solution using Laplace Transformation, Laplace Transformation on Special Function."
@@ -1369,7 +1369,7 @@
     "code": "CSCE604225",
     "name": "Praktikum Pemrograman Kompetitif",
     "credits": 1,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata Kuliah ini memberikan aspek praktikal yang lebih banyak untuk mata kuliah CSCE604226 Pemrograman Kompetitif. Peserta akan mendapatkan pengalaman Latihan soal- soal pemrograman kompetitif yang lebih intensif.",
     "topics": [
       "Topik-topik yang disampaikan pada kuliah CSCE604226 Pemrograman Kompetitif, plus topik-topik advanced tambahan lainnya."
@@ -1394,7 +1394,7 @@
     "code": "CSCE604111",
     "name": "Simulasi dan Pemodelan",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memperkenalkan dasar-dasar pemodelan sistem menggunakan simulasi komputer dan teknik matematik terutama dengan pendekatan memakai persamaan diferensial (pemahaman topik/pernah mengambil mata kuliah Persamaan Diferensial akan sangat membantu). Beberapa studi kasus akan dijabarkan baik dalam perkuliahan maupun dalam latihan dan tugas-tugas perkuliahan yang diberikan. Contoh-contoh pemodelan sistem yang didiskusikan akan mencakup berbagai bidang dengan penekanan pada analisa dan pemodelan sistem komputer dan komunikasi , sistem antrian, dan beberapa sistem lain dengan menggunakan beberapa paradigma pemodelan seperti, simulasi, teori antrian, dan pendekatan proses stochastic.",
     "topics": [
       "Pendahuluan; Pemodelan dan Simulasi; simulasi Monte Carlo; Continuous system simulation; Discrete event Simulation; Mixed Simulation (discrete and continuous); Quantitative Modeling; Petri Nets; Queuing Networks; Stochastic Algebra; Sample generation; Concepts in Discrete event simulation (DES): Components of DES; Input Data Modeling, Verification and Validation; Output Analysis; Model Design; Parallel and Distributed Simulation; Distributed Virtual Environments; High Level Architecture."
@@ -1414,7 +1414,7 @@
     "code": "CSCE604254",
     "name": "Sistem Terdistribusi",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memperkenalkan prinsip dan teknologi dasar dari sistem terdistribusi, membahas algoritma – algoritma yang menyelesaikan masalah dasar sistem terdistribusi termasuk model komunikasi, sinkronisasi waktu, urutan peristiwa, pesan broadcast, konsensus dan konsistensi, serta membekali mahasiswa dengan pemahaman terhadap aplikasi yang menggunakan sistem terdistribusi seperti message brokering system, streaming platform, collaboration tools berbasis CRDT, dan blockchain. Setelah menyelesaikan mata kuliah ini, mahasiswa mampu membangun aplikasi yang berbasis sistem terdistribusi dan merancang sistem terdistribusi yang efektif dan efisien. Topik – topik yang dibahas mencakup: pengenalan terhadap sistem terdistribusi, model sistem terdistribusi, waktu, jam, dan urutan peristiwa, replikasi, konsensus, konsistensi dan studi kasus teknologi terkini. Metode pembelajaran menggunakan pendekatan flipped classroom.",
     "topics": [
       "Introduction to distributed systems; Models of distributed systems; Time, clock, and ordering of events; Logical time and broadcast protocols; Replication; Consensus; Consistency; Case Study: Pengiriman pesan asinkronus dengan AJAX dan WebSocket; Case Study: Data streaming dengan Apache Kafka; Case Study: Kolaborasi dan resolusi konflik dengan CRDT; Case Study: Blockchain dan mata uang kripto"
@@ -1435,7 +1435,7 @@
     "code": "CSCE604036",
     "name": "Representasi Pengetahuan dan Penalaran",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memperkenalkan salah satu bidang AI yang berkaitan dengan bagaimana pengetahuan (knowledge) direpresentasikan secara simbolik sehingga dapat dimanipulasi secara otomatis oleh program yang melakukan penalaran (reasoning) terhadap pengetahuan tersebut. Peserta mata kuliah ini akan dibekali dengan konsep-konsep yang merupakan fondasi dasar dari knowledge representation and reasoning untuk dapat memahami topik-topik lanjut dan mengikuti perkembangan terkini, serta mengembangkan aplikasi AI di bidang ini.",
     "topics": [
       "First-Order Logic, representasi knowledge dan entailment, resolusi, production systems, structured descriptions, default reasoning, probabilistic reasoning, explanation dan diagnosis, reasoning about actions."
@@ -1456,7 +1456,7 @@
     "code": "CSCE604232",
     "name": "Robotika",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata ajar Robotika memberikan pengantar tentang implementasi robot dari sudut pandang ilmu komputer. Topik yang dibahas pada kuliah ini meliputi pergerakan di tempat, perpindahan, penagkapan informasi dari luar, lokalisasi, pemetaan, dan navigasi. Pada kuliah ini, mahasiswa akan melakukan praktikum menggunakan simulasi. Robot tersebut dapat diprogram dengan menggunakan berbagai algoritma pembelajaran mesin maupun kecardasan buatan. Hal tersebut akan dapat membuat pemelajar memiliki ketangkasan maupun pemahaman menyeluruh tentang dunia robotika dalam riset maupun industri. Metode pengajaran yang digunakan berbasis blended learning, yang menggabungkan metode pembelajaran face-to-face antara fasilitator dan peserta kuliah (synchronous) dengan metode interaksi online yang menyediakan materi pembelajaran dan ruang diskusi secara online (asynchronous). Dikarenakan kondisi pandemi COVID-19, seluruh kegiatan synchronous diubah menjadi pembelajaran jarak jauh yang dilakukan secara daring, dan seluruh kegiatan praktikum akan menggunakan simulasi. Bahasa yang digunakan dalam kegiatan belajar mengajar adalah Bahasa Indonesia.",
     "topics": [
       "Introduksi Robotik: permasalahan, tantangan dan aplikasi; Lokomosi pada robot berkaki dan beroda; Lokomosi pada robot UAV; Kinematika robot; Sensor pada robot; Ekstraksi fitur dan representasi fitur pada robot; Lokalisasi dan representasi peta pada robot; Path Planning; Aplikasi pendeteksi objek pada robot; Implementasi robot menggunakan perangkat lunak simulasi."
@@ -1479,7 +1479,7 @@
     "code": "CSCE604151",
     "name": "Sistem Tertanam",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata ajar Sistem Tertanam (Embedded Systems) memperkenalkan sistem berbasis microcontroller yang merupakan perpaduan antara hardware dan software untuk melakukan suatu fungsi tertentu. Sejak ditemukannya mikroprosesor pada awal tahun 70- an, teknologi dan aplikasi sistem tertanam berkembang sangat pesat dan merambah ke berbagai aspek kehidupan manusia seperti mobile devices (telepon genggam, MP3 player, dsb), medical systems, robotika, automation, dsb. Mata kuliah ini ditujukan untuk memberikan bekal untuk perancangan sistem tertanam, terutama dari aspek kemampuan menghasilkan software yang andal.",
     "topics": [
       "Introduction to Embedded System; Hardware Fundamentals for the Software Engineers; Microprocessor dan Buses; Mikrokontroller; Sensor; Aktuator; Interrupts & Interrupt Handler Concepts; Interrupt Basics Interrupt Latency; Tutorial Interrupt; Round Robin, Round Robin with Interrupts, dan Function-Queue- Scheduling Architecture; Introduction to Real Time Operating System; Task; Introduction to Internet of Things (IoT); IoT node; IoT data acquisition; IoT Visualization; Develop an Embedded System with AVR/Arduino/Raspberry and integrated wit IoT."
@@ -1499,7 +1499,7 @@
     "code": "CSCE604028",
     "name": "Software Product Line Engineering",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini memperkenalkan salah satu metode pengembangan perangkat lunak yang disebut dengan Software Product Line Engineering (SPLE). SPLE menekankan pada aspek variability management, reusability, dan juga product generation. Di tengah perkembangan teknologi yang meningkat pesat, suatu perangkat lunak dapat memiliki kemiripan fitur dengan perangkat lunak lain tetapi juga memiliki variasi tertentu. Dengan paradigma SPLE, developer dapat menghasilkan perangkat lunak yang bervariasi dalam satu kali development. Pada kuliah ini akan diperkenalkan konsep dasar SPLE yang meliputi fase domain engineering dan application engingering. Selain itu, praktik teknis juga akan diperkenalkan agar mahasiswa dapat memanfaatkan tools yang ada untuk perangkat lunak secara otomatis berdasarkan variasi fitur yang dipilih. Studi kasus terkait perangkat lunak yang memiliki variability akan digunakan untuk mengilustrasikan proses pengembangan. Setelah mengambil kuliah ini, mahasiswa diharapkan dapat terampil untuk memodelkan dan mengimplementasikan perangkat lunak yang memiliki variasi sesuai dengan paradigma SPLE.",
     "topics": [
       "Pengantar Software Product Line Engineering; Analisis Domain dan Identifikasi Commonalities & Variabilities; Arsitektur Produk Line; Pengembangan Produk Line; Manajemen Produk Line; Alat untuk modeling, analisis, dan generasi produk; Integrasi dengan alat pengembangan perangkat lunak lainnya; Analisis studi kasus penerapan SPLE di berbagai industri; Pembahasan tantangan dan solusi dalam implementasi SPLE."
@@ -1523,7 +1523,7 @@
     "code": "CSIE604290",
     "name": "Technopreneurship",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata ajar ini memperkenalkan dan memberikan wawasan tentang kewirausahaan di bidang teknologi (technology-entrepreneurship).",
     "topics": [
       "Introduction; The individual entrepreneurial mind-set; Economic growth and technology entrepreneur; Opportunity and the concept summary; Building a competitive advantage; Competitive strategy - industry analysis; Innovation strategy; Business model generation; Opportunity analysis project; The business plan; The financial plan; Legal formation/intellectual property; Entrepreneurial marketing; Start-up teams; Acquiring resources; Alliances and partnerships; Presenting the plan; Opportunity execution project"
@@ -1545,7 +1545,7 @@
     "code": "CSCE604128",
     "name": "Teknik Kompilator",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata ajar ini mempersiapkan mahasiswa untuk dapat menyelesaikan masalah yang terkait dengan perancangan bahasa pemrograman dan teknik teknik pembentuk kompilator – program pemroses bahasa pemrograman. Secara umum mahasiswa akan memahami komponen suatu kompilator, bagaimana interaksi antara komponen dan bagaimana pembuatan dan pengembangan serta integrasi seluruh komponen tersebut.",
     "topics": [
       "Pengenalan (fungsi dan kegunaan kompilator); Analisis Leksikal; Analisis Sintak (parser): pengenalan grammar (tata Bahasa), grammar model, parsing tree dan deriviasi, parsing predictive, parsing shift dan reduksi, parsing SLR, parsing LALR; Tabel Simbol (bentuk liner dan hash, operasi pada tabel symbol); Analisis semantic (deklarasi nama/variable, operasi attribute – type checking, contoh analisis leksikal – context checker model); Run time environment; Teknik alokasi storage; Kode sasaran (target codes): umum dan model; Kode intermedia (berbagai bentuk KI); Pembentukan kode (code generator): bentuk umum, dan model prosedur dan fungsi tanpa parameter, prosedur dan fungsi dengan parameter; Optimisasi."
@@ -1572,7 +1572,7 @@
     "code": "CSCE604179",
     "name": "Teknologi Mobile",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata ajar ini merupakan pengantar bidang komunikasi mobile yang ditujukan untuk memberikan gambaran umum tentang teknologi mobile dari sudut pandang ilmu komputer. Pada awal perkuliahan, diberikan beberapa dasar tentang teknologi transmisi nirkabel. Topik yang dibahas meliputi: frekuensi yang digunakan untuk komunikasi, sinyal, skema dasar multiplexing dan modulasi, protokol akses, serta persyaratan aplikasi. Berbagai teknologi mobile seperti CDMA, GSM, DECT, W-CDMA, CDMA2000, dan UMTS akan diperkenalkan sebagai bagian dari sistem komunikasi mobile. Dalam kuliah ini juga dibahas bagaimana memanfaatkan sensor dan layanan yang tersedia dalam perangkat komunikasi mobile untuk membangun aplikasi diatas platform mobile.",
     "topics": [
       "Introduction to Mobile Technology; Wireless Transmission; Medium Access Control; Wireless Telecommunication System – Cellular System; Wireless LAN/MAN; Network Protocols – Mobile IP; Mobile Ad-hoc Networks (MANET); Mobile Phone Technology"
@@ -1602,7 +1602,7 @@
     "code": "CSCE604135",
     "name": "Temu-balik Informasi",
     "credits": 4,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Kuliah Information Retrieval (Temu-Balik Informasi) menyampaikan ilmu seputar sains dan teknologi pengembangan search engine. Pada bagian pertama, peserta akan mempelajari struktur data dan algoritme fundamental untuk sebuah text retrieval system. Pada bagian kedua, peserta akan mendalami topik-topik terkait data-driven retrieval model dan juga bagaimana melakukan evaluasi terhadap efektifitas dari sebuah search engine.",
     "topics": [
       "Introduction to IR (History & Big Picture); Inverted Index: Dictionary & Postings Lists; Inverted Index: Phrase Queries & Proximity Search; Index Construction: Tokenization, Normalization, Stemming, Stop Words; Index Construction: External Memory Indexing, Distributed Indexing, Dynamic Indexing; Index Compression: Dictionary Compression, Compression Principles, Postings Compression: Variable Byte Encoding & OptPForDelta; Ranked Retrieval; Term Frequency & Weighting: TF & IDF, TaaT scheme; Vector Space Model for Scoring; Tolerant Retrieval: Spelling Correction; Probabilistic IR: “Best Match 25” (BM25); Efficient Query Processing; Inefficient Evaluation of BM25; Top-K Retrieval & WAND Algorithm; Query Auto-Completion: Trie & RMQ- based Index; IR Evaluation; Online Evaluation: A/B Testing & Interleaving; Offline Evaluation: Cranfield-Style Evaluation & Model-based metrics; Web Crawling; Relevance Feedback & Query Expansion; Machine Learning & Text Classification for IR; Distributed Word Representations for IR; Learning to Rank; Link Analysis: PageRank; Neural Language Models; Dense Passage Retriever; Large Language Models (LLMs); IR & Question Answering; Locally Sensitive Hashing & Approximate Nearest Neighbor; Recommender Systems; Personalized Search"
@@ -1637,7 +1637,7 @@
     "code": "CSCE604029",
     "name": "Topik Khusus Ilmu Komputer",
     "credits": 3,
-    "state": "Elective",
+    "state": "Pilihan",
     "description": "Mata kuliah ini akan membahas perkembangan riset dan teknologi terkini pada bidang ilmu komputer. Isi materinya akan disesuaikan dengan isu-isu terkini pada saat mata kuliah ditawarkan.",
     "topics": [
       "Materi disesuaikan dengan perkembangan terkini pada bidang Ilmu Komputer."

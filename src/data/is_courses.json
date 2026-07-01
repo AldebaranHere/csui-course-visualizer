@@ -3,7 +3,7 @@
     "code": "UIGE600004",
     "name": "MPK Agama",
     "credits": 2,
-    "state": "Universitas",
+    "state": "Wajib Universitas",
     "description": "Pemaparan materi oleh pengampu untuk menga online/offline; diskusi focus group dan home group; aktivitas diskusi dengan pengisian borang",
     "topics": [
       "Sejarah dan makna agama",
@@ -23,7 +23,7 @@
     "code": "UIGE600003",
     "name": "MPK B. Inggris",
     "credits": 2,
-    "state": "Universitas",
+    "state": "Wajib Universitas",
     "description": "",
     "topics": ["Materi ajar Bahasa Inggris untuk komunikasi secara verbal dan tertulis, utamanya untuk kegiatan akademis."],
     "learningOutcomes": ["Mampu berkomunikasi secara tertulis dan oral dengan Bahasa Inggris."],
@@ -35,7 +35,7 @@
     "code": "UIGE600006",
     "name": "MPKT (MPKT)",
     "credits": 6,
-    "state": "Universitas",
+    "state": "Wajib Universitas",
     "description": "Pemaparan materi oleh pengampu diruang kelas online/offline; diskusi focus group dan home group; aktivitas diskusi dengan pengisian borang",
     "topics": [
       "Membangun karakter",
@@ -57,7 +57,7 @@
     "code": "CSGE601012",
     "name": "Kalkulus 1",
     "credits": 3,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Kalkulus merupakan mata ajaran wajib di Fasilkom dengan materi utama Kalkulus Dasar. Ada dua masalah dasar dalam Kalkulus, yaitu masalah garis singgung dan luas. Masalah garis singgung adalah bagaimana menentukan gradien garis singgung di suatu titik pada kurva. Sedangkan masalah luas adalah bagaimana menentukan luas daerah bidang di antara suatu kurva sumbu-x pada interval [a, b]. Kedua masalah tersebut melibatkan grafik fungsi bernilai nyata y = f(x), dan jawabannya merupakan limit perubahan dan jumlahan, yang kemudian kita kenal sebagai turunan dan integral. Oleh karena itu, Kalkulus sering disebut sebagai ilmu yang mempelajari limit. Jawaban dua masalah geometris tersebut merupakan kunci dari berbagai masalah terapan dalam ilmu pengetahuan dan teknologi.",
     "topics": [
       "1) Review: sistem bilangan dan fungsi",
@@ -81,7 +81,7 @@
     "code": "CSGE601010",
     "name": "Matematika Diskret 1",
     "credits": 3,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata ajar ini memperkenalkan topik-topik dasar matematika diskrit, antara lain logika, struktur diskret dasar, dan analisis kombinatorik, yang menjadi dasar bagi topik-topik lanjutan dan aplikasinya pada ilmu komputer/sistem informasi.",
     "topics": [
       "1) Intro to Discrete Math",
@@ -116,7 +116,7 @@
     "code": "CSGE601020",
     "name": "Dasar-Dasar Pemrograman 1",
     "credits": 4,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini bertujuan untuk mengajarkan konsep-konsep dasar serta teknik untuk membuat program komputer menggunakan Bahasa Pemrograman Python. Mata kuliah ini diajarkan melalui kombinasi kuliah tatap muka serta sesi latihan pemrograman dengan setiap peserta kuliah mengakses PC yang tersambung ke Internet. Mata kuliah ini mempraktekkan prinsip pemrograman yang tidak bisa diajarkan dalam cara yang sepenuhnya linier, namun topik-topik awal tetap dibahas lagi di belakang dengan tingkat kedalaman yang lebih canggih. Bahasa yang digunakan adalah Phyton.",
     "topics": [
       "1) Pengenalan pemrograman & sistem komputer",
@@ -142,7 +142,7 @@
     "code": "CSGE601021",
     "name": "Dasar-Dasar Pemrograman 2",
     "credits": 4,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini merupakan lanjutan dari Dasar-Dasar Pemrograman 1, yang berfokus pada paradigma pengembangan perangkat lunak skala medium, terutama dengan paradigma pemrograman berorientasi objek. Bahasa pemrograman yang digunakan adalah Java.",
     "topics": [
       "1) Elementary Programming",
@@ -169,7 +169,7 @@
     "code": "CSGE601011",
     "name": "Matematika Diskret 2",
     "credits": 3,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini merupakan kelanjutan dari mata kuliah Matematika Diskrit 1 dan memberikan landasan teoritis untuk ilmu komputer.",
     "topics": [
       "1) Number Theory: Divisibility, Modular Arithmetic, Integer Representations",
@@ -203,7 +203,7 @@
     "code": "CSGE602022",
     "name": "Pemrograman Berbasis Platform",
     "credits": 4,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini akan membahas pengembangan perangkat lunak pada berbagai macam platform. Materi yang dipelajari berhubungan dengan berbagai macam konsep dan peraturan pemrograman yang diterapkan pada suatu platform. Sebagai contoh pemrograman pada platform yang relevan saat ini adalah perangkat bergerak (mobile), web, robotik dan kecerdasan buatan, perangkat tertanam, dan gaming. Setiap platform memiliki karakteristik yang berbeda mulai dari keteraturan pola pemrograman, mekanisme pemrosesan, interaksi antar komponen/application programming interface (API)/hardware, dan interaksi dengan pengguna yang diterapkan pada pemrograman high-level.",
     "topics": [
       "1) Introduction to Platform-Based Programming",
@@ -228,7 +228,7 @@
     "code": "CSGE602040",
     "name": "Struktur Data & Algoritma",
     "credits": 4,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini mengajarkan teknik-teknik dasar untuk abstraksi struktur data, algoritma-algoritma akses dan manipulasi struktur-struktur abstraksi tersebut; serta pengantar analisis kompleksitas eksekusi algoritma-algoritma tersebut.",
     "topics": [
       "1) Analisis Algoritma",
@@ -260,7 +260,7 @@
     "code": "CSGE602012",
     "name": "Aljabar Linier",
     "credits": 3,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini membekali mahasiswa keterampilan pemecahan masalah terkait dengan aljabar vektor dan meningkatkan penalaran matematis (logis, konsisten, jelas, seksama) yang merupakan disposisi dan keterampilan berpikir kritis. Bahan kajian meliputi sistem persamaan linear, aljabar matriks, ruang vektor dan hasil kali dalam, nilai dan vektor eigen, serta transformasi linear.",
     "topics": [
       "1) Sistem persamaan linier",
@@ -285,7 +285,7 @@
     "code": "CSGE602023",
     "name": "Pengantar Keamanan Perangkat Lunak",
     "credits": 3,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini membahas mengenai keamanan perangkat lunak. Topik yang dibahas mencakup antara lain: Manajemen keamanan (informasi, kebijakan, prosedur), Manajemen resiko, Model dan tingkat keamanan pada jaringan, peralatan, aplikasi, serta kontrol akses dan keamanan fisik.",
     "topics": [
       "1) Introduction to Software Security",
@@ -309,7 +309,7 @@
     "code": "CSGE602024",
     "name": "Sistem Interaksi",
     "credits": 3,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah akan membekali mahasiswa dengan pengetahuan mengenai perancangan antarmuka untuk perangkat lunak. Capaian pembelajaran mata kuliah ini adalah mahasiswa mampu menerapkan prinsip-prinsip sistem interaksi dalam mengembangkan sebuah aplikasi atau menawarkan sebuah alternatif desain interaksi yang lebih baik. Mata kuliah disampaikan melalui metode pembelajaran aktif melalui diskusi kelompok kecil (small group discussion), pembelajaran berbasis proyek (Project-based Learning), dan penggunaan Learning Management System SC ELE. Ruang lingkup yang dibahas mencakup konteks historis dari human-computer interaction (HCI), interaction design, cognition, teknik-teknik dalam HCI, aspek sosial dalam HCI, pengumpulan dan analisis data, proses desain interaksi, prototyping, dan evaluasi.",
     "topics": [
       "1) Sejarah HCI, Interaction Design, UX, Conceptual Model",
@@ -335,7 +335,7 @@
     "code": "CSGE602070",
     "name": "Basis Data",
     "credits": 4,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini membahas konsep dasar dari manajemen database yang mencakup aspek pemodelan dan desain, bahasa dan fasilitas, implementasi dan penggunaan database.",
     "topics": [
       "1) Konsep dan arsitektur sistem basis data",
@@ -361,7 +361,7 @@
     "code": "CSGE603091",
     "name": "Metodologi Penelitian & Penulisan Ilmiah",
     "credits": 3,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini berfokus pada metodologi penelitian dan penulisan ilmiah pada bidang Ilmu Komputer, Sistem Informasi, dan Teknologi Informasi (CS/SI/TI). Mata kuliah ini akan mengajarkan peserta untuk memiliki cara berpikir proses yang sistematis dan logis, secara ilmiah. Dalam mata kuliah ini peserta diminta untuk melakukan penelitian mini dan menulis karya ilmiah sebagai proses terintegrasi, di bidang CS/SI/TI. Secara garis besar, mata kuliah ini membahas bagaimana melakukan penelitian di bidang CS/SI/TI, sehingga \"peneliti\" dapat mengelola sumber dayanya secara optimal dan menulis laporan penelitian secara ilmiah. Selain itu, mata kuliah ini akan mengeksplorasi peran penelitian sebagai fungsi inti dalam mendorong pemahaman tentang pengetahuan, keterampilan, dan sikap baru di bidang pengembangan CS/SI/TI.",
     "topics": [
       "1) Basic understanding on research and scientific writing",
@@ -387,7 +387,7 @@
     "code": "CSGE603130",
     "name": "Kecerdasan Artifisial & Sains Data Dasar",
     "credits": 4,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini memperkenalkan konsep-konsep dasar kecerdasan artifisial (artificial intelligence) dan sains data (data science), serta berbagai pendekatan dan teknik-teknik dasar yang dapat dipergunakan untuk memecahkan berbagai permasalahan di bidang kecerdasan artifisial dan sains data. Mata kuliah ini memberikan eksposisi pertama kepada para peserta terhadap paradigma kecerdasan artifisial non-simbolik yang mencakup berbagai teknik pemelajaran mesin (machine learning) yang juga merupakan bagian inti dalam proses sains data untuk melakukan ekstraksi pengetahuan dari data yang tersedia. Cakupan mata kuliah ini berkisar pada pengertian dasar kecerdasan artifisial, pemelajaran mesin dan sains data, serta teknik-teknik klasifikasi, regresi, dan clustering tradisional.",
     "topics": [
       "1) Artificial Intelligence, Data Science, and Machine Learning: Introduction and Terminology",
@@ -413,13 +413,13 @@
     ],
     "sublearningOutcomes": [],
     "resources": ["Scele Fasilkom UI"],
-    "prerequisites": ["STAT", "CSGE602012", "CSGE602040"]
+    "prerequisites": ["CSIM102113", "CSGE602012", "CSGE602040"]
   },
   "CSGE614093": {
     "code": "CSGE614093",
     "name": "Komputer dan Masyarakat",
     "credits": 3,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini menimbulkan kesadaran dan kepekaan mahasiswa terhadap berbagai persoalan etika, sosial, dan ekonomi terkait penerapan teknologi komputer dalam kehidupan sehari-hari. Mahasiswa diharapkan mampu merespon positif terhadap masalah-masalah sosial yang ada dalam konteks disiplin ilmu komputer. Mahasiswa akan dihadapkan pada isu-isu yang berkaitan dengan teknologi informasi dan komputer, dan diharapkan mampu menganalisa isu tersebut dan memberikan solusi dari sudut pandang mereka sebagai mahasiswa ilmu komputer.",
     "topics": [
       "1) Information Technology and Our Ethics",
@@ -441,7 +441,7 @@
     "code": "CSGE604097",
     "name": "Kerja Praktik",
     "credits": 6,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini memberikan kesempatan kepada mahasiswa untuk memperoleh pengalaman dalam penyelesaian permasalahan yang terdapat pada sebuah organisasi menggunakan Teknologi Informasi dan Komunikasi (TIK) dengan cara terjun secara langsung ke dunia kerja.",
     "topics": [
       "Mampu melaksanakan tugas di perusahaan tempat kerja praktik dengan baik serta menyusun dan mempresentasikan laporan kerja praktik."
@@ -459,7 +459,7 @@
     "code": "CSGE604099",
     "name": "Tugas Akhir Individu",
     "credits": 6,
-    "state": "Fakultas",
+    "state": "Wajib Fakultas",
     "description": "Mata kuliah ini bertujuan melatih kemampuan mahasiswa untuk menerapkan pengetahuan dalam bidang ilmu komputer dan/atau sistem informasi pada satu kegiatan penelitian maupun penyelesaian masalah di suatu organisasi, industri dan masyarakat. Setelah mengikuti mata kuliah ini mahasiswa dapat menghasilkan tulisan ilmiah berbahasa Indonesia maupun Inggris dalam bentuk skripsi. Kegiatan dilakukan secara mandiri atau berkelompok dengan jumlah anggota maksimum 3 orang dibawah bimbingan oleh minimal seorang dosen dalam waktu maksimum dua semester.",
     "topics": [
       "Pengetahuan dalam bidang ilmu komputer dan/atau sistem informasi pada satu kegiatan penelitian maupun penyelesaian masalah di suatu organisasi, industri, dan masyarakat."
@@ -477,7 +477,7 @@
     "code": "CSIM601190",
     "name": "Manajemen Bisnis",
     "credits": 3,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Kuliah ini bertujuan untuk meningkatkan pengetahuan dan kemampuan mahasiswa terkait aspek bisnis dan manajemen di dalam organisasi. Melalui contoh dan studi kasus, mahasiswa akan memahami konsep dasar organisasi bisnis serta membangun keterampilan analisis manajerial yang dibutuhkan lulusan sistem informasi. Bahasa yang akan digunakan pada mata kuliah ini adalah kombinasi antara Bahasa Indonesia dan Bahasa Inggris. Mayoritas bahan ajar dan ujian tertulis akan menggunakan Bahasa Inggris.",
     "topics": [
       "1) Taking Risk and Making Profit within Dynamics Business Environment",
@@ -527,7 +527,7 @@
     "code": "CSIM601191",
     "name": "Komunikasi Bisnis dan Teknis",
     "credits": 3,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini berfokus pada strategi dan keterampilan untuk menulis dan berbicara yang efektif dalam organisasi bisnis. Mata kuliah ini akan mengajarkan siswa teknik- teknik dasar komunikasi yang berguna dalam konteks sehari-hari organisasi/bisnis.",
     "topics": [
       "1) Professional Communication",
@@ -559,7 +559,7 @@
     "code": "CSIM601251",
     "name": "Dasar-Dasar Arsitektur Komputer",
     "credits": 3,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Melalui kuliah ini mahasiswa diharapkan dapat mengerti komponen dasar dari suatu sistem komputer dan bagaimana komponen-komponen ini bekerja sama untuk menghasilkan fungsi yang diinginkan oleh pemakai komputer. Kuliah akan terbagi menjadi 2 bagian. Bagian pertama dari kuliah ini akan mempelajari tentang Sistem Digital, dan bagian kedua akan mempelajari tentang Arsitektur Komputer. Topik yang dicakup pada Sistem Digital adalah me-review representasi biner; merancang dan menganalisa rangkaian kombinasi; merancang dan menganalisa rangkaian sekuensial; komponen dasar lainnya seperti counter, register dan memori. Topik yang dibahas pada Arsitektur Komputer adalah: bahasa assembly, bagian-bagian dari suatu processor, siklus kerja processor, dan memory hierarchy.",
     "topics": [
       "1) Introduction to computer system",
@@ -596,7 +596,7 @@
     "code": "CSIM601280",
     "name": "Prinsip-prinsip Sistem Informasi",
     "credits": 3,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini mengajarkan mahasiswa terkait aspek dan pengetahuan dasar serta prinsip-prinsip sistem informasi.",
     "topics": [
       "1) Konsep informasi",
@@ -626,7 +626,7 @@
     "code": "CSIM602155",
     "name": "Pengantar Sistem Operasi",
     "credits": 3,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini membahas tentang konsep dan hal-hal yang berkaitan dengan Sistem Operasi (Operating System), dengan cakupan materi yang telah disesuaikan dengan kebutuhan program studi sistem informasi.",
     "topics": [
       "1) Introduction & Operating System Structure",
@@ -657,7 +657,7 @@
     "code": "CSIM102113",
     "name": "Pengantar Statistika",
     "credits": 4,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Setelah lulus mata kuliah ini mahasiswa diharapkan mampu menerapkan konsep-konsep probabilitas dan statistik untuk menginterpretasikan data guna mendukung pemecahan masalah. Metode pembelajaran yang digunakan dalam mata kuliah ini adalah pembelajaran kooperatif. Ruang lingkup yang dibahas mencakup statistik deskriptif, teori probabilitas dasar, Teorema Bayes, variabel acak (Bernoulli, Binomial, Geometrik, Poisson, Uniform, Eksponensial, Normal), distribusi statistik sampel (central limit theorem), estimasi parameter (estimasi titik dan interval), dan uji hipotesis (mean dan varians). Mata kuliah ini juga berfokus untuk mengembangkan pengetahuan terkait teknik-teknik statistik lanjut yang diperlukan untuk mengolah data, sehingga bermanfaat dalam proses pengambilan keputusan. Mata kuliah ini mengembangkan keterampilan untuk memilih teknik statistik yang tepat untuk memecahkan kasus tertentu.",
     "topics": [
       "1) Introduction and descriptive statistics",
@@ -691,7 +691,7 @@
     "code": "CSIM602263",
     "name": "Sistem Informasi Perusahaan dan Akuntansi",
     "credits": 4,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini bertujuan untuk memberikan pengetahuan terhadap solusi SI terintegrasi bagi perusahaan dan metode implementasinya. Mata kuliah ini akan mengajarkan mahasiswa proses bisnis utama dan proses bisnis pendukung dalam suatu organisasi dan bagaimana memodelkan proses bisnis tersebut, termasuk pencatatan keuangan di dalam perusahaan. Di samping itu, diberikan pula kebutuhan terhadap solusi SI (aplikasi) yang dapat digunakan untuk mengimplementasikan proses bisnis tersebut. Proses bisnis utama yang diberikan dalam mata ajar ini mengambil contoh di bidang manufacturing yaitu meliputi proses utama di 3 area yaitu di area sales and marketing, procurement, dan production. Selain itu, akan diperkenalkan juga proses bisnis pendukung terkait pengelolaan sumber daya manusia dan keuangan perusahaan. Untuk proses bisnis utama, pembahasan area sales and marketing juga mencakup pengenalan konsep customer relationship management sementara untuk area production and procurement akan juga diperkenalkan konsep supply chain management. Kuliah ini juga bertujuan untuk meningkatkan pengetahuan dan kemampuan mahasiswa terkait pencatatan keuangan di perusahaan. Untuk pencatatan keuangan, peserta kuliah akan diajarkan dari mulai dasar pencatatan, seperti pengenalan akun, debit-kredit, cara membaca laporan keuangan, serta membuat laporan keuangan terintegrasi. Selain itu. peserta akan diajarkan mengenai implementasi Sistem Informasi Akuntansi.",
     "topics": [
       "1) Introduction to business process",
@@ -727,7 +727,7 @@
     "code": "CSIM602281",
     "name": "Manajemen Proyek Teknologi Informasi",
     "credits": 3,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini berfokus pada standar pengetahuan yang dibutuhkan oleh Project Management Institute (PMI), yang merupakan organisasi sertifikasi terdepan di dunia untuk para profesional di semua disiplin Manajemen Proyek. Mata kuliah ini juga akan memperluas pengetahuan dan keterampilan dalam manajemen proyek TI untuk sistem perusahaan, dan akan memberikan kesempatan bagi mahasiswa untuk belajar bagaimana praktik dan prosedur yang digunakan dalam organisasi. Fokus khusus dari mata kuliah ini adalah bagaimana seorang manajer proyek bisa mengendalikan semua batasan dalam pelaksanaan proyek, baik dalam hal kapasitas staf, jadwal pengembangan sistem, biaya, perkiraan upaya, dan kualitas, serta bagaimana batasan-batasan ini terkait dengan konsep PMI®, dan bagaimana pengelolaannya sebaik-baiknya dalam pelaksanaan proyek dari berbagai skala.",
     "topics": [
       "1) Introduction of Project Management",
@@ -760,7 +760,7 @@
     "code": "CSIM603026",
     "name": "Arsitektur dan Pemrograman Aplikasi Perusahaan",
     "credits": 4,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini memperkenalkan teknologi pengembangan aplikasi enterprise terkini. Dimulai dari konsep pengembangan aplikasi, framework pengembangan terbaru, penggunaan database dan studi kasus yang dituangkan dalam tugas proyek berkelompok.",
     "topics": [
       "1) Introduction to Enterprise Application & Application Architecture",
@@ -796,7 +796,7 @@
     "code": "CSIM603183",
     "name": "Analisis dan Perancangan Sistem Informasi",
     "credits": 3,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini akan membahas konsep analisis dan perancangan sistem informasi (ANAPERANCIS), metodologi tentang bagaimana cara memperoleh kebutuhan pengguna sehingga rancangan SI dapat memenuhi kebutuhan organisasi. Berbagai pendekatan yang digunakan dalam metodologi ANAPERANCIS akan dibahas, termasuk penggunaan berbagai metode, teknik, proses, prosedur, dan alat untuk analisis dan perancangan. Selain itu, mata kuliah ini juga akan mengeksplorasi peran ANAPERANCIS yang telah beralih dari sekedar pendukung dalam pengembangan SI, menjadi fungsi inti (enabler) yang mendorong SI yang bersifat adaptif dan dapat diterima, melalui perbaikan kualitas informasi, perbaikan pengambilan keputusan dan perbaikan pembagian sumber daya, dan lain-lain. Perancangan SI harus dapat mencerminkan SI yang dapat membawa daya saing dan mempertahankan posisi strategis sebuah organisasi.",
     "topics": [
       "1) Introduction to Systems Analysis & Design",
@@ -828,7 +828,7 @@
     "code": "CSIM603182",
     "name": "Manajemen Sistem Informasi",
     "credits": 3,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini mengajarkan mahasiswa terkait aspek dan pengetahuan mengelola sistem informasi dalam suatu organisasi bisnis, baik dari aspek strategis maupun teknis. Mata kuliah ini merupakan jembatan antara dunia kampus dengan dunia kerja.",
     "topics": [
       "1) Pengantar Manajemen Sistem Informasi",
@@ -854,7 +854,7 @@
     "code": "CSIM603154",
     "name": "Jaringan Komunikasi dan Data",
     "credits": 4,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini memperkenalkan model referensi ISO/OSI dan TCP/IP untuk menganalisis, merancang, mengimplementasikan, dan mengelola jaringan komunikasi data.",
     "topics": [
       "1) Computer Networks and the Internet",
@@ -882,7 +882,7 @@
     "code": "CSIM603229",
     "name": "Proyek Pengembangan Sistem Informasi",
     "credits": 6,
-    "state": "Program Studi",
+    "state": "Wajib Program Studi",
     "description": "Mata kuliah ini mengajarkan mahasiswa terkait pengembangan suatu proyek sistem informasi. Proses pengembangan mencakup beberapa tahapan umum yaitu inisialisasi, perencanaan, analisis, desain, serta implementasi.",
     "topics": [
       "1) Project Initialization",

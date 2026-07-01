@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, BookOpen, GraduationCap, Award, Compass } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useCurriculumStore } from '@/store/useCurriculumStore';
 import { Course } from '@/types/curriculum';
 
@@ -64,7 +64,6 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
             {/* Description */}
             <div>
               <h4 className="flex items-center gap-2 font-sans text-xs font-bold text-[#E2E8F0] uppercase tracking-wider border-b border-[#333333] pb-1.5 mb-3">
-                <BookOpen className="w-4 h-4 text-[#C5A059]" />
                 Deskripsi
               </h4>
               <p className="font-sans text-sm text-[#E2E8F0] leading-relaxed">
@@ -76,7 +75,6 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
             {course.prerequisites && course.prerequisites.length > 0 && (
               <div>
                 <h4 className="flex items-center gap-2 font-sans text-xs font-bold text-[#E2E8F0] uppercase tracking-wider border-b border-[#333333] pb-1.5 mb-3">
-                  <Compass className="w-4 h-4 text-[#C5A059]" />
                   Prasyarat
                 </h4>
                 <div className="flex flex-wrap gap-2">
@@ -97,7 +95,6 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
             {course.topics && course.topics.length > 0 && (
               <div>
                 <h4 className="flex items-center gap-2 font-sans text-xs font-bold text-[#E2E8F0] uppercase tracking-wider border-b border-[#333333] pb-1.5 mb-3">
-                  <GraduationCap className="w-4 h-4 text-[#C5A059]" />
                   Pokok Bahasan
                 </h4>
                 <ul className="space-y-2">
@@ -115,7 +112,6 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
             {course.learningOutcomes && course.learningOutcomes.length > 0 && (
               <div>
                 <h4 className="flex items-center gap-2 font-sans text-xs font-bold text-[#E2E8F0] uppercase tracking-wider border-b border-[#333333] pb-1.5 mb-3">
-                  <Award className="w-4 h-4 text-[#C5A059]" />
                   Capaian Pembelajaran (CPL)
                 </h4>
                 <ul className="space-y-2">
@@ -133,7 +129,6 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
             {course.sublearningOutcomes && course.sublearningOutcomes.length > 0 && (
               <div>
                 <h4 className="flex items-center gap-2 font-sans text-xs font-bold text-[#E2E8F0] uppercase tracking-wider border-b border-[#333333] pb-1.5 mb-3">
-                  <Award className="w-4 h-4 text-[#C5A059]" />
                   Sub-Capaian Pembelajaran
                 </h4>
                 <ul className="space-y-2">
@@ -151,7 +146,6 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
             {course.resources && course.resources.length > 0 && (
               <div>
                 <h4 className="flex items-center gap-2 font-sans text-xs font-bold text-[#E2E8F0] uppercase tracking-wider border-b border-[#333333] pb-1.5 mb-3">
-                  <BookOpen className="w-4 h-4 text-[#C5A059]" />
                   Pustaka & Alat
                 </h4>
                 <ul className="space-y-2">

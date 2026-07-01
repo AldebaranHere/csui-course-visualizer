@@ -32,7 +32,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
   const searchQuery = useCurriculumStore((state) => state.searchQuery);
   const highlightedNodes = useCurriculumStore((state) => state.highlightedNodes);
   const setHighlightedNodes = useCurriculumStore((state) => state.setHighlightedNodes);
-  const { fitView } = useReactFlow();
+  const { fitView, setCenter } = useReactFlow();
 
   // 1. Calculate matching and dependency paths
   useEffect(() => {
@@ -172,6 +172,19 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     }, 100);
   }, [activeMajor, fitView]);
 
+  // Zoom into selected node when selectedCourseId changes
+  useEffect(() => {
+    if (selectedCourseId) {
+      const selectedNode = nodes.find((n) => n.id === selectedCourseId);
+      if (selectedNode) {
+        // Center of the node (240x100)
+        const x = selectedNode.position.x + 120;
+        const y = selectedNode.position.y + 50;
+        setCenter(x, y, { zoom: 1.1, duration: 800 });
+      }
+    }
+  }, [selectedCourseId, nodes, setCenter]);
+
   return (
     <div className="w-full h-full bg-[#111111] relative">
       <ReactFlow
@@ -183,6 +196,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         onlyRenderVisibleElements={true}
         minZoom={0.1}
         maxZoom={2}
+        proOptions={{ hideAttribution: true }}
         className="text-[#F8FAFC]"
       >
         <Background color="#333333" gap={20} size={1} />
