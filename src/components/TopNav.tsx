@@ -204,23 +204,13 @@ export const TopNav: React.FC = () => {
                 </a>
 
                 <a
-                  href="https://x.com/wholovesmaths"
+                  href="https://github.com/AldebaranHere"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm hover:text-[#C5A059] transition-colors group"
                 >
-                  <span className="font-sans font-bold text-[#C5A059] w-20 shrink-0">X:</span>
-                  <span>wholovesmaths</span>
-                </a>
-
-                <a
-                  href="https://instagram.com/aldebaran26adhitya"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm hover:text-[#C5A059] transition-colors group"
-                >
-                  <span className="font-sans font-bold text-[#C5A059] w-20 shrink-0">Instagram:</span>
-                  <span>aldebaran26adhitya</span>
+                  <span className="font-sans font-bold text-[#C5A059] w-20 shrink-0">GitHub:</span>
+                  <span>github.com/AldebaranHere</span>
                 </a>
               </div>
             </div>
