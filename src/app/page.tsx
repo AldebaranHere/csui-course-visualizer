@@ -12,6 +12,7 @@ import csCoursesRaw from '@/data/cs_courses.json';
 import isCoursesRaw from '@/data/is_courses.json';
 
 import { ReactFlowProvider } from 'reactflow';
+import { SemesterSidebar } from '@/components/SemesterSidebar';
 
 // Type-cast datasets to CurriculumMap
 const csCourses = csCoursesRaw as CurriculumMap;
@@ -33,6 +34,7 @@ export default function Home() {
 
         {/* Main Workspace */}
         <main className="flex-1 relative w-full h-full pt-16">
+          <SemesterSidebar />
           <CurriculumGraph courses={activeCourses} />
         </main>
 
