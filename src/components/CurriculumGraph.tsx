@@ -205,7 +205,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     dagreGraph.setDefaultEdgeLabel(() => ({}));
     
     // Configure Dagre layout: Top-to-Bottom, compound layouts, spacious separation
-    dagreGraph.setGraph({ rankdir: 'TB', nodesep: 100, ranksep: 160, compound: true });
+    dagreGraph.setGraph({ rankdir: 'TB', nodesep: 40, ranksep: 160, compound: true });
 
     const semestersList = ['1', '2', '3', '4', '5', '6', '7', '8', 'pilihan'];
     
@@ -357,46 +357,66 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       if (course.prerequisites) {
         course.prerequisites.forEach((prereq) => {
           if (courses[prereq]) {
-            // Check if both source and target are in the highlighted set
-            const hasHighlight = highlightedNodes.size > 0;
-            const isSourceActive = !hasHighlight || highlightedNodes.has(prereq);
-            const isTargetActive = !hasHighlight || highlightedNodes.has(course.code);
-            const isHighlightedEdge = hasHighlight && isSourceActive && isTargetActive;
-            
-            // Show label on highlighted active paths
-            const showLabel = isHighlightedEdge && (selectedCourseId === prereq || selectedCourseId === course.code);
+             // Check if both source and target are in the highlighted set
+             const hasHighlight = highlightedNodes.size > 0;
+             const isSourceActive = !hasHighlight || highlightedNodes.has(prereq);
+             const isTargetActive = !hasHighlight || highlightedNodes.has(course.code);
+             const isHighlightedEdge = hasHighlight && isSourceActive && isTargetActive;
+             
+             // Dynamic arrow color logic:
+             // 1. When a course is clicked, active relevant arrows stay yellow, others turn grey (#333333).
+             // 2. When a semester is selected but no course is clicked, all arrows turn grey.
+             // 3. By default (no filter active), all arrows are yellow (#C5A059).
+             const isCourseClicked = selectedCourseId !== null;
+             const isSemesterSelected = selectedSemester !== null;
+             
+             let isYellow = false;
+             if (isCourseClicked) {
+               isYellow = isHighlightedEdge;
+             } else if (isSemesterSelected) {
+               isYellow = false;
+             } else {
+               isYellow = true;
+             }
 
-            flowEdges.push({
-              id: `${prereq}-${course.code}`,
-              source: prereq,
-              target: course.code,
-              type: 'prerequisite',
-              animated: isHighlightedEdge && selectedCourseId === prereq,
-              style: {
-                stroke: isHighlightedEdge ? '#C5A059' : '#333333',
-                strokeWidth: isHighlightedEdge ? 2.5 : 1.5,
-                opacity: hasHighlight && !isHighlightedEdge ? 0.15 : 1,
-                transition: 'stroke 0.2s, stroke-width 0.2s, opacity 0.2s',
-              },
-              markerEnd: {
-                type: MarkerType.ArrowClosed,
-                width: 20,
-                height: 20,
-                color: isHighlightedEdge ? '#C5A059' : '#333333',
-              },
-              data: {
-                showLabel,
-                sourceCourseName: courses[prereq]?.name || prereq,
-                prereqIndex: course.prerequisites.indexOf(prereq),
-              },
-            });
+             const strokeColor = isYellow ? '#C5A059' : '#333333';
+             const strokeWidth = isYellow ? 2.0 : 1.5;
+             const opacityValue = isYellow ? 1 : 0.15;
+
+             // Show label on highlighted active paths
+             const showLabel = isHighlightedEdge && (selectedCourseId === prereq || selectedCourseId === course.code);
+
+             flowEdges.push({
+               id: `${prereq}-${course.code}`,
+               source: prereq,
+               target: course.code,
+               type: 'prerequisite',
+               animated: isHighlightedEdge && selectedCourseId === prereq,
+               style: {
+                 stroke: strokeColor,
+                 strokeWidth: strokeWidth,
+                 opacity: opacityValue,
+                 transition: 'stroke 0.2s, stroke-width 0.2s, opacity 0.2s',
+               },
+               markerEnd: {
+                 type: MarkerType.ArrowClosed,
+                 width: 20,
+                 height: 20,
+                 color: strokeColor,
+               },
+               data: {
+                 showLabel,
+                 sourceCourseName: courses[prereq]?.name || prereq,
+                 prereqIndex: course.prerequisites.indexOf(prereq),
+               },
+             });
           }
         });
       }
     });
 
     return { nodes: flowNodes, edges: flowEdges };
-  }, [courses, highlightedNodes, selectedCourseId, activeMajor]);
+  }, [courses, highlightedNodes, selectedCourseId, selectedSemester, activeMajor]);
 
   // Fit view when major changes
   useEffect(() => {
