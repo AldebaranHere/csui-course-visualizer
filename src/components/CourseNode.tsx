@@ -7,14 +7,26 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
   const selectedCourseId = useCurriculumStore((state) => state.selectedCourseId);
   const highlightedNodes = useCurriculumStore((state) => state.highlightedNodes);
   const setSelectedCourseId = useCurriculumStore((state) => state.setSelectedCourseId);
+  const selectedSemester = useCurriculumStore((state) => state.selectedSemester);
 
   const isSelected = selectedCourseId === id;
   
+  // Semester filtering logic
+  const isSemesterMatch =
+    selectedSemester === null ||
+    (selectedSemester === 'pilihan' && data.state === 'Pilihan') ||
+    (selectedSemester !== 'pilihan' && data.recommendedSemester?.toString() === selectedSemester);
+
+  const isSemesterFilteredAndMatched = selectedSemester !== null && isSemesterMatch;
+  const isSemesterFilteredAndMismatched = selectedSemester !== null && !isSemesterMatch;
+
   // A node is active (fully visible) if:
   // 1. There are no highlighted/filtered nodes at all
   // 2. Or the node is in the highlightedNodes set
   const hasHighlight = highlightedNodes.size > 0;
   const isActive = !hasHighlight || highlightedNodes.has(id);
+
+  const isNodeDimmed = !isActive || isSemesterFilteredAndMismatched;
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -25,8 +37,13 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
     <div
       onClick={handleClick}
       className={`w-[240px] p-4 bg-[#1E1E1E] border rounded-[4px] shadow-lg transition-all duration-200 cursor-pointer select-none
-        ${isSelected ? 'border-[#C5A059] scale-105 ring-1 ring-[#C5A059]' : 'border-[#333333] hover:bg-[#2A2A2A]'}
-        ${isActive ? 'opacity-100' : 'opacity-20 pointer-events-none'}
+        ${isSelected 
+          ? 'border-[#C5A059] scale-105 ring-1 ring-[#C5A059]' 
+          : isSemesterFilteredAndMatched
+            ? 'border-[#C5A059] ring-2 ring-[#C5A059] shadow-lg shadow-[#C5A059]/20'
+            : 'border-[#333333] hover:bg-[#2A2A2A]'
+        }
+        ${isNodeDimmed ? 'opacity-20 pointer-events-none' : 'opacity-100'}
       `}
       style={{ minHeight: '80px' }}
     >

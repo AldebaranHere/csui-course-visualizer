@@ -11,6 +11,7 @@ export interface Course {
   sublearningOutcomes: string[]; // Specific mastery metrics
   resources: string[];        // Recommended textbooks and software tools
   prerequisites: string[];    // Array of course codes acting as directional edge sources
+  recommendedSemester?: number; // Recommended semester (1-8)
 }
 
 // Global data store shape structured as a dictionary
