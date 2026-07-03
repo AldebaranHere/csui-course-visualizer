@@ -5,10 +5,12 @@ interface CurriculumState {
   selectedCourseId: string | null;
   searchQuery: string;
   highlightedNodes: Set<string>;
+  selectedSemester: string | null;
   setActiveMajor: (major: 'CS' | 'IS') => void;
   setSelectedCourseId: (id: string | null) => void;
   setSearchQuery: (query: string) => void;
   setHighlightedNodes: (nodes: Set<string>) => void;
+  setSelectedSemester: (semester: string | null) => void;
 }
 
 export const useCurriculumStore = create<CurriculumState>((set) => ({
@@ -16,6 +18,7 @@ export const useCurriculumStore = create<CurriculumState>((set) => ({
   selectedCourseId: null,
   searchQuery: '',
   highlightedNodes: new Set<string>(),
+  selectedSemester: null,
 
   setActiveMajor: (major) =>
     set({
@@ -23,6 +26,7 @@ export const useCurriculumStore = create<CurriculumState>((set) => ({
       selectedCourseId: null,
       searchQuery: '',
       highlightedNodes: new Set<string>(),
+      selectedSemester: null,
     }),
 
   setSelectedCourseId: (id) =>
@@ -33,4 +37,6 @@ export const useCurriculumStore = create<CurriculumState>((set) => ({
   setSearchQuery: (query) => set({ searchQuery: query }),
 
   setHighlightedNodes: (nodes) => set({ highlightedNodes: nodes }),
+
+  setSelectedSemester: (semester) => set({ selectedSemester: semester }),
 }));
