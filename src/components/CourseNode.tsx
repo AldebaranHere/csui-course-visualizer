@@ -8,6 +8,7 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
   const highlightedNodes = useCurriculumStore((state) => state.highlightedNodes);
   const setSelectedCourseId = useCurriculumStore((state) => state.setSelectedCourseId);
   const selectedSemester = useCurriculumStore((state) => state.selectedSemester);
+  const setSelectedSemester = useCurriculumStore((state) => state.setSelectedSemester);
 
   const isSelected = selectedCourseId === id;
   
@@ -18,18 +19,25 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
     (selectedSemester !== 'pilihan' && data.recommendedSemester?.toString() === selectedSemester);
 
   const isSemesterFilteredAndMatched = selectedSemester !== null && isSemesterMatch;
-  const isSemesterFilteredAndMismatched = selectedSemester !== null && !isSemesterMatch;
 
-  // A node is active (fully visible) if:
-  // 1. There are no highlighted/filtered nodes at all
-  // 2. Or the node is in the highlightedNodes set
+  // Check if there is an active course click selection or search query highlighting
   const hasHighlight = highlightedNodes.size > 0;
-  const isActive = !hasHighlight || highlightedNodes.has(id);
+  const isHighlighted = highlightedNodes.has(id);
 
-  const isNodeDimmed = !isActive || isSemesterFilteredAndMismatched;
+  let isNodeDimmed = false;
+  if (hasHighlight) {
+    // If there's an active path highlighting, ONLY highlight relevant courses on the path, dim everything else (ignoring semester constraints)
+    isNodeDimmed = !isHighlighted;
+  } else if (selectedSemester !== null) {
+    // If no course is clicked but a semester filter is active, only show the matched semester courses
+    isNodeDimmed = !isSemesterMatch;
+  }
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    if (selectedSemester !== null) {
+      setSelectedSemester(null);
+    }
     setSelectedCourseId(id);
   };
 
@@ -43,7 +51,7 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
             ? 'border-[#C5A059] ring-2 ring-[#C5A059] shadow-lg shadow-[#C5A059]/20'
             : 'border-[#333333] hover:bg-[#2A2A2A]'
         }
-        ${isNodeDimmed ? 'opacity-20 pointer-events-none' : 'opacity-100'}
+        ${isNodeDimmed ? 'opacity-20 hover:opacity-80' : 'opacity-100'}
       `}
       style={{ minHeight: '80px' }}
     >
