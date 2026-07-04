@@ -259,52 +259,64 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       }
     }
 
+    // 3. Align IS Semester 7 (Kerja Praktik) exactly to the left of Semester 8 (Tugas Akhir)
+    if (activeMajor === 'IS') {
+      const propensiNode = courseList.find(c => c.name.toLowerCase().includes('proyek pengembangan') || c.name.toLowerCase().includes('propensi'));
+      const kpNode = courseList.find(c => c.name.toLowerCase().includes('kerja praktik'));
+      const taNode = courseList.find(c => c.name.toLowerCase().includes('tugas akhir'));
+      if (propensiNode && kpNode && taNode) {
+        dagreGraph.setEdge(propensiNode.code, kpNode.code);
+        dagreGraph.setEdge(propensiNode.code, taNode.code);
+      }
+    }
+
     // Perform layout calculation
     dagre.layout(dagreGraph);
 
     // Build the React Flow Nodes list
     const flowNodes: Node[] = [];
 
-    // Calculate manual parent bounding boxes based on laid-out course node coordinates
-    const semesterBounds: Record<string, { minX: number; maxX: number; minY: number; maxY: number }> = {};
     const padding = 30;
     const headerHeight = 110;
+    const gap = 40;
 
-    courseList.forEach((course) => {
-      const sem = getRecommendedSemester(course, activeMajor);
-      const dagreNode = dagreGraph.node(course.code);
-      if (!dagreNode) return;
-
-      const nodeMinX = dagreNode.x - 120;
-      const nodeMaxX = dagreNode.x + 120;
-      const nodeMinY = dagreNode.y - 60;
-      const nodeMaxY = dagreNode.y + 60;
-
-      if (!semesterBounds[sem]) {
-        semesterBounds[sem] = {
-          minX: nodeMinX,
-          maxX: nodeMaxX,
-          minY: nodeMinY,
-          maxY: nodeMaxY,
-        };
-      } else {
-        const bounds = semesterBounds[sem];
-        bounds.minX = Math.min(bounds.minX, nodeMinX);
-        bounds.maxX = Math.max(bounds.maxX, nodeMaxX);
-        bounds.minY = Math.min(bounds.minY, nodeMinY);
-        bounds.maxY = Math.max(bounds.maxY, nodeMaxY);
-      }
+    // Group and sort courses by semester based on Dagre layout X coordinates to keep optimized horizontal order
+    const coursesBySem: Record<string, typeof courseList> = {};
+    semestersList.forEach((sem) => {
+      coursesBySem[sem] = courseList.filter(c => getRecommendedSemester(c, activeMajor) === sem);
+      coursesBySem[sem].sort((a, b) => {
+        const nodeA = dagreGraph.node(a.code);
+        const nodeB = dagreGraph.node(b.code);
+        return (nodeA?.x || 0) - (nodeB?.x || 0);
+      });
     });
 
-    // 1. Generate Semester Group Nodes (Backdrop Cards) with manually computed tight boundaries
+    // 1. Generate Semester Group Nodes (Backdrop Cards) with tight packed boundaries
     semestersList.forEach((sem) => {
-      const bounds = semesterBounds[sem];
-      if (!bounds) return; // Skip rendering if no courses resolved to this semester
+      const semCourses = coursesBySem[sem];
+      if (semCourses.length === 0) return;
 
-      const parentX = bounds.minX - padding;
-      const parentY = bounds.minY - padding - headerHeight;
-      const parentWidth = (bounds.maxX - bounds.minX) + 2 * padding;
-      const parentHeight = (bounds.maxY - bounds.minY) + 2 * padding + headerHeight;
+      let parentWidth = 0;
+      let parentHeight = 0;
+
+      if (sem === 'pilihan') {
+        const cols = 4;
+        const rows = Math.ceil(semCourses.length / cols);
+        parentWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
+        parentHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
+      } else {
+        const N = semCourses.length;
+        parentWidth = N * 240 + (N - 1) * gap + 2 * padding;
+        parentHeight = 120 + 2 * padding + headerHeight;
+      }
+
+      // Center container card exactly where Dagre positioned the semester compound node center
+      const parentDagreNode = dagreGraph.node(`semester-${sem}`);
+      const centerX = parentDagreNode?.x || 0;
+      const centerY = parentDagreNode?.y || 0;
+
+      const parentX = centerX - parentWidth / 2;
+      const parentY = centerY - parentHeight / 2;
 
       let label = `Semester ${sem}`;
       if (sem === 'pilihan') {
@@ -323,31 +335,39 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     });
 
     // 2. Generate Course Nodes (positioned relatively inside manually computed parent coordinates)
-    courseList.forEach((course) => {
-      const sem = getRecommendedSemester(course, activeMajor);
-      const dagreNode = dagreGraph.node(course.code);
-      const bounds = semesterBounds[sem];
-      if (!bounds) return;
+    semestersList.forEach((sem) => {
+      const semCourses = coursesBySem[sem];
+      semCourses.forEach((course, index) => {
+        const semNumber = sem === 'pilihan' ? undefined : parseInt(sem, 10);
+        const enrichedCourse = {
+          ...course,
+          recommendedSemester: semNumber,
+        };
 
-      const parentLeft = bounds.minX - padding;
-      const parentTop = bounds.minY - padding - headerHeight;
+        let relativeX = 0;
+        let relativeY = 0;
 
-      const semNumber = sem === 'pilihan' ? undefined : parseInt(sem, 10);
-      const enrichedCourse = {
-        ...course,
-        recommendedSemester: semNumber,
-      };
+        if (sem === 'pilihan') {
+          const col = index % 4;
+          const row = Math.floor(index / 4);
+          relativeX = padding + col * (240 + gap);
+          relativeY = padding + headerHeight + row * (120 + gap);
+        } else {
+          relativeX = padding + index * (240 + gap);
+          relativeY = padding + headerHeight;
+        }
 
-      flowNodes.push({
-        id: course.code,
-        type: 'course',
-        data: enrichedCourse,
-        parentNode: `semester-${sem}`,
-        extent: 'parent',
-        position: {
-          x: (dagreNode.x - 120) - parentLeft,
-          y: (dagreNode.y - 60) - parentTop,
-        },
+        flowNodes.push({
+          id: course.code,
+          type: 'course',
+          data: enrichedCourse,
+          parentNode: `semester-${sem}`,
+          extent: 'parent',
+          position: {
+            x: relativeX,
+            y: relativeY,
+          },
+        });
       });
     });
 
