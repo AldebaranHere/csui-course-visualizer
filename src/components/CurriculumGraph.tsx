@@ -291,6 +291,41 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       });
     });
 
+    interface SemesterBoundItem {
+      id: string;
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    }
+    const semesterBounds: SemesterBoundItem[] = [];
+
+    // Pre-calculate the Pilihan group's X and Y coordinates to align Semesters 6, 7, and 8 exactly to its left and top
+    let pilihanLeftX = 0;
+    let pilihanTopY = 0;
+    const sem6Height = 120 + 2 * padding + headerHeight;
+    const pilihanDagreNode = dagreGraph.node('semester-pilihan');
+    if (pilihanDagreNode) {
+      const cols = 4;
+      const pilihanWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
+      const semCourses = coursesBySem['pilihan'] || [];
+      const rows = Math.ceil(semCourses.length / cols);
+      const pilihanHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
+      const pilihanCenterX = pilihanDagreNode.x;
+      const pilihanCenterY = pilihanDagreNode.y;
+      pilihanLeftX = pilihanCenterX - pilihanWidth / 2;
+      pilihanTopY = pilihanCenterY - pilihanHeight / 2;
+    }
+
+    // Pre-calculate Semester 7 and 8 widths to position them side-by-side under Semester 6
+    const getSemesterWidth = (semKey: string) => {
+      const semCourses = coursesBySem[semKey] || [];
+      if (semCourses.length === 0) return 0;
+      return semCourses.length * 240 + (semCourses.length - 1) * gap + 2 * padding;
+    };
+    const sem7Width = getSemesterWidth('7');
+    const sem8Width = getSemesterWidth('8');
+
     // 1. Generate Semester Group Nodes (Backdrop Cards) with tight packed boundaries
     semestersList.forEach((sem) => {
       const semCourses = coursesBySem[sem];
@@ -315,8 +350,28 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       const centerX = parentDagreNode?.x || 0;
       const centerY = parentDagreNode?.y || 0;
 
-      const parentX = centerX - parentWidth / 2;
-      const parentY = centerY - parentHeight / 2;
+      let parentX = centerX - parentWidth / 2;
+      let parentY = centerY - parentHeight / 2;
+
+      // Layout override: Position Semesters 6, 7, and 8 exactly to the left and top-aligned of the Pilihan group
+      if (sem === '6') {
+        parentX = pilihanLeftX - parentWidth - 80;
+        parentY = pilihanTopY;
+      } else if (sem === '8') {
+        parentX = pilihanLeftX - sem8Width - 80;
+        parentY = pilihanTopY + sem6Height + 160;
+      } else if (sem === '7') {
+        parentX = pilihanLeftX - sem8Width - 80 - sem7Width - 80;
+        parentY = pilihanTopY + sem6Height + 160;
+      }
+
+      semesterBounds.push({
+        id: `semester-${sem}`,
+        x: parentX,
+        y: parentY,
+        w: parentWidth,
+        h: parentHeight,
+      });
 
       let label = `Semester ${sem}`;
       if (sem === 'pilihan') {
@@ -428,6 +483,9 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                  showLabel,
                  sourceCourseName: courses[prereq]?.name || prereq,
                  prereqIndex: course.prerequisites.indexOf(prereq),
+                 sourceParentId: `semester-${getRecommendedSemester(courses[prereq], activeMajor)}`,
+                 targetParentId: `semester-${getRecommendedSemester(course, activeMajor)}`,
+                 semesterBounds,
                },
              });
           }
