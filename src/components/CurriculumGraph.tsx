@@ -259,6 +259,17 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       }
     }
 
+    // 3. Align IS Semester 7 (Kerja Praktik) exactly to the left of Semester 8 (Tugas Akhir)
+    if (activeMajor === 'IS') {
+      const propensiNode = courseList.find(c => c.name.toLowerCase().includes('proyek pengembangan') || c.name.toLowerCase().includes('propensi'));
+      const kpNode = courseList.find(c => c.name.toLowerCase().includes('kerja praktik'));
+      const taNode = courseList.find(c => c.name.toLowerCase().includes('tugas akhir'));
+      if (propensiNode && kpNode && taNode) {
+        dagreGraph.setEdge(propensiNode.code, kpNode.code);
+        dagreGraph.setEdge(propensiNode.code, taNode.code);
+      }
+    }
+
     // Perform layout calculation
     dagre.layout(dagreGraph);
 
