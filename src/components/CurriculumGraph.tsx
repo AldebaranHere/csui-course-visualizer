@@ -619,7 +619,6 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       {activeProgram === 'AI' && (
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 animate-in slide-in-from-top duration-300 pointer-events-none">
           <div className="bg-[#1E1E1E] border border-[#C5A059]/40 text-[#C5A059] px-4 py-2.5 rounded-md shadow-lg text-xs font-bold font-sans flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse shrink-0" />
             <span>Catatan: Informasi prasyarat mata kuliah belum tersedia. Ini akan diupdate saat informasi tersebut diumumkan.</span>
           </div>
         </div>
