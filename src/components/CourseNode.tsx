@@ -10,13 +10,18 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
   const selectedSemester = useCurriculumStore((state) => state.selectedSemester);
   const setSelectedSemester = useCurriculumStore((state) => state.setSelectedSemester);
 
+  const activeProgram = useCurriculumStore((state) => state.activeProgram);
+
   const isSelected = selectedCourseId === id;
+  const isAI = activeProgram === 'AI';
   
-  // Semester filtering logic
+  // Semester/Category filtering logic
   const isSemesterMatch =
     selectedSemester === null ||
-    (selectedSemester === 'pilihan' && data.state === 'Pilihan') ||
-    (selectedSemester !== 'pilihan' && data.recommendedSemester?.toString() === selectedSemester);
+    (isAI
+      ? data.category === selectedSemester
+      : (selectedSemester === 'pilihan' && data.state === 'Pilihan') ||
+        (selectedSemester !== 'pilihan' && data.recommendedSemester?.toString() === selectedSemester));
 
   const isSemesterFilteredAndMatched = selectedSemester !== null && isSemesterMatch;
 

@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import { Search, HelpCircle, X, User } from 'lucide-react';
 import { useCurriculumStore } from '@/store/useCurriculumStore';
 import { useReactFlow } from 'reactflow';
+import { PROGRAM_REGISTRY } from '@/data/programRegistry';
+import { StudyProgram } from '@/types/curriculum';
 
 export const TopNav: React.FC = () => {
-  const activeMajor = useCurriculumStore((state) => state.activeMajor);
-  const setActiveMajor = useCurriculumStore((state) => state.setActiveMajor);
+  const activeProgram = useCurriculumStore((state) => state.activeProgram);
+  const setActiveProgram = useCurriculumStore((state) => state.setActiveProgram);
   const searchQuery = useCurriculumStore((state) => state.searchQuery);
   const setSearchQuery = useCurriculumStore((state) => state.setSearchQuery);
   const { fitView } = useReactFlow();
   const [isFaqOpen, setIsFaqOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-  const handleMajorChange = (major: 'CS' | 'IS') => {
-    setActiveMajor(major);
+  const handleProgramChange = (program: StudyProgram) => {
+    setActiveProgram(program);
     // Give layout engine a tiny moment to calculate before fitting view
     setTimeout(() => {
       fitView({ duration: 800, padding: 0.2 });
@@ -56,30 +58,36 @@ export const TopNav: React.FC = () => {
             Peta Mata Kuliah <span className="text-[#C5A059] font-normal">Fasilkom UI</span>
           </div>
 
-          {/* Major Selector Segmented Control */}
-          <div className="flex bg-[#333333] rounded-[4px] p-0.5 min-h-[40px] items-center">
-            <button
-              onClick={() => handleMajorChange('CS')}
-              className={`px-4 py-1.5 rounded-[4px] font-sans text-xs font-bold transition-all duration-200 cursor-pointer min-h-[36px] flex items-center justify-center
-                ${activeMajor === 'CS'
-                  ? 'bg-[#C5A059] text-[#111111]'
-                  : 'text-[#E2E8F0] hover:bg-[#1E1E1E]'
-                }
-              `}
+          {/* Categorized Dropdown Selector */}
+          <div className="relative min-w-[220px]">
+            <select
+              value={activeProgram}
+              onChange={(e) => handleProgramChange(e.target.value as StudyProgram)}
+              className="w-full bg-[#333333] border border-[#333333] text-[#F8FAFC] focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] focus:outline-none rounded-[4px] px-3 py-2 text-xs font-bold font-sans min-h-[40px] cursor-pointer appearance-none bg-no-repeat bg-[right_12px_center] transition-all duration-200"
+              style={{
+                backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E2E8F0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                backgroundSize: '16px',
+              }}
             >
-              Ilmu Komputer (IK)
-            </button>
-            <button
-              onClick={() => handleMajorChange('IS')}
-              className={`px-4 py-1.5 rounded-[4px] font-sans text-xs font-bold transition-all duration-200 cursor-pointer min-h-[36px] flex items-center justify-center
-                ${activeMajor === 'IS'
-                  ? 'bg-[#C5A059] text-[#111111]'
-                  : 'text-[#E2E8F0] hover:bg-[#1E1E1E]'
-                }
-              `}
-            >
-              Sistem Informasi (SI)
-            </button>
+              <optgroup label="Program Reguler" className="bg-[#1E1E1E] text-[#E2E8F0] font-sans font-normal">
+                {Object.entries(PROGRAM_REGISTRY)
+                  .filter(([, entry]) => entry.category === 'Reguler')
+                  .map(([key, entry]) => (
+                    <option key={key} value={key} className="bg-[#1E1E1E] text-[#F8FAFC] py-2">
+                      {entry.name}
+                    </option>
+                  ))}
+              </optgroup>
+              <optgroup label="Program KKI" className="bg-[#1E1E1E] text-[#E2E8F0] font-sans font-normal">
+                {Object.entries(PROGRAM_REGISTRY)
+                  .filter(([, entry]) => entry.category === 'KKI')
+                  .map(([key, entry]) => (
+                    <option key={key} value={key} className="bg-[#1E1E1E] text-[#F8FAFC] py-2">
+                      {entry.name}
+                    </option>
+                  ))}
+              </optgroup>
+            </select>
           </div>
         </div>
 

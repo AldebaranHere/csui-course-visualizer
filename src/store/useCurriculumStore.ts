@@ -1,12 +1,13 @@
 import { create } from 'zustand';
+import { StudyProgram } from '@/types/curriculum';
 
 interface CurriculumState {
-  activeMajor: 'CS' | 'IS';
+  activeProgram: StudyProgram;
   selectedCourseId: string | null;
   searchQuery: string;
   highlightedNodes: Set<string>;
   selectedSemester: string | null;
-  setActiveMajor: (major: 'CS' | 'IS') => void;
+  setActiveProgram: (program: StudyProgram) => void;
   setSelectedCourseId: (id: string | null) => void;
   setSearchQuery: (query: string) => void;
   setHighlightedNodes: (nodes: Set<string>) => void;
@@ -14,15 +15,15 @@ interface CurriculumState {
 }
 
 export const useCurriculumStore = create<CurriculumState>((set) => ({
-  activeMajor: 'CS',
+  activeProgram: 'CS',
   selectedCourseId: null,
   searchQuery: '',
   highlightedNodes: new Set<string>(),
   selectedSemester: null,
 
-  setActiveMajor: (major) =>
+  setActiveProgram: (program) =>
     set({
-      activeMajor: major,
+      activeProgram: program,
       selectedCourseId: null,
       searchQuery: '',
       highlightedNodes: new Set<string>(),
