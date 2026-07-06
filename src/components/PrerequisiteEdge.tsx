@@ -13,6 +13,7 @@ interface SemesterBoundItem {
 export const PrerequisiteEdge: React.FC<EdgeProps> = ({
   id,
   source,
+  target,
   sourceX,
   sourceY,
   targetX,
@@ -89,16 +90,27 @@ export const PrerequisiteEdge: React.FC<EdgeProps> = ({
   const selectedSemester = useCurriculumStore((state) => state.selectedSemester);
   const setSelectedSemester = useCurriculumStore((state) => state.setSelectedSemester);
 
-  // Calculate stacked vertical offsets to prevent overlaps above the destination card handle
-  const index = data?.prereqIndex || 0;
-  const verticalOffset = 18 + index * 20; // 18px for first, then 20px spacing per level
+  // Calculate stacked vertical offsets to prevent overlaps above/below the course card
+  const prereqIndex = data?.prereqIndex || 0;
+  const verticalOffsetPrereq = 18 + prereqIndex * 20; // above target card
 
-  const handleLabelClick = (e: React.MouseEvent) => {
+  const successorIndex = data?.successorIndex || 0;
+  const verticalOffsetSuccessor = 8 + successorIndex * 20; // below source card
+
+  const handlePrereqClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (selectedSemester !== null) {
       setSelectedSemester(null);
     }
     setSelectedCourseId(source);
+  };
+
+  const handleSuccessorClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedSemester !== null) {
+      setSelectedSemester(null);
+    }
+    setSelectedCourseId(target);
   };
 
   return (
@@ -110,18 +122,33 @@ export const PrerequisiteEdge: React.FC<EdgeProps> = ({
         d={edgePath}
         markerEnd={markerEnd}
       />
-      {data?.showLabel && data?.sourceCourseName && (
+      {data?.showPrereqLabel && data?.sourceCourseName && (
         <EdgeLabelRenderer>
           <div
-            onClick={handleLabelClick}
+            onClick={handlePrereqClick}
             style={{
               position: 'absolute',
-              transform: `translate(-50%, -100%) translate(${targetX}px, ${targetY - verticalOffset}px)`,
+              transform: `translate(-50%, -100%) translate(${targetX}px, ${targetY - verticalOffsetPrereq}px)`,
               pointerEvents: 'all',
             }}
             className="text-[9px] font-mono font-bold text-[#C5A059] bg-[#111111] hover:bg-[#C5A059] hover:text-[#111111] px-1.5 py-0.5 rounded border border-[#C5A059]/40 shadow-md select-none z-50 transition-all duration-200 cursor-pointer whitespace-nowrap"
           >
             {data.sourceCourseName}
+          </div>
+        </EdgeLabelRenderer>
+      )}
+      {data?.showSuccessorLabel && data?.targetCourseName && (
+        <EdgeLabelRenderer>
+          <div
+            onClick={handleSuccessorClick}
+            style={{
+              position: 'absolute',
+              transform: `translate(-50%, 0%) translate(${sourceX}px, ${sourceY + verticalOffsetSuccessor}px)`,
+              pointerEvents: 'all',
+            }}
+            className="text-[9px] font-mono font-bold text-[#C5A059] bg-[#111111] hover:bg-[#C5A059] hover:text-[#111111] px-1.5 py-0.5 rounded border border-[#C5A059]/40 shadow-md select-none z-50 transition-all duration-200 cursor-pointer whitespace-nowrap"
+          >
+            {data.targetCourseName}
           </div>
         </EdgeLabelRenderer>
       )}

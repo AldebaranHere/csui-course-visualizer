@@ -512,8 +512,17 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
              const strokeWidth = isYellow ? 2.0 : 1.5;
              const opacityValue = isYellow ? 1 : 0.15;
 
-             // Show label on highlighted active paths
-             const showLabel = isHighlightedEdge && (selectedCourseId === prereq || selectedCourseId === course.code);
+             const showPrereqLabel = isHighlightedEdge && selectedCourseId === course.code;
+             const showSuccessorLabel = isHighlightedEdge && selectedCourseId === prereq;
+
+             let successorIndex = 0;
+             if (showSuccessorLabel) {
+               const successors = courseList
+                 .filter((c) => c.prerequisites && c.prerequisites.includes(prereq))
+                 .map((c) => c.code)
+                 .sort();
+               successorIndex = successors.indexOf(course.code);
+             }
 
              flowEdges.push({
                id: `${prereq}-${course.code}`,
@@ -534,9 +543,12 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                  color: strokeColor,
                },
                data: {
-                 showLabel,
+                 showPrereqLabel,
+                 showSuccessorLabel,
                  sourceCourseName: courses[prereq]?.name || prereq,
+                 targetCourseName: course.name,
                  prereqIndex: course.prerequisites.indexOf(prereq),
+                 successorIndex,
                  sourceParentId: `semester-${getRecommendedSemester(courses[prereq], activeProgram)}`,
                  targetParentId: `semester-${getRecommendedSemester(course, activeProgram)}`,
                  semesterBounds,
