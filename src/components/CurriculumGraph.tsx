@@ -391,6 +391,20 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       let parentX = centerX - parentWidth / 2;
       let parentY = centerY - parentHeight / 2;
 
+      // Layout override for AI categories: arrange in a 2x3 grid
+      if (isAI) {
+        const catIndex = semestersList.indexOf(sem);
+        const col = catIndex % 3;
+        const row = Math.floor(catIndex / 3);
+        const colWidth = 1140;
+        const colGap = 80;
+        const rowGap = 120;
+        const row0MaxHeight = 450;
+
+        parentX = col * (colWidth + colGap);
+        parentY = row === 0 ? 0 : row0MaxHeight + rowGap;
+      }
+
       // Layout override: Position Semesters 6, 7, and 8 exactly to the left and top-aligned of the Pilihan group
       if (isCS || isIS) {
         if (sem === '6') {
