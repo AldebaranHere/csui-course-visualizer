@@ -1,0 +1,723 @@
+{
+  "CSCM602223": {
+    "code": "CSCM602223",
+    "name": "Advanced Programming",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "This advanced programming course will introduce students to the latest and most up- to- date programming techniques used in the industry. In addition to theory, the course will also teach students how to adapt to using enterprise- scale programming techniques to help them design, implement, and maintain complex systems. With the help of Agile software development methodology, students will learn about the software development lifecycle. The scope of this course includes Object Oriented Analysis & Design, Applying OO Principles, Test- driven Development, Software Packaging and Deployment, Scaling up Software, Design Patterns, Continuous Integration, Concurrency, High- level Networking, Familiarity with Cloud Deployment, and Web Services. The regular class will be conducted in Indonesian, while the international class will be conducted in English.",
+    "topics": [
+      "Coding Standards, Continuous Integration & DevOps, Maintainability, OO Principles, Test Driven Development & Refactoring, Concurrency, Design Patterns, Software Architectures, High- Level Networking, Asynchronous Programming, Deployment & Monitoring"
+    ],
+    "learningOutcomes": [
+      "Specify, implement, and test software components;",
+      "Utilize modern and popular programming language features;",
+      "Apply best practices in programming as a member of a software project;",
+      "Develop high- quality, reliable, readable software with comprehensive documentation and unit testing."
+    ],
+    "sublearningOutcomes": [
+      "Understand the concept of concurrency and apply it in multithreading systems;",
+      "Synchronize multithreading systems and avoid race conditions;",
+      "Anticipate and detect deadlocks that can occur in multithreading systems;",
+      "Use advanced data structures, libraries, and features of a programming language;",
+      "Develop, use, and deploy a web service to a cloud service;",
+      "Apply best practices from Agile software development, including clean code, secure coding, iteration, test-driven development, continuous integration, and continuous deployment;",
+      "Design complex programs that combine multiple modules and multiple levels of refinement, considering design principles, design patterns, and refactoring;",
+      "Understand the role of software architecture in designing software;",
+      "Use multiple software architectures in software development;",
+      "Make software design decisions based on flexibility, maintainability, and reusability;",
+      "Implement programs systematically using integrated testing so that the modules in the system can work as specified;",
+      "Work effectively in teams and integrate work efficiently and sustainably;",
+      "Monitor running systems to identify bugs/faults in the system;",
+      "Use various software tools to help design and implement software. These tools include program design tools, integrated development environments (IDEs), configuration management systems, refactoring tools, profilers, automatic testing environments, project management tools, and debuggers."
+    ],
+    "resources": [
+      "Freeman, E., et al. (2014). Head First Design Patterns A Brain- Friendly Guide. O'Reilly Media, Inc.",
+      "Martin, R. (2007). Clean Code: A Handbook of Agile Software Craftsmanship. Pearson.",
+      "Newman, S. (2015). Building Microservices. O'Reilly Media, Inc.",
+      "Oaks, S. (2014). Java Performance The Definitive Guide Getting the Most Out of Your Code. O'Reilly Media, Inc.",
+      "Clearly, S. (2014). Concurrency in C# Cookbook: Asynchronous, Parallel, and Multithreaded Programming. O'Reilly Media, Inc.",
+      "Fowler, M. (1999). Refactoring: Improving the Design of Existing Code. Addison- Wesley.",
+      "Mark Richards, Neal Ford, Fundamental of Software Architecture: An Engineering Approach, O'Reilly Media, Inc."
+    ],
+    "prerequisites": [
+      "CSGE601021",
+      "CSGE602022"
+    ]
+  },
+  "CSCM603142": {
+    "code": "CSCM603142",
+    "name": "Algorithm Design & Analysis",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "This course discusses how to design and analyze algorithms for solving given problems. It focuses on two main issues, i.e., the correctness and the complexity of the algorithms. Several techniques and approaches will be discussed, including dynamic programming, greedy algorithms, graph algorithms, approximation algorithms, and NP- completeness.",
+    "topics": [
+      "Introduction to algorithms: bubble sort, insertion sort, selection sort, searching; Growth of functions; Algorithm analysis: worst- case, best- case, average- case; Divide and conquer; Quicksort; Mergesort; Recurrence relation: master method, method of substitution, recursion tree; Heap sort; Lower bound of comparison based sorting; Linear sorting: bucket sort, radix sort, counting sort; Order statistics: selection problem; Dynamic programming; LCS, Matrix- chain multiplication; Greedy algorithm: fractional knapsack, job scheduling, MST; Backtracking: 0/1 Knapsack; Backtracking, branch and bound; Graph algorithms: BFS, DFS, shortest path, maximum flow; Sorting networks, parallel algorithms; Approximation algorithms, NP- completeness."
+    ],
+    "learningOutcomes": [
+      "Ability to design and evaluate algorithms for solving computational problems, both through analytical evaluation and testing."
+    ],
+    "sublearningOutcomes": [
+      "Understand the techniques commonly used to solve specific programming problems;",
+      "Mathematically prove the correctness of an algorithm;",
+      "Analyze the complexity of an algorithm under specific conditions;",
+      "Select and apply appropriate techniques or approaches to solve a computational problem;",
+      "Evaluate the performance of an algorithm, both mathematically and experimentally;",
+      "Understand how to determine whether a problem is NP- complete or not."
+    ],
+    "resources": [
+      "Cormen, T.H., Leiserson, C.E., Rivest, R.L. and Stein, C., Introduction to Algorithms, MIT Press, 2001."
+    ],
+    "prerequisites": [
+      "CSGE602040"
+    ]
+  },
+  "CSCM602241": {
+    "code": "CSCM602241",
+    "name": "Automata & Theory of Languages",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "This course discusses theoretical models of computation and formal languages. It covers the underlying concept of theory of computation, several abstract machines as models of computation, including Turing Machines, formal languages such as context- free languages, and the limitation of computation.",
+    "topics": [
+      "(1) Introduction: mathematical foundations, basic terminology of languages, mathematical inductions, recursive definitions (2) Regular languages (3) Regular expressions (4) Deterministic Finite automata dan Nondeterministic finite automata (5) Kleene's theorem dan Myhill -Nerode theorem (6) Pumping lemma for regular languages (7) Context- free grammars (8) Push- down automata PDA (9) Context- free languages CFL (10) Equivalence between PDA and CFL (11) Turing machines and its variants (12) Recursive and recursively enumerable languages (13) Chomsky hierarchy (14) Decision problems, (un) decidability."
+    ],
+    "learningOutcomes": [
+      "Ability to explain the fundamental concepts, principles, and theories of computation and its limitations."
+    ],
+    "sublearningOutcomes": [
+      "understand the fundamental concepts of theory of computation;",
+      "understand several abstract machines with their languages and expressions, and be able to design and develop such machines;",
+      "understand the limitation of computation."
+    ],
+    "resources": [
+      "Elaine Rich. Automata, Computability, and Complexity: Theory and Applications. Pearson Education. Pearson Prentice Hall, 2009",
+      "J. Martin. Introduction to Languages and the Theory of Computation. McGraw -Hill Series in Computer Science, 2003.",
+      "J.E. Hopcroft, R. Motwani, & J.D. Ullman. Introduction to Automata Theory, Languages, and Computation. Pearson, 2013."
+    ],
+    "prerequisites": [
+      "CSGE601010",
+      "CSGE601011"
+    ]
+  },
+  "CSGE601012": {
+    "code": "CSGE601012",
+    "name": "Calculus 1",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "This course discusses basic concepts of calculus and emphasize its importance for solving scientific problems and providing the basis of many computational techniques.",
+    "topics": [
+      "The topics for this course are real numbers, complex number, inequalities and absolute values, one variable functions, graphs, function and its operations, limits and continuity of the functions of one variable, derivative and its applications, exponential and logarithmic functions, the notion of the integration, the techniques of integral calculations, the applications of the definite integral, and techniques of integrations."
+    ],
+    "learningOutcomes": [
+      "Ability to apply fundamental calculus concepts and reasoning to computer science applications."
+    ],
+    "sublearningOutcomes": [
+      "be able to explain the characteristics of real number systems and algebraic operations, and to solve inequalities involving absolute values;",
+      "be able to classify functions based on certain criteria, draw graphs of simple functions, perform algebraic operations on functions;",
+      "be able to evaluate limits of algebraic and trig onometric functions, and limits of infinity;",
+      "be able to analyze the continuity of functions on given intervals;",
+      "be able to describe the geometrical interpretation of derivatives;",
+      "be able to explain and apply the basic rules of differentiation;",
+      "be able to approximate the value of functions at a certain point using differentials;",
+      "be able to locate the extreme and the inflection points of continuous functions over closed intervals;",
+      "be able to identify decreasing/increasing functions and the concavity of functions;",
+      "be able to evaluate the integral of given function s and to apply it for calculating the average value of functions over an interval, area of region between curves, arc length, and volume of simple solids; 11. be able to explain the definition of simple transcendental functions, relates those and their inverses, and evaluate the integral of those functions."
+    ],
+    "resources": [
+      "Varberg, Dale E., Edwin Joseph Purcell, and Steven E. Rigdon. Calculus with Differential Equations. 9th Edition. Pearson/Prentice Hall, 2007."
+    ],
+    "prerequisites": []
+  },
+  "CSCM601213": {
+    "code": "CSCM601213",
+    "name": "Calculus 2",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "The course covers the advanced topics of calculus and builds upon the basic concepts of calculus introduced in the first part of the course.",
+    "topics": [
+      "Further techniques of Integration; Indeterminate forms of limits; Improper integral; Infinite sequences and series; Vector and Geometry Space; Multiple integral; Further Applications of Integral; Ordinary Differential Equations."
+    ],
+    "learningOutcomes": [
+      "Ability to apply fundamental calculus concepts and reasoning to computer science applications."
+    ],
+    "sublearningOutcomes": [
+      "be able to select and apply the right techniques to evaluate the integral of more complex functions;",
+      "be able to select and apply the right procedure to evaluate indeterminate forms of limits, improper integral, and multiple integral."
+    ],
+    "resources": [
+      "Varberg, Dale E., Edwin Joseph Purcell, and Steven E. Rigdon. Calculus with Differential Equations. 9th Edition. Pearson/Prentice Hall, 2007."
+    ],
+    "prerequisites": [
+      "CSGE601012"
+    ]
+  },
+  "CSGE614093": {
+    "code": "CSGE614093",
+    "name": "Computer & Society",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "This course aims to raise the students' awareness and sensibility to various social and economic problems regarding the implementation of computer technologies in daily lives. The students will be exposed to some issues related to IT and are required to analyze the issues and to recommend some solutions from their point of view as a student of computer science.",
+    "topics": [
+      "Understanding the history and origin of computing; Understanding the social impacts of computer's technology; Understanding computer scientists' responsibility; Dealing with evolving new technology; Understanding the intellectual property issues."
+    ],
+    "learningOutcomes": [
+      "be able to analyze and recommend some solutions to the social, ethical and professional issues;",
+      "be able to discuss the impacts of IT and to reflect on the corresponding social, ethical, and economic issues;",
+      "be able to assess those issues based on the values on their professions;",
+      "be able to develop professional responsibility."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Suggested reading materials will enrich students' understanding:1. K.W. Bowyer, Ethics and computing, 19962. JA Senn, Information technology in business, 19953. C.B. Fleddermann, Engineering Ethics, 3rd ed., 20084. G. Reynolds, Ethics in Information Technology, 2nd ed., 20095. C.E. Harris, et al, Engineering Ethics - Concepts & Cases, 2009"
+    ],
+    "prerequisites": []
+  },
+  "CSCM603154": {
+    "code": "CSCM603154",
+    "name": "Computer Networks & Security",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "This course discusses fundamental concepts in computer networks, the Internet, and security. It emphasizes the top- down approach of the computer network and Internet model, starting from the application layer at the top and discusses all layers, starting from the application layer, transport layer, network layer, data link layer, and physical layer. Towards the end, it also discusses security topics.",
+    "topics": [
+      "Computer Networks and the Internet, Application layer, Transport layer, Network layer: data plane, Network layer: data and control plane, Link layer and LAN, Security in computer networks: Principles of cryptography, Security in computer networks: Authentication, Security in computer networks: Message integrity and digital signature, Security in computer networks: Securing email, Security in computer networks: Securing TCP connection: TLS, Security in computer networks: Operational security: firewall"
+    ],
+    "learningOutcomes": [
+      "Ability to analyze computational and system problems involving computer networks;",
+      "Ability to explain fundamental computer network and security concepts and apply them to network design and implementation."
+    ],
+    "sublearningOutcomes": [
+      "Students are able to understand (A1) and describe (C2) the basic components of computer networks and the internet;",
+      "Students are able to perform (A2) and utilize (C3) the tools and platforms to simulate and analyze the networks;",
+      "Students are able to understand (A1) and describe (C2) the protocols in the application layer;",
+      "Students are able to perform (A2) and inspect (C3) the application message using packet sniffer application;",
+      "Students are able to initiate (A3) and implement (C3) the protocols in the application layer using socket programming;",
+      "Students are able to understand (A1) and describe (C2) the protocols in the transport layer;",
+      "Students are able to initiate (A3) and implement (C3) the protocols in the transport layer using socket programming;",
+      "Students are able to understand (A1) and describe (C2) the protocols in the network layer;",
+      "Students are able to initiate (A3) and solve (C3) the IP addressing and subnetting problems;",
+      "Students are able to understand (A1) and describe (C2) the protocols in the network layer;",
+      "Students are able to initiate (A3) and simulate (C3) the networks and SDN;",
+      "Students are able to relate (A4) and analyze (C4) the networks and SDN;",
+      "Students are able to understand (A1) and describe (C2) the protocols in the link layer;",
+      "Students are able to initiate (A3) and simulate (C3) the networks and SDN;",
+      "Students are able to relate (A4) and analyze (C4) the full layer of computer networks and SDN;",
+      "Students are able to understand (A1) and describe (C2) the security in the computer networks;",
+      "Students are able to relate (A4) and compare (C4) the cryptography methods to secure the communication in the computer networks."
+    ],
+    "resources": [
+      "James Kurose and Keith Ross, Computer Networking: A Top- down Approach 8th Ed., Pearson, 2021."
+    ],
+    "prerequisites": [
+      "CSGE601020",
+      "CSCM602055"
+    ]
+  },
+  "CSGE602040": {
+    "code": "CSGE602040",
+    "name": "Data Structures & Algorithms",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "The course discusses basic techniques for data abstractions and manipulation of such abstract structures through appropriate algorithms. It also introduces complexity analysis of space and time allocation in implementing algorithms.",
+    "topics": [
+      "The topics covered are: Abstract Data Types; Linear data model: lists, stacks, queues, sets; Searching; Sorting; Hierarchical data model: Tree; Binary Search Trees; AVL Tree; B- Tree; Binary Heap, Huffman Coding; Hash table; Graph representation and algorithms."
+    ],
+    "learningOutcomes": [
+      "Ability to apply appropriate data structures and design algorithms with those data structures to abstract problems and solve them."
+    ],
+    "sublearningOutcomes": [
+      "Select appropriate data stru ctures for a given problem and implement them by following programming principles such as object-oriented (abstraction, encapsulation, information hiding, etc.);",
+      "Implement algorithms for their manipulation, either from scratch or by modifying available resources, such as Java Collections API;",
+      "Compare different algorithms with respect to their efficiency through algorithm analysis."
+    ],
+    "resources": [
+      "Mark Allen Weiss, Data Structures and Problem Solving Using Java (4rd edition), Addison Wesley, 2010."
+    ],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSGE602070": {
+    "code": "CSGE602070",
+    "name": "Databases",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "This course discusses the basic concept of database management including the aspect of modeling and design, language and facility, implementation and the application of databases.",
+    "topics": [
+      "Concept and Architecture of Database System, Modelling using Entity Relationship, Relational DB design; ER/EER to relational mapping, Relational data model & relational DB constraint, SQL- DDL Insert/Update/Delete, SQL Basic & Advanced Query, SQL - Indexing, Trigger and Stored Procedure, Functional Dep. and Normalization"
+    ],
+    "learningOutcomes": [
+      "Ability to design, implement, and manage databases according to requirements."
+    ],
+    "sublearningOutcomes": [
+      "Design database application correctly by evaluating all related requirements;",
+      "Given database queries, both simple and complex, students can apply SQL to complete those queries correctly;",
+      "Given a logical database schema, students can decide appropriate data types for each field and constraints for each table and implement Data Definition Language (DDL) and Data Manipulation Language (DML) in a Data Base Management Systems (DBMS)."
+    ],
+    "resources": [
+      "Elmasri, et al., Database Systems, 6th Edition, Addison-Wesley, 2011",
+      "Connolly, et al., Database Systems, 5th Edition, Pearson Education, 2010"
+    ],
+    "prerequisites": [
+      "CSGE601021"
+    ]
+  },
+  "CSGE601010": {
+    "code": "CSGE601010",
+    "name": "Discrete Mathematics 1",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "This course discusses various topics on Discrete Mathematics that provide theoretical foundations to support advanced study in computer science. Applications of each topic in computer science are also discussed.",
+    "topics": [
+      "Propositional logic, First- order predicate logic, Proofs, Sets and Functions, Mathematical induction, Sequences, Progressions, the Pigeonhole principle, Permutations, Combinations."
+    ],
+    "learningOutcomes": [
+      "Ability to construct logical arguments and apply discrete structures to represent discrete objects and use them to solve combinatorial problems systematically and logically."
+    ],
+    "sublearningOutcomes": [
+      "Derive rigorous logical proofs given a set of premises using the rules of Propositional Logic and first- order predicate logic;",
+      "Perform basic operations of sets (union, intersection, difference, and complement);",
+      "Perform the basic operations of functions (inverse, composition);",
+      "Compare the process of mathematical induction and the behavior of other types of sequences;",
+      "Apply the pigeonhole principle in solving mathematical problems;",
+      "Calculate numbers of possible outcomes of elementary combinatorial processes such as permutations and combinations."
+    ],
+    "resources": [
+      "Kenneth H. Rosen, Discrete Mathematics and Its Applications, 7th Ed, McGrawHill, 2012"
+    ],
+    "prerequisites": []
+  },
+  "CSGE601011": {
+    "code": "CSGE601011",
+    "name": "Discrete Mathematics 2",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "This course is a continuation of Discrete Mathematics 1 that provides further theoretical foundations for Computer Science.",
+    "topics": [
+      "Topics covered are: Theory of Integers, Relations, Graph s, and Trees."
+    ],
+    "learningOutcomes": [
+      "Ability to construct logical arguments and apply discrete structures to represent discrete objects and use them to solve combinatorial problems systematically and logically."
+    ],
+    "sublearningOutcomes": [
+      "Solve linear homogeneous / non- homogeneous recurrence relations with constant coefficients;",
+      "Understand the concepts of generating functions and use them to solve recurrence relations;",
+      "Understand the concept of relations and their applications;",
+      "Understand the properties of relations, closures of relation, equivalence relations, partial orderings and their applications in real- world problems;",
+      "Understand the concepts of graphs and able to model problems using graphs;",
+      "Understand the issues in graphs isomorphism, connectivity, Euler and Hamilton paths, shortest path problem, planar graph s and graph coloring;",
+      "Understand the concepts of trees and their application;",
+      "Understand tree traversal and able to construct (minimum) spanning trees from known graphs."
+    ],
+    "resources": [
+      "Kenneth H. Rosen, Discrete Mathematics and Its Applications, 7th Ed, McGrawHill, 2012"
+    ],
+    "prerequisites": []
+  },
+  "CSGE601020": {
+    "code": "CSGE601020",
+    "name": "Foundations of Programming 1",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "This course aims to teach the fundamental concepts and techniques of computer programming as an introduction to computer science. This module is taught using a combination of lectures and hands- on programming exercises.",
+    "topics": [
+      "Introduction to computers and programming; Data Types; Control; Data Structures and Functions; Introduction to object- oriented programming; Files; Exceptions; Recursion; Graphical User Interface (GUI)."
+    ],
+    "learningOutcomes": [
+      "Ability to articulate fundamental programming concepts, apply them to problem abstraction and logical and computational solutions, and be familiar with various programming paradigms."
+    ],
+    "sublearningOutcomes": [
+      "Explain and correlate fundamental concepts related to programming and computer systems;",
+      "Explain, modify, and analyze variables, data types, and number systems;",
+      "Explain and design control mechanisms such as selection and repetition;",
+      "Explain and modify character strings (strings);",
+      "Explain and modify text files and handle exceptions;",
+      "Explain and design functions and operate lists;",
+      "Explain and modify tuples, mutability, sets, and dictionaries;",
+      "Explain and design recursive programs;",
+      "Explain and design complex features in classes;",
+      "Explain and implement the basics of Graphical User Interfaces (GUIs)."
+    ],
+    "resources": [
+      "L. Perkovic. Introduction to Computing using Python. 2 n d Edition.",
+      "W. Punch and R. Enbody, The Practices of Computing using Python. 3r d Edition"
+    ],
+    "prerequisites": []
+  },
+  "CSGE601021": {
+    "code": "CSGE601021",
+    "name": "Foundations of Programming 2",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "This course is the second part of the two- course Programming Foundations. It is built upon the knowledge and experience from the first part of Programming Foundations to enhance the programming skill. It specifically focuses on the object- oriented programming paradigm (using Java) and emphasizes the use of this paradigm in problem solving.",
+    "topics": [
+      "Classes & Objects; Fundamental Data Types: Primitive & Object Types; Control Flow (Decision and Loop); Methods & Access Specifier; Introduction to Objects and Classes; Arrays, Arrays of Objects; Array Lists; Sorting and Searching; Advanced Recursion; Inheritance; Polymorphism: Abstract Class, Interfaces, etc; Graphical User Interfaces; Input/Output and Exception Handling; Generic Collections: List, Map, Set, Stack, Queue; Generic Programming: Generic Classes & Methods; Unit Testing."
+    ],
+    "learningOutcomes": [
+      "Upon successful completion of this course, the students are expected to have developed further programming skills (from algorithm to coding, abstraction, simple design modularity, inheritance, etc.) and to apply best practices from the object- oriented programming paradigm."
+    ],
+    "sublearningOutcomes": [
+      "Students will be able to analyze problem solutions using computational thinking to develop a problem- solving logic/algorithm;",
+      "Students will be able to select appropriate data types, variables, methods, and OOP (Object- Oriented Programming) designs to solve problems;",
+      "Students will be able to design programs with good object- oriented concepts and exception handling capabilities."
+    ],
+    "resources": [
+      "Liang, Y. Daniel. Introduction to Java Programming and Data Structures, Comprehensive Version, 11th Edition. Pearson Education, 2018."
+    ],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSGE602024": {
+    "code": "CSGE602024",
+    "name": "Human Computer Interaction",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "This course focuses on the interface design concepts for a software. In this course, students are taught how to apply the principles of human- computer interaction in developing an application, and offer a better alternative interaction design. Materials are delivered through active learning methods, such as: small group discussions, project- based learning, and the use of e- learning management system. The scope discussed in this course includes the historical context of human - computer interaction (HCI), interaction design, cognition, techniques in HCI, social aspects of HCI, data collection and analysis, interaction design process, prototyping, and evaluation.",
+    "topics": [
+      "Introduction to Human - Computer Interaction; Basic principles of psychology (cognition); Social interaction; Interfaces; Interaction Design Process; Data Collection (Data Gathering); Data analysis; Defining Requirements; Prototyping and System Construction; System Evaluation."
+    ],
+    "learningOutcomes": [
+      "Ability to design the interaction system of a computer application, in accordance with the principles of human- computer interaction."
+    ],
+    "sublearningOutcomes": [
+      "Describe the relationship between Interaction Design and Human-Computer Interaction;",
+      "Explain the basic principles of psychology (cognition);",
+      "Describe social interactions;",
+      "Describe the types of interfaces;",
+      "Describe the Interaction Design process;",
+      "Carry out data collection;",
+      "Perform data analysis;",
+      "Determine the requirements;",
+      "Evaluate products using the Usability Testing method;",
+      "Make wireframes (mockups) or low-fidelity prototypes."
+    ],
+    "resources": [
+      "Sharp, H., Rogers, Y, and Preece, J. Interaction design: Beyond human -computer interaction 4th edition. West Sussex, England: John -Wiley & Sons. 2015.",
+      "Lazar, J., Feng, J. H., & Hochheiser, H. Research methods in human -computer interaction. Morgan Kaufmann. 2017.",
+      "Norman, D. The design of everyday things: Revised and expanded edition. Basic books. 2013",
+      "Meirelles, I. Design for Information: An Introduction to the Histories, Theories, and Best Practices Behind Effective Information Visualizations. Rockport Publishers. 2013.",
+      "Brand, W. Visual Doing: A Practical Guide to Incorporate Visual Thinking into Your Daily Business and Communication. BIS Publishers. 2018. (6) Krug, S. Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability. New Riders Publishing. 2013.",
+      "Krug, S. Rocket Surgery Made Easy: The Do -It-Yourself Guide to Finding and Fixing Usability Problems . New Riders Publishing. 2009.",
+      "Nielsen, D., & Granholm, K. Creative Thinker's Exercise Book. BIS Publishers. 2017"
+    ],
+    "prerequisites": [
+      "CSGE602022"
+    ]
+  },
+  "CSGE603130": {
+    "code": "CSGE603130",
+    "name": "Introduction to Artificial Intelligence and Data Science",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "This course introduces the concepts and basic techniques of artificial intelligence (AI) and data science. Participants in this course will be equipped with basic theoretical understanding and practical skills to solve artificial intelligence and data science problems. In addition, they will also be equipped with an understanding of how data science makes artificial intelligence as the principle for processing knowledge from data.",
+    "topics": [
+      "Artificial Intelligence, Data Science, and Machine Learning: Introduction and Terminology, Problem Solving: Search & CSP, Knowledge, Reasoning, and Planning, Exploratory Data Analysis (EDA), Data Preparation and Dimensionality Reduction, Clustering (K- means, hierarchical), Classification and Regression Trees, and Random Forest, Model Evaluation, Performance Metric, Bias- Variance Tradeoff, K- Nearest Neighbor Classification and Regression, Naive Bayes Classifier, Linear Regression, Logistic Regression, Softmax Regression, Ridge Regression, Lasso Regression, Support Vector Machines, Imbalanced Classification, Neural Networks."
+    ],
+    "learningOutcomes": [
+      "Ability to apply, evaluate, and select appropriate artificial intelligence and data science models for real- world problems of moderate scale that require solutions with high- performance AI characteristics."
+    ],
+    "sublearningOutcomes": [
+      "Describe the basic concepts of intelligent and autonomous agents, as well as the general taxonomy of AI;",
+      "Explain the basic principles in data science and the position of AI in a data science framework to process data into useful knowledge and insights;",
+      "Apply exploratory data analysis techniques to get an initial unders tanding of the data before further processing;",
+      "Apply data collection and preprocessing techniques to facilitate further data processing, including data cleaning, format adjustment, and extraction of relations in high-dimensional data using plots, covariane and PCA (Principal Component Analysis) techniques;",
+      "Apply the naive Bayes classification, decision tree, and nearest neighbors techniques to make predictions of data categorization;",
+      "Apply linear regression techniques to make non -categorical predictions and see the data trends;",
+      "Apply basic performance evaluation techniques to data analytics using appropriate metrics;",
+      "Apply basic data visualization techniques to gain insight into the data"
+    ],
+    "resources": [
+      "Stuart Russell & Peter Norvig. Artificial Intelligence: A Modern Approach, 3rd Edition, Prentice Hall 2010.",
+      "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani. An Introduction to Statistical Learning with Applications in R. Springer, 2013.",
+      "Joel Grus. Data Science from Scratch. O'Reilly, 2015. Stuart Russell & Peter Norvig, Artificial Intelligence: A Modern Approach 3rd Edition. Prentice Hall 2010"
+    ],
+    "prerequisites": [
+      "CSCM602013",
+      "CSGE602040",
+      "CSGE602012"
+    ]
+  },
+  "CSCM601252": {
+    "code": "CSCM601252",
+    "name": "Introduction to Computer Organization",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "This course provides the foundations of sequential computer organization consisting of input, output, memory, and processor (control and data path). The understanding of these concepts will also be supported with some programming exercises using low- level languages, e.g., assembly languages.",
+    "topics": [
+      "(1) Performance (2) RISC vs CISC (3) MIPS Assembly Language (4) Arithmetic Unit (5) Processor: Datapath and Control (6) Processor: Pipeline (7) Memory System: RAM, ROM, Cache Memory (8) Introduction to AVR (9) Assembly Language Based on AVR (10) Input /Output Organization"
+    ],
+    "learningOutcomes": [
+      "Ability to explain the basic organization and architecture of computer hardware, and to apply low- level languages to perform operations on the main components of computer hardware."
+    ],
+    "sublearningOutcomes": [
+      "Understand the basic concepts of computer organization;",
+      "Understand how to execute the machine language instruction;",
+      "Understand how to access the components of computer systems, viz., input, output, memory, and processor (control and data path) by means of assembly languages"
+    ],
+    "resources": [
+      "Patterson, David A., and John L. Hennessy. Computer organization and design: the hardware/software interface. Vol. 4. Elsevier, 2010."
+    ],
+    "prerequisites": [
+      "CSCM601150"
+    ]
+  },
+  "CSCM601150": {
+    "code": "CSCM601150",
+    "name": "Introduction to Digital Systems",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "This course provides a basic understanding and practical aspects in designing digital systems using high- level programming language. such as VHDL. The students will learn basic concepts in designing digital circuits, such as binary representation, Boolean algebra, finite- state- machine and instruction- set processors. They also learn basic components for design on different levels of abstractions such as transistors, gates, flip flops, adders, multipliers, registers, memories and processors.",
+    "topics": [
+      "(1) Numbering Systems (Binary, Octal, Decimal, Hexadecimal) - Two's complement & Arithmetic Operations (2) Floating Point Numbers & Error detection mechanism (3) Boolean Algebra: algebra manipulation, canonical form (4) Digital logic gates, Gate implementation, IC (5) Logic Circuits, n-bit Full Adder/Subtractor (6) Karnaugh Map (7) Tabulation Method (8) Selector, Decoder (9) Shifter, Rotator, Arithmetic and Logic Extension (10) ALU, Programmable ROM, PLA, (11) Flip -flop (12) State Table, State Diagram, Timing Diagram (13) Sequential logic ana lysis and synthesis (14) RAM, Stack & Queue (15) Registers (16) Memory (17) Simple Data paths: Accumulators & One's Counter (18) Datapath(8) Computer Organization Overview"
+    ],
+    "learningOutcomes": [
+      "Ability to design digital systems that form the foundation of computer hardware."
+    ],
+    "sublearningOutcomes": [
+      "Determine the required components in satisfying a specification of a digital system;",
+      "Understand the behavior of those components and their interaction required for achieving the functionality of a digital system;",
+      "Integrate those components into a digital system design;",
+      "Simulate the resulting digital system design to evaluate its behavior."
+    ],
+    "resources": [
+      "Mano, M. Morris, Charles R. Kime, and Tom Martin. Logic and computer design fundamentals. Vol. 5. Pearson Education, 2015.",
+      "Tan, Aaron Tuck Choy. Digital Logic Design. McGraw -Hill, 2004.",
+      "Harris, David, and Sarah Harris. Digital design and computer archit ecture. 2nd Edition. Elsevier, 2013"
+    ],
+    "prerequisites": []
+  },
+  "CSGE602012": {
+    "code": "CSGE602012",
+    "name": "Linear Algebra",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "This course prepares the students to be able to solve problems about matrix algebra and vector spaces. It also discusses the application of linear algebra in computer science.",
+    "topics": [
+      "Linear equation systems, matrices, determinant, vector spaces, inner product spaces, Eigen value and Eigen vector, and linear transformation."
+    ],
+    "learningOutcomes": [
+      "Students will be able to apply various methods for solving systems of linear equations and identify and implement the most effective method for solving a given system of linear equations;",
+      "Students will be able to explain the concept of a general vector space, determine the basis and dimension of a general vector space, and construct subspaces from given sets or matrices;",
+      "Students will be able to Determine the eigenvalues and eigenspaces of square matrices, apply eigenvalue decomposition to diagonalize matrices, construct a basis for Rn using eigenvectors;",
+      "Students will be able to Identify whether a given function is a linear transformation, determine the standard matrix, rank, and nullity of a linear transformation in Euclidean space, find the eigenvalues and eigenvectors of a linear transformation in Euclidean space, interpret geometrically linear transformations on the plane and in space."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "Anton, Howard; Elementary Linear Algebra; 11 th Edition, John Wiley & Sons. Inc, New York, NY, 2013.",
+      "Lay, David C.; Linear Algebra and Its Application; 2nd Edition, Addison- Wesley Publ. Co.; Reading, Mass, 2000",
+      "Johnson, Lee W., R. Dean Riess, Jimmy T. Arnold; Introduction to Linear Algebra, Addison Wesley, New York, NY, 2002"
+    ],
+    "prerequisites": []
+  },
+  "CSCM603117": {
+    "code": "CSCM603117",
+    "name": "Numerical Analysis",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "The course provides the basic knowledge of numerical methods to solve scientific and engineering problem s. The students are trained to solve problems that require numerical analysis, e.g., using Matlab (or any other Programming Language for scientific computation) as the programming environment. Practical issues in implementing numerical methods, such as software reliability and hardware performance are also discussed.",
+    "topics": [
+      "(1) Introduction: computation in finite precision: machine representation numbers, errors propagation and analysis, numerical stability and accuracy (2) System of linear equations: review relevant theory of linear algebra, triangular factorization, pivoting strategies (3) System of linear equations: special linear system (4) Least Squares Problems (5) Nonlinear equation (6) Optimization (7) Interpolation (8) Numerical Integration (9) Initial value problems in ordinary differential equations."
+    ],
+    "learningOutcomes": [
+      "Ability to implement systems that utilize numerical methods to solve problems requiring complex mathematical modeling."
+    ],
+    "sublearningOutcomes": [
+      "understand the relation between the problems in science and engineering and the needs of numerical softwares to solve the problems;",
+      "understand the fundamental of programming and visualization in some programming language and able to write and run the codes;",
+      "understand the number representation in computers;",
+      "understand some polynomial interpolation techniques and apply the techniques to interpolate some numerical data;",
+      "understand some numerical technique to solve linear systems;",
+      "understand some numerical techniques to solve non-linear equation;",
+      "understand some numerical techniques to solve integration;",
+      "understand some numerical methods for solving ordinary differential equations;",
+      "understand some least squares methods to use them to solve some problems."
+    ],
+    "resources": [
+      "Scientific Computing - An introductory survey, 2nd Ed, McGraw- Hill, Michael T. Heath, 2002"
+    ],
+    "prerequisites": [
+      "CSGE602012",
+      "CSCM601213"
+    ]
+  },
+  "CSCM602055": {
+    "code": "CSCM602055",
+    "name": "Operating Systems",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "This course discusses the organization, structure and concepts of computer operating systems. The trade- off between the performance and the functionality in designing and implementing an operating system is discussed, with the emphasis on processes management, interprocess communication, memory management, I/O management, file system management, implementation examples (GNU/Linux and MS Windows), and the support provided by operating systems for distributed systems.",
+    "topics": [
+      "Introduction & computer systems overview: processor, instruction execution, interrupts, memory hierarchy, cache memory and I/O communications; Operating System Overview: operating systems objective and functions, history, design, interface, system calls, virtual machines, generation and boot; Process: concept and threads; Process: CPU scheduling; Process: process synchronization; Process: deadlocks; Memory: background, swapping, paging, segmentation; Virtual memory: background, demand - paging, copy- on- write, page replacement; Virtual memory: allocation of frames, trashing, memory- mapped files and allocating kernel memory; Input/Output and Disk Management; File Management; Protection and Security; Distributed Systems."
+    ],
+    "learningOutcomes": [
+      "Ability to explain the components of an operating system, design, modify, and implement operating system components."
+    ],
+    "sublearningOutcomes": [
+      "Understand the role of an operating system;",
+      "Understand how to decompose programs and executions;",
+      "Understand the main concept of concurrency, its problems, and solutions;",
+      "Explain the concepts of process management and memory management;",
+      "Explain the mechanism and the algorithms of CPU scheduling;",
+      "Understand the idea and the implementation of virtual memory;",
+      "Understand the features and concepts of file systems and I/O devices;",
+      "Analyze issues related to performance of an operating system in managing hardwares."
+    ],
+    "resources": [
+      "A. Silberschatz, Operating systems concepts with Java 7th edition.",
+      "A.S. Tannenbaum, Operating Systems Design and Implementation 3rd Edition, Prentice hall software series.",
+      "William Stallings, Operating Systems, Prentice Hall 4th or later edition"
+    ],
+    "prerequisites": [
+      "CSCM601252"
+    ]
+  },
+  "CSGE602022": {
+    "code": "CSGE602022",
+    "name": "Platform-based Development",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "This course discusses software development process on various platforms. The material studied in this course are related to various programming concepts and rules that are applied to a platform. Examples of platforms that are relevant today are web and mobile devices. Each platform has different characteristics, ranging from programming patterns, processing mechanisms, interaction between components / API / hardware, and interactions with users which are applied to high- level programming.",
+    "topics": [
+      "Introduction to Platform- Based Programming; Web Platform Development Framework; Test, Models, Views Templates & assets; Data delivery HTML, XML, dan JSON; Form, POST & GET, session, cookie, authentication, authorization; Navigation, layouting, HTML template, CSS, assets; Client side programming with JQuery; Mobile platform development framework using Flutter; User Interfaces; Mobile application delivery; Security Aspects on Web Development: Cross Site Request Forgery, Cross Site Scripting"
+    ],
+    "learningOutcomes": [
+      "Ability to implement computer- based systems, including two platform- based applications: Web and Mobile platforms."
+    ],
+    "sublearningOutcomes": [
+      "Understand the different concepts, characteristics, and implementation mechanisms on various platforms;",
+      "Design and develop applications using various platforms;",
+      "Integrate multiple applications on different platforms;",
+      "Understand Web application Threats."
+    ],
+    "resources": [
+      "Deitel. Internet & World Wide Web How to Program 5th Edition, Prentice Hall, 2012.",
+      "Percival. Test-Driven Development with Python 1st Edition, O'Reilly, 2014",
+      "Dawn Griffiths and David Griffiths. Head First, Android Development, A Brain-Friendly Guide, O'Reilly, 2017"
+    ],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSGE603091": {
+    "code": "CSGE603091",
+    "name": "Scientific Writing & Research Methodology",
+    "credits": 3,
+    "state": "Wajib Fakultas",
+    "description": "This course focuses on methodology for doing research in computer science and develops students' scientific and critical thinking. It is also intended to enrich students' comprehension of the structure and execution of the written academic papers in reporting their research results. It involves the understanding of the process of writing, the techniques used in writing, and the writing itself. The development of writing should be an integrated approach of human- data- information- knowledge- tool interaction which may result in a sound and readable academic writing.",
+    "topics": [
+      "Course Overview; Introduction to research methodology and A Model of Scientific Inquiry; Problem identification & Hypothesis, Logical Thinking; Review of Literature: compare, contrast, criticize, synthesize, and summarize papers; Scientific Writing: dissertation, thesis, papers, etc; Writing Research Proposals & Reports; Research Design; Research Design; Class presentation; Class presentation; Experimental Research in CS, IS, and IT; Experimental Research in CS, IS, and IT; Survey Research in IT; Data Collection, Data Analysis, and Data Presentation."
+    ],
+    "learningOutcomes": [
+      "Ability to explain various approaches to scientific writing;",
+      "Ability to produce scientific writing as an integrated approach between humans, data, information, knowledge, and tools."
+    ],
+    "sublearningOutcomes": [
+      "Understand the basic process in conducting research;",
+      "Explore various approaches in doing research;",
+      "Employ scientific methods and critical thinking in research;",
+      "Explore various approaches in developing academic writing;",
+      "Conduct a mini research and produce an academic paper reporting the research results."
+    ],
+    "resources": [
+      "Sekaran, Uma. \"Research Methods for Business: A Skill- Building Approach\". 2005",
+      "Wilson Jr., E.B. \"An Introduction to Scientific Research Methods\"",
+      "Christensen, Larry B. Experimental methodology, Pearson, 9th Edition, 2004",
+      "Tan, Willie. Practical research methods. Singapore: Prentice Hall. 2002",
+      "Myers, Michel D. Qualitative Research in Information Systems: a reader. Sage pub, 2002",
+      "Additional readings will be assigned during lectures"
+    ],
+    "prerequisites": []
+  },
+  "CSCM603125": {
+    "code": "CSCM603125",
+    "name": "Software Engineering",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "This course discusses software engineering methodologies and life cycles, from requirements gathering, planning, analysis, design, implementation, and testing.",
+    "topics": [
+      "Introduction to Software Engineering: Software category, Software evolution; The Software Process: Generic Process Model, Prescriptive Process Model, Agile Development; Modeling Analysis & Design: Requirement Analysis, Use Case Diagrams, Class Diagrams, Interaction Diagrams, Architecture Design, Class & Method Design, Design Pattern; Software Management; Quality Management: Software Testing Strategies, Testing Conventional Application."
+    ],
+    "learningOutcomes": [
+      "Ability to identify and apply the appropriate methodology for software engineering."
+    ],
+    "sublearningOutcomes": [
+      "Determine a proper process model in engineering software based on some specific conditions;",
+      "Model software specification in various stages: requirement gathering, analysis, and design;",
+      "Apply various strategies in software testing."
+    ],
+    "resources": [
+      "Pressman, Roger S., Software Engineering: A Practitioner's Approach, 7th Edition, Mc. Graw Hill International, USA, 2010.",
+      "Sommerville, Ian, Software Engineering, 8th Edition, Pearson-Addison Wesley, England, 2007.",
+      "Bentley, Lonnie D., Jeffrey L. Whitten, and Gary Randolph. Systems Analysis and Design for the Global Enterprise. 7th ed. Boston: McGraw- Hill Irwin, 2007. 4. Dennis, Alan, et al., System Analysis and Design with UML 3rd Edition, John Wiley & Sons, 2010."
+    ],
+    "prerequisites": [
+      "CSGE601021"
+    ]
+  },
+  "CSCM603228": {
+    "code": "CSCM603228",
+    "name": "Software Engineering Projects",
+    "credits": 6,
+    "state": "Wajib Program Studi",
+    "description": "The course provides the students with the experience to be actively involved in one semester software engineering project by running a complete software development lifecycle, from ideation until deployment. Practical issues related to development methodology and technology used will be discussed.",
+    "topics": [
+      "Scrum Software, Architecture, Clean Code, QA Testing, Automatic Deployment, Product Pitching; Development deployment, continuous integration; User Interface Design; Scrum, Working in team, communication skill; Working in team, communication skill, User Interface Design, Scrum Development and deployment, continuous integration; Software Testing, test coverage, software quality assurance Maintainability, changes management Security, privacy Documentation Scalability, profiling; Product Pitching."
+    ],
+    "learningOutcomes": [
+      "Ability to communicate effectively, collaborate, and contribute in teams with diverse backgrounds to provide information technology- based solutions in their professional field;",
+      "Ability to apply computer science knowledge to research activities and problem- solving in organizations, industries, and society;",
+      "Ability to effectively utilize modern software development tools throughout the software development lifecycle, from design to implementation and documentation."
+    ],
+    "sublearningOutcomes": [
+      "Understand the needs of potential users and represent them in the form of application designs and high- fidelity mockups;",
+      "Understand and apply Scrum framework for software development in a group setting;",
+      "Understand and master software development best practices, including working in teams following agreed-upon patterns such as Git flow, and efficiently utilizing tools like version control and code review;",
+      "Apply high standards of work and quality throughout the software development process, from start to finish;",
+      "Understand and apply best practices in software testing, focusing on testing according to requirements;",
+      "Practice soft skills in support of application development, such as the ability to implement their knowledge, communicate with product owners, convey their knowledge to lecturers, present applications orally, and publish them visually."
+    ],
+    "resources": [
+      "Harry Percival. Test Driven Development with Python. O'Reilly Media: 2014.",
+      "Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship, Prentice Hall, 2009.",
+      "Pressman, Roger S. Software Engineering: A Practitioner's Approach 6th ed. McGraw Hill, Singapore: 2005.",
+      "Software Engineering Competency Model (SWECOM), IEEE Computer Society, 2014.",
+      "Usability Goals (Rogers, Preece, & Sharp, 2002)",
+      "Eight Golden Rules of Interface Design (Shneiderman & Plaissance, 2005)",
+      "Harry Percival. Test Driven Development with Python. O'Reilly Media: 2014."
+    ],
+    "prerequisites": [
+      "CSCM603125",
+      "CSEG602070",
+      "CSCM602223"
+    ]
+  },
+  "CSCM602013": {
+    "code": "CSCM602013",
+    "name": "Statistics & Probability",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "This course provides basics of statistics and probability for data interpretation in order to support problem solving and decision making.",
+    "topics": [
+      "Introduction; Descriptive Statistics; Sampling Techniques; Elements of Probability: Events and outcomes. Probability rules. Conditional probability. Independence; Bayes' rule; Random variables and their distribution; Discrete random variables. Special Discrete distributions: Bernoulli, Binomial, Geometric; Negative Binomial, Poisson; Continuous distribution and probability densities; Continuous distribution: Uniform, Exponential, Normal; Expectation; Central Limit Theorem; Statistical inference. Parameter and statistics; Distribution of Sampling Statistics; Parameter estimation and hypothesis testing."
+    ],
+    "learningOutcomes": [
+      "Ability to apply probability and statistics concepts to analyze and interpret data for problem- solving."
+    ],
+    "sublearningOutcomes": [
+      "Given a set of data, students can Present/visualize descriptive statistics of the data, including correlations;",
+      "Given a set of data, develop a work plan based on learned sampling techniques when asked to conduct a data collection survey;",
+      "Given a set of data, solve probability problems using basic probability theory and conditional probability (Bayes' Theorem) if given a probability problem;",
+      "Given a set of data, model the data as a random variable and calculate its expectation and distribution function if given data about an event;",
+      "Given a set of data, calculate the statistical distribution using the central limit theorem if given data from multiple sampling results;",
+      "Given a set of data, estimate the distribution parameters if given data from sampling results;",
+      "Given a set of data, perform hypothesis tests and draw conclusions if given a statement/hypothesis about the mean."
+    ],
+    "resources": [
+      "Probability & Statistics with Applications to Computing, Alex Tsun",
+      "Introduction to Probability and Statistics for Engineers & Scientists, 3rd ed., Sheldon M. Ross, Elsevier, 2004"
+    ],
+    "prerequisites": [
+      "CSGE601012",
+      "CSGE601010"
+    ]
+  }
+}

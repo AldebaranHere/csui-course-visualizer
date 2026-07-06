@@ -1,10 +1,12 @@
+'use client';
+
 import React, { useEffect, useMemo } from 'react';
 import ReactFlow, {
   Background,
   Controls,
   MiniMap,
-  Edge,
   Node,
+  Edge,
   MarkerType,
   useReactFlow,
 } from 'reactflow';
@@ -13,7 +15,7 @@ import Fuse from 'fuse.js';
 
 import 'reactflow/dist/style.css';
 import { useCurriculumStore } from '@/store/useCurriculumStore';
-import { Course } from '@/types/curriculum';
+import { Course, StudyProgram } from '@/types/curriculum';
 import CourseNode from './CourseNode';
 import SemesterGroupNode from './SemesterGroupNode';
 import { PrerequisiteEdge } from './PrerequisiteEdge';
@@ -32,15 +34,30 @@ interface CurriculumGraphProps {
   courses: Record<string, Course>;
 }
 
-// Helper to determine the recommended semester for a course based on its name and major
-const getRecommendedSemester = (course: Course, major: 'CS' | 'IS'): string => {
+// Helper to determine the recommended semester/group for a course based on its name and active program
+const getRecommendedSemester = (course: Course, program: StudyProgram): string => {
+  if (program === 'AI') {
+    return course.category || 'Mata Kuliah Pilihan';
+  }
+
   if (course.state === 'Pilihan') {
     return 'pilihan';
   }
 
-  const name = course.name.toLowerCase().trim();
+  if (program === 'CS_KKI') {
+    const code = course.code;
+    if (['CSGE601012', 'CSGE601010', 'CSGE602012', 'CSGE601020', 'CSCM601150'].includes(code)) return '1';
+    if (['CSCM601213', 'CSGE601011', 'CSGE601021', 'CSGE602040', 'CSCM601252'].includes(code)) return '2';
+    if (['CSGE602022', 'CSCM602241', 'CSCM602013', 'CSGE602070', 'CSCM602055'].includes(code)) return '3';
+    if (['CSCM603142', 'CSCM602223', 'CSCM603125', 'CSCM603154', 'CSGE603130'].includes(code)) return '4';
+    if (['CSGE602024', 'CSGE603091', 'CSCM603117', 'CSCM603228', 'CSGE614093'].includes(code)) return '5';
+    return 'pilihan';
+  }
 
-  if (major === 'CS') {
+  const name = course.name.toLowerCase().trim();
+  const isCS = program === 'CS';
+
+  if (isCS) {
     // CS Semester 1
     if (name.includes('mpk') && name.includes('agama')) return '1';
     if (name.includes('mpk') && name.includes('inggris')) return '1';
@@ -142,7 +159,7 @@ const getRecommendedSemester = (course: Course, major: 'CS' | 'IS'): string => {
 };
 
 export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => {
-  const activeMajor = useCurriculumStore((state) => state.activeMajor);
+  const activeProgram = useCurriculumStore((state) => state.activeProgram);
   const selectedCourseId = useCurriculumStore((state) => state.selectedCourseId);
   const setSelectedCourseId = useCurriculumStore((state) => state.setSelectedCourseId);
   const searchQuery = useCurriculumStore((state) => state.searchQuery);
@@ -151,8 +168,13 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
   const selectedSemester = useCurriculumStore((state) => state.selectedSemester);
   const { fitView, setCenter, fitBounds } = useReactFlow();
 
+  // Intercept empty dataset for IS KKI to show empty state alert
+  const isDataEmpty = Object.keys(courses).length === 0;
+
   // 1. Calculate matching and dependency paths
   useEffect(() => {
+    if (isDataEmpty) return;
+
     // If a specific course is selected, highlight its prerequisite path and descendants
     if (selectedCourseId && courses[selectedCourseId]) {
       const getPrerequisites = (code: string, visited = new Set<string>()): Set<string> => {
@@ -197,21 +219,35 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     // Default: clear highlights
     setHighlightedNodes(new Set());
-  }, [selectedCourseId, searchQuery, courses, setHighlightedNodes]);
+  }, [selectedCourseId, searchQuery, courses, setHighlightedNodes, isDataEmpty]);
 
   // 2. Generate laid-out React Flow Nodes and Edges using Dagre
   const { nodes, edges } = useMemo(() => {
+    if (isDataEmpty) {
+      return { nodes: [], edges: [] };
+    }
+
     const dagreGraph = new dagre.graphlib.Graph({ compound: true });
     dagreGraph.setDefaultEdgeLabel(() => ({}));
     
     // Configure Dagre layout: Top-to-Bottom, compound layouts, spacious separation
     dagreGraph.setGraph({ rankdir: 'TB', nodesep: 40, ranksep: 160, compound: true });
 
-    const semestersList = ['1', '2', '3', '4', '5', '6', '7', '8', 'pilihan'];
+    const isAI = activeProgram === 'AI';
+
+    const semestersList = isAI
+      ? [
+          'MATHEMATICAL FOUNDATIONS',
+          'AI MODELING AND ETHICS',
+          'PROGRAMMING FOUNDATIONS',
+          'DATA, SYSTEMS, AND SOLUTION DEVELOPMENT',
+          'GENERAL REQUIREMENTS & UNDERGRADUATE RESEARCH',
+          'Mata Kuliah Pilihan'
+        ]
+      : ['1', '2', '3', '4', '5', '6', '7', '8', 'pilihan'];
     
-    // Initialize semester container parent nodes in Dagre with dynamic size fit padding
+    // Initialize container parent nodes in Dagre with dynamic size fit padding
     semestersList.forEach((sem) => {
-      // Dagre calculates dimensions based on children plus padding
       dagreGraph.setNode(`semester-${sem}`, { padding: 15 });
     });
 
@@ -220,7 +256,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     // Add child nodes to Dagre & establish parent relationships
     courseList.forEach((course) => {
       dagreGraph.setNode(course.code, { width: 240, height: 120 });
-      const sem = getRecommendedSemester(course, activeMajor);
+      const sem = getRecommendedSemester(course, activeProgram);
       dagreGraph.setParent(course.code, `semester-${sem}`);
     });
 
@@ -237,7 +273,8 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     // Layout Enhancements:
     // 1. Arrange Pilihan (Elective) courses into a square-ish matrix (4 columns) using dummy layout edges
-    const pilihanCourses = courseList.filter(c => getRecommendedSemester(c, activeMajor) === 'pilihan');
+    const pilihanCategory = isAI ? 'Mata Kuliah Pilihan' : 'pilihan';
+    const pilihanCourses = courseList.filter(c => getRecommendedSemester(c, activeProgram) === pilihanCategory);
     const cols = 4;
     for (let i = 0; i < pilihanCourses.length; i++) {
       if (i + cols < pilihanCourses.length) {
@@ -245,25 +282,27 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       }
     }
 
-    // 2. Adjust CS Semester 7 placement closer to Semester 1/6 columns by adding a layout-only dummy edge
-    if (activeMajor === 'CS') {
-      const pplNode = courseList.find(c => c.name.toLowerCase().includes('proyek perangkat lunak'));
-      const kpNode = courseList.find(c => c.name.toLowerCase().includes('kerja praktik'));
+    // 2. Adjust CS/CS_KKI Semester 7 placement closer to Semester 1/6 columns by adding layout-only dummy edges
+    const isCS = activeProgram === 'CS' || activeProgram === 'CS_KKI';
+    if (isCS) {
+      const pplNode = courseList.find(c => c.name.toLowerCase().includes('proyek perangkat lunak') || c.name.toLowerCase().includes('software project'));
+      const kpNode = courseList.find(c => c.name.toLowerCase().includes('kerja praktik') || c.name.toLowerCase().includes('internship'));
       if (pplNode && kpNode) {
         dagreGraph.setEdge(pplNode.code, kpNode.code);
       }
-      const mppiNode = courseList.find(c => c.name.toLowerCase().includes('metodologi penelitian'));
-      const komasNode = courseList.find(c => c.name.toLowerCase().includes('komputer & masyarakat') || c.name.toLowerCase().includes('komputer dan masyarakat'));
+      const mppiNode = courseList.find(c => c.name.toLowerCase().includes('metodologi penelitian') || c.name.toLowerCase().includes('scientific writing & research methodology'));
+      const komasNode = courseList.find(c => c.name.toLowerCase().includes('komputer & masyarakat') || c.name.toLowerCase().includes('computer & society'));
       if (mppiNode && komasNode) {
         dagreGraph.setEdge(mppiNode.code, komasNode.code);
       }
     }
 
-    // 3. Align IS Semester 7 (Kerja Praktik) exactly to the left of Semester 8 (Tugas Akhir)
-    if (activeMajor === 'IS') {
-      const propensiNode = courseList.find(c => c.name.toLowerCase().includes('proyek pengembangan') || c.name.toLowerCase().includes('propensi'));
-      const kpNode = courseList.find(c => c.name.toLowerCase().includes('kerja praktik'));
-      const taNode = courseList.find(c => c.name.toLowerCase().includes('tugas akhir'));
+    // 3. Align IS/IS_KKI Semester 7 (Kerja Praktik) exactly to the left of Semester 8 (Tugas Akhir)
+    const isIS = activeProgram === 'IS' || activeProgram === 'IS_KKI';
+    if (isIS) {
+      const propensiNode = courseList.find(c => c.name.toLowerCase().includes('proyek pengembangan') || c.name.toLowerCase().includes('propensi') || c.name.toLowerCase().includes('information systems development project'));
+      const kpNode = courseList.find(c => c.name.toLowerCase().includes('kerja praktik') || c.name.toLowerCase().includes('internship'));
+      const taNode = courseList.find(c => c.name.toLowerCase().includes('tugas akhir') || c.name.toLowerCase().includes('thesis') || c.name.toLowerCase().includes('undergraduate thesis'));
       if (propensiNode && kpNode && taNode) {
         dagreGraph.setEdge(propensiNode.code, kpNode.code);
         dagreGraph.setEdge(propensiNode.code, taNode.code);
@@ -283,7 +322,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     // Group and sort courses by semester based on Dagre layout X coordinates to keep optimized horizontal order
     const coursesBySem: Record<string, typeof courseList> = {};
     semestersList.forEach((sem) => {
-      coursesBySem[sem] = courseList.filter(c => getRecommendedSemester(c, activeMajor) === sem);
+      coursesBySem[sem] = courseList.filter(c => getRecommendedSemester(c, activeProgram) === sem);
       coursesBySem[sem].sort((a, b) => {
         const nodeA = dagreGraph.node(a.code);
         const nodeB = dagreGraph.node(b.code);
@@ -304,12 +343,11 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     let pilihanLeftX = 0;
     let pilihanTopY = 0;
     const sem6Height = 120 + 2 * padding + headerHeight;
-    const pilihanDagreNode = dagreGraph.node('semester-pilihan');
+    const pilihanDagreNode = dagreGraph.node(`semester-${pilihanCategory}`);
     if (pilihanDagreNode) {
-      const cols = 4;
-      const pilihanWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
-      const semCourses = coursesBySem['pilihan'] || [];
+      const semCourses = coursesBySem[pilihanCategory] || [];
       const rows = Math.ceil(semCourses.length / cols);
+      const pilihanWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
       const pilihanHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
       const pilihanCenterX = pilihanDagreNode.x;
       const pilihanCenterY = pilihanDagreNode.y;
@@ -334,8 +372,8 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       let parentWidth = 0;
       let parentHeight = 0;
 
-      if (sem === 'pilihan') {
-        const cols = 4;
+      // Group layout logic: AI categories and Pilihan use 4-column matrix grids, others use single horizontal rows
+      if (isAI || sem === 'pilihan') {
         const rows = Math.ceil(semCourses.length / cols);
         parentWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
         parentHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
@@ -354,15 +392,17 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       let parentY = centerY - parentHeight / 2;
 
       // Layout override: Position Semesters 6, 7, and 8 exactly to the left and top-aligned of the Pilihan group
-      if (sem === '6') {
-        parentX = pilihanLeftX - parentWidth - 80;
-        parentY = pilihanTopY;
-      } else if (sem === '8') {
-        parentX = pilihanLeftX - sem8Width - 80;
-        parentY = pilihanTopY + sem6Height + 160;
-      } else if (sem === '7') {
-        parentX = pilihanLeftX - sem8Width - 80 - sem7Width - 80;
-        parentY = pilihanTopY + sem6Height + 160;
+      if (isCS || isIS) {
+        if (sem === '6') {
+          parentX = pilihanLeftX - parentWidth - 80;
+          parentY = pilihanTopY;
+        } else if (sem === '8') {
+          parentX = pilihanLeftX - sem8Width - 80;
+          parentY = pilihanTopY + sem6Height + 160;
+        } else if (sem === '7') {
+          parentX = pilihanLeftX - sem8Width - 80 - sem7Width - 80;
+          parentY = pilihanTopY + sem6Height + 160;
+        }
       }
 
       semesterBounds.push({
@@ -375,8 +415,11 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
       let label = `Semester ${sem}`;
       if (sem === 'pilihan') {
-        label = activeMajor === 'CS' ? 'Pilihan (Semester 6 hingga 8)' : 'Pilihan (Semester 5 hingga 8)';
+        label = isCS ? 'Pilihan (Semester 6 hingga 8)' : 'Pilihan (Semester 5 hingga 8)';
+      } else if (isAI) {
+        label = sem;
       }
+
       flowNodes.push({
         id: `semester-${sem}`,
         type: 'semesterGroup',
@@ -393,7 +436,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     semestersList.forEach((sem) => {
       const semCourses = coursesBySem[sem];
       semCourses.forEach((course, index) => {
-        const semNumber = sem === 'pilihan' ? undefined : parseInt(sem, 10);
+        const semNumber = (sem === 'pilihan' || isAI) ? undefined : parseInt(sem, 10);
         const enrichedCourse = {
           ...course,
           recommendedSemester: semNumber,
@@ -402,9 +445,10 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         let relativeX = 0;
         let relativeY = 0;
 
-        if (sem === 'pilihan') {
-          const col = index % 4;
-          const row = Math.floor(index / 4);
+        // Positioning logic matching the group shapes
+        if (isAI || sem === 'pilihan') {
+          const col = index % cols;
+          const row = Math.floor(index / cols);
           relativeX = padding + col * (240 + gap);
           relativeY = padding + headerHeight + row * (120 + gap);
         } else {
@@ -438,10 +482,6 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
              const isTargetActive = !hasHighlight || highlightedNodes.has(course.code);
              const isHighlightedEdge = hasHighlight && isSourceActive && isTargetActive;
              
-             // Dynamic arrow color logic:
-             // 1. When a course is clicked, active relevant arrows stay yellow, others turn grey (#333333).
-             // 2. When a semester is selected but no course is clicked, all arrows turn grey.
-             // 3. By default (no filter active), all arrows are yellow (#C5A059).
              const isCourseClicked = selectedCourseId !== null;
              const isSemesterSelected = selectedSemester !== null;
              
@@ -483,8 +523,8 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                  showLabel,
                  sourceCourseName: courses[prereq]?.name || prereq,
                  prereqIndex: course.prerequisites.indexOf(prereq),
-                 sourceParentId: `semester-${getRecommendedSemester(courses[prereq], activeMajor)}`,
-                 targetParentId: `semester-${getRecommendedSemester(course, activeMajor)}`,
+                 sourceParentId: `semester-${getRecommendedSemester(courses[prereq], activeProgram)}`,
+                 targetParentId: `semester-${getRecommendedSemester(course, activeProgram)}`,
                  semesterBounds,
                },
              });
@@ -494,17 +534,19 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     });
 
     return { nodes: flowNodes, edges: flowEdges };
-  }, [courses, highlightedNodes, selectedCourseId, selectedSemester, activeMajor]);
+  }, [courses, highlightedNodes, selectedCourseId, selectedSemester, activeProgram, isDataEmpty]);
 
-  // Fit view when major changes
+  // Fit view when active program changes
   useEffect(() => {
+    if (isDataEmpty) return;
     setTimeout(() => {
       fitView({ duration: 800, padding: 0.2 });
     }, 100);
-  }, [activeMajor, fitView]);
+  }, [activeProgram, fitView, isDataEmpty]);
 
   // Zoom into selected node when selectedCourseId changes
   useEffect(() => {
+    if (isDataEmpty) return;
     if (selectedCourseId) {
       const selectedNode = nodes.find((n) => n.id === selectedCourseId);
       if (selectedNode && selectedNode.parentNode) {
@@ -517,10 +559,11 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         }
       }
     }
-  }, [selectedCourseId, nodes, setCenter]);
+  }, [selectedCourseId, nodes, setCenter, isDataEmpty]);
 
   // Zoom/fit bounds of the selected semester group node when selectedSemester changes
   useEffect(() => {
+    if (isDataEmpty) return;
     if (selectedSemester) {
       const groupNode = nodes.find((n) => n.id === `semester-${selectedSemester}`);
       if (groupNode && groupNode.style?.width && groupNode.style?.height) {
@@ -537,10 +580,37 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     } else {
       fitView({ duration: 800, padding: 0.2 });
     }
-  }, [selectedSemester, nodes, fitBounds, fitView]);
+  }, [selectedSemester, nodes, fitBounds, fitView, isDataEmpty]);
+
+  // Empty State Alert Box for unpublished datasets (e.g. IS KKI)
+  if (isDataEmpty) {
+    return (
+      <div className="flex flex-col items-center justify-center w-full h-full bg-[#111111] px-6 text-center select-none">
+        <div className="max-w-2xl bg-[#1E1E1E] border border-[#EF4444]/30 p-8 rounded-lg shadow-2xl animate-in fade-in duration-300">
+          <div className="w-16 h-16 bg-[#EF4444]/10 border border-[#EF4444]/30 rounded-full flex items-center justify-center text-[#EF4444] mx-auto mb-6 text-2xl font-bold">
+            !
+          </div>
+          <h2 className="text-xl font-bold text-[#F8FAFC] mb-4">Informasi Belum Tersedia</h2>
+          <p className="text-sm text-[#E2E8F0] leading-relaxed text-justify">
+            This page is currently unavailable due to the fact that the guidebook for IS KKI is not yet published. You may refer to the IS section (the regular program) for reference. Note that the regular IS program and the KKI IS program may have different courses take place in different semesters. If the guidebook has been published but this page has not been updated, please contact the developer of the website. Contact information is available in the &quot;Kontak&quot; box in the top navigation bar. Thank you for understanding.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full h-full bg-[#111111] relative">
+      {/* Floating AI Disclaimer Banner */}
+      {activeProgram === 'AI' && (
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 animate-in slide-in-from-top duration-300 pointer-events-none">
+          <div className="bg-[#1E1E1E] border border-[#C5A059]/40 text-[#C5A059] px-4 py-2.5 rounded-md shadow-lg text-xs font-bold font-sans flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse shrink-0" />
+            <span>Catatan: Informasi prasyarat mata kuliah belum tersedia. Ini akan diupdate saat informasi tersebut diumumkan.</span>
+          </div>
+        </div>
+      )}
+
       <ReactFlow
         nodes={nodes}
         edges={edges}
