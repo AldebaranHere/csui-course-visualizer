@@ -5,26 +5,17 @@ import { useCurriculumStore } from '@/store/useCurriculumStore';
 import { CurriculumGraph } from '@/components/CurriculumGraph';
 import { CourseDrawer } from '@/components/CourseDrawer';
 import { TopNav } from '@/components/TopNav';
-import { CurriculumMap } from '@/types/curriculum';
-
-// Import JSON datasets directly
-import csCoursesRaw from '@/data/cs_courses.json';
-import isCoursesRaw from '@/data/is_courses.json';
-
+import { PROGRAM_REGISTRY } from '@/data/programRegistry';
 import { ReactFlowProvider } from 'reactflow';
 import { SemesterSidebar } from '@/components/SemesterSidebar';
 
-// Type-cast datasets to CurriculumMap
-const csCourses = csCoursesRaw as CurriculumMap;
-const isCourses = isCoursesRaw as CurriculumMap;
-
 export default function Home() {
-  const activeMajor = useCurriculumStore((state) => state.activeMajor);
+  const activeProgram = useCurriculumStore((state) => state.activeProgram);
 
-  // Dynamically select the current active curriculum dataset
+  // Dynamically select the current active curriculum dataset from registry
   const activeCourses = useMemo(() => {
-    return activeMajor === 'CS' ? csCourses : isCourses;
-  }, [activeMajor]);
+    return PROGRAM_REGISTRY[activeProgram].data;
+  }, [activeProgram]);
 
   return (
     <ReactFlowProvider>
