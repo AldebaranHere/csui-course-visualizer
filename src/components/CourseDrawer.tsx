@@ -158,6 +158,32 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
                 </ul>
               </div>
             )}
+
+            {/* Prerequisite of (Immediate Successors) */}
+            {(() => {
+              const successors = Object.values(courses).filter(
+                (c) => c.prerequisites && c.prerequisites.includes(selectedCourseId || '')
+              );
+              if (successors.length === 0) return null;
+              return (
+                <div>
+                  <h4 className="flex items-center gap-2 font-sans text-xs font-bold text-[#E2E8F0] uppercase tracking-wider border-b border-[#333333] pb-1.5 mb-3">
+                    Prasyarat Untuk
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {successors.map((succ) => (
+                      <button
+                        key={succ.code}
+                        onClick={() => setSelectedCourseId(succ.code)}
+                        className="font-mono text-xs px-3 py-1.5 bg-[#2A2A2A] border border-[#333333] text-[#F8FAFC] rounded hover:border-[#C5A059] transition-colors duration-200 cursor-pointer min-h-[36px]"
+                      >
+                        {succ.code}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
           </>
         ) : (
           <div className="h-full flex items-center justify-center text-[#E2E8F0]/50 text-sm">
