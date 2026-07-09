@@ -47,7 +47,7 @@ export const PrerequisiteEdge: React.FC<EdgeProps> = ({
     if (box.id === sourceParentId || box.id === targetParentId) return false;
     
     // Check if the box is vertically between the source and target
-    const verticalOverlap = box.y > (sourceY + 10) && (box.y + box.h) < (targetY - 10);
+    const verticalOverlap = box.y > (sourceY + 10) && box.y < (targetY - 10);
     if (!verticalOverlap) return false;
 
     // Check if the vertical line segment from adjustedSourceX to adjustedTargetX would cross the box horizontally
@@ -63,6 +63,8 @@ export const PrerequisiteEdge: React.FC<EdgeProps> = ({
 
   // Label obstacle checking: prevent lines from crossing the top-left label area of any group
   semesterBounds.forEach((box: SemesterBoundItem) => {
+    if (box.id === sourceParentId || box.id === targetParentId) return;
+
     // Label region width: 320px, height: 80px from top-left of the group container
     const labelLeft = box.x;
     const labelRight = box.x + 320;
@@ -81,6 +83,41 @@ export const PrerequisiteEdge: React.FC<EdgeProps> = ({
       }
     }
   });
+
+  const avoidContainersY = (yVal: number, x1: number, x2: number) => {
+    let adjustedY = yVal;
+    let iterations = 0;
+    const minX = Math.min(x1, x2);
+    const maxX = Math.max(x1, x2);
+
+    while (iterations < 5) {
+      let resolved = true;
+      for (const box of semesterBounds) {
+        if (box.id === sourceParentId || box.id === targetParentId) continue;
+
+        // Only avoid if there is horizontal overlap between the line segment and container
+        const boxLeft = box.x;
+        const boxRight = box.x + box.w;
+        const horizontalOverlap = !(maxX < boxLeft || minX > boxRight);
+        if (!horizontalOverlap) continue;
+
+        if (adjustedY > box.y - 10 && adjustedY < box.y + box.h + 10) {
+          resolved = false;
+          const distToTop = Math.abs(adjustedY - (box.y - 30));
+          const distToBottom = Math.abs(adjustedY - (box.y + box.h + 30));
+          if (distToTop < distToBottom) {
+            adjustedY = snapToGrid(box.y - 30);
+          } else {
+            adjustedY = snapToGrid(box.y + box.h + 30);
+          }
+          break;
+        }
+      }
+      if (resolved) break;
+      iterations++;
+    }
+    return adjustedY;
+  };
 
   let edgePath = '';
 
@@ -108,15 +145,15 @@ export const PrerequisiteEdge: React.FC<EdgeProps> = ({
     );
     
     // Step down within the source container, capped to be below sourceY and above targetY
-    const yStep1 = snapToGrid(Math.min(Math.max(sourceY + 30 + sourceOffset, sourceY + 40), targetY - 40));
+    const yStep1 = avoidContainersY(snapToGrid(Math.min(Math.max(sourceY + 30 + sourceOffset, sourceY + 40), targetY - 40)), adjustedSourceX, detourX);
     // Step down below all obstacles, capped to be below sourceY and above targetY
-    const yStep2 = snapToGrid(Math.min(Math.max(maxObsY + 30 + targetOffset, sourceY + 40), targetY - 40));
+    const yStep2 = avoidContainersY(snapToGrid(Math.min(Math.max(maxObsY + 30 + targetOffset, sourceY + 40), targetY - 40)), detourX, adjustedTargetX);
 
     edgePath = `M ${adjustedSourceX} ${sourceY - 3} L ${adjustedSourceX} ${yStep1} L ${detourX} ${yStep1} L ${detourX} ${yStep2} L ${adjustedTargetX} ${yStep2} L ${adjustedTargetX} ${targetY + 3}`;
   } else {
     // Custom clean step path with horizontal turn, capped to be below sourceY and above targetY
     const midY = (sourceY + targetY) / 2;
-    const yTurn = snapToGrid(Math.min(Math.max(midY + sourceOffset + targetOffset, sourceY + 40), targetY - 40));
+    const yTurn = avoidContainersY(snapToGrid(Math.min(Math.max(midY + sourceOffset + targetOffset, sourceY + 40), targetY - 40)), adjustedSourceX, adjustedTargetX);
     edgePath = `M ${adjustedSourceX} ${sourceY - 3} L ${adjustedSourceX} ${yTurn} L ${adjustedTargetX} ${yTurn} L ${adjustedTargetX} ${targetY + 3}`;
   }
 

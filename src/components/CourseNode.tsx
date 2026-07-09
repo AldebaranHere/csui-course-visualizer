@@ -69,14 +69,14 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
       {Array.from({ length: data.prerequisites ? data.prerequisites.length : 1 }).map((_, index) => {
         const total = data.prerequisites ? data.prerequisites.length : 1;
         const offset = (index - (total - 1) / 2) * 40;
-        const leftPercent = `calc(50% + ${offset}px)`;
+        const leftPercent = `calc(50% + ${offset - 4}px)`;
         return (
           <Handle
             key={`target-${index}`}
             type="target"
             id={`target-${index}`}
             position={Position.Top}
-            style={{ left: leftPercent }}
+            style={{ left: leftPercent, top: '-4px', transform: 'none' }}
             className="!bg-[#333333] !border-none !w-2 !h-2"
           />
         );
@@ -109,14 +109,14 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
       {Array.from({ length: outgoingCount || 1 }).map((_, index) => {
         const total = outgoingCount || 1;
         const offset = (index - (total - 1) / 2) * 40;
-        const leftPercent = `calc(50% + ${offset}px)`;
+        const leftPercent = `calc(50% + ${offset - 4}px)`;
         return (
           <Handle
             key={`source-${index}`}
             type="source"
             id={`source-${index}`}
             position={Position.Bottom}
-            style={{ left: leftPercent }}
+            style={{ left: leftPercent, bottom: '-4px', transform: 'none' }}
             className="!bg-[#333333] !border-none !w-2 !h-2"
           />
         );
