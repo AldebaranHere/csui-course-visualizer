@@ -255,7 +255,10 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     // Add child nodes to Dagre & establish parent relationships
     courseList.forEach((course) => {
-      dagreGraph.setNode(course.code, { width: 240, height: 120 });
+      const outgoingCount = courseList.filter((c) => c.prerequisites?.includes(course.code)).length;
+      const maxConn = Math.max(course.prerequisites ? course.prerequisites.length : 0, outgoingCount);
+      const nodeWidth = Math.max(320, maxConn * 40);
+      dagreGraph.setNode(course.code, { width: nodeWidth, height: 120 });
       const sem = getRecommendedSemester(course, activeProgram);
       dagreGraph.setParent(course.code, `semester-${sem}`);
     });
@@ -315,8 +318,14 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     // Build the React Flow Nodes list
     const flowNodes: Node[] = [];
 
-    const padding = 30;
-    const headerHeight = 110;
+    const getCourseWidth = (course: Course) => {
+      const outgoingCount = courseList.filter((c) => c.prerequisites?.includes(course.code)).length;
+      const maxConn = Math.max(course.prerequisites ? course.prerequisites.length : 0, outgoingCount);
+      return Math.max(320, maxConn * 40);
+    };
+
+    const padding = 40;
+    const headerHeight = 120;
     const gap = 40;
 
     // Group and sort courses by semester based on Dagre layout X coordinates to keep optimized horizontal order
@@ -339,51 +348,69 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     }
     const semesterBounds: SemesterBoundItem[] = [];
 
-    // Pre-calculate the Pilihan group's X and Y coordinates to align Semesters 6, 7, and 8 exactly to its left and top
-    let pilihanLeftX = 0;
-    let pilihanTopY = 0;
-    const sem6Height = 120 + 2 * padding + headerHeight;
-    const pilihanDagreNode = dagreGraph.node(`semester-${pilihanCategory}`);
-    if (pilihanDagreNode) {
-      const semCourses = coursesBySem[pilihanCategory] || [];
-      const rows = Math.ceil(semCourses.length / cols);
-      const pilihanWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
-      const pilihanHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
-      const pilihanCenterX = pilihanDagreNode.x;
-      const pilihanCenterY = pilihanDagreNode.y;
-      pilihanLeftX = pilihanCenterX - pilihanWidth / 2;
-      pilihanTopY = pilihanCenterY - pilihanHeight / 2;
-    }
+    // Pre-calculate heights and widths of all active semesters to position them in a custom layout
+    const semHeights: Record<string, number> = {};
+    const semWidths: Record<string, number> = {};
+    const semY: Record<string, number> = {};
 
-    // Pre-calculate Semester 7 and 8 widths to position them side-by-side under Semester 6
-    const getSemesterWidth = (semKey: string) => {
-      const semCourses = coursesBySem[semKey] || [];
-      if (semCourses.length === 0) return 0;
-      return semCourses.length * 240 + (semCourses.length - 1) * gap + 2 * padding;
-    };
-    const sem7Width = getSemesterWidth('7');
-    const sem8Width = getSemesterWidth('8');
-
-    // 1. Generate Semester Group Nodes (Backdrop Cards) with tight packed boundaries
     semestersList.forEach((sem) => {
-      const semCourses = coursesBySem[sem];
+      const semCourses = coursesBySem[sem] || [];
       if (semCourses.length === 0) return;
 
       let parentWidth = 0;
       let parentHeight = 0;
-
-      // Group layout logic: AI categories and Pilihan use 4-column matrix grids, others use single horizontal rows
       if (isAI || sem === 'pilihan') {
         const rows = Math.ceil(semCourses.length / cols);
-        parentWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
+        let colWidth = 320;
+        semCourses.forEach((c) => {
+          colWidth = Math.max(colWidth, getCourseWidth(c));
+        });
+        parentWidth = cols * colWidth + (cols - 1) * gap + 2 * padding;
         parentHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
       } else {
-        const N = semCourses.length;
-        parentWidth = N * 240 + (N - 1) * gap + 2 * padding;
+        let sumW = 0;
+        semCourses.forEach((c) => {
+          sumW += getCourseWidth(c);
+        });
+        parentWidth = sumW + (semCourses.length - 1) * gap + 2 * padding;
         parentHeight = 120 + 2 * padding + headerHeight;
       }
+      semWidths[sem] = parentWidth;
+      semHeights[sem] = parentHeight;
+    });
 
-      // Center container card exactly where Dagre positioned the semester compound node center
+    const centerRefX = 1200;
+    const rowGap = 240;
+    const shiftX = 360;
+
+    // Calculate Y offsets for semesters 1-5
+    let currentY = 0;
+    ['1', '2', '3', '4', '5'].forEach((sem) => {
+      if (semHeights[sem] !== undefined) {
+        semY[sem] = currentY;
+        currentY += semHeights[sem] + rowGap;
+      }
+    });
+
+    // Pilihan and Semesters 6-8 top boundary starts below Semester 5
+    const blocksTopY = currentY;
+
+    // Pilihan (Green block) on the left side
+    const pilihanWidth = semWidths['pilihan'] || 0;
+    const pilihanX = centerRefX - 80 - pilihanWidth;
+
+    // Blue block (Semesters 6-8) on the right side
+    const blueBlockX = centerRefX + 80;
+
+    // 1. Generate Semester Group Nodes (Backdrop Cards) with custom layout coordinates
+    semestersList.forEach((sem) => {
+      const semCourses = coursesBySem[sem];
+      if (semCourses.length === 0) return;
+
+      const parentWidth = semWidths[sem];
+      const parentHeight = semHeights[sem];
+
+      // Center container card exactly where Dagre positioned the semester compound node center by default
       const parentDagreNode = dagreGraph.node(`semester-${sem}`);
       const centerX = parentDagreNode?.x || 0;
       const centerY = parentDagreNode?.y || 0;
@@ -391,32 +418,47 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       let parentX = centerX - parentWidth / 2;
       let parentY = centerY - parentHeight / 2;
 
-      // Layout override for AI categories: arrange in a 2x3 grid
-      if (isAI) {
+      // Custom Zig-Zag and Side-by-Side block coordinates override
+      if (isCS || isIS) {
+        if (sem === '1') {
+          parentX = centerRefX - parentWidth / 2;
+          parentY = semY['1'] ?? parentY;
+        } else if (sem === '2') {
+          parentX = centerRefX - parentWidth / 2 + shiftX;
+          parentY = semY['2'] ?? parentY;
+        } else if (sem === '3') {
+          parentX = centerRefX - parentWidth / 2 - shiftX;
+          parentY = semY['3'] ?? parentY;
+        } else if (sem === '4') {
+          parentX = centerRefX - parentWidth / 2 + shiftX;
+          parentY = semY['4'] ?? parentY;
+        } else if (sem === '5') {
+          parentX = centerRefX - parentWidth / 2 - shiftX;
+          parentY = semY['5'] ?? parentY;
+        } else if (sem === 'pilihan') {
+          parentX = pilihanX;
+          parentY = blocksTopY;
+        } else if (sem === '6') {
+          parentX = blueBlockX + 150;
+          parentY = blocksTopY;
+        } else if (sem === '7') {
+          parentX = blueBlockX;
+          parentY = blocksTopY + (semHeights['6'] || 0) + rowGap;
+        } else if (sem === '8') {
+          parentX = blueBlockX + 300;
+          parentY = blocksTopY + (semHeights['6'] || 0) + (semHeights['7'] || 0) + 2 * rowGap;
+        }
+      } else if (isAI) {
         const catIndex = semestersList.indexOf(sem);
         const col = catIndex % 3;
         const row = Math.floor(catIndex / 3);
         const colWidth = 1140;
         const colGap = 80;
-        const rowGap = 120;
+        const aiRowGap = 120;
         const row0MaxHeight = 450;
 
         parentX = col * (colWidth + colGap);
-        parentY = row === 0 ? 0 : row0MaxHeight + rowGap;
-      }
-
-      // Layout override: Position Semesters 6, 7, and 8 exactly to the left and top-aligned of the Pilihan group
-      if (isCS || isIS) {
-        if (sem === '6') {
-          parentX = pilihanLeftX - parentWidth - 80;
-          parentY = pilihanTopY;
-        } else if (sem === '8') {
-          parentX = pilihanLeftX - sem8Width - 80;
-          parentY = pilihanTopY + sem6Height + 160;
-        } else if (sem === '7') {
-          parentX = pilihanLeftX - sem8Width - 80 - sem7Width - 80;
-          parentY = pilihanTopY + sem6Height + 160;
-        }
+        parentY = row === 0 ? 0 : row0MaxHeight + aiRowGap;
       }
 
       semesterBounds.push({
@@ -449,6 +491,14 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     // 2. Generate Course Nodes (positioned relatively inside manually computed parent coordinates)
     semestersList.forEach((sem) => {
       const semCourses = coursesBySem[sem];
+      let currentXOffset = padding;
+      let colWidth = 320;
+      if (isAI || sem === 'pilihan') {
+        semCourses.forEach((c) => {
+          colWidth = Math.max(colWidth, getCourseWidth(c));
+        });
+      }
+
       semCourses.forEach((course, index) => {
         const semNumber = (sem === 'pilihan' || isAI) ? undefined : parseInt(sem, 10);
         const enrichedCourse = {
@@ -463,11 +513,12 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         if (isAI || sem === 'pilihan') {
           const col = index % cols;
           const row = Math.floor(index / cols);
-          relativeX = padding + col * (240 + gap);
+          relativeX = padding + col * (colWidth + gap);
           relativeY = padding + headerHeight + row * (120 + gap);
         } else {
-          relativeX = padding + index * (240 + gap);
+          relativeX = currentXOffset;
           relativeY = padding + headerHeight;
+          currentXOffset += getCourseWidth(course) + gap;
         }
 
         flowNodes.push({
@@ -486,6 +537,25 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     // Map to React Flow Edges
     const flowEdges: Edge[] = [];
+    
+    // First pass: count source/target occurrences to separate parallel lines
+    const sourceCounts: Record<string, number> = {};
+    const targetCounts: Record<string, number> = {};
+
+    courseList.forEach((course) => {
+      if (course.prerequisites) {
+        course.prerequisites.forEach((prereq) => {
+          if (courses[prereq]) {
+            sourceCounts[prereq] = (sourceCounts[prereq] || 0) + 1;
+            targetCounts[course.code] = (targetCounts[course.code] || 0) + 1;
+          }
+        });
+      }
+    });
+
+    const sourceCurrentIndex: Record<string, number> = {};
+    const targetCurrentIndex: Record<string, number> = {};
+
     courseList.forEach((course) => {
       if (course.prerequisites) {
         course.prerequisites.forEach((prereq) => {
@@ -524,10 +594,19 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                successorIndex = successors.indexOf(course.code);
              }
 
+             const sCount = sourceCounts[prereq] || 1;
+             const tCount = targetCounts[course.code] || 1;
+             const sIdx = sourceCurrentIndex[prereq] || 0;
+             sourceCurrentIndex[prereq] = sIdx + 1;
+             const tIdx = targetCurrentIndex[course.code] || 0;
+             targetCurrentIndex[course.code] = tIdx + 1;
+
              flowEdges.push({
                id: `${prereq}-${course.code}`,
                source: prereq,
                target: course.code,
+               sourceHandle: `source-${sIdx}`,
+               targetHandle: `target-${tIdx}`,
                type: 'prerequisite',
                animated: isHighlightedEdge && selectedCourseId === prereq,
                style: {
@@ -552,6 +631,10 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                  sourceParentId: `semester-${getRecommendedSemester(courses[prereq], activeProgram)}`,
                  targetParentId: `semester-${getRecommendedSemester(course, activeProgram)}`,
                  semesterBounds,
+                 sourceIndex: sIdx,
+                 sourceTotal: sCount,
+                 targetIndex: tIdx,
+                 targetTotal: tCount,
                },
              });
           }
@@ -579,7 +662,12 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         // Find parent group coordinates to map relative back to absolute layout space
         const parentNode = nodes.find((n) => n.id === selectedNode.parentNode);
         if (parentNode) {
-          const absoluteX = selectedNode.position.x + parentNode.position.x + 120;
+          const courseData = selectedNode.data as Course;
+          const incoming = courseData.prerequisites ? courseData.prerequisites.length : 0;
+          const outgoingCount = nodes.filter((n) => n.type === 'course' && (n.data as Course).prerequisites?.includes(selectedNode.id)).length;
+          const maxConn = Math.max(incoming, outgoingCount);
+          const courseWidth = Math.max(320, maxConn * 40);
+          const absoluteX = selectedNode.position.x + parentNode.position.x + courseWidth / 2;
           const absoluteY = selectedNode.position.y + parentNode.position.y + 60;
           setCenter(absoluteX, absoluteY, { zoom: 1.1, duration: 800 });
         }
