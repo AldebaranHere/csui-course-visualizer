@@ -553,6 +553,50 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       }
     });
 
+    // Group edges by their semester transition pair to assign unique lanes
+    interface EdgeGroupItem {
+      prereq: string;
+      courseCode: string;
+      sourceX: number;
+      targetX: number;
+    }
+    const edgeGroups: Record<string, EdgeGroupItem[]> = {};
+
+    courseList.forEach((course) => {
+      if (course.prerequisites) {
+        course.prerequisites.forEach((prereq) => {
+          if (courses[prereq]) {
+            const sourceSem = getRecommendedSemester(courses[prereq], activeProgram);
+            const targetSem = getRecommendedSemester(course, activeProgram);
+            const key = `${sourceSem}-${targetSem}`;
+            
+            const sourceDagreNode = dagreGraph.node(prereq);
+            const targetDagreNode = dagreGraph.node(course.code);
+            const sourceX = sourceDagreNode?.x || 0;
+            const targetX = targetDagreNode?.x || 0;
+
+            if (!edgeGroups[key]) {
+              edgeGroups[key] = [];
+            }
+            edgeGroups[key].push({ prereq, courseCode: course.code, sourceX, targetX });
+          }
+        });
+      }
+    });
+
+    const edgeLanes: Record<string, { laneIndex: number; laneTotal: number }> = {};
+    Object.keys(edgeGroups).forEach((key) => {
+      const items = edgeGroups[key];
+      // Sort edges horizontally by the average of their source/target X coordinates to prevent crossings
+      items.sort((a, b) => (a.sourceX + a.targetX) - (b.sourceX + b.targetX));
+      items.forEach((item, index) => {
+        edgeLanes[`${item.prereq}-${item.courseCode}`] = {
+          laneIndex: index,
+          laneTotal: items.length,
+        };
+      });
+    });
+
     const sourceCurrentIndex: Record<string, number> = {};
     const targetCurrentIndex: Record<string, number> = {};
 
@@ -601,6 +645,8 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
              const tIdx = targetCurrentIndex[course.code] || 0;
              targetCurrentIndex[course.code] = tIdx + 1;
 
+             const laneInfo = edgeLanes[`${prereq}-${course.code}`] || { laneIndex: 0, laneTotal: 1 };
+
              flowEdges.push({
                id: `${prereq}-${course.code}`,
                source: prereq,
@@ -635,12 +681,16 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                  sourceTotal: sCount,
                  targetIndex: tIdx,
                  targetTotal: tCount,
+                 laneIndex: laneInfo.laneIndex,
+                 laneTotal: laneInfo.laneTotal,
                },
              });
           }
         });
       }
     });
+
+    console.log('ALL FLOW EDGES:', flowEdges.map(e => ({ id: e.id, source: e.source, target: e.target, laneIndex: e.data.laneIndex, laneTotal: e.data.laneTotal })));
 
     return { nodes: flowNodes, edges: flowEdges };
   }, [courses, highlightedNodes, selectedCourseId, selectedSemester, activeProgram, isDataEmpty]);
