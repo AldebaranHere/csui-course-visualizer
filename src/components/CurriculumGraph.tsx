@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useDeferredValue } from 'react';
 import ReactFlow, {
   Background,
   Controls,
@@ -33,6 +33,34 @@ const edgeTypes = {
 interface CurriculumGraphProps {
   courses: Record<string, Course>;
 }
+
+// ─── Routing engine helpers (moved from PrerequisiteEdge for shared single computation) ───
+
+interface ObstacleBox {
+  id: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+const snapToGrid = (x: number) => Math.round(x / 20) * 20;
+
+const getSemNumFromY = (y: number) => {
+  if (y < 560) return 1;
+  if (y < 1120) return 2;
+  if (y < 1680) return 3;
+  if (y < 2240) return 4;
+  return 5 + Math.floor((y - 2240) / 560);
+};
+
+function getSemNum(parentId?: string) {
+  if (!parentId) return 0;
+  if (parentId === 'semester-pilihan') return 7;
+  const match = parentId.match(/semester-(\d+)/);
+  return match ? parseInt(match[1], 10) : 0;
+}
+
 
 // Helper to determine the recommended semester/group for a course based on its name and active program
 const getRecommendedSemester = (course: Course, program: StudyProgram): string => {
@@ -171,6 +199,12 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
   // Intercept empty dataset for IS KKI to show empty state alert
   const isDataEmpty = Object.keys(courses).length === 0;
 
+  // P3: Defer the expensive Dagre layout computation off the blocking render path.
+  // deferredCourses lags behind `courses` by one render when the program switches,
+  // allowing the shell UI (nav, sidebar) to repaint immediately.
+  const deferredCourses = useDeferredValue(courses);
+  const isLayoutStale = deferredCourses !== courses;
+
   // 1. Calculate matching and dependency paths
   useEffect(() => {
     if (isDataEmpty) return;
@@ -222,7 +256,9 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
   }, [selectedCourseId, searchQuery, courses, setHighlightedNodes, isDataEmpty]);
 
   // 2. Generate laid-out React Flow Nodes and Edges using Dagre
-  const { nodes, edges } = useMemo(() => {
+  // 2. Generate laid-out React Flow Nodes and Edges using Dagre
+  // Hook 1: Runs Dagre layout only when raw dataset changes
+  const baseLayout = useMemo(() => {
     if (isDataEmpty) {
       return { nodes: [], edges: [] };
     }
@@ -231,7 +267,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     dagreGraph.setDefaultEdgeLabel(() => ({}));
     
     // Configure Dagre layout: Top-to-Bottom, compound layouts, spacious separation
-    dagreGraph.setGraph({ rankdir: 'TB', nodesep: 40, ranksep: 160, compound: true });
+    dagreGraph.setGraph({ rankdir: 'TB', nodesep: 80, ranksep: 160, compound: true });
 
     const isAI = activeProgram === 'AI';
 
@@ -253,9 +289,17 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     const courseList = Object.values(courses);
 
+    // Pre-compute successor counts (O(n)) so CourseNode can avoid O(n²) scans
+    const successorMap: Record<string, number> = {};
+    courseList.forEach((course) => {
+      course.prerequisites?.forEach((prereq) => {
+        successorMap[prereq] = (successorMap[prereq] || 0) + 1;
+      });
+    });
+
     // Add child nodes to Dagre & establish parent relationships
     courseList.forEach((course) => {
-      const outgoingCount = courseList.filter((c) => c.prerequisites?.includes(course.code)).length;
+      const outgoingCount = successorMap[course.code] || 0;
       const maxConn = Math.max(course.prerequisites ? course.prerequisites.length : 0, outgoingCount);
       const nodeWidth = Math.max(320, maxConn * 40);
       dagreGraph.setNode(course.code, { width: nodeWidth, height: 120 });
@@ -319,7 +363,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     const flowNodes: Node[] = [];
 
     const getCourseWidth = (course: Course) => {
-      const outgoingCount = courseList.filter((c) => c.prerequisites?.includes(course.code)).length;
+      const outgoingCount = successorMap[course.code] || 0;
       const maxConn = Math.max(course.prerequisites ? course.prerequisites.length : 0, outgoingCount);
       return Math.max(320, maxConn * 40);
     };
@@ -504,6 +548,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         const enrichedCourse = {
           ...course,
           recommendedSemester: semNumber,
+          outgoingCount: successorMap[course.code] || 0,
         };
 
         let relativeX = 0;
@@ -604,40 +649,6 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       if (course.prerequisites) {
         course.prerequisites.forEach((prereq) => {
           if (courses[prereq]) {
-             // Check if both source and target are in the highlighted set
-             const hasHighlight = highlightedNodes.size > 0;
-             const isSourceActive = !hasHighlight || highlightedNodes.has(prereq);
-             const isTargetActive = !hasHighlight || highlightedNodes.has(course.code);
-             const isHighlightedEdge = hasHighlight && isSourceActive && isTargetActive;
-             
-             const isCourseClicked = selectedCourseId !== null;
-             const isSemesterSelected = selectedSemester !== null;
-             
-             let isYellow = false;
-             if (isCourseClicked) {
-               isYellow = isHighlightedEdge;
-             } else if (isSemesterSelected) {
-               isYellow = false;
-             } else {
-               isYellow = true;
-             }
-
-             const strokeColor = isYellow ? '#C5A059' : '#333333';
-             const strokeWidth = isYellow ? 2.0 : 1.5;
-             const opacityValue = isYellow ? 1 : 0.15;
-
-             const showPrereqLabel = isHighlightedEdge && selectedCourseId === course.code;
-             const showSuccessorLabel = isHighlightedEdge && selectedCourseId === prereq;
-
-             let successorIndex = 0;
-             if (showSuccessorLabel) {
-               const successors = courseList
-                 .filter((c) => c.prerequisites && c.prerequisites.includes(prereq))
-                 .map((c) => c.code)
-                 .sort();
-               successorIndex = successors.indexOf(course.code);
-             }
-
              const sCount = sourceCounts[prereq] || 1;
              const tCount = targetCounts[course.code] || 1;
              const sIdx = sourceCurrentIndex[prereq] || 0;
@@ -654,26 +665,10 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                sourceHandle: `source-${sIdx}`,
                targetHandle: `target-${tIdx}`,
                type: 'prerequisite',
-               animated: isHighlightedEdge && selectedCourseId === prereq,
-               style: {
-                 stroke: strokeColor,
-                 strokeWidth: strokeWidth,
-                 opacity: opacityValue,
-                 transition: 'stroke 0.2s, stroke-width 0.2s, opacity 0.2s',
-               },
-               markerEnd: {
-                 type: MarkerType.ArrowClosed,
-                 width: 20,
-                 height: 20,
-                 color: strokeColor,
-               },
                data: {
-                 showPrereqLabel,
-                 showSuccessorLabel,
                  sourceCourseName: courses[prereq]?.name || prereq,
                  targetCourseName: course.name,
                  prereqIndex: course.prerequisites.indexOf(prereq),
-                 successorIndex,
                  sourceParentId: `semester-${getRecommendedSemester(courses[prereq], activeProgram)}`,
                  targetParentId: `semester-${getRecommendedSemester(course, activeProgram)}`,
                  semesterBounds,
@@ -690,10 +685,451 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       }
     });
 
-    console.log('ALL FLOW EDGES:', flowEdges.map(e => ({ id: e.id, source: e.source, target: e.target, laneIndex: e.data.laneIndex, laneTotal: e.data.laneTotal })));
-
     return { nodes: flowNodes, edges: flowEdges };
-  }, [courses, highlightedNodes, selectedCourseId, selectedSemester, activeProgram, isDataEmpty]);
+  // `courses` (the live prop) is intentionally omitted — we use deferredCourses
+  // to defer the heavy Dagre computation off the blocking render path (P3).
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deferredCourses, activeProgram, isDataEmpty]);
+
+  // Hook 2: Applies styling/highlight state to nodes and edges. Bypasses Dagre completely.
+  const { nodes, edges } = useMemo(() => {
+    if (!baseLayout) return { nodes: [], edges: [] };
+
+    const { nodes: baseNodes, edges: baseEdges } = baseLayout;
+
+    const courseList = Object.values(deferredCourses);
+
+    const mappedEdges = baseEdges.map((edge) => {
+      const prereq = edge.source;
+      const courseCode = edge.target;
+      const course = deferredCourses[courseCode];
+      if (!course) return edge;
+
+      const hasHighlight = highlightedNodes.size > 0;
+      const isSourceActive = !hasHighlight || highlightedNodes.has(prereq);
+      const isTargetActive = !hasHighlight || highlightedNodes.has(courseCode);
+      const isHighlightedEdge = hasHighlight && isSourceActive && isTargetActive;
+      
+      const isCourseClicked = selectedCourseId !== null;
+      const isSemesterSelected = selectedSemester !== null;
+      
+      let isYellow = false;
+      if (isCourseClicked) {
+        isYellow = isHighlightedEdge;
+      } else if (isSemesterSelected) {
+        isYellow = false;
+      } else {
+        isYellow = true;
+      }
+
+      const strokeColor = isYellow ? '#C5A059' : '#333333';
+      const strokeWidth = isYellow ? 2.0 : 1.5;
+      const opacityValue = isYellow ? 1 : 0.15;
+
+      const showPrereqLabel = isHighlightedEdge && selectedCourseId === courseCode;
+      const showSuccessorLabel = isHighlightedEdge && selectedCourseId === prereq;
+
+      let successorIndex = 0;
+      if (showSuccessorLabel) {
+        const successors = courseList
+          .filter((c) => c.prerequisites && c.prerequisites.includes(prereq))
+          .map((c) => c.code)
+          .sort();
+        successorIndex = successors.indexOf(courseCode);
+      }
+
+      return {
+        ...edge,
+        animated: isHighlightedEdge && selectedCourseId === prereq,
+        style: {
+          stroke: strokeColor,
+          strokeWidth: strokeWidth,
+          opacity: opacityValue,
+          transition: 'stroke 0.2s, stroke-width 0.2s, opacity 0.2s',
+        },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          width: 20,
+          height: 20,
+          color: strokeColor,
+        },
+        data: {
+          ...edge.data,
+          showPrereqLabel,
+          showSuccessorLabel,
+          successorIndex,
+          // pathData injected below after routingPathMap is computed
+        },
+      };
+    });
+
+    return { nodes: baseNodes, edges: mappedEdges };
+  }, [baseLayout, highlightedNodes, selectedCourseId, selectedSemester, deferredCourses]);
+
+  // ─── Routing Engine: derived from baseLayout.nodes (stable, no RF store subscription) ───
+  // IMPORTANT: We intentionally do NOT use useStore(nodeInternals) here.
+  // Array.from(nodeInternals.values()) creates a new reference on every RF store update,
+  // which would cause routingPathMap → edgesWithPaths → setEdges → RF store update → infinite loop.
+  // baseLayout.nodes contains the same positions (we set them explicitly) and is stable.
+  // Stable reference — baseLayout.nodes is already memoised, but the `?? []` fallback
+  // would create a new array reference on every render. useMemo ensures the routing
+  // engine only recomputes when baseLayout actually changes.
+  const layoutNodes = React.useMemo(() => baseLayout?.nodes ?? [], [baseLayout]);
+
+
+  const rfNodeMap = React.useMemo(() => {
+    const map: Record<string, Node> = {};
+    layoutNodes.forEach((n) => { map[n.id] = n; });
+    return map;
+  }, [layoutNodes]);
+
+  const rfSemesterBounds = React.useMemo(() => {
+    return layoutNodes
+      .filter((n) => n.type === 'semesterGroup')
+      .map((n) => ({
+        id: n.id,
+        x: n.position.x,
+        y: n.position.y,
+        w: Number(n.width || n.style?.width || 320),
+        h: Number(n.height || n.style?.height || 480),
+      }));
+  }, [layoutNodes]);
+
+  const rfEdgeSourceCounts = React.useMemo(() => {
+    const counts: Record<string, number> = {};
+    if (!baseLayout) return counts;
+    baseLayout.edges.forEach((edge) => {
+      counts[edge.source] = (counts[edge.source] || 0) + 1;
+    });
+    return counts;
+  }, [baseLayout]);
+
+  const rfEdgeTargetCounts = React.useMemo(() => {
+    const counts: Record<string, number> = {};
+    if (!baseLayout) return counts;
+    baseLayout.edges.forEach((edge) => {
+      counts[edge.target] = (counts[edge.target] || 0) + 1;
+    });
+    return counts;
+  }, [baseLayout]);
+
+  const rfNodeBounds = React.useMemo(() => {
+    const bounds: Record<string, ObstacleBox> = {};
+    if (!baseLayout) return bounds;
+    layoutNodes.forEach((node) => {
+      if (node.type !== 'course') return;
+      const parentNode = node.parentNode ? rfNodeMap[node.parentNode] : null;
+      const parentX = parentNode?.position.x || 0;
+      const parentY = parentNode?.position.y || 0;
+      const outgoingCount = baseLayout.edges.filter((e) => e.source === node.id).length;
+      const maxConn = Math.max(node.data.prerequisites ? node.data.prerequisites.length : 0, outgoingCount);
+      const nodeWidth = Math.max(320, maxConn * 40);
+      bounds[node.id] = {
+        id: node.id,
+        x: node.position.x + parentX,
+        y: node.position.y + parentY,
+        w: nodeWidth,
+        h: 110,
+      };
+    });
+    return bounds;
+  }, [layoutNodes, baseLayout, rfNodeMap]);
+
+  const routingPathMap = React.useMemo(() => {
+    if (!baseLayout || baseLayout.edges.length === 0 || layoutNodes.length === 0) return null;
+
+    const baseEdges = baseLayout.edges;
+
+    const adjustDetourX = (x: number, side: string, sourceParentId: string | undefined | null, targetParentId: string | undefined | null, sourceY: number, targetY: number) => {
+      let adjustedX = x;
+      rfSemesterBounds.forEach((box) => {
+        if (box.id === sourceParentId || box.id === targetParentId) return;
+        const verticalOverlap = box.y > sourceY + 5 && box.y < targetY - 5;
+        if (!verticalOverlap) return;
+        if (adjustedX > box.x - 20 && adjustedX < box.x + box.w + 20) {
+          if (side === 'left') {
+            adjustedX = Math.min(adjustedX, box.x - 40);
+          } else {
+            adjustedX = Math.max(adjustedX, box.x + box.w + 40);
+          }
+        }
+      });
+      return snapToGrid(adjustedX);
+    };
+
+    type EdgeInfo = {
+      id: string; sourceX: number; sourceY: number; targetX: number; targetY: number;
+      sourceSem: number; targetSem: number; obstacles: ObstacleBox[];
+      minObsX: number; maxObsX: number; maxObsY: number;
+      detourSide: string; lastObstacleSem: number;
+      sourceParentId: string | undefined; targetParentId: string | undefined;
+      sourceOffset: number; targetOffset: number; verticalLaneIndex: number;
+    };
+
+    const edgeInfos: EdgeInfo[] = baseEdges
+      .map((edge) => {
+        const sourceNode = rfNodeMap[edge.source];
+        const targetNode = rfNodeMap[edge.target];
+        if (!sourceNode || !targetNode) return null;
+
+        const sIdx = parseInt(edge.sourceHandle?.replace('source-', '') || '0', 10);
+        const tIdx = parseInt(edge.targetHandle?.replace('target-', '') || '0', 10);
+        const sCount = rfEdgeSourceCounts[edge.source] || 1;
+        const tCount = rfEdgeTargetCounts[edge.target] || 1;
+        const sourceOffset = (sIdx - (sCount - 1) / 2) * 40;
+        const targetOffset = (tIdx - (tCount - 1) / 2) * 40;
+
+        const sBounds = rfNodeBounds[edge.source];
+        const tBounds = rfNodeBounds[edge.target];
+        if (!sBounds || !tBounds) return null;
+
+        const sourceXCoord = sBounds.x + sBounds.w / 2 + sourceOffset;
+        const sourceYCoord = sBounds.y + sBounds.h;
+        const targetXCoord = tBounds.x + tBounds.w / 2 + targetOffset;
+        const targetYCoord = tBounds.y;
+
+        const sourceSem = getSemNumFromY(sourceYCoord);
+        const targetSem = getSemNumFromY(targetYCoord);
+
+        const obstacles: ObstacleBox[] = [];
+
+        rfSemesterBounds.forEach((box) => {
+          if (box.id === sourceNode.parentNode || box.id === targetNode.parentNode) return;
+          const verticalOverlap = box.y > sourceYCoord + 5 && box.y < targetYCoord - 5;
+          if (!verticalOverlap) return;
+          const minLineX = Math.min(sourceXCoord, targetXCoord);
+          const maxLineX = Math.max(sourceXCoord, targetXCoord);
+          const horizontalOverlap = !(maxLineX < box.x || minLineX > box.x + box.w);
+          if (horizontalOverlap) obstacles.push(box);
+        });
+
+        Object.values(rfNodeBounds).forEach((box) => {
+          const courseNode = rfNodeMap[box.id];
+          if (!courseNode || courseNode.parentNode !== targetNode.parentNode) return;
+          if (box.id === edge.source || box.id === edge.target) return;
+          const verticalOverlap = box.y > sourceYCoord + 5 && box.y < targetYCoord - 5;
+          if (!verticalOverlap) return;
+          const minLineX = Math.min(sourceXCoord, targetXCoord);
+          const maxLineX = Math.max(sourceXCoord, targetXCoord);
+          const horizontalOverlap = !(maxLineX < box.x || minLineX > box.x + box.w);
+          if (horizontalOverlap) obstacles.push(box);
+        });
+
+        rfSemesterBounds.forEach((box) => {
+          if (box.id === sourceNode.parentNode || box.id === targetNode.parentNode) return;
+          const labelLeft = box.x;
+          const labelRight = box.x + 320;
+          const labelTop = box.y;
+          const labelBottom = box.y + 80;
+          const minLineX = Math.min(sourceXCoord, targetXCoord);
+          const maxLineX = Math.max(sourceXCoord, targetXCoord);
+          const verticalOverlap = labelTop < Math.max(sourceYCoord, targetYCoord) && labelBottom > Math.min(sourceYCoord, targetYCoord);
+          const horizontalOverlap = !(maxLineX < labelLeft || minLineX > labelRight);
+          if (verticalOverlap && horizontalOverlap) {
+            obstacles.push({ id: box.id, x: labelLeft, y: labelTop, w: 320, h: 80 });
+          }
+        });
+
+        let detourSide = 'none';
+        let minObsX = Infinity, maxObsX = -Infinity, maxObsY = -Infinity;
+        let lastObstacleSem = 0;
+        if (obstacles.length > 0) {
+          obstacles.forEach((box) => {
+            minObsX = Math.min(minObsX, box.x);
+            maxObsX = Math.max(maxObsX, box.x + box.w);
+            maxObsY = Math.max(maxObsY, box.y + box.h);
+            const courseNode = rfNodeMap[box.id];
+            const semNum = courseNode?.parentNode ? getSemNum(courseNode.parentNode) : getSemNum(box.id);
+            if (semNum > lastObstacleSem) lastObstacleSem = semNum;
+          });
+          lastObstacleSem = Math.min(lastObstacleSem, targetSem - 1);
+          const distToLeft = Math.abs(sourceXCoord - minObsX);
+          const distToRight = Math.abs(sourceXCoord - maxObsX);
+          detourSide = distToLeft < distToRight ? 'left' : 'right';
+        }
+
+        return {
+          id: edge.id, sourceX: sourceXCoord, sourceY: sourceYCoord,
+          targetX: targetXCoord, targetY: targetYCoord,
+          sourceSem, targetSem, obstacles, minObsX, maxObsX, maxObsY,
+          detourSide, lastObstacleSem,
+          sourceParentId: sourceNode.parentNode, targetParentId: targetNode.parentNode,
+          sourceOffset, targetOffset, verticalLaneIndex: 0,
+        };
+      })
+      .filter((info): info is EdgeInfo => info !== null);
+
+    function colorVerticalDetours(detours: EdgeInfo[]) {
+      const n = detours.length;
+      if (n === 0) return;
+      const adj: number[][] = Array.from({ length: n }, () => []);
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+          const overlap = Math.max(detours[i].sourceY, detours[j].sourceY) < Math.min(detours[i].targetY, detours[j].targetY);
+          if (overlap) { adj[i].push(j); adj[j].push(i); }
+        }
+      }
+      const colors = new Array(n).fill(-1);
+      const indices = Array.from({ length: n }, (_, i) => i);
+      indices.sort((i, j) => detours[i].sourceY - detours[j].sourceY);
+      indices.forEach((idx) => {
+        const d = detours[idx];
+        const neighborColors = new Set<number>();
+        adj[idx].forEach((neigh) => { if (colors[neigh] !== -1) neighborColors.add(colors[neigh]); });
+        const usedXCoords = new Set<number>();
+        edgeInfos.forEach((other) => {
+          const overlap = Math.max(d.sourceY, other.sourceY) < Math.min(d.targetY, other.targetY);
+          if (overlap) { usedXCoords.add(Math.round(other.sourceX)); usedXCoords.add(Math.round(other.targetX)); }
+        });
+        detours.forEach((other, oIdx) => {
+          if (colors[oIdx] !== -1 && other.id !== d.id) {
+            const overlap = Math.max(d.sourceY, other.sourceY) < Math.min(d.targetY, other.targetY);
+            if (overlap) {
+              const rawOtherDetourX = other.detourSide === 'left'
+                ? other.minObsX - 40 - colors[oIdx] * 20
+                : other.maxObsX + 40 + colors[oIdx] * 20;
+              usedXCoords.add(Math.round(adjustDetourX(rawOtherDetourX, other.detourSide, other.sourceParentId, other.targetParentId, other.sourceY, other.targetY)));
+            }
+          }
+        });
+        let c = 0;
+        while (true) {
+          if (!neighborColors.has(c)) {
+            const rawDetourX = d.detourSide === 'left' ? d.minObsX - 40 - c * 20 : d.maxObsX + 40 + c * 20;
+            if (!usedXCoords.has(Math.round(adjustDetourX(rawDetourX, d.detourSide, d.sourceParentId, d.targetParentId, d.sourceY, d.targetY)))) break;
+          }
+          c++;
+        }
+        colors[idx] = c;
+      });
+      detours.forEach((info, i) => { info.verticalLaneIndex = colors[i]; });
+    }
+
+    const leftDetours = edgeInfos.filter((info) => info.obstacles.length > 0 && info.detourSide === 'left');
+    const rightDetours = edgeInfos.filter((info) => info.obstacles.length > 0 && info.detourSide === 'right');
+    colorVerticalDetours(leftDetours);
+    colorVerticalDetours(rightDetours);
+
+    const gapSegments: { edgeIdx: number; segmentType: 'step1' | 'step2' | 'turn'; x1: number; x2: number; detourX?: number; }[][] = Array.from({ length: 12 }, () => []);
+    edgeInfos.forEach((info, idx) => {
+      if (info.obstacles.length > 0) {
+        const rawDetourX = info.detourSide === 'left'
+          ? info.minObsX - 40 - info.verticalLaneIndex * 20
+          : info.maxObsX + 40 + info.verticalLaneIndex * 20;
+        const detourX = adjustDetourX(rawDetourX, info.detourSide, info.sourceParentId, info.targetParentId, info.sourceY, info.targetY);
+        gapSegments[info.sourceSem].push({ edgeIdx: idx, segmentType: 'step1', x1: Math.min(info.sourceX, detourX), x2: Math.max(info.sourceX, detourX), detourX });
+        gapSegments[info.lastObstacleSem || info.sourceSem].push({ edgeIdx: idx, segmentType: 'step2', x1: Math.min(detourX, info.targetX), x2: Math.max(detourX, info.targetX), detourX });
+      } else {
+        gapSegments[info.sourceSem].push({ edgeIdx: idx, segmentType: 'turn', x1: Math.min(info.sourceX, info.targetX), x2: Math.max(info.sourceX, info.targetX) });
+      }
+    });
+
+    const segmentYMap: Record<string, number> = {};
+    for (let g = 1; g <= 9; g++) {
+      const segments = gapSegments[g];
+      const m = segments.length;
+      if (m === 0) continue;
+      const semG = rfSemesterBounds.find((b) => b.id === `semester-${g}`);
+      const semG1 = rfSemesterBounds.find((b) => b.id === `semester-${g + 1}`);
+      const minY = semG ? semG.y + semG.h + 40 : 0;
+      const maxY = semG1 ? semG1.y - 40 : minY + 200;
+      const availableHeight = maxY - minY;
+      const conflicts = Array.from({ length: m }, () => new Set<number>());
+      for (let i = 0; i < m; i++) {
+        for (let j = i + 1; j < m; j++) {
+          const overlap = Math.max(segments[i].x1, segments[j].x1) < Math.min(segments[i].x2, segments[j].x2);
+          if (overlap) { conflicts[i].add(j); conflicts[j].add(i); }
+        }
+      }
+      let colors2 = new Array(m).fill(-1);
+      let changed = true, iterations = 0;
+      while (changed && iterations < 10) {
+        changed = false;
+        iterations++;
+        colors2 = new Array(m).fill(-1);
+        const idxs = Array.from({ length: m }, (_, i) => i);
+        idxs.sort((i, j) => segments[i].x1 - segments[j].x1);
+        idxs.forEach((idx) => {
+          const neighborColors = new Set<number>();
+          conflicts[idx].forEach((neigh) => { if (colors2[neigh] !== -1) neighborColors.add(colors2[neigh]); });
+          let c = 0;
+          while (neighborColors.has(c)) c++;
+          colors2[idx] = c;
+        });
+        const laneTotal2 = Math.max(...colors2) + 1;
+        const spacing2 = Math.min(20, availableHeight / (laneTotal2 + 1));
+        const currentIntervals = segments.map((seg, i) => {
+          const laneIndex = colors2[i];
+          const rawY = minY + (laneIndex + 1) * spacing2;
+          const y = spacing2 >= 20 ? snapToGrid(rawY) : Math.round(rawY);
+          let x1 = seg.x1, x2 = seg.x2;
+          if (seg.segmentType === 'step1' || seg.segmentType === 'step2') {
+            const info = edgeInfos[seg.edgeIdx];
+            const detourX = snapToGrid(info.detourSide === 'left'
+              ? info.minObsX - 40 - info.verticalLaneIndex * 20
+              : info.maxObsX + 40 + info.verticalLaneIndex * 20);
+            if (seg.segmentType === 'step1') { x1 = Math.min(info.sourceX, detourX); x2 = Math.max(info.sourceX, detourX); }
+            else { x1 = Math.min(detourX, info.targetX); x2 = Math.max(detourX, info.targetX); }
+          }
+          return { x1, x2, y };
+        });
+        for (let i = 0; i < m; i++) {
+          for (let j = i + 1; j < m; j++) {
+            if (currentIntervals[i].y === currentIntervals[j].y) {
+              const s1 = currentIntervals[i], s2 = currentIntervals[j];
+              const overlap = Math.max(s1.x1, s2.x1) < Math.min(s1.x2, s2.x2);
+              if (overlap && !conflicts[i].has(j)) { conflicts[i].add(j); conflicts[j].add(i); changed = true; }
+            }
+          }
+        }
+      }
+      const laneTotal = Math.max(...colors2) + 1;
+      const spacing = Math.min(20, availableHeight / (laneTotal + 1));
+      segments.forEach((seg, i) => {
+        const laneIndex = colors2[i];
+        const rawY = minY + (laneIndex + 1) * spacing;
+        const y = spacing >= 20 ? snapToGrid(rawY) : Math.round(rawY);
+        segmentYMap[`${seg.edgeIdx}_${seg.segmentType}`] = y;
+      });
+    }
+
+    const pathMap: Record<string, { d: string; sourceX: number; sourceY: number; targetX: number; targetY: number }> = {};
+    edgeInfos.forEach((info, idx) => {
+      let d = '';
+      if (info.obstacles.length > 0) {
+        const rawDetourX = info.detourSide === 'left'
+          ? info.minObsX - 40 - info.verticalLaneIndex * 20
+          : info.maxObsX + 40 + info.verticalLaneIndex * 20;
+        const detourX = adjustDetourX(rawDetourX, info.detourSide, info.sourceParentId, info.targetParentId, info.sourceY, info.targetY);
+        const yStep1 = segmentYMap[`${idx}_step1`] || (info.sourceY + 40);
+        const yStep2 = segmentYMap[`${idx}_step2`] || (info.targetY - 40);
+        d = `M ${info.sourceX} ${info.sourceY - 3} L ${info.sourceX} ${yStep1} L ${detourX} ${yStep1} L ${detourX} ${yStep2} L ${info.targetX} ${yStep2} L ${info.targetX} ${info.targetY + 3}`;
+      } else {
+        const yTurn = segmentYMap[`${idx}_turn`] || ((info.sourceY + info.targetY) / 2);
+        d = `M ${info.sourceX} ${info.sourceY - 3} L ${info.sourceX} ${yTurn} L ${info.targetX} ${yTurn} L ${info.targetX} ${info.targetY + 3}`;
+      }
+      pathMap[info.id] = { d, sourceX: info.sourceX, sourceY: info.sourceY, targetX: info.targetX, targetY: info.targetY };
+    });
+
+    return pathMap;
+  }, [layoutNodes, rfNodeMap, rfSemesterBounds, rfEdgeSourceCounts, rfEdgeTargetCounts, rfNodeBounds, baseLayout]);
+
+  // Hook 3: Merges pre-computed pathData from routingPathMap into the styled edges.
+  // Split from Hook 2 to resolve declaration order (routingPathMap must be declared first).
+  const edgesWithPaths = React.useMemo(() => {
+    if (!routingPathMap) return edges;
+    return edges.map((edge) => ({
+      ...edge,
+      data: {
+        ...edge.data,
+        pathData: routingPathMap[edge.id] ?? null,
+      },
+    }));
+  }, [edges, routingPathMap]);
+
+  const handlePaneClick = React.useCallback(() => {
+    setSelectedCourseId(null);
+  }, [setSelectedCourseId]);
 
   // Fit view when active program changes
   useEffect(() => {
@@ -774,12 +1210,22 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         </div>
       )}
 
+      {/* P3: Loading overlay shown while deferred Dagre layout catches up */}
+      {isLayoutStale && (
+        <div className="absolute inset-0 z-40 bg-[#111111]/60 flex items-center justify-center pointer-events-none">
+          <div className="bg-[#1E1E1E] border border-[#333333] rounded-lg px-6 py-3 flex items-center gap-3 shadow-xl">
+            <div className="w-4 h-4 border-2 border-[#C5A059] border-t-transparent rounded-full animate-spin" />
+            <span className="text-sm font-sans text-[#E2E8F0]">Memuat peta kurikulum...</span>
+          </div>
+        </div>
+      )}
+
       <ReactFlow
         nodes={nodes}
-        edges={edges}
+        edges={edgesWithPaths}
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
-        onPaneClick={() => setSelectedCourseId(null)}
+        onPaneClick={handlePaneClick}
         fitView
         onlyRenderVisibleElements={true}
         minZoom={0.1}

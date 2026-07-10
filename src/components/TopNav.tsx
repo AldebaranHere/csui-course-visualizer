@@ -63,7 +63,8 @@ export const TopNav: React.FC = () => {
             <select
               value={activeProgram}
               onChange={(e) => handleProgramChange(e.target.value as StudyProgram)}
-              className="w-full bg-[#333333] border border-[#333333] text-[#F8FAFC] focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] focus:outline-none rounded-[4px] px-3 py-2 text-xs font-bold font-sans min-h-[40px] cursor-pointer appearance-none bg-no-repeat bg-[right_12px_center] transition-all duration-200"
+              aria-label="Pilih Program Studi"
+              className="w-full bg-[#333333] border border-[#333333] text-[#F8FAFC] focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] focus:outline-none rounded-[4px] px-3 py-2 text-xs font-bold font-sans min-h-[40px] cursor-pointer appearance-none bg-no-repeat bg-[right_12px_center] transition-opacity duration-200"
               style={{
                 backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E2E8F0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
                 backgroundSize: '16px',
@@ -100,14 +101,14 @@ export const TopNav: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Cari mata kuliah..."
-              className="bg-transparent border border-[#333333] text-[#F8FAFC] placeholder:text-[#E2E8F0]/50 rounded-[4px] py-2 pl-9 pr-4 text-sm focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] focus:outline-none w-64 transition-all duration-200 font-sans min-h-[44px]"
+              className="bg-transparent border border-[#333333] text-[#F8FAFC] placeholder:text-[#E2E8F0]/50 rounded-[4px] py-2 pl-9 pr-4 text-sm focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] focus:outline-none w-64 transition-opacity duration-200 font-sans min-h-[44px]"
             />
           </div>
 
           {/* FAQ Button */}
           <button
             onClick={() => setIsFaqOpen(true)}
-            className="px-4 py-2 border border-[#333333] hover:border-[#C5A059] text-xs font-bold text-[#E2E8F0] hover:text-[#C5A059] bg-[#2A2A2A] hover:bg-[#333333] rounded-[4px] transition-all duration-200 flex items-center gap-2 min-h-[44px] cursor-pointer"
+            className="px-4 py-2 border border-[#333333] hover:border-[#C5A059] text-xs font-bold text-[#E2E8F0] hover:text-[#C5A059] bg-[#2A2A2A] hover:bg-[#333333] rounded-[4px] transition-opacity duration-200 flex items-center gap-2 min-h-[44px] cursor-pointer"
             aria-label="FAQ"
           >
             <HelpCircle className="w-4 h-4" />
@@ -117,7 +118,7 @@ export const TopNav: React.FC = () => {
           {/* Contact Developer Button */}
           <button
             onClick={() => setIsContactOpen(true)}
-            className="px-4 py-2 border border-[#333333] hover:border-[#C5A059] text-xs font-bold text-[#E2E8F0] hover:text-[#C5A059] bg-[#2A2A2A] hover:bg-[#333333] rounded-[4px] transition-all duration-200 flex items-center gap-2 min-h-[44px] cursor-pointer"
+            className="px-4 py-2 border border-[#333333] hover:border-[#C5A059] text-xs font-bold text-[#E2E8F0] hover:text-[#C5A059] bg-[#2A2A2A] hover:bg-[#333333] rounded-[4px] transition-opacity duration-200 flex items-center gap-2 min-h-[44px] cursor-pointer"
             aria-label="Hubungi Developer"
           >
             <User className="w-4 h-4" />

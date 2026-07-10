@@ -15,8 +15,9 @@ export interface Course {
   learningOutcomes: string[];
   sublearningOutcomes?: string[];
   resources: string[];
-  prerequisites: string[]; 
+  prerequisites: string[];
   recommendedSemester?: number; // Dynamically added during graph layouts
+  outgoingCount?: number;       // Pre-computed by layout engine; number of courses that require this one
 }
 
 export type CurriculumMap = Record<string, Course>;

@@ -2,7 +2,6 @@ import React from 'react';
 import { Handle, Position, NodeProps } from 'reactflow';
 import { useCurriculumStore } from '@/store/useCurriculumStore';
 import { Course } from '@/types/curriculum';
-import { PROGRAM_REGISTRY } from '@/data/programRegistry';
 
 const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
   const selectedCourseId = useCurriculumStore((state) => state.selectedCourseId);
@@ -47,15 +46,16 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
     setSelectedCourseId(id);
   };
 
-  const courses = PROGRAM_REGISTRY[activeProgram]?.data || {};
-  const outgoingCount = Object.values(courses).filter((c) => c.prerequisites?.includes(id)).length;
+  // outgoingCount is pre-computed by the layout engine (successorMap) and passed via data
+  const outgoingCount = data.outgoingCount ?? 0;
   const maxConn = Math.max(data.prerequisites ? data.prerequisites.length : 0, outgoingCount);
   const nodeWidth = Math.max(320, maxConn * 40);
+
 
   return (
     <div
       onClick={handleClick}
-      className={`p-4 bg-[#1E1E1E] border rounded-[4px] shadow-lg transition-all duration-200 cursor-pointer select-none
+      className={`p-5 bg-[#1E1E1E] border rounded-[4px] shadow-lg transition-opacity duration-200 cursor-pointer select-none
         ${isSelected 
           ? 'border-[#C5A059] scale-105 ring-1 ring-[#C5A059]' 
           : isSemesterFilteredAndMatched
