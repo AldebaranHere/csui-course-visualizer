@@ -7,6 +7,132 @@ interface CourseDrawerProps {
   courses: Record<string, Course>;
 }
 
+interface CourseCodeBreakdown {
+  label: string;
+  value: string;
+  explanation: string;
+}
+
+function parseCourseCode(code: string): {
+  isValid: boolean;
+  breakdown: CourseCodeBreakdown[];
+  note: string;
+} {
+  const note = "Catatan: Ketersediaan mata kuliah tidak dijamin sepenuhnya oleh pola kode ini, melainkan sekadar penjelasan makna kode dalam bahasa alami.";
+  
+  if (!code || code.length !== 10) {
+    return { isValid: false, breakdown: [], note };
+  }
+
+  const breakdown: CourseCodeBreakdown[] = [];
+
+  // 1. Karakter 1-4 (Kode Universitas/Fakultas/Prodi/Jenis)
+  const prefix = code.slice(0, 4);
+  if (prefix === 'UIGE') {
+    breakdown.push({
+      label: 'Karakter 1–4',
+      value: 'UIGE',
+      explanation: 'Mata kuliah wajib universitas.',
+    });
+  } else {
+    const faculty = prefix.slice(0, 2);
+    const prodi = prefix.charAt(2);
+    const type = prefix.charAt(3);
+    
+    const facText = faculty === 'CS' ? 'Fakultas Ilmu Komputer' : `Fakultas ${faculty}`;
+    const prodiText = prodi === 'C' ? 'Program Studi Ilmu Komputer' : prodi === 'I' ? 'Program Studi Sistem Informasi' : `Program Studi ${prodi}`;
+    const typeText = type === 'M' ? 'Mata kuliah wajib (Mandatory)' : type === 'E' ? 'Mata kuliah pilihan (Elective)' : `Mata kuliah ${type}`;
+    
+    breakdown.push({
+      label: 'Karakter 1–4',
+      value: prefix,
+      explanation: `${facText}, ${prodiText}, ${typeText}.`,
+    });
+  }
+
+  // 2. Karakter 5 (Jenjang)
+  const levelChar = code.charAt(4);
+  const levelText = levelChar === '6' ? 'Jenjang Sarjana (S1 / KKNI Level 6)' : `Jenjang pendidikan level ${levelChar}`;
+  breakdown.push({
+    label: 'Karakter 5',
+    value: levelChar,
+    explanation: levelText,
+  });
+
+  // 3. Karakter 6 (Jenis Kelas/Bahasa)
+  const classChar = code.charAt(5);
+  let classText = '';
+  if (classChar === '0') {
+    classText = 'Kelas reguler (Bahasa Indonesia sebagai pengantar)';
+  } else if (classChar === '1') {
+    classText = 'Kelas internasional / KKI (Bahasa Inggris sebagai pengantar)';
+  } else {
+    classText = `Jenis kelas/bahasa pengantar kode ${classChar}`;
+  }
+  breakdown.push({
+    label: 'Karakter 6',
+    value: classChar,
+    explanation: classText,
+  });
+
+  // 4. Karakter 7 (Tahun Kuliah)
+  const yearChar = code.charAt(6);
+  breakdown.push({
+    label: 'Karakter 7',
+    value: yearChar,
+    explanation: `Umumnya ditawarkan untuk mahasiswa tahun ke‑${yearChar}.`,
+  });
+
+  // 5. Karakter 8 (Semester)
+  const semChar = code.charAt(7);
+  let semText = '';
+  if (semChar === '0') {
+    semText = 'Dapat dibuka pada semester ganjil maupun genap';
+  } else if (semChar === '1') {
+    semText = 'Umumnya ditawarkan di semester ganjil (odd)';
+  } else if (semChar === '2') {
+    semText = 'Umumnya ditawarkan di semester genap (even)';
+  } else {
+    semText = `Semester dibuka kode ${semChar}`;
+  }
+  breakdown.push({
+    label: 'Karakter 8',
+    value: semChar,
+    explanation: semText,
+  });
+
+  // 6. Karakter 9 (Kelompok Disiplin)
+  const groupChar = code.charAt(8);
+  let groupText = '';
+  switch (groupChar) {
+    case '1': groupText = 'Matematika & komputasi ilmiah'; break;
+    case '2': groupText = 'Pemrograman & rekayasa perangkat lunak'; break;
+    case '3': groupText = 'Pengolahan informasi cerdas'; break;
+    case '4': groupText = 'Komputasi & algoritma'; break;
+    case '5': groupText = 'Arsitektur & infrastruktur'; break;
+    case '6': groupText = 'Sistem perusahaan'; break;
+    case '7': groupText = 'Teknologi informasi'; break;
+    case '8': groupText = 'Sistem informasi & aplikasi'; break;
+    case '9': groupText = 'Kepribadian & keterampilan berkarya'; break;
+    default: groupText = `Kelompok disiplin ilmu kode ${groupChar}`;
+  }
+  breakdown.push({
+    label: 'Karakter 9',
+    value: groupChar,
+    explanation: `Kelompok disiplin: ${groupText}.`,
+  });
+
+  // 7. Karakter 10 (Urutan)
+  const seqChar = code.charAt(9);
+  breakdown.push({
+    label: 'Karakter 10',
+    value: seqChar,
+    explanation: `Urutan mata kuliah ke‑${seqChar} dalam kelompok disiplin tersebut.`,
+  });
+
+  return { isValid: true, breakdown, note };
+}
+
 export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
   const selectedCourseId = useCurriculumStore((state) => state.selectedCourseId);
   const setSelectedCourseId = useCurriculumStore((state) => state.setSelectedCourseId);
@@ -24,6 +150,8 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [setSelectedCourseId]);
 
+  const codeAnalysis = course ? parseCourseCode(course.code) : null;
+
   return (
     <aside
       className={`fixed top-0 right-0 h-screen w-96 bg-[#1E1E1E] border-l border-[#333333] z-50 flex flex-col shadow-[-4px_0_24px_rgba(0,0,0,0.5)] transition-transform duration-200 ease-out transform
@@ -36,9 +164,11 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
           <span className="font-mono text-xs font-bold tracking-wider text-[#C5A059] block mb-1">
             {course?.code}
           </span>
-          <h2 className="font-sans text-[22px] font-bold text-[#F8FAFC] leading-snug">
-            {course?.name}
-          </h2>
+          {course?.name && (
+            <h2 className="font-sans text-[22px] font-bold text-[#F8FAFC] leading-snug">
+              {course.name}
+            </h2>
+          )}
           <div className="flex items-center gap-2 mt-2">
             <span className="text-xs px-2.5 py-0.5 rounded bg-[#333333] text-[#F8FAFC]">
               {course?.credits} SKS
@@ -70,6 +200,33 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
                 {course.description || 'Tidak ada deskripsi tersedia.'}
               </p>
             </div>
+
+            {/* Course Code Breakdown Section */}
+            {codeAnalysis && codeAnalysis.isValid && (
+              <div>
+                <h4 className="flex items-center gap-2 font-sans text-xs font-bold text-[#E2E8F0] uppercase tracking-wider border-b border-[#333333] pb-1.5 mb-3">
+                  Makna Kode Mata Kuliah
+                </h4>
+                <div className="space-y-3">
+                  <div className="space-y-2 max-h-60 overflow-y-auto pr-1 border border-[#333333] rounded p-2.5 bg-[#151515]">
+                    {codeAnalysis.breakdown.map((item, idx) => (
+                      <div key={idx} className="flex gap-2 text-xs font-sans">
+                        <div className="font-mono text-[#C5A059] bg-[#222222] px-1 py-0.5 rounded shrink-0 min-w-[36px] text-center h-fit border border-[#333333]">
+                          {item.value}
+                        </div>
+                        <div className="text-[#E2E8F0]/90">
+                          <span className="font-bold text-[#F8FAFC] block">{item.label}</span>
+                          {item.explanation}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-[10px] text-[#E2E8F0]/50 italic leading-normal">
+                    {codeAnalysis.note}
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* Prerequisites */}
             {course.prerequisites && course.prerequisites.length > 0 && (

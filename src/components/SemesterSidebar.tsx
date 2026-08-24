@@ -41,7 +41,7 @@ export const SemesterSidebar: React.FC = () => {
             <button
               key={cat.key}
               onClick={() => handleSelect(cat.key)}
-              className={`py-2 px-2.5 rounded text-[10px] font-bold font-sans transition-all cursor-pointer border text-left leading-tight
+              className={`py-2 px-2.5 rounded text-[10px] font-bold font-sans transition-opacity cursor-pointer border text-left leading-tight
                 ${selectedSemester === cat.key
                   ? 'bg-[#C5A059] text-[#111111] border-[#C5A059] shadow-md shadow-[#C5A059]/20'
                   : 'bg-[#1E1E1E] text-[#E2E8F0] border-[#333333] hover:bg-[#333333] hover:border-[#444444]'
@@ -58,7 +58,7 @@ export const SemesterSidebar: React.FC = () => {
               <button
                 key={sem}
                 onClick={() => handleSelect(sem)}
-                className={`py-1.5 rounded text-xs font-bold font-sans transition-all cursor-pointer border text-center
+                className={`py-1.5 rounded text-xs font-bold font-sans transition-opacity cursor-pointer border text-center
                   ${selectedSemester === sem
                     ? 'bg-[#C5A059] text-[#111111] border-[#C5A059] shadow-md shadow-[#C5A059]/20'
                     : 'bg-[#1E1E1E] text-[#E2E8F0] border-[#333333] hover:bg-[#333333] hover:border-[#444444]'
@@ -71,7 +71,7 @@ export const SemesterSidebar: React.FC = () => {
 
           <button
             onClick={() => handleSelect('pilihan')}
-            className={`w-full mt-2 py-2 rounded text-xs font-bold font-sans transition-all cursor-pointer border text-center
+            className={`w-full mt-2 py-2 rounded text-xs font-bold font-sans transition-opacity cursor-pointer border text-center
               ${selectedSemester === 'pilihan'
                 ? 'bg-[#C5A059] text-[#111111] border-[#C5A059] shadow-md shadow-[#C5A059]/20'
                 : 'bg-[#1E1E1E] text-[#E2E8F0] border-[#333333] hover:bg-[#333333] hover:border-[#444444]'
@@ -88,7 +88,7 @@ export const SemesterSidebar: React.FC = () => {
             setSelectedSemester(null);
             setSelectedCourseId(null);
           }}
-          className="w-full mt-1.5 py-1.5 rounded text-[10px] font-sans font-bold text-[#EF4444] border border-transparent hover:border-[#EF4444]/20 hover:bg-[#EF4444]/10 transition-all cursor-pointer text-center"
+          className="w-full mt-1.5 py-1.5 rounded text-[10px] font-sans font-bold text-[#EF4444] border border-transparent hover:border-[#EF4444]/20 hover:bg-[#EF4444]/10 transition-opacity cursor-pointer text-center"
         >
           Hapus Filter
         </button>

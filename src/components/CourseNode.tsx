@@ -46,10 +46,16 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
     setSelectedCourseId(id);
   };
 
+  // outgoingCount is pre-computed by the layout engine (successorMap) and passed via data
+  const outgoingCount = data.outgoingCount ?? 0;
+  const maxConn = Math.max(data.prerequisites ? data.prerequisites.length : 0, outgoingCount);
+  const nodeWidth = Math.max(320, maxConn * 40);
+
+
   return (
     <div
       onClick={handleClick}
-      className={`w-[240px] p-4 bg-[#1E1E1E] border rounded-[4px] shadow-lg transition-all duration-200 cursor-pointer select-none
+      className={`p-5 bg-[#1E1E1E] border rounded-[4px] shadow-lg transition-opacity duration-200 cursor-pointer select-none
         ${isSelected 
           ? 'border-[#C5A059] scale-105 ring-1 ring-[#C5A059]' 
           : isSemesterFilteredAndMatched
@@ -58,13 +64,23 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
         }
         ${isNodeDimmed ? 'opacity-20 hover:opacity-80' : 'opacity-100'}
       `}
-      style={{ minHeight: '80px' }}
+      style={{ width: `${nodeWidth}px`, minHeight: '80px' }}
     >
-      <Handle
-        type="target"
-        position={Position.Top}
-        className="!bg-[#333333] !border-none !w-2 !h-2"
-      />
+      {Array.from({ length: data.prerequisites ? data.prerequisites.length : 1 }).map((_, index) => {
+        const total = data.prerequisites ? data.prerequisites.length : 1;
+        const offset = (index - (total - 1) / 2) * 40;
+        const leftPercent = `calc(50% + ${offset - 4}px)`;
+        return (
+          <Handle
+            key={`target-${index}`}
+            type="target"
+            id={`target-${index}`}
+            position={Position.Top}
+            style={{ left: leftPercent, top: '-4px', transform: 'none' }}
+            className="!bg-[#333333] !border-none !w-2 !h-2"
+          />
+        );
+      })}
       
       <div className="flex justify-between items-center mb-1">
         <span className="font-mono text-[13px] font-medium tracking-wider text-[#C5A059]">
@@ -90,11 +106,21 @@ const CourseNode: React.FC<NodeProps<Course>> = ({ id, data }) => {
         )}
       </div>
 
-      <Handle
-        type="source"
-        position={Position.Bottom}
-        className="!bg-[#333333] !border-none !w-2 !h-2"
-      />
+      {Array.from({ length: outgoingCount || 1 }).map((_, index) => {
+        const total = outgoingCount || 1;
+        const offset = (index - (total - 1) / 2) * 40;
+        const leftPercent = `calc(50% + ${offset - 4}px)`;
+        return (
+          <Handle
+            key={`source-${index}`}
+            type="source"
+            id={`source-${index}`}
+            position={Position.Bottom}
+            style={{ left: leftPercent, bottom: '-4px', transform: 'none' }}
+            className="!bg-[#333333] !border-none !w-2 !h-2"
+          />
+        );
+      })}
     </div>
   );
 };

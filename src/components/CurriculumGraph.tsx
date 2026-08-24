@@ -9,6 +9,8 @@ import ReactFlow, {
   Edge,
   MarkerType,
   useReactFlow,
+  Position,
+  getSmoothStepPath,
 } from 'reactflow';
 import dagre from '@dagrejs/dagre';
 import Fuse from 'fuse.js';
@@ -447,6 +449,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     });
 
     // 2. Generate Course Nodes (positioned relatively inside manually computed parent coordinates)
+    const nodeCoords: Record<string, { x: number; y: number; width: number; height: number; parentNode: string }> = {};
     semestersList.forEach((sem) => {
       const semCourses = coursesBySem[sem];
       semCourses.forEach((course, index) => {
@@ -481,8 +484,33 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
             y: relativeY,
           },
         });
+
+        nodeCoords[course.code] = {
+          x: relativeX,
+          y: relativeY,
+          width: 240,
+          height: 80,
+          parentNode: `semester-${sem}`,
+        };
       });
     });
+
+    const semesterAbsoluteCoords: Record<string, { x: number; y: number }> = {};
+    semesterBounds.forEach((bound) => {
+      semesterAbsoluteCoords[bound.id] = { x: bound.x, y: bound.y };
+    });
+
+    const getAbsoluteCoords = (courseCode: string) => {
+      const coords = nodeCoords[courseCode];
+      if (!coords) return { x: 0, y: 0, width: 240, height: 80 };
+      const parent = semesterAbsoluteCoords[coords.parentNode];
+      return {
+        x: (parent?.x || 0) + coords.x,
+        y: (parent?.y || 0) + coords.y,
+        width: coords.width,
+        height: coords.height,
+      };
+    };
 
     // Map to React Flow Edges
     const flowEdges: Edge[] = [];
@@ -524,6 +552,54 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                successorIndex = successors.indexOf(course.code);
              }
 
+             const sAbs = getAbsoluteCoords(prereq);
+             const tAbs = getAbsoluteCoords(course.code);
+
+             const sourceXVal = sAbs.x + sAbs.width / 2;
+             const sourceYVal = sAbs.y + sAbs.height;
+             const targetXVal = tAbs.x + tAbs.width / 2;
+             const targetYVal = tAbs.y;
+
+             const obstacles = semesterBounds.filter((box: SemesterBoundItem) => {
+               if (box.id === nodeCoords[prereq]?.parentNode || box.id === nodeCoords[course.code]?.parentNode) return false;
+               const verticalOverlap = box.y > (sourceYVal + 10) && (box.y + box.h) < (targetYVal - 10);
+               if (!verticalOverlap) return false;
+               const minLineX = Math.min(sourceXVal, targetXVal);
+               const maxLineX = Math.max(sourceXVal, targetXVal);
+               const boxLeft = box.x;
+               const boxRight = box.x + box.w;
+               const horizontalOverlap = !(maxLineX < boxLeft || minLineX > boxRight);
+               return horizontalOverlap;
+             });
+
+             let edgePath = '';
+             if (obstacles.length > 0) {
+               let minObsX = Infinity;
+               let maxObsX = -Infinity;
+               let maxObsY = -Infinity;
+               obstacles.forEach((box: SemesterBoundItem) => {
+                 minObsX = Math.min(minObsX, box.x);
+                 maxObsX = Math.max(maxObsX, box.x + box.w);
+                 maxObsY = Math.max(maxObsY, box.y + box.h);
+               });
+               const distToLeft = Math.abs(sourceXVal - minObsX);
+               const distToRight = Math.abs(sourceXVal - maxObsX);
+               const detourX = distToLeft < distToRight ? minObsX - 40 : maxObsX + 40;
+               const yStep1 = sourceYVal + 30;
+               const yStep2 = maxObsY + 30;
+               edgePath = `M ${sourceXVal} ${sourceYVal} L ${sourceXVal} ${yStep1} L ${detourX} ${yStep1} L ${detourX} ${yStep2} L ${targetXVal} ${yStep2} L ${targetXVal} ${targetYVal}`;
+             } else {
+               const [path] = getSmoothStepPath({
+                 sourceX: sourceXVal,
+                 sourceY: sourceYVal,
+                 sourcePosition: Position.Bottom,
+                 targetX: targetXVal,
+                 targetY: targetYVal,
+                 targetPosition: Position.Top,
+               });
+               edgePath = path;
+             }
+
              flowEdges.push({
                id: `${prereq}-${course.code}`,
                source: prereq,
@@ -549,9 +625,16 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                  targetCourseName: course.name,
                  prereqIndex: course.prerequisites.indexOf(prereq),
                  successorIndex,
-                 sourceParentId: `semester-${getRecommendedSemester(courses[prereq], activeProgram)}`,
-                 targetParentId: `semester-${getRecommendedSemester(course, activeProgram)}`,
+                 sourceParentId: nodeCoords[prereq]?.parentNode,
+                 targetParentId: nodeCoords[course.code]?.parentNode,
                  semesterBounds,
+                 pathData: {
+                   d: edgePath,
+                   sourceX: sourceXVal,
+                   sourceY: sourceYVal,
+                   targetX: targetXVal,
+                   targetY: targetYVal,
+                 },
                },
              });
           }
