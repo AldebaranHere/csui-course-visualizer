@@ -399,6 +399,36 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     const sem7Width = getSemesterWidth('7');
     const sem8Width = getSemesterWidth('8');
 
+    // Calculate dynamic column widths for AI grid (2x3 grid of 6 semester groups)
+    const aiColWidths = [0, 0, 0];
+    if (isAI) {
+      semestersList.forEach((semName, idx) => {
+        const colIdx = idx % 3;
+        const semCourses = coursesBySem[semName] || [];
+        if (semCourses.length === 0) return;
+        
+        let w = 0;
+        if (isAI || semName === 'pilihan') {
+          const colWidths = Array(cols).fill(320);
+          semCourses.forEach((c, cIdx) => {
+            const colIdx = cIdx % cols;
+            const cardW = getCourseCardWidth(c.code);
+            if (cardW > colWidths[colIdx]) {
+              colWidths[colIdx] = cardW;
+            }
+          });
+          const totalColWidth = colWidths.reduce((sum, cw) => sum + cw, 0);
+          w = totalColWidth + (cols - 1) * gap + 2 * padding;
+        } else {
+          w = getSemesterWidth(semName);
+        }
+        
+        if (w > aiColWidths[colIdx]) {
+          aiColWidths[colIdx] = w;
+        }
+      });
+    }
+
     // 1. Generate Semester Group Nodes (Backdrop Cards) with tight packed boundaries
     semestersList.forEach((sem) => {
       const semCourses = coursesBySem[sem];
@@ -439,12 +469,16 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         const catIndex = semestersList.indexOf(sem);
         const col = catIndex % 3;
         const row = Math.floor(catIndex / 3);
-        const colWidth = 1140;
         const colGap = 80;
         const rowGap = 120;
         const row0MaxHeight = 450;
 
-        parentX = col * (colWidth + colGap);
+        let accumulatedX = 0;
+        for (let i = 0; i < col; i++) {
+          accumulatedX += aiColWidths[i] + colGap;
+        }
+
+        parentX = accumulatedX;
         parentY = row === 0 ? 0 : row0MaxHeight + rowGap;
       }
 
