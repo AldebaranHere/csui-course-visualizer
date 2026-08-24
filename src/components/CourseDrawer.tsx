@@ -164,9 +164,11 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
           <span className="font-mono text-xs font-bold tracking-wider text-[#C5A059] block mb-1">
             {course?.code}
           </span>
-          <h2 className="font-sans text-[22px] font-bold text-[#F8FAFC] leading-snug">
-            {course?.name}
-          </h2>
+          {course?.name && (
+            <h2 className="font-sans text-[22px] font-bold text-[#F8FAFC] leading-snug">
+              {course.name}
+            </h2>
+          )}
           <div className="flex items-center gap-2 mt-2">
             <span className="text-xs px-2.5 py-0.5 rounded bg-[#333333] text-[#F8FAFC]">
               {course?.credits} SKS
