@@ -237,6 +237,25 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     const isAI = activeProgram === 'AI';
 
+    // Pre-calculate successor counts (how many courses require each course)
+    const successorCounts: Record<string, number> = {};
+    Object.values(courses).forEach((c) => {
+      if (c.prerequisites) {
+        c.prerequisites.forEach((prereq) => {
+          successorCounts[prereq] = (successorCounts[prereq] || 0) + 1;
+        });
+      }
+    });
+
+    const getCourseCardWidth = (courseCode: string) => {
+      const c = courses[courseCode];
+      if (!c) return 320;
+      const outgoingCount = successorCounts[courseCode] || 0;
+      const prereqCount = c.prerequisites ? c.prerequisites.length : 0;
+      const maxConn = Math.max(prereqCount, outgoingCount);
+      return Math.max(320, maxConn * 40);
+    };
+
     const semestersList = isAI
       ? [
           'MATHEMATICAL FOUNDATIONS',
@@ -257,7 +276,8 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     // Add child nodes to Dagre & establish parent relationships
     courseList.forEach((course) => {
-      dagreGraph.setNode(course.code, { width: 240, height: 120 });
+      const w = getCourseCardWidth(course.code);
+      dagreGraph.setNode(course.code, { width: w, height: 120 });
       const sem = getRecommendedSemester(course, activeProgram);
       dagreGraph.setParent(course.code, `semester-${sem}`);
     });
@@ -349,7 +369,16 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     if (pilihanDagreNode) {
       const semCourses = coursesBySem[pilihanCategory] || [];
       const rows = Math.ceil(semCourses.length / cols);
-      const pilihanWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
+      const colWidths = Array(cols).fill(320);
+      semCourses.forEach((c, idx) => {
+        const colIdx = idx % cols;
+        const w = getCourseCardWidth(c.code);
+        if (w > colWidths[colIdx]) {
+          colWidths[colIdx] = w;
+        }
+      });
+      const totalColWidth = colWidths.reduce((sum, w) => sum + w, 0);
+      const pilihanWidth = totalColWidth + (cols - 1) * gap + 2 * padding;
       const pilihanHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
       const pilihanCenterX = pilihanDagreNode.x;
       const pilihanCenterY = pilihanDagreNode.y;
@@ -361,7 +390,11 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     const getSemesterWidth = (semKey: string) => {
       const semCourses = coursesBySem[semKey] || [];
       if (semCourses.length === 0) return 0;
-      return semCourses.length * 240 + (semCourses.length - 1) * gap + 2 * padding;
+      let totalWidth = 0;
+      semCourses.forEach((c) => {
+        totalWidth += getCourseCardWidth(c.code);
+      });
+      return totalWidth + (semCourses.length - 1) * gap + 2 * padding;
     };
     const sem7Width = getSemesterWidth('7');
     const sem8Width = getSemesterWidth('8');
@@ -377,11 +410,19 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       // Group layout logic: AI categories and Pilihan use 4-column matrix grids, others use single horizontal rows
       if (isAI || sem === 'pilihan') {
         const rows = Math.ceil(semCourses.length / cols);
-        parentWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
+        const colWidths = Array(cols).fill(320);
+        semCourses.forEach((c, idx) => {
+          const colIdx = idx % cols;
+          const w = getCourseCardWidth(c.code);
+          if (w > colWidths[colIdx]) {
+            colWidths[colIdx] = w;
+          }
+        });
+        const totalColWidth = colWidths.reduce((sum, w) => sum + w, 0);
+        parentWidth = totalColWidth + (cols - 1) * gap + 2 * padding;
         parentHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
       } else {
-        const N = semCourses.length;
-        parentWidth = N * 240 + (N - 1) * gap + 2 * padding;
+        parentWidth = getSemesterWidth(sem);
         parentHeight = 120 + 2 * padding + headerHeight;
       }
 
@@ -466,10 +507,26 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         if (isAI || sem === 'pilihan') {
           const col = index % cols;
           const row = Math.floor(index / cols);
-          relativeX = padding + col * (240 + gap);
+          const colWidths = Array(cols).fill(320);
+          semCourses.forEach((c, idx) => {
+            const colIdx = idx % cols;
+            const w = getCourseCardWidth(c.code);
+            if (w > colWidths[colIdx]) {
+              colWidths[colIdx] = w;
+            }
+          });
+          let accumulatedX = padding;
+          for (let i = 0; i < col; i++) {
+            accumulatedX += colWidths[i] + gap;
+          }
+          relativeX = accumulatedX;
           relativeY = padding + headerHeight + row * (120 + gap);
         } else {
-          relativeX = padding + index * (240 + gap);
+          let accumulatedX = padding;
+          for (let i = 0; i < index; i++) {
+            accumulatedX += getCourseCardWidth(semCourses[i].code) + gap;
+          }
+          relativeX = accumulatedX;
           relativeY = padding + headerHeight;
         }
 
@@ -488,7 +545,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         nodeCoords[course.code] = {
           x: relativeX,
           y: relativeY,
-          width: 240,
+          width: getCourseCardWidth(course.code),
           height: 80,
           parentNode: `semester-${sem}`,
         };
