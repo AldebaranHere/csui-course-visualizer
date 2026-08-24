@@ -22,7 +22,12 @@ export const TopNav: React.FC = () => {
     }, 50);
   };
 
-  const faqData = [
+  interface FAQItem {
+    q: string;
+    a: React.ReactNode;
+  }
+
+  const faqData: FAQItem[] = [
     {
       q: 'Bagaimana cara membaca peta kurikulum ini?',
       a: 'Setiap kotak melambangkan satu mata kuliah. Garis panah menunjukkan hubungan prasyarat: mata kuliah di pangkal panah harus diselesaikan sebelum mengambil mata kuliah di ujung panah.'
@@ -30,6 +35,28 @@ export const TopNav: React.FC = () => {
     {
       q: 'Apa arti dari penyorotan (highlight) saat mata kuliah diklik?',
       a: 'Ketika Anda mengklik sebuah mata kuliah, jalurnya akan disorot secara otomatis: semua mata kuliah prasyarat (sebelumnya) akan diberi warna latar belakang yang berbeda, dan semua mata kuliah turunan (yang membutuhkan mata kuliah ini) akan disorot dengan warna kuning.'
+    },
+    {
+      q: 'Apa arti dari label "PR" di pojok kanan bawah beberapa kotak mata kuliah?',
+      a: '"PR" merupakan singkatan dari Prasyarat (Prerequisites). Angka di sebelah label "PR" menunjukkan total jumlah mata kuliah prasyarat yang wajib diselesaikan sebelum Anda dapat mengambil mata kuliah tersebut.'
+    },
+    {
+      q: 'Bagaimana cara membaca kode mata kuliah (format 10 karakter)?',
+      a: (
+        <div className="space-y-2 mt-1">
+          <div>Kode mata kuliah 10 karakter memiliki struktur sistematis berikut:</div>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong>Karakter 1–4:</strong> Kode Universitas/Fakultas/Prodi (contoh: <code>UIGE</code> = wajib universitas; <code>CS</code> = Ilmu Komputer; karakter ke-3 <code>C</code> = Ilmu Komputer, <code>I</code> = Sistem Informasi; karakter ke-4 <code>M</code> = wajib, <code>E</code> = pilihan).</li>
+            <li><strong>Karakter 5:</strong> Level KKNI (<code>6</code> = Sarjana S1).</li>
+            <li><strong>Karakter 6:</strong> Jenis kelas/bahasa pengantar (<code>0</code> = reguler/Bahasa Indonesia, <code>1</code> = internasional/KKI/Bahasa Inggris).</li>
+            <li><strong>Karakter 7:</strong> Tahun kuliah ditawarkan (tahun ke-1, 2, 3, atau 4).</li>
+            <li><strong>Karakter 8:</strong> Semester dibukanya mata kuliah (<code>0</code> = ganjil atau genap, <code>1</code> = ganjil, <code>2</code> = genap).</li>
+            <li><strong>Karakter 9:</strong> Kelompok disiplin ilmu (contoh: <code>1</code> = Matematika, <code>2</code> = RPL, <code>3</code> = AI, <code>4</code> = Algoritma, <code>5</code> = Infrastruktur, <code>6</code> = Enterprise, <code>7</code> = TI, <code>8</code> = SI, <code>9</code> = Kepribadian).</li>
+            <li><strong>Karakter 10:</strong> Urutan/indeks mata kuliah dalam kelompok tersebut.</li>
+          </ul>
+          <div className="text-xs text-[#E2E8F0]/50 italic mt-1">Catatan: Pola kode ini menunjukkan rancangan kurikulum secara umum dan tidak menjamin ketersediaan mata kuliah pada semester berjalan secara mutlak.</div>
+        </div>
+      )
     },
     {
       q: 'Bagaimana cara mencari mata kuliah?',
@@ -42,10 +69,6 @@ export const TopNav: React.FC = () => {
     {
       q: 'Bagaimana cara memperbesar, memperkecil, atau menggeser graf?',
       a: 'Gunakan scroll mouse atau cubit trackpad untuk memperbesar/memperkecil (zoom). Klik dan geser (drag) di area kosong pada layar untuk memindahkan (pan) tampilan peta kurikulum.'
-    },
-    {
-      q: 'Apa arti dari label "PR" di pojok kanan bawah beberapa kotak mata kuliah?',
-      a: '"PR" merupakan singkatan dari Prasyarat (Prerequisites). Angka di sebelah label "PR" menunjukkan total jumlah mata kuliah prasyarat yang wajib diselesaikan sebelum Anda dapat mengambil mata kuliah tersebut.'
     }
   ];
 
@@ -150,9 +173,9 @@ export const TopNav: React.FC = () => {
                     <span className="select-none font-mono text-xs bg-[#333333] text-[#F8FAFC] px-1.5 py-0.5 rounded shrink-0">Q</span>
                     <span>{item.q}</span>
                   </h4>
-                  <p className="font-sans text-sm text-[#E2E8F0]/90 leading-relaxed pl-8">
+                  <div className="font-sans text-sm text-[#E2E8F0]/90 leading-relaxed pl-8">
                     {item.a}
-                  </p>
+                  </div>
                 </div>
               ))}
             </div>

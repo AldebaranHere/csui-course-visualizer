@@ -10,7 +10,7 @@ interface PathData {
   targetY: number;
 }
 
-const PrerequisiteEdgeComponent: React.FC<EdgeProps> = ({
+export const PrerequisiteEdge: React.FC<EdgeProps> = ({
   id,
   source,
   target,
@@ -26,7 +26,6 @@ const PrerequisiteEdgeComponent: React.FC<EdgeProps> = ({
   const selectedSemester = useCurriculumStore((state) => state.selectedSemester);
   const setSelectedSemester = useCurriculumStore((state) => state.setSelectedSemester);
 
-  // Path is computed once in CurriculumGraph's routingPathMap and passed via data.pathData
   const pathData: PathData | null = data?.pathData ?? null;
   const path = pathData?.d ?? '';
 
@@ -36,20 +35,24 @@ const PrerequisiteEdgeComponent: React.FC<EdgeProps> = ({
   const calculatedTargetY = pathData?.targetY ?? targetY;
 
   const prereqIndex = data?.prereqIndex || 0;
-  const verticalOffsetPrereq = 18 + prereqIndex * 20;
+  const verticalOffsetPrereq = 18 + prereqIndex * 20; // above target card
 
   const successorIndex = data?.successorIndex || 0;
-  const verticalOffsetSuccessor = 8 + successorIndex * 20;
+  const verticalOffsetSuccessor = 8 + successorIndex * 20; // below source card
 
   const handlePrereqClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (selectedSemester !== null) setSelectedSemester(null);
+    if (selectedSemester !== null) {
+      setSelectedSemester(null);
+    }
     setSelectedCourseId(source);
   };
 
   const handleSuccessorClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (selectedSemester !== null) setSelectedSemester(null);
+    if (selectedSemester !== null) {
+      setSelectedSemester(null);
+    }
     setSelectedCourseId(target);
   };
 
@@ -71,7 +74,7 @@ const PrerequisiteEdgeComponent: React.FC<EdgeProps> = ({
               transform: `translate(-50%, -100%) translate(${calculatedTargetX}px, ${calculatedTargetY - verticalOffsetPrereq}px)`,
               pointerEvents: 'all',
             }}
-            className="text-[9px] font-mono font-bold text-[#C5A059] bg-[#111111] hover:bg-[#C5A059] hover:text-[#111111] px-1.5 py-0.5 rounded border border-[#C5A059]/40 shadow-md select-none z-50 transition-opacity duration-200 cursor-pointer whitespace-nowrap"
+            className="text-[9px] font-mono font-bold text-[#C5A059] bg-[#111111] hover:bg-[#C5A059] hover:text-[#111111] px-1.5 py-0.5 rounded border border-[#C5A059]/40 shadow-md select-none z-50 transition-all duration-200 cursor-pointer whitespace-nowrap"
           >
             {data.sourceCourseName}
           </div>
@@ -86,7 +89,7 @@ const PrerequisiteEdgeComponent: React.FC<EdgeProps> = ({
               transform: `translate(-50%, 0%) translate(${calculatedSourceX}px, ${calculatedSourceY + verticalOffsetSuccessor}px)`,
               pointerEvents: 'all',
             }}
-            className="text-[9px] font-mono font-bold text-[#C5A059] bg-[#111111] hover:bg-[#C5A059] hover:text-[#111111] px-1.5 py-0.5 rounded border border-[#C5A059]/40 shadow-md select-none z-50 transition-opacity duration-200 cursor-pointer whitespace-nowrap"
+            className="text-[9px] font-mono font-bold text-[#C5A059] bg-[#111111] hover:bg-[#C5A059] hover:text-[#111111] px-1.5 py-0.5 rounded border border-[#C5A059]/40 shadow-md select-none z-50 transition-all duration-200 cursor-pointer whitespace-nowrap"
           >
             {data.targetCourseName}
           </div>
@@ -95,6 +98,3 @@ const PrerequisiteEdgeComponent: React.FC<EdgeProps> = ({
     </>
   );
 };
-
-export const PrerequisiteEdge = React.memo(PrerequisiteEdgeComponent);
-PrerequisiteEdge.displayName = 'PrerequisiteEdge';
