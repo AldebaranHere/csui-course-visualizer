@@ -1563,7 +1563,7 @@
     ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": ["CSIM603154"]
   },
   "CSCE604243": {
     "code": "CSCE604243",
