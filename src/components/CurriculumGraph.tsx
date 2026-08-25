@@ -277,7 +277,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     // Add child nodes to Dagre & establish parent relationships
     courseList.forEach((course) => {
       const w = getCourseCardWidth(course.code);
-      dagreGraph.setNode(course.code, { width: w, height: 120 });
+      dagreGraph.setNode(course.code, { width: w, height: 80 });
       const sem = getRecommendedSemester(course, activeProgram);
       dagreGraph.setParent(course.code, `semester-${sem}`);
     });
@@ -364,7 +364,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     // Pre-calculate the Pilihan group's X and Y coordinates to align Semesters 6, 7, and 8 exactly to its left and top
     let pilihanLeftX = 0;
     let pilihanTopY = 0;
-    const sem6Height = 120 + 2 * padding + headerHeight;
+    const sem6Height = 80 + 2 * padding + headerHeight;
     const pilihanDagreNode = dagreGraph.node(`semester-${pilihanCategory}`);
     if (pilihanDagreNode) {
       const semCourses = coursesBySem[pilihanCategory] || [];
@@ -379,7 +379,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       });
       const totalColWidth = colWidths.reduce((sum, w) => sum + w, 0);
       const pilihanWidth = totalColWidth + (cols - 1) * gap + 2 * padding;
-      const pilihanHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
+      const pilihanHeight = rows * 80 + (rows - 1) * gap + 2 * padding + headerHeight;
       const pilihanCenterX = pilihanDagreNode.x;
       const pilihanCenterY = pilihanDagreNode.y;
       pilihanLeftX = pilihanCenterX - pilihanWidth / 2;
@@ -450,10 +450,10 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         });
         const totalColWidth = colWidths.reduce((sum, w) => sum + w, 0);
         parentWidth = totalColWidth + (cols - 1) * gap + 2 * padding;
-        parentHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
+        parentHeight = rows * 80 + (rows - 1) * gap + 2 * padding + headerHeight;
       } else {
         parentWidth = getSemesterWidth(sem);
-        parentHeight = 120 + 2 * padding + headerHeight;
+        parentHeight = 80 + 2 * padding + headerHeight;
       }
 
       // Center container card exactly where Dagre positioned the semester compound node center
@@ -555,7 +555,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
             accumulatedX += colWidths[i] + gap;
           }
           relativeX = accumulatedX;
-          relativeY = padding + headerHeight + row * (120 + gap);
+          relativeY = padding + headerHeight + row * (80 + gap);
         } else {
           let accumulatedX = padding;
           for (let i = 0; i < index; i++) {
