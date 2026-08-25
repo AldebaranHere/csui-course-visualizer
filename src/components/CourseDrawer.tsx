@@ -208,7 +208,7 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
                   Makna Kode Mata Kuliah
                 </h4>
                 <div className="space-y-3">
-                  <div className="space-y-2 max-h-60 overflow-y-auto pr-1 border border-[#333333] rounded p-2.5 bg-[#151515]">
+                  <div className="space-y-2 border border-[#333333] rounded p-2.5 bg-[#151515]">
                     {codeAnalysis.breakdown.map((item, idx) => (
                       <div key={idx} className="flex gap-2 text-xs font-sans">
                         <div className="font-mono text-[#C5A059] bg-[#222222] px-1 py-0.5 rounded shrink-0 min-w-[36px] text-center h-fit border border-[#333333]">
