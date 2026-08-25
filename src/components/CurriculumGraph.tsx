@@ -532,6 +532,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         const enrichedCourse = {
           ...course,
           recommendedSemester: semNumber,
+          outgoingCount: successorCounts[course.code] || 0,
         };
 
         let relativeX = 0;
@@ -634,21 +635,24 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
              const showPrereqLabel = isHighlightedEdge && selectedCourseId === course.code;
              const showSuccessorLabel = isHighlightedEdge && selectedCourseId === prereq;
 
-             let successorIndex = 0;
-             if (showSuccessorLabel) {
-               const successors = courseList
-                 .filter((c) => c.prerequisites && c.prerequisites.includes(prereq))
-                 .map((c) => c.code)
-                 .sort();
-               successorIndex = successors.indexOf(course.code);
-             }
+             const successors = courseList
+               .filter((c) => c.prerequisites && c.prerequisites.includes(prereq))
+               .map((c) => c.code)
+               .sort();
+             const successorIndex = successors.indexOf(course.code);
+             const prereqIndex = course.prerequisites.indexOf(prereq);
 
              const sAbs = getAbsoluteCoords(prereq);
              const tAbs = getAbsoluteCoords(course.code);
 
-             const sourceXVal = sAbs.x + sAbs.width / 2;
+             const sourceTotal = successors.length;
+             const sourceOffset = (successorIndex - (sourceTotal - 1) / 2) * 40;
+             const targetTotal = course.prerequisites.length;
+             const targetOffset = (prereqIndex - (targetTotal - 1) / 2) * 40;
+
+             const sourceXVal = sAbs.x + sAbs.width / 2 + sourceOffset;
              const sourceYVal = sAbs.y + sAbs.height;
-             const targetXVal = tAbs.x + tAbs.width / 2;
+             const targetXVal = tAbs.x + tAbs.width / 2 + targetOffset;
              const targetYVal = tAbs.y;
 
              const obstacles = semesterBounds.filter((box: SemesterBoundItem) => {
@@ -708,6 +712,8 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                id: `${prereq}-${course.code}`,
                source: prereq,
                target: course.code,
+               sourceHandle: `source-${successorIndex}`,
+               targetHandle: `target-${prereqIndex}`,
                type: 'prerequisite',
                animated: isHighlightedEdge && selectedCourseId === prereq,
                style: {
@@ -727,7 +733,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                  showSuccessorLabel,
                  sourceCourseName: courses[prereq]?.name || prereq,
                  targetCourseName: course.name,
-                 prereqIndex: course.prerequisites.indexOf(prereq),
+                 prereqIndex,
                  successorIndex,
                  sourceParentId: nodeCoords[prereq]?.parentNode,
                  targetParentId: nodeCoords[course.code]?.parentNode,
