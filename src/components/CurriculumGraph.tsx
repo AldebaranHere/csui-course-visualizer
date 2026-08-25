@@ -237,6 +237,25 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     const isAI = activeProgram === 'AI';
 
+    // Pre-calculate successor counts (how many courses require each course)
+    const successorCounts: Record<string, number> = {};
+    Object.values(courses).forEach((c) => {
+      if (c.prerequisites) {
+        c.prerequisites.forEach((prereq) => {
+          successorCounts[prereq] = (successorCounts[prereq] || 0) + 1;
+        });
+      }
+    });
+
+    const getCourseCardWidth = (courseCode: string) => {
+      const c = courses[courseCode];
+      if (!c) return 320;
+      const outgoingCount = successorCounts[courseCode] || 0;
+      const prereqCount = c.prerequisites ? c.prerequisites.length : 0;
+      const maxConn = Math.max(prereqCount, outgoingCount);
+      return Math.max(320, maxConn * 40);
+    };
+
     const semestersList = isAI
       ? [
           'MATHEMATICAL FOUNDATIONS',
@@ -257,7 +276,8 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     // Add child nodes to Dagre & establish parent relationships
     courseList.forEach((course) => {
-      dagreGraph.setNode(course.code, { width: 240, height: 120 });
+      const w = getCourseCardWidth(course.code);
+      dagreGraph.setNode(course.code, { width: w, height: 120 });
       const sem = getRecommendedSemester(course, activeProgram);
       dagreGraph.setParent(course.code, `semester-${sem}`);
     });
@@ -349,7 +369,16 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     if (pilihanDagreNode) {
       const semCourses = coursesBySem[pilihanCategory] || [];
       const rows = Math.ceil(semCourses.length / cols);
-      const pilihanWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
+      const colWidths = Array(cols).fill(320);
+      semCourses.forEach((c, idx) => {
+        const colIdx = idx % cols;
+        const w = getCourseCardWidth(c.code);
+        if (w > colWidths[colIdx]) {
+          colWidths[colIdx] = w;
+        }
+      });
+      const totalColWidth = colWidths.reduce((sum, w) => sum + w, 0);
+      const pilihanWidth = totalColWidth + (cols - 1) * gap + 2 * padding;
       const pilihanHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
       const pilihanCenterX = pilihanDagreNode.x;
       const pilihanCenterY = pilihanDagreNode.y;
@@ -361,10 +390,44 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     const getSemesterWidth = (semKey: string) => {
       const semCourses = coursesBySem[semKey] || [];
       if (semCourses.length === 0) return 0;
-      return semCourses.length * 240 + (semCourses.length - 1) * gap + 2 * padding;
+      let totalWidth = 0;
+      semCourses.forEach((c) => {
+        totalWidth += getCourseCardWidth(c.code);
+      });
+      return totalWidth + (semCourses.length - 1) * gap + 2 * padding;
     };
     const sem7Width = getSemesterWidth('7');
     const sem8Width = getSemesterWidth('8');
+
+    // Calculate dynamic column widths for AI grid (2x3 grid of 6 semester groups)
+    const aiColWidths = [0, 0, 0];
+    if (isAI) {
+      semestersList.forEach((semName, idx) => {
+        const colIdx = idx % 3;
+        const semCourses = coursesBySem[semName] || [];
+        if (semCourses.length === 0) return;
+        
+        let w = 0;
+        if (isAI || semName === 'pilihan') {
+          const colWidths = Array(cols).fill(320);
+          semCourses.forEach((c, cIdx) => {
+            const colIdx = cIdx % cols;
+            const cardW = getCourseCardWidth(c.code);
+            if (cardW > colWidths[colIdx]) {
+              colWidths[colIdx] = cardW;
+            }
+          });
+          const totalColWidth = colWidths.reduce((sum, cw) => sum + cw, 0);
+          w = totalColWidth + (cols - 1) * gap + 2 * padding;
+        } else {
+          w = getSemesterWidth(semName);
+        }
+        
+        if (w > aiColWidths[colIdx]) {
+          aiColWidths[colIdx] = w;
+        }
+      });
+    }
 
     // 1. Generate Semester Group Nodes (Backdrop Cards) with tight packed boundaries
     semestersList.forEach((sem) => {
@@ -377,11 +440,19 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       // Group layout logic: AI categories and Pilihan use 4-column matrix grids, others use single horizontal rows
       if (isAI || sem === 'pilihan') {
         const rows = Math.ceil(semCourses.length / cols);
-        parentWidth = cols * 240 + (cols - 1) * gap + 2 * padding;
+        const colWidths = Array(cols).fill(320);
+        semCourses.forEach((c, idx) => {
+          const colIdx = idx % cols;
+          const w = getCourseCardWidth(c.code);
+          if (w > colWidths[colIdx]) {
+            colWidths[colIdx] = w;
+          }
+        });
+        const totalColWidth = colWidths.reduce((sum, w) => sum + w, 0);
+        parentWidth = totalColWidth + (cols - 1) * gap + 2 * padding;
         parentHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
       } else {
-        const N = semCourses.length;
-        parentWidth = N * 240 + (N - 1) * gap + 2 * padding;
+        parentWidth = getSemesterWidth(sem);
         parentHeight = 120 + 2 * padding + headerHeight;
       }
 
@@ -398,12 +469,16 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         const catIndex = semestersList.indexOf(sem);
         const col = catIndex % 3;
         const row = Math.floor(catIndex / 3);
-        const colWidth = 1140;
         const colGap = 80;
         const rowGap = 120;
         const row0MaxHeight = 450;
 
-        parentX = col * (colWidth + colGap);
+        let accumulatedX = 0;
+        for (let i = 0; i < col; i++) {
+          accumulatedX += aiColWidths[i] + colGap;
+        }
+
+        parentX = accumulatedX;
         parentY = row === 0 ? 0 : row0MaxHeight + rowGap;
       }
 
@@ -457,6 +532,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         const enrichedCourse = {
           ...course,
           recommendedSemester: semNumber,
+          outgoingCount: successorCounts[course.code] || 0,
         };
 
         let relativeX = 0;
@@ -466,11 +542,27 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         if (isAI || sem === 'pilihan') {
           const col = index % cols;
           const row = Math.floor(index / cols);
-          relativeX = padding + col * (240 + gap);
-          relativeY = padding + headerHeight + row * (120 + gap);
+          const colWidths = Array(cols).fill(320);
+          semCourses.forEach((c, idx) => {
+            const colIdx = idx % cols;
+            const w = getCourseCardWidth(c.code);
+            if (w > colWidths[colIdx]) {
+              colWidths[colIdx] = w;
+            }
+          });
+          let accumulatedX = padding;
+          for (let i = 0; i < col; i++) {
+            accumulatedX += colWidths[i] + gap;
+          }
+          relativeX = accumulatedX;
+          relativeY = padding + headerHeight + row * (120 + gap) - 40;
         } else {
-          relativeX = padding + index * (240 + gap);
-          relativeY = padding + headerHeight;
+          let accumulatedX = padding;
+          for (let i = 0; i < index; i++) {
+            accumulatedX += getCourseCardWidth(semCourses[i].code) + gap;
+          }
+          relativeX = accumulatedX;
+          relativeY = padding + headerHeight - 40;
         }
 
         flowNodes.push({
@@ -488,7 +580,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         nodeCoords[course.code] = {
           x: relativeX,
           y: relativeY,
-          width: 240,
+          width: getCourseCardWidth(course.code),
           height: 80,
           parentNode: `semester-${sem}`,
         };
@@ -543,21 +635,24 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
              const showPrereqLabel = isHighlightedEdge && selectedCourseId === course.code;
              const showSuccessorLabel = isHighlightedEdge && selectedCourseId === prereq;
 
-             let successorIndex = 0;
-             if (showSuccessorLabel) {
-               const successors = courseList
-                 .filter((c) => c.prerequisites && c.prerequisites.includes(prereq))
-                 .map((c) => c.code)
-                 .sort();
-               successorIndex = successors.indexOf(course.code);
-             }
+             const successors = courseList
+               .filter((c) => c.prerequisites && c.prerequisites.includes(prereq))
+               .map((c) => c.code)
+               .sort();
+             const successorIndex = successors.indexOf(course.code);
+             const prereqIndex = course.prerequisites.indexOf(prereq);
 
              const sAbs = getAbsoluteCoords(prereq);
              const tAbs = getAbsoluteCoords(course.code);
 
-             const sourceXVal = sAbs.x + sAbs.width / 2;
+             const sourceTotal = successors.length;
+             const sourceOffset = (successorIndex - (sourceTotal - 1) / 2) * 40;
+             const targetTotal = course.prerequisites.length;
+             const targetOffset = (prereqIndex - (targetTotal - 1) / 2) * 40;
+
+             const sourceXVal = sAbs.x + sAbs.width / 2 + sourceOffset;
              const sourceYVal = sAbs.y + sAbs.height;
-             const targetXVal = tAbs.x + tAbs.width / 2;
+             const targetXVal = tAbs.x + tAbs.width / 2 + targetOffset;
              const targetYVal = tAbs.y;
 
              const obstacles = semesterBounds.filter((box: SemesterBoundItem) => {
@@ -573,6 +668,9 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
              });
 
              let edgePath = '';
+             const sourceParentBound = semesterBounds.find((b) => b.id === nodeCoords[prereq]?.parentNode);
+             const targetParentBound = semesterBounds.find((b) => b.id === nodeCoords[course.code]?.parentNode);
+              
              if (obstacles.length > 0) {
                let minObsX = Infinity;
                let maxObsX = -Infinity;
@@ -585,25 +683,37 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                const distToLeft = Math.abs(sourceXVal - minObsX);
                const distToRight = Math.abs(sourceXVal - maxObsX);
                const detourX = distToLeft < distToRight ? minObsX - 40 : maxObsX + 40;
-               const yStep1 = sourceYVal + 30;
+                
+               const sourceContainerBottom = sourceParentBound ? (sourceParentBound.y + sourceParentBound.h) : sourceYVal;
+               const yStep1 = sourceParentBound && targetParentBound && sourceParentBound.id !== targetParentBound.id
+                 ? sourceContainerBottom + 20
+                 : sourceYVal + 30;
                const yStep2 = maxObsY + 30;
                edgePath = `M ${sourceXVal} ${sourceYVal} L ${sourceXVal} ${yStep1} L ${detourX} ${yStep1} L ${detourX} ${yStep2} L ${targetXVal} ${yStep2} L ${targetXVal} ${targetYVal}`;
              } else {
-               const [path] = getSmoothStepPath({
-                 sourceX: sourceXVal,
-                 sourceY: sourceYVal,
-                 sourcePosition: Position.Bottom,
-                 targetX: targetXVal,
-                 targetY: targetYVal,
-                 targetPosition: Position.Top,
-               });
-               edgePath = path;
+               if (sourceParentBound && targetParentBound && sourceParentBound.id !== targetParentBound.id) {
+                 const sourceContainerBottom = sourceParentBound.y + sourceParentBound.h;
+                 const yStep = sourceContainerBottom + 20;
+                 edgePath = `M ${sourceXVal} ${sourceYVal} L ${sourceXVal} ${yStep} L ${targetXVal} ${yStep} L ${targetXVal} ${targetYVal}`;
+               } else {
+                 const [path] = getSmoothStepPath({
+                   sourceX: sourceXVal,
+                   sourceY: sourceYVal,
+                   sourcePosition: Position.Bottom,
+                   targetX: targetXVal,
+                   targetY: targetYVal,
+                   targetPosition: Position.Top,
+                 });
+                 edgePath = path;
+               }
              }
 
              flowEdges.push({
                id: `${prereq}-${course.code}`,
                source: prereq,
                target: course.code,
+               sourceHandle: `source-${successorIndex}`,
+               targetHandle: `target-${prereqIndex}`,
                type: 'prerequisite',
                animated: isHighlightedEdge && selectedCourseId === prereq,
                style: {
@@ -623,7 +733,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                  showSuccessorLabel,
                  sourceCourseName: courses[prereq]?.name || prereq,
                  targetCourseName: course.name,
-                 prereqIndex: course.prerequisites.indexOf(prereq),
+                 prereqIndex,
                  successorIndex,
                  sourceParentId: nodeCoords[prereq]?.parentNode,
                  targetParentId: nodeCoords[course.code]?.parentNode,
