@@ -338,7 +338,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     const flowNodes: Node[] = [];
 
     const padding = 30;
-    const headerHeight = 110;
+    const headerHeight = 40;
     const gap = 40;
 
     // Group and sort courses by semester based on Dagre layout X coordinates to keep optimized horizontal order
