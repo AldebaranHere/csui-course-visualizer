@@ -664,6 +664,9 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
              });
 
              let edgePath = '';
+             const sourceParentBound = semesterBounds.find((b) => b.id === nodeCoords[prereq]?.parentNode);
+             const targetParentBound = semesterBounds.find((b) => b.id === nodeCoords[course.code]?.parentNode);
+              
              if (obstacles.length > 0) {
                let minObsX = Infinity;
                let maxObsX = -Infinity;
@@ -676,19 +679,29 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                const distToLeft = Math.abs(sourceXVal - minObsX);
                const distToRight = Math.abs(sourceXVal - maxObsX);
                const detourX = distToLeft < distToRight ? minObsX - 40 : maxObsX + 40;
-               const yStep1 = sourceYVal + 30;
+                
+               const sourceContainerBottom = sourceParentBound ? (sourceParentBound.y + sourceParentBound.h) : sourceYVal;
+               const yStep1 = sourceParentBound && targetParentBound && sourceParentBound.id !== targetParentBound.id
+                 ? sourceContainerBottom + 20
+                 : sourceYVal + 30;
                const yStep2 = maxObsY + 30;
                edgePath = `M ${sourceXVal} ${sourceYVal} L ${sourceXVal} ${yStep1} L ${detourX} ${yStep1} L ${detourX} ${yStep2} L ${targetXVal} ${yStep2} L ${targetXVal} ${targetYVal}`;
              } else {
-               const [path] = getSmoothStepPath({
-                 sourceX: sourceXVal,
-                 sourceY: sourceYVal,
-                 sourcePosition: Position.Bottom,
-                 targetX: targetXVal,
-                 targetY: targetYVal,
-                 targetPosition: Position.Top,
-               });
-               edgePath = path;
+               if (sourceParentBound && targetParentBound && sourceParentBound.id !== targetParentBound.id) {
+                 const sourceContainerBottom = sourceParentBound.y + sourceParentBound.h;
+                 const yStep = sourceContainerBottom + 20;
+                 edgePath = `M ${sourceXVal} ${sourceYVal} L ${sourceXVal} ${yStep} L ${targetXVal} ${yStep} L ${targetXVal} ${targetYVal}`;
+               } else {
+                 const [path] = getSmoothStepPath({
+                   sourceX: sourceXVal,
+                   sourceY: sourceYVal,
+                   sourcePosition: Position.Bottom,
+                   targetX: targetXVal,
+                   targetY: targetYVal,
+                   targetPosition: Position.Top,
+                 });
+                 edgePath = path;
+               }
              }
 
              flowEdges.push({
