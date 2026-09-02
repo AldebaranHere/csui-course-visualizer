@@ -38,11 +38,20 @@ interface CurriculumGraphProps {
 
 // Helper to determine the recommended semester/group for a course based on its name and active program
 const getRecommendedSemester = (course: Course, program: StudyProgram): string => {
-  if (program === 'AI') {
-    return course.category || 'Mata Kuliah Pilihan';
+  if (course.state === 'Pilihan' || course.state === 'Elective') {
+    return 'pilihan';
   }
 
-  if (course.state === 'Pilihan') {
+  if (program === 'AI') {
+    const code = course.code;
+    if (['UIGE600004', 'UIGE600003', 'CSGE601020', 'CSAM601011', 'CSAM601010', 'CSAM601012'].includes(code)) return '1';
+    if (['UIGE600007', 'CSGE601021', 'CSAM601022', 'CSAM601014', 'CSAM602013'].includes(code)) return '2';
+    if (['CSGE602040', 'CSAM602150', 'CSAM602130', 'CSAM602131'].includes(code)) return '3';
+    if (['CSGE602070', 'CSAM602232', 'CSAM602241', 'CSAM602251', 'CSAM602271', 'CSAM602233'].includes(code)) return '4';
+    if (['CSAM603090', 'CSAM603152', 'CSAM603135', 'CSAM603134', 'CSGE603091'].includes(code)) return '5';
+    if (['CSAM603223'].includes(code)) return '6';
+    if (['CSGE604097', 'CSGE614093'].includes(code)) return '7';
+    if (['CSGE604099', 'CSGE604098'].includes(code)) return '8';
     return 'pilihan';
   }
 
@@ -256,16 +265,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       return Math.max(320, maxConn * 40);
     };
 
-    const semestersList = isAI
-      ? [
-          'MATHEMATICAL FOUNDATIONS',
-          'AI MODELING AND ETHICS',
-          'PROGRAMMING FOUNDATIONS',
-          'DATA, SYSTEMS, AND SOLUTION DEVELOPMENT',
-          'GENERAL REQUIREMENTS & UNDERGRADUATE RESEARCH',
-          'Mata Kuliah Pilihan'
-        ]
-      : ['1', '2', '3', '4', '5', '6', '7', '8', 'pilihan'];
+    const semestersList = ['1', '2', '3', '4', '5', '6', '7', '8', 'pilihan'];
     
     // Initialize container parent nodes in Dagre with dynamic size fit padding
     semestersList.forEach((sem) => {
@@ -295,7 +295,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
     // Layout Enhancements:
     // 1. Arrange Pilihan (Elective) courses into a square-ish matrix (4 columns) using dummy layout edges
-    const pilihanCategory = isAI ? 'Mata Kuliah Pilihan' : 'pilihan';
+    const pilihanCategory = 'pilihan';
     const pilihanCourses = courseList.filter(c => getRecommendedSemester(c, activeProgram) === pilihanCategory);
     const cols = 4;
     for (let i = 0; i < pilihanCourses.length; i++) {
@@ -328,6 +328,19 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       if (propensiNode && kpNode && taNode) {
         dagreGraph.setEdge(propensiNode.code, kpNode.code);
         dagreGraph.setEdge(propensiNode.code, taNode.code);
+      }
+    }
+
+    // 4. Align AI Semester 7 (Kerja Praktik) and Semester 8 (Tugas Akhir) relative to Semester 6
+    if (isAI) {
+      const projNode = courseList.find(c => c.code === 'CSAM603223');
+      const kpNode = courseList.find(c => c.code === 'CSGE604097');
+      const taNode = courseList.find(c => c.code === 'CSGE604099');
+      if (projNode && kpNode) {
+        dagreGraph.setEdge(projNode.code, kpNode.code);
+      }
+      if (projNode && taNode) {
+        dagreGraph.setEdge(projNode.code, taNode.code);
       }
     }
 
@@ -399,46 +412,16 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     const sem7Width = getSemesterWidth('7');
     const sem8Width = getSemesterWidth('8');
 
-    // Calculate dynamic column widths for AI grid (2x3 grid of 6 semester groups)
-    const aiColWidths = [0, 0, 0];
-    if (isAI) {
-      semestersList.forEach((semName, idx) => {
-        const colIdx = idx % 3;
-        const semCourses = coursesBySem[semName] || [];
-        if (semCourses.length === 0) return;
-        
-        let w = 0;
-        if (isAI || semName === 'pilihan') {
-          const colWidths = Array(cols).fill(320);
-          semCourses.forEach((c, cIdx) => {
-            const colIdx = cIdx % cols;
-            const cardW = getCourseCardWidth(c.code);
-            if (cardW > colWidths[colIdx]) {
-              colWidths[colIdx] = cardW;
-            }
-          });
-          const totalColWidth = colWidths.reduce((sum, cw) => sum + cw, 0);
-          w = totalColWidth + (cols - 1) * gap + 2 * padding;
-        } else {
-          w = getSemesterWidth(semName);
-        }
-        
-        if (w > aiColWidths[colIdx]) {
-          aiColWidths[colIdx] = w;
-        }
-      });
-    }
-
     // 1. Generate Semester Group Nodes (Backdrop Cards) with tight packed boundaries
     semestersList.forEach((sem) => {
       const semCourses = coursesBySem[sem];
-      if (semCourses.length === 0) return;
+      if (!semCourses || semCourses.length === 0) return;
 
       let parentWidth = 0;
       let parentHeight = 0;
 
-      // Group layout logic: AI categories and Pilihan use 4-column matrix grids, others use single horizontal rows
-      if (isAI || sem === 'pilihan') {
+      // Group layout logic: Pilihan uses 4-column matrix grid, standard semesters use single horizontal row
+      if (sem === 'pilihan') {
         const rows = Math.ceil(semCourses.length / cols);
         const colWidths = Array(cols).fill(320);
         semCourses.forEach((c, idx) => {
@@ -464,26 +447,8 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       let parentX = centerX - parentWidth / 2;
       let parentY = centerY - parentHeight / 2;
 
-      // Layout override for AI categories: arrange in a 2x3 grid
-      if (isAI) {
-        const catIndex = semestersList.indexOf(sem);
-        const col = catIndex % 3;
-        const row = Math.floor(catIndex / 3);
-        const colGap = 80;
-        const rowGap = 120;
-        const row0MaxHeight = 450;
-
-        let accumulatedX = 0;
-        for (let i = 0; i < col; i++) {
-          accumulatedX += aiColWidths[i] + colGap;
-        }
-
-        parentX = accumulatedX;
-        parentY = row === 0 ? 0 : row0MaxHeight + rowGap;
-      }
-
       // Layout override: Position Semesters 6, 7, and 8 exactly to the left and top-aligned of the Pilihan group
-      if (isCS || isIS) {
+      if (isCS || isIS || isAI) {
         if (sem === '6') {
           parentX = pilihanLeftX - parentWidth - 80;
           parentY = pilihanTopY;
@@ -507,8 +472,6 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
       let label = `Semester ${sem}`;
       if (sem === 'pilihan') {
         label = isCS ? 'Pilihan (Semester 6 hingga 8)' : 'Pilihan (Semester 5 hingga 8)';
-      } else if (isAI) {
-        label = sem;
       }
 
       flowNodes.push({
@@ -527,8 +490,9 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     const nodeCoords: Record<string, { x: number; y: number; width: number; height: number; parentNode: string }> = {};
     semestersList.forEach((sem) => {
       const semCourses = coursesBySem[sem];
+      if (!semCourses) return;
       semCourses.forEach((course, index) => {
-        const semNumber = (sem === 'pilihan' || isAI) ? undefined : parseInt(sem, 10);
+        const semNumber = sem === 'pilihan' ? undefined : parseInt(sem, 10);
         const enrichedCourse = {
           ...course,
           recommendedSemester: semNumber,
@@ -539,7 +503,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         let relativeY = 0;
 
         // Positioning logic matching the group shapes
-        if (isAI || sem === 'pilihan') {
+        if (sem === 'pilihan') {
           const col = index % cols;
           const row = Math.floor(index / cols);
           const colWidths = Array(cols).fill(320);
@@ -820,15 +784,6 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
   return (
     <div className="w-full h-full bg-[#111111] relative">
-      {/* Floating AI Disclaimer Banner */}
-      {activeProgram === 'AI' && (
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 animate-in slide-in-from-top duration-300 pointer-events-none">
-          <div className="bg-[#1E1E1E] border border-[#C5A059]/40 text-[#C5A059] px-4 py-2.5 rounded-md shadow-lg text-xs font-bold font-sans flex items-center gap-2">
-            <span>Catatan: Informasi prasyarat mata kuliah belum tersedia. Ini akan diupdate saat informasi tersebut diumumkan.</span>
-          </div>
-        </div>
-      )}
-
       <ReactFlow
         nodes={nodes}
         edges={edges}
