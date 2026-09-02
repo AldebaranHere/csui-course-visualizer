@@ -235,15 +235,23 @@ export const CourseDrawer: React.FC<CourseDrawerProps> = ({ courses }) => {
                   Prasyarat
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {course.prerequisites.map((prereq) => (
-                    <button
-                      key={prereq}
-                      onClick={() => setSelectedCourseId(prereq)}
-                      className="font-mono text-xs px-3 py-1.5 bg-[#2A2A2A] border border-[#333333] text-[#F8FAFC] rounded hover:border-[#C5A059] transition-colors duration-200 cursor-pointer min-h-[36px]"
-                    >
-                      {prereq}
-                    </button>
-                  ))}
+                  {course.prerequisites.map((prereq) => {
+                    const isSoft = course.softPrerequisites?.includes(prereq);
+                    return (
+                      <button
+                        key={prereq}
+                        onClick={() => setSelectedCourseId(prereq)}
+                        className={`font-mono text-xs px-3 py-1.5 bg-[#2A2A2A] border text-[#F8FAFC] rounded hover:border-[#C5A059] transition-colors duration-200 cursor-pointer min-h-[36px] flex items-center gap-1.5
+                          ${isSoft ? 'border-dashed border-[#C5A059]/60' : 'border-[#333333]'}
+                        `}
+                      >
+                        <span>{prereq}</span>
+                        {isSoft && (
+                          <span className="text-[10px] text-[#C5A059] font-sans font-normal">(Lunak)</span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             )}

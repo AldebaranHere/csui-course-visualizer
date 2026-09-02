@@ -14,6 +14,7 @@ import ReactFlow, {
 } from 'reactflow';
 import dagre from '@dagrejs/dagre';
 import Fuse from 'fuse.js';
+import { Info } from 'lucide-react';
 
 import 'reactflow/dist/style.css';
 import { useCurriculumStore } from '@/store/useCurriculumStore';
@@ -44,11 +45,11 @@ const getRecommendedSemester = (course: Course, program: StudyProgram): string =
 
   if (program === 'AI') {
     const code = course.code;
-    if (['UIGE600004', 'UIGE600003', 'CSGE601020', 'CSAM601011', 'CSAM601010', 'CSAM601012'].includes(code)) return '1';
-    if (['UIGE600007', 'CSGE601021', 'CSAM601022', 'CSAM601014', 'CSAM602013'].includes(code)) return '2';
-    if (['CSGE602040', 'CSAM602150', 'CSAM602130', 'CSAM602131'].includes(code)) return '3';
-    if (['CSGE602070', 'CSAM602232', 'CSAM602241', 'CSAM602251', 'CSAM602271', 'CSAM602233'].includes(code)) return '4';
-    if (['CSAM603090', 'CSAM603152', 'CSAM603135', 'CSAM603134', 'CSGE603091'].includes(code)) return '5';
+    if (['CSAM601011', 'CSAM601010', 'CSAM601012', 'CSGE601020', 'UIGE600004', 'UIGE600003'].includes(code)) return '1';
+    if (['UIGE600007', 'CSAM601014', 'CSGE602040', 'CSAM601022', 'CSGE601021'].includes(code)) return '2';
+    if (['CSAM602013', 'CSAM602131', 'CSAM602130', 'CSAM602150', 'CSGE602070'].includes(code)) return '3';
+    if (['CSAM602241', 'CSAM602233', 'CSAM602232', 'CSAM602251', 'CSAM602271'].includes(code)) return '4';
+    if (['CSGE603091', 'CSAM603090', 'CSAM603134', 'CSAM603135', 'CSAM603152'].includes(code)) return '5';
     if (['CSAM603223'].includes(code)) return '6';
     if (['CSGE604097', 'CSGE614093'].includes(code)) return '7';
     if (['CSGE604099', 'CSGE604098'].includes(code)) return '8';
@@ -673,6 +674,8 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                }
              }
 
+             const isSoft = course.softPrerequisites?.includes(prereq);
+
              flowEdges.push({
                id: `${prereq}-${course.code}`,
                source: prereq,
@@ -685,6 +688,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
                  stroke: strokeColor,
                  strokeWidth: strokeWidth,
                  opacity: opacityValue,
+                 strokeDasharray: isSoft ? '6,5' : undefined,
                  transition: 'stroke 0.2s, stroke-width 0.2s, opacity 0.2s',
                },
                markerEnd: {
@@ -738,7 +742,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         const parentNode = nodes.find((n) => n.id === selectedNode.parentNode);
         if (parentNode) {
           const absoluteX = selectedNode.position.x + parentNode.position.x + 120;
-          const absoluteY = selectedNode.position.y + parentNode.position.y + 60;
+          const absoluteY = selectedNode.position.y + parentNode.position.y + 40;
           setCenter(absoluteX, absoluteY, { zoom: 1.1, duration: 800 });
         }
       }
@@ -769,10 +773,10 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
   // Empty State Alert Box for unpublished datasets (e.g. IS KKI)
   if (isDataEmpty) {
     return (
-      <div className="flex flex-col items-center justify-center w-full h-full bg-[#111111] px-6 text-center select-none">
-        <div className="max-w-2xl bg-[#1E1E1E] border border-[#EF4444]/30 p-8 rounded-lg shadow-2xl animate-in fade-in duration-300">
-          <div className="w-16 h-16 bg-[#EF4444]/10 border border-[#EF4444]/30 rounded-full flex items-center justify-center text-[#EF4444] mx-auto mb-6 text-2xl font-bold">
-            !
+      <div className="w-full h-full bg-[#111111] flex items-center justify-center p-6">
+        <div className="max-w-xl bg-[#1E1E1E] border border-[#333333] rounded-lg p-8 shadow-2xl text-center flex flex-col items-center">
+          <div className="w-12 h-12 rounded-full bg-[#C5A059]/10 text-[#C5A059] flex items-center justify-center mb-4">
+            <Info className="w-6 h-6" />
           </div>
           <h2 className="text-xl font-bold text-[#F8FAFC] mb-4">Informasi Belum Tersedia</h2>
           <p className="text-sm text-[#E2E8F0] leading-relaxed text-justify">
@@ -785,6 +789,29 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
 
   return (
     <div className="w-full h-full bg-[#111111] relative">
+      {/* Legend for Strict vs Soft Prerequisites (AI Study Program) */}
+      {activeProgram === 'AI' && (
+        <div className="fixed top-20 right-4 z-40 bg-[#1E1E1E]/90 border border-[#333333] px-3.5 py-2.5 rounded-lg shadow-lg backdrop-blur-md flex flex-col gap-1.5 select-none pointer-events-none">
+          <div className="text-[10px] font-bold text-[#C5A059] uppercase tracking-wider mb-0.5 font-sans">
+            Keterangan Prasyarat
+          </div>
+          <div className="flex items-center gap-2 text-[11px] font-sans text-[#E2E8F0]">
+            <svg width="28" height="10" className="shrink-0">
+              <line x1="0" y1="5" x2="20" y2="5" stroke="#C5A059" strokeWidth="2" />
+              <polygon points="20,2 27,5 20,8" fill="#C5A059" />
+            </svg>
+            <span>Prasyarat Ketat (harus sudah lulus)</span>
+          </div>
+          <div className="flex items-center gap-2 text-[11px] font-sans text-[#E2E8F0]">
+            <svg width="28" height="10" className="shrink-0">
+              <line x1="0" y1="5" x2="20" y2="5" stroke="#C5A059" strokeWidth="2" strokeDasharray="4,3" />
+              <polygon points="20,2 27,5 20,8" fill="#C5A059" />
+            </svg>
+            <span>Prasyarat Lunak (sudah mengambil)</span>
+          </div>
+        </div>
+      )}
+
       <ReactFlow
         nodes={nodes}
         edges={edges}

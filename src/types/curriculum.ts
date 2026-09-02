@@ -24,6 +24,7 @@ export interface Course {
   sublearningOutcomes?: string[];
   resources: string[];
   prerequisites: string[];
+  softPrerequisites?: string[]; // Courses that are soft prerequisites (sudah mengambil)
   recommendedSemester?: number; // Dynamically added during graph layouts
   outgoingCount?: number;       // Pre-computed by layout engine; number of courses that require this one
 }
