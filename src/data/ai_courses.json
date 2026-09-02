@@ -32,7 +32,8 @@
     ],
     "prerequisites": [
       "CSGE601021"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSGE601020": {
     "code": "CSGE601020",
@@ -67,7 +68,8 @@
       "4. Eric Matthes, Python Crash Course, 3rd Edition, O’Reilly (https://www.oreilly.com/ library/view/python-crash-course/9781098156664/)",
       "5. Y Daniel Liang. Introduction to Python Programming and Data Structures, Global Edition, 3rd Edition. Pearson, 2026."
     ],
-    "prerequisites": []
+    "prerequisites": [],
+    "softPrerequisites": []
   },
   "CSGE601021": {
     "code": "CSGE601021",
@@ -101,7 +103,8 @@
     "resources": [],
     "prerequisites": [
       "CSGE601020"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM601022": {
     "code": "CSAM601022",
@@ -136,7 +139,8 @@
     "resources": [],
     "prerequisites": [
       "CSGE601020"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM603090": {
     "code": "CSAM603090",
@@ -168,6 +172,9 @@
     "resources": [],
     "prerequisites": [
       "CSAM602251"
+    ],
+    "softPrerequisites": [
+      "CSAM602251"
     ]
   },
   "CSAM603152": {
@@ -192,7 +199,8 @@
     "resources": [],
     "prerequisites": [
       "CSAM602150"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM602013": {
     "code": "CSAM602013",
@@ -227,6 +235,9 @@
     "prerequisites": [
       "CSAM601011",
       "CSAM601012"
+    ],
+    "softPrerequisites": [
+      "CSAM601012"
     ]
   },
   "CSAM601011": {
@@ -259,7 +270,8 @@
       "2. Seth Braver. Full Frontal Calculus: An Infinitesimal Approach, 2nd Ed. Vector Vectorum Books, 2019.",
       "3. Howard Jerome Keisler. Elementary Calculus: An Infinitesimal Approach, 3rd Ed. Dover, 2012; Edisi online 2026 dapat diakses di https://people.math.wisc.edu/~hkeisler/calc. htm"
     ],
-    "prerequisites": []
+    "prerequisites": [],
+    "softPrerequisites": []
   },
   "CSAM603135": {
     "code": "CSAM603135",
@@ -294,6 +306,9 @@
     "prerequisites": [
       "CSAM602232",
       "CSAM602251"
+    ],
+    "softPrerequisites": [
+      "CSAM602251"
     ]
   },
   "CSGE604097": {
@@ -313,7 +328,8 @@
     "resources": [],
     "prerequisites": [
       "97 SKS"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSGE614093": {
     "code": "CSGE614093",
@@ -338,7 +354,8 @@
     "resources": [],
     "prerequisites": [
       "Semester 7"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM601010": {
     "code": "CSAM601010",
@@ -363,7 +380,8 @@
     "resources": [
       "Kenneth H. Rosen. Discrete Mathematics and Its Applications. McGraw-Hill, International edition. Latest is 9th edition (2026), but older editions can be used."
     ],
-    "prerequisites": []
+    "prerequisites": [],
+    "softPrerequisites": []
   },
   "CSGE603091": {
     "code": "CSGE603091",
@@ -392,7 +410,8 @@
     "resources": [],
     "prerequisites": [
       "Semester 5"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "UIGE600004": {
     "code": "UIGE600004",
@@ -419,7 +438,8 @@
     ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": [],
+    "softPrerequisites": []
   },
   "UIGE600003": {
     "code": "UIGE600003",
@@ -447,7 +467,8 @@
     ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": [],
+    "softPrerequisites": []
   },
   "UIGE600007": {
     "code": "UIGE600007",
@@ -474,7 +495,8 @@
     ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": [],
+    "softPrerequisites": []
   },
   "CSAM602232": {
     "code": "CSAM602232",
@@ -507,7 +529,8 @@
     "prerequisites": [
       "CSAM602130",
       "CSGE602040"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM602241": {
     "code": "CSAM602241",
@@ -543,7 +566,8 @@
     "prerequisites": [
       "CSAM602013",
       "CSGE602040"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM602150": {
     "code": "CSAM602150",
@@ -573,7 +597,8 @@
     "resources": [],
     "prerequisites": [
       "CSGE601020"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM602233": {
     "code": "CSAM602233",
@@ -609,7 +634,8 @@
     "prerequisites": [
       "CSAM602130",
       "CSGE602040"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM603134": {
     "code": "CSAM603134",
@@ -636,9 +662,9 @@
     "sublearningOutcomes": [],
     "resources": [],
     "prerequisites": [
-      "CSAM602130",
-      "CSGE602040"
-    ]
+      "CSAM602232"
+    ],
+    "softPrerequisites": []
   },
   "CSAM601014": {
     "code": "CSAM601014",
@@ -667,6 +693,9 @@
     "resources": [],
     "prerequisites": [
       "CSAM601010",
+      "CSAM601011"
+    ],
+    "softPrerequisites": [
       "CSAM601011"
     ]
   },
@@ -708,8 +737,13 @@
     "sublearningOutcomes": [],
     "resources": [],
     "prerequisites": [
-      "CSAM603152",
       "CSAM602251",
+      "CSAM603152",
+      "CSAM603090",
+      "CSAM603135",
+      "CSAM602271"
+    ],
+    "softPrerequisites": [
       "CSAM603090",
       "CSAM603135",
       "CSAM602271"
@@ -748,6 +782,9 @@
       "CSAM601022",
       "CSAM602150",
       "CSAM602130"
+    ],
+    "softPrerequisites": [
+      "CSAM602130"
     ]
   },
   "CSAM602271": {
@@ -780,7 +817,8 @@
     "prerequisites": [
       "CSGE602070",
       "CSAM602130"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM602131": {
     "code": "CSAM602131",
@@ -808,7 +846,8 @@
     "resources": [],
     "prerequisites": [
       "CSAM601010"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM602130": {
     "code": "CSAM602130",
@@ -841,10 +880,11 @@
     "sublearningOutcomes": [],
     "resources": [],
     "prerequisites": [
-      "CSGE601020",
+      "CSAM601012",
       "CSAM601014",
-      "CSAM601012"
-    ]
+      "CSGE602040"
+    ],
+    "softPrerequisites": []
   },
   "CSGE602040": {
     "code": "CSGE602040",
@@ -874,7 +914,8 @@
     "resources": [],
     "prerequisites": [
       "CSGE601020"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAM601012": {
     "code": "CSAM601012",
@@ -908,7 +949,8 @@
       "1. Giordano, T., Jessup, B., and Nevins, M. Vector Spaces First: An Introduction to Linear Algebra, 4th Ed. Ottawa: University of Ottawa, 2021. Available from https://doi.org/10.20381/ruor-28168.",
       "2. Axler, Sheldon. Linear Algebra Done Right, 4th Ed. Springer, 2024. Available from https://linear.axler.net/"
     ],
-    "prerequisites": []
+    "prerequisites": [],
+    "softPrerequisites": []
   },
   "CSGE604099": {
     "code": "CSGE604099",
@@ -931,7 +973,8 @@
     "resources": [],
     "prerequisites": [
       "CSGE603091"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSGE604098": {
     "code": "CSGE604098",
@@ -954,7 +997,8 @@
     "resources": [],
     "prerequisites": [
       "CSGE603091"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604236": {
     "code": "CSAE604236",
@@ -987,7 +1031,8 @@
     ],
     "prerequisites": [
       "CSAM603134"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604070": {
     "code": "CSAE604070",
@@ -1031,7 +1076,8 @@
     "prerequisites": [
       "CSGE602070",
       "CSAM602271"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604240": {
     "code": "CSAE604240",
@@ -1074,7 +1120,8 @@
       "CSAM602130",
       "CSGE602040",
       "CSAM602232"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604131": {
     "code": "CSAE604131",
@@ -1115,7 +1162,8 @@
     "prerequisites": [
       "CSGE602070",
       "CSAM602131"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604034": {
     "code": "CSAE604034",
@@ -1155,7 +1203,8 @@
     "prerequisites": [
       "CSAM603152",
       "CSAM602251"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604030": {
     "code": "CSAE604030",
@@ -1198,7 +1247,8 @@
     "prerequisites": [
       "CSAM602241",
       "CSAM602130"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604233": {
     "code": "CSAE604233",
@@ -1240,7 +1290,8 @@
       "CSAM602130",
       "CSAM602241",
       "CSAM602232"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604222": {
     "code": "CSAE604222",
@@ -1282,7 +1333,8 @@
     "prerequisites": [
       "CSGE601020",
       "CSAM602131"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604032": {
     "code": "CSAE604032",
@@ -1319,7 +1371,8 @@
     "prerequisites": [
       "CSAM602232",
       "CSAM603134"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604037": {
     "code": "CSAE604037",
@@ -1356,7 +1409,8 @@
     "prerequisites": [
       "CSGE602070",
       "CSAM602130"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604033": {
     "code": "CSAE604033",
@@ -1399,7 +1453,8 @@
     ],
     "prerequisites": [
       "CSAM602130"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604232": {
     "code": "CSAE604232",
@@ -1440,7 +1495,8 @@
     "prerequisites": [
       "CSAM602130",
       "CSAM602150"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSEA604031": {
     "code": "CSEA604031",
@@ -1484,7 +1540,8 @@
     "prerequisites": [
       "CSAM602232",
       "CSAM602241"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604135": {
     "code": "CSAE604135",
@@ -1527,7 +1584,8 @@
     ],
     "prerequisites": [
       "CSAM602232"
-    ]
+    ],
+    "softPrerequisites": []
   },
   "CSAE604035": {
     "code": "CSAE604035",
@@ -1569,6 +1627,7 @@
     "prerequisites": [
       "CSAM601022",
       "CSAM602130"
-    ]
+    ],
+    "softPrerequisites": []
   }
 }
