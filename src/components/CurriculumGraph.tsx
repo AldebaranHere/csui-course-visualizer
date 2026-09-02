@@ -377,6 +377,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
     // Pre-calculate the Pilihan group's X and Y coordinates to align Semesters 6, 7, and 8 exactly to its left and top
     let pilihanLeftX = 0;
     let pilihanTopY = 0;
+    const pilihanLeftOffset = 320 + gap; // Shift all courses in Pilihan group by one course card to the right
     const sem6Height = 120 + 2 * padding + headerHeight;
     const pilihanDagreNode = dagreGraph.node(`semester-${pilihanCategory}`);
     if (pilihanDagreNode) {
@@ -391,7 +392,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
         }
       });
       const totalColWidth = colWidths.reduce((sum, w) => sum + w, 0);
-      const pilihanWidth = totalColWidth + (cols - 1) * gap + 2 * padding;
+      const pilihanWidth = pilihanLeftOffset + totalColWidth + (cols - 1) * gap + 2 * padding;
       const pilihanHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
       const pilihanCenterX = pilihanDagreNode.x;
       const pilihanCenterY = pilihanDagreNode.y;
@@ -432,7 +433,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
           }
         });
         const totalColWidth = colWidths.reduce((sum, w) => sum + w, 0);
-        parentWidth = totalColWidth + (cols - 1) * gap + 2 * padding;
+        parentWidth = pilihanLeftOffset + totalColWidth + (cols - 1) * gap + 2 * padding;
         parentHeight = rows * 120 + (rows - 1) * gap + 2 * padding + headerHeight;
       } else {
         parentWidth = getSemesterWidth(sem);
@@ -514,7 +515,7 @@ export const CurriculumGraph: React.FC<CurriculumGraphProps> = ({ courses }) => 
               colWidths[colIdx] = w;
             }
           });
-          let accumulatedX = padding;
+          let accumulatedX = padding + pilihanLeftOffset;
           for (let i = 0; i < col; i++) {
             accumulatedX += colWidths[i] + gap;
           }
