@@ -1,574 +1,1574 @@
 {
-  "AI_MF_01": {
-    "code": "AI_MF_01",
-    "name": "Logic and Discrete Structures",
+  "CSGE602070": {
+    "code": "CSGE602070",
+    "name": "Basis Data",
     "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "MATHEMATICAL FOUNDATIONS",
-    "description": "Logic and Discrete Structures course provides theoretical foundations of discrete mathematics and logic for computer science and AI modeling.",
-    "topics": [],
-    "learningOutcomes": [],
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini membahas konsep-konsep dasar manajemen basis data, yang mencakup aspek pemodelan dan perancangan, bahasa, serta implementasi. Topik-topik yang diajarkan meliputi arsitektur dan konsep sistem manajemen basis data (database management system atau DBMS), struktur dan organisasi berkas (file), pengindeksan (indexing), pemodelan data menggunakan model entity-relationship (ER), bahasa kueri formal, basis data berorientasi objek, Structured Query Language (SQL), Query by Example (QBE), dependensi fungsional (functional dependency), normalisasi basis data relasional, serta algoritma dan proses perancangan basis data relasional.",
+    "topics": [
+      "1. Introduction to Databases and Database System Concepts and Architecture.",
+      "2. Data Modeling using the ER model.",
+      "3. Data Modeling using the EER model.",
+      "4. Relational Data Model and Relational DB Constraints.",
+      "5. Relational DB Design through ER/EER to Relational Mapping.",
+      "6. SQL - DDL and row insertion, updates, and deletions.",
+      "7. SQL - Basic Querying techniques.",
+      "8. SQL - Advanced Querying techniques.",
+      "9. SQL - Indexing for performance optimization.",
+      "10. Triggers and Stored Procedures for database automation.",
+      "11. Functional Dependency and Normalization for relational design.",
+      "12. Relational Algebra as a formal query language.",
+      "13. Query Processing and execution strategies."
+    ],
+    "learningOutcomes": [
+      "1. Mampu memahami konsep basis data, pemanfaatan, dan tahapan pengembangan basis data (KA 6 = 33.3%).",
+      "2. Mampu merancang basis data secara benar dan sesuai dengan kebutuhan data pengguna (KA 5 = 100%, KA 6 = 33.3%).",
+      "3. Mampu mengimplementasikan dan memanipulasi basis data (KA 6 = 33.3%, KA 7 = 100%)."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
+    "resources": [
+      "1. Elmasri, et al., Database Systems, 6th Edition, Addison-Wesley, 2011",
+      "2. Connolly, et al., Database Systems, 5th Edition, Pearson Education, 2010"
+    ],
+    "prerequisites": [
+      "CSGE601021"
+    ]
+  },
+  "CSGE601020": {
+    "code": "CSGE601020",
+    "name": "Dasar-Dasar Pemrograman 1",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini bertujuan untuk mengajarkan konsep dan teknik dasar dalam membuat program komputer dalam konteks pengantar ilmu komputer dan pemecahan masalah. Pilihan bahasa pemrograman bukanlah fokus utama dari mata kuliah ini, walaupun pada kurikulum ini, bahasa pemrograman yang digunakan untuk mata kuliah ini adalah Python.",
+    "topics": [
+      "1. Introduction to programming and computer systems.",
+      "2. Variables, data types, and number systems.",
+      "3. Control mechanisms such as selection and repetition.",
+      "4. Strings and slicing.",
+      "5. Simple text files and exceptions.",
+      "6. Functions and parameter passing.",
+      "7. Lists, tuples, and mutability.",
+      "8. Recursive functions and problem solving using recursion.",
+      "9. Sets, dictionaries, and randomness.",
+      "10. Introduction to OOP: Introduction to classes and namespaces.",
+      "11. Design of classes: UML and GUI.",
+      "12. OOP: Inheritance and polymorphism.",
+      "13. Binary files and exceptions; testing.",
+      "14. Advanced Python features: Lambda expressions, iterators, generators, and decorators."
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan konsep fondasi pemrograman untuk melakukan abstraksi dan menyelesaikan permasalahan komputasi sederhana; serta memahami beberapa paradigma pemrograman popular lain seperti object-oriented programming dan functional programming (KA 5=100%, KA 6=100%, KA 7=100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "1. Dokumentasi Python Terbaru, https://docs.python.org/3/",
+      "2. William F. Punch and Richard Enbody. The Practice of Computing Using Python. 3rd Edition. Pearson, 2016.",
+      "3. Allen B. Downey. Think Python. 3rd Edition. O’Reilly Media, 2024. (https:// greenteapress.com/wp/think-python-3rd-edition/)",
+      "4. Eric Matthes, Python Crash Course, 3rd Edition, O’Reilly (https://www.oreilly.com/ library/view/python-crash-course/9781098156664/)",
+      "5. Y Daniel Liang. Introduction to Python Programming and Data Structures, Global Edition, 3rd Edition. Pearson, 2026."
+    ],
     "prerequisites": []
   },
-  "AI_MF_02": {
-    "code": "AI_MF_02",
-    "name": "Univariate Calculus",
+  "CSGE601021": {
+    "code": "CSGE601021",
+    "name": "Dasar-Dasar Pemrograman 2",
     "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "MATHEMATICAL FOUNDATIONS",
-    "description": "Fundamental concepts of univariate calculus including limits, derivatives, integration, and applications in mathematical modeling.",
-    "topics": [],
-    "learningOutcomes": [],
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini merupakan bagian kedua dari seri “Dasar-Dasar Pemrograman” dan dirancang untuk mengembangkan pengetahuan serta pengalaman yang telah diperoleh dari Dasar-Dasar Pemrograman 1 guna meningkatkan kemampuan pemrograman mahasiswa. Mata kuliah ini secara khusus berfokus pada paradigma Pemrograman Berorientasi Objek (Object-Oriented Programming atau OOP) dan menekankan penggunaannya dalam pemecahan masalah. Bahasa pemrograman apa pun dapat digunakan selama mendukung paradigma pemrograman berorientasi objek tersebut.",
+    "topics": [
+      "1. Introduction to Java: Overview of the Java ecosystem, JVM, JRE, and the compilation process.",
+      "2. Elementary Programming: Basic syntax, identifiers, variables, constants, and fundamental data types.",
+      "3. Selections: Conditional logic using if-else statements and switch-case structures.",
+      "4. Math Functions, Characters, and Strings: Working with the Math class, character encoding, and string manipulation.",
+      "5. Loops: Iteration control using for, while, and do-while loops.",
+      "6. Methods: Defining modular code, parameter passing, and return values.",
+      "7. Recursion: Understanding self-referential functions and recursive problem-solving techniques.",
+      "8. Arrays and ArrayList: Managing fixed-size data structures and dynamic object lists.",
+      "9. Generics: Implementing type-safe classes and methods to handle multiple data types.",
+      "10. Objects and Classes: Core principles of instantiation, constructors, and class members.",
+      "11. Object-Oriented Thinking: Conceptualizing software through objects, states, and behaviors.",
+      "12. Inheritance and Polymorphism: Hierarchical class structures, method overriding, and dynamic binding.",
+      "13. Abstract Classes and Interfaces: Designing architectural blueprints and defining common behaviors.",
+      "14. Exception Handling and Text I/O: Managing runtime errors and performing file read/ write operations.",
+      "15. Swing: Building graphical user interfaces (GUI) using the Java Swing framework."
+    ],
+    "learningOutcomes": [
+      "1. Mampu memahami konsep-konsep pemrograman dalam paradigma pemrograman berorientasi objek dan menggunakannya untuk melakukan abstraksi atas permasalahan komputasi sederhana yang dihadapi secara logis dan komputasional (KA 5=100%).",
+      "2. Mampu merancang dan mengimplementasikan program sederhana dengan paradigma pemrograman berorientasi objek (KA 6=100%, KA 7=100%).",
+      "3. Mampu menguji apakah suatu program dalam paradigma pemrograman berorientasi objek sudah berjalan dengan benar (KA 8=100%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": [
+      "CSGE601020"
+    ]
   },
-  "AI_MF_03": {
-    "code": "AI_MF_03",
-    "name": "Multivariate Calculus",
+  "CSAM601022": {
+    "code": "CSAM601022",
+    "name": "Desain Produk Kecerdasan Artifisial",
     "credits": 3,
     "state": "Wajib Program Studi",
-    "category": "MATHEMATICAL FOUNDATIONS",
-    "description": "Advanced concepts of multivariate calculus, multiple integrals, vector calculus, and functions of several variables.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini memberikan pengantar Kecerdasan Buatan (Artificial Intelligence atau AI) bagi mahasiswa dari perspektif solusi produk untuk masalah-masalah spesifik. Pembahasannya memberikan gambaran umum tentang konsep dan teknologi yang mendasari pengembangan produk berbasis AI, mencakup dasar-dasar pengembangan produk secara umum serta konsep dan aplikasi AI yang relevan. Dari sisi pengembangan produk, mata kuliah ini mencakup pengantar siklus hidup pengembangan produk, riset pengguna, desain pengalaman pengguna (user experience atau UX), pembuatan prototype, integrasi, dan validasi produk. Dari sisi AI, mata kuliah ini mencakup gambaran umum tingkat dasar tentang teknologi AI modern dengan penekanan pada aplikasi pemelajaran mesin (machine learning), jaringan saraf tiruan (neural networks), dan model bahasa generatif (generative language models). Sepanjang semester, mahasiswa dihadapkan pada beberapa praktik langsung dalam mengembangkan prototype produk berbasis AI menggunakan komponen pustaka perangkat lunak (software library) yang sudah ada.",
+    "topics": [
+      "1. Intro to AI: Overview of AI, terminology, types of AI, historical milestones, current trends.",
+      "2. AI Use Cases in Products: Examples of AI in everyday applications.",
+      "3. AI Product Design Basics: Human-centered design, product development cycle, human- AI interaction",
+      "4. User Needs & Research: Problem identification, defining users, empathy maps, persona, user research methods (surveys, interviews, usability testing)",
+      "5. UI Design for AI Products: Principles of UI/UX, feedback loops, heuristics for AI UIs",
+      "6. Low-Fidelity Prototyping",
+      "7. Wireframes, sketches, mockups, practice with Figma or paper prototyping.",
+      "8. AI Ethics & Society: Bias, fairness, explainability, privacy, transparency",
+      "9. Data for AI Products: Data types, collection, preprocessing, privacy in data.",
+      "10. Validating AI Product Ideas: Value proposition, desirability vs feasibility, quick tests",
+      "11. High-Fidelity AI Prototyping: Intro to ML libraries (Scikit-learn, transformers), embedding simple models",
+      "12. High-Fidelity AI Prototyping II: Model inference, error handling, user feedback integration",
+      "13. AI Integration Basics: APIs, Flask, streamlit for demo purposes",
+      "14. Evaluation & Testing: Usability metrics, model performance, experience evaluation"
+    ],
+    "learningOutcomes": [
+      "1. Mampu mengidentifikasi masalah yang relevan untuk diselesaikan menggunakan produk sederhana berbasis AI (KA 5=100%).",
+      "2. Mampu merancang solusi produk AI sederhana yang mempertimbangkan kebutuhan pengguna dan prinsip desain secara mandiri dan kolaboratif (KA 3=50%, KA 7=50%).",
+      "3. Mampu mengembangkan prototipe produk AI sederhana secara mandiri dan kolaboratif (KA 3=50%, KA 7=50%).",
+      "4. Mampu melakukan evaluasi sederhana terhadap prototipe produk AI (KA 8=100%).",
+      "5. Mampu menjelaskan aspek etika, sosial, dan teknis yang terkait dengan pengembangan produk AI (KA 1=100%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": [
+      "CSGE601020"
+    ]
   },
-  "AI_MF_04": {
-    "code": "AI_MF_04",
-    "name": "Linear Structure",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "MATHEMATICAL FOUNDATIONS",
-    "description": "Core concepts of linear algebra, vector spaces, linear transformations, matrices, and eigenvalues for AI operations.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_MF_05": {
-    "code": "AI_MF_05",
-    "name": "Statistics and Probability",
+  "CSAM603090": {
+    "code": "CSAM603090",
+    "name": "Etika Kecerdasan Artifisial",
     "credits": 3,
     "state": "Wajib Program Studi",
-    "category": "MATHEMATICAL FOUNDATIONS",
-    "description": "Introduction to probability theory, random variables, distributions, parameter estimation, and statistical hypothesis testing.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas perspektif etis dalam pengembangan dan penerapan teknologi AI di dunia nyata serta mengeksplorasi berbagai potensi solusi, baik secara teknis maupun non- teknis. Secara khusus, mahasiswa mempelajari solusi teknis untuk isu-isu etis dalam AI melalui studi model explainable AI, baik secara teoritis maupun praktis dalam bentuk implementasi berbasis proyek.",
+    "topics": [
+      "1. Intro to AI Ethics & Core Principles: fairness, (human) rights, non-maleficence, accountability, transparency.",
+      "2. Real-world examples of AI Failures: COMPAS, facial recognition, etc.",
+      "3. Fairness & Bias in Machine Learning: Fairness definitions/metrics and sources of algorithmic bias",
+      "4. Accountability & Responsibility: Responsibility models (legal, social)",
+      "5. Fairness-Aware Machine Learning: Pre-, in-, post-processing techniques for mitigation of bias.",
+      "6. Post-hoc Methods for Explainable AI: SHAP, LIME, etc.",
+      "7. Interpretable Models: Trees, rule lists, linear models",
+      "8. Contestability & redress mechanisms, AI as Socio-technical systems",
+      "9. Ethics audit introduction (Model Cards, Datasheets)",
+      "10. AI Governance/Policy, Generative AI, and Risks of AI to Disinformation, Labor, Legitimacy, Democracy, etc.",
+      "11. Robustness & Limitations of Explainable AI: Fragility of explanations, adversarial shifts",
+      "12. Ethics Risk Audit: Ethics Risk Matrix, AI Fairness Checklist."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan keterkaitan antara dasar-dasar etika dengan teknologi AI yang berkembang dewasa ini serta menjabarkan berbagai implikasi etik yang dapat terjadi dengan penggunaan teknologi AI secara pervasif, baik secara tertulis maupun lisan dengan bahasa yang baik (KA 1=100%, KA 2=100%).",
+      "2. Mampu merumuskan solusi teknis dan nonteknis yang secara konseptual dapat memitigasi dampak buruk penerapan AI secara etik melalui kerja mandiri atau kerja bersama (KA 3=100%, KA 5=100%).",
+      "3. Mampu mengimplementasikan dan menerapkan teknik-teknik explainable AI dalam mengurangi risiko kegagalan etik dari teknologi AI (KA 6=100%).",
+      "4. Mampu memberikan evaluasi/penilaian dari perspektif etika terhadap suatu solusi AI secara adil, objektif, dan rigorous (KA 8=100%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
+    "prerequisites": [
+      "CSAM602251"
+    ]
+  },
+  "CSAM603152": {
+    "code": "CSAM603152",
+    "name": "Jaringan Sistem Komputer",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini memperkenalkan jaringan komputer dan internet, membahas bagaimana protokol berfungsi dalam lapisan jaringan komputer berdasarkan standar OSI atau TCP/ IP, serta memberikan pemahaman kepada mahasiswa mengenai aplikasi yang memanfaatkan jaringan komputer. Setelah menyelesaikan mata kuliah ini, mahasiswa akan mampu membangun aplikasi yang menggunakan jaringan komputer dan merancang jaringan komputer berdasarkan berbagai konsep dan protokol jaringan sesuai dengan standar OSI atau TCP/ IP. Topik yang dicakup meliputi: pengantar jaringan komputer dan internet, lapisan aplikasi (application layer), lapisan transpor (transport layer), lapisan jaringan (network layer), lapisan tautan (link layer) dan LAN, serta keamanan jaringan komputer. Metode pembelajaran menggunakan pendekatan flipped classroom.",
+    "topics": [
+      "1. Introduction to computer networks and the internet: a) Components of computer networks and the internet b) Functions and roles of protocols in each network communication layer c) Computer network performance parameters",
+      "2. Application layer: a) Principles of computer network applications b) Socket programming with Python c) Web technology and the HTTP protocol d) DNS protocol",
+      "3. Transport layer: a) Principles of transport communication layer services b) Multiplexing and demultiplexing processes c) UDP protocol d) TCP protocol e) Congestion control mechanisms",
+      "4. Network layer: data plane a) Principles of the network communication layer b) Internet Protocol (IP) version 4 c) IP address allocation methods d) DHCP protocol e) NAT protocol",
+      "5. Network layer: control plane a) Principles of routing b) Link-state and distance-vector routing algorithms c) Intra-AS routing algorithm: OSPF d) Inter-AS routing algorithm: BGP",
+      "6. Link layer: a) Principles of the link communication layer b) Bit error detection and correction c) MAC protocol d) ARP protocol e) LAN and VLAN",
+      "7. Security in computer networks: a) Principles of network security b) Principles of cryptography c) Message integrity and digital signatures d) Authentication processes e) Securing TCP connections with TLS f) Firewall"
+    ],
+    "learningOutcomes": [
+      "Mampu membuat rancangan cetak biru arsitektur dan sistem jaringan komputer berdasarkan berbagai konsep dan protokol jaringan komputer sesuai standar OSI atau TCP/IP (KA 7=100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSAM602150"
+    ]
+  },
+  "CSAM602013": {
+    "code": "CSAM602013",
+    "name": "Kalkulus Multivariat",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini memberikan landasan analitis kalkulus peubah banyak yang dirancang secara khusus untuk kebutuhan kecerdasan buatan (AI) dan machine learning (ML), yang berfungsi sebagai prasyarat utama untuk topik-topik optimisasi pada mata kuliah tingkat lanjut. Fokus utamanya bergeser dari kalkulus tradisional berbasis fisika menuju pemahaman tentang kondisi analitis yang mengatur bagaimana model AI belajar dalam ruang berdimensi tinggi. Topik-topik utama mencakup geometri peubah banyak dan visualisasi loss landscapes, turunan terhadap vektor dan matriks (matrix calculus), serta penggunaan matriks Jacobian dalam komposisi fungsi atau lapisan model. Mahasiswa akan mempelajari kondisi optimalitas tingkat pertama dan kedua secara analitis menggunakan matriks Hessian untuk menganalisis kelengkungan dan titik pelana (saddle points). Selain itu, mata kuliah ini mencakup deret Taylor, metode pengali Lagrange untuk optimisasi bersyarat, serta pengantar prinsip-prinsip konveksitas sebagai penentu keberhasilan optimisasi global. Bagian akhir dari mata kuliah ini menekankan pada mekanisme matematis Automatic Differentiation (mode Forward dan Reverse) sebagai realisasi dari mekanisme backpropagation pada model deep learning, serta penerapan integral peubah banyak dalam konteks probabilitas dan statistik untuk ML.",
+    "topics": [
+      "1. Introduction to multivariate calculus and its applications in optimization and AI.",
+      "2. Linear Algebra Refresher - Geometric Orientation: Eigendecomposition as principal axes of change, linear transformations as mappings between feature spaces, and geometric intuition of SVD (singular values as scaling factors).",
+      "3. Multivariate Functions and Geometry: Scalar fields (loss surfaces) and vector fields (gradient flows), level sets, contour maps, and visualization of high-dimensional landscapes, vector-valued functions and parametric curves in R n .",
+      "4. The Gradient Vector: Partial derivatives and limit in higher dimensions, directional derivatives, and gradient as the direction of steepest ascent.",
+      "5. Jacobians & Chain Rules: Jacobian matrix as a linear approximation of vector-to-vector maps, multivariate chain rule via Jacobian composition, and total derivatives.",
+      "6. Matrix Calculus: Differentiating scalar-valued functions with respect to vectors and matrices, identities for quadratic forms, and an introduction to the Kronecker product and vectorization for machine learning.",
+      "7. Analytical Optimization I: Definition of critical points (setting the gradient to zero), first-order necessary condition for local extrema, and identifying stationary points in high-dimensional manifolds.",
+      "8. Analytical Optimization II: The Hessian Matrix (second-order partial derivatives and local curvature), classifying extrema (positive definite, negative definite, and indefinite Hessians), identifying saddle points, and the Laplacian as the trace of the Hessian.",
+      "9. Taylor Series in \\(\\mathbb{R}^n\\): Multivariate Taylor expansion (linear vs. quadratic approximations), the link between Taylor series and the Hessian in function approximation, and remainder terms and the limits of local approximations.",
+      "10. Convexity: Convex sets and convex functions (definitions and properties), why local minimum equals global minimum in convexity, and an introduction to duality (primal vs. dual problem intuition).",
+      "11. Multivariable Integration: Double and triple integrals as expectations in continuous probability, change of variables (the role of the Jacobian determinant), and the Gaussian integral (calculating normalizers for AI noise modeling).",
+      "12. Autodifferentiation (Forward and Reverse Mode): Primal, tangent, and adjoint variables, derivative computation over computation graph, and efficiency of vector-Jacobian products.",
+      "13. Example: Linear Models: Analytical vs. iterative approaches (Normal Equations vs. gradient-based search needs), deriving gradients for Mean Squared Error (MSE) and Cross-Entropy loss, and a preview of “Search and Optimization” (moving from analysis to algorithmic execution)."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan konsep dasar fungsi multivariat serta gabungan peran kalkulus univariat dan aljabar linear di dalamnya (KA 9=20%).",
+      "2. Mampu menerapkan konsep gradien, turunan berarah, Jacobian, Hessian, dan deret Taylor dalam penyelesaian permasalahan optimisasi dan aproksimasi fungsi multivariabel (KA 9=20%).",
+      "3. Mampu menerapkan dan mengimplementasikan teknik multivariate automated differentiation untuk menghitung turunan parsial dari fungsi multivariabel sederhana (KA 9=20%).",
+      "4. Mampu menerapkan integral lipat pada penyelesaian optimisasi dalam pemelajaran mesin (KA 9=20%).",
+      "5. Mampu menerapkan teknik-teknik kalkulus multivariat pada beberapa permasalahan pemelajaran mesin dasar (KA 9=20%)"
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSAM601011",
+      "CSAM601012"
+    ]
+  },
+  "CSAM601011": {
+    "code": "CSAM601011",
+    "name": "Kalkulus Univariat",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini memberikan fondasi matematika kalkulus pendekatan berbasis infinitesimal. Intuisi matematika sekolah menengah dijembatani dengan ketepatan formal melalui pemanfaatan representasi hyperreal untuk mendefinisikan limit, kontinuitas, dan asimtot secara aljabar. Bahasan kalkulus diferensial disampaikan melalui visualisasi local linearity, aljabar turunan eksak menggunakan infinitesimal yang mendukung automatic differentiation yang mendasari mekanisme optimisasi model AI, akumulasi nilai dan perubahan neto melalui hyperfinite sums, serta analisis asimtotik dan deret takhingga. Dengan berfokus pada intuisi visual dan aljabar eksak, mata kuliah ini membekali mahasiswa dengan penalaran matematis formal yang selaras dengan logika komputasi tanpa memerlukan prasyarat komputasi atau aplikasi fisika 3D yang rumit.",
+    "topics": [
+      "1. Refresher’s on functions.",
+      "2. Infinitesimal, Hyperreals, Approximation, and Rendering (the “standard part” function)",
+      "3. Limits and Continuity.",
+      "4. Derivatives a) Local Linearity b) Basic Derivative Rules c) Product & Quotient Rules d) The Chain Rule e) Implicit Differentiation",
+      "5. Applications of Derivatives a) Local Extrema b) Convexity & Curvature c) Asymptotes & Growth Rates d) Examples in Optimization",
+      "6. Integration a) Antiderivatives & Finite Sums b) Definite Integrals c) Fundamental Theorem of Calculus & Net Change Theorem d) Integration by Substitution",
+      "7. Transcendental Functions a) Exponential & Log Functions",
+      "8. Applications of Integration a) Area between curves b) Average value of a function (for data smoothing)",
+      "9. Techniques of INtegration a) Integration by Parts b) Improper Integrals",
+      "10. Sequences & Series a) Sequences & Infinite Limits b) Infinite Series c) Convergence Tests d) Taylor Series."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan konsep-konsep fundamental matematika kontinu—mencakup limit, kontinuitas, turunan, dan integral, menggunakan representasi infinitesimal (hyperreals) dan linearitas lokal (local linearity). (KA 9=25%).",
+      "2. Mampu menghitung turunan eksak, integral, limit, serta deret takhingga secara aljabar menggunakan kaidah-kaidah baku yang selaras dengan logika komputasi eksak. (KA 9=25%).",
+      "3. Mampu menerapkan kalkulus diferensial untuk menganalisis perilaku fungsi, menentukan ekstremum lokal dan konveksitas, serta melakukan aproksimasi linear dan iteratif yang relevan dengan algoritma komputasi (KA 9=25%).",
+      "4. Mampu menerapkan kalkulus integral dan analisis asimtotik untuk menyelesaikan masalah perangkuman data kontinu (continuous data summarization, seperti nilai rata-rata dan perubahan neto) serta mengevaluasi laju pertumbuhan dan konvergensi barisan/deret. (KA 9=25%)"
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "1. C. Bryan Dawson. Calculus Set Free: Infinitesimals to the Rescue. Oxford University Press, 2021.",
+      "2. Seth Braver. Full Frontal Calculus: An Infinitesimal Approach, 2nd Ed. Vector Vectorum Books, 2019.",
+      "3. Howard Jerome Keisler. Elementary Calculus: An Infinitesimal Approach, 3rd Ed. Dover, 2012; Edisi online 2026 dapat diakses di https://people.math.wisc.edu/~hkeisler/calc. htm"
+    ],
     "prerequisites": []
   },
-  "AI_AME_01": {
-    "code": "AI_AME_01",
-    "name": "AI Ethics",
+  "CSAM603135": {
+    "code": "CSAM603135",
+    "name": "Kecerdasan Artifisial Generatif",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini membahas dasar-dasar Generative Artificial Intelligence (AI), yang dibangun di atas fondasi deep learning yang telah diperoleh pada mata kuliah prasyarat Deep Learning. Fokus dari mata kuliah ini terletak pada teori dasar dan teknik software development untuk membuat model AI generatif, serta strategi untuk memanfaatkan model-model tersebut guna menyelesaikan masalah spesifik. Topik-topik utama meliputi metode pre-training dan fine-tuning, prompt engineering, reinforcement learning untuk model generatif, serta aspek-aspek inference dan deployment yang efisien pada infrastruktur high-performance computing. Model-model yang dibahas meliputi GPT, Diffusion, Variational Autoencoders (VAE), Generative Adversarial Networks (GAN), dan lainnya.",
+    "topics": [
+      "1. Introduction to Generative AI: Modalities, tasks, and latent variables.",
+      "2. Likelihood and MLE Fundamentals: Core principles of Maximum Likelihood Estimation in a generative context.",
+      "3. Variational Foundations: KL Divergence, Evidence Lower Bound (ELBO), and Variational Inference.",
+      "4. Variational Autoencoder (VAE): Theory, the reparameterization trick, implementation, and evaluation (MSE, reconstruction quality, and latent interpolation).",
+      "5. Generative Adversarial Networks (GANs): Minimax game theory, discriminator-generator setup, Conditional GANs, StyleGAN, training dynamics, and evaluation (FID, IS, diversity vs. quality, and mode collapse).",
+      "6. Diffusion Models: Forward process, noise schedules, reverse process, Denoising Diffusion Probabilistic Models (DDPMs), sampling, and qualitative evaluation.",
+      "7. Autoregressive Transformers: GPT architecture, attention mechanisms, causal masking, decoding strategies (greedy, top-k, top-p, beam), and evaluation (perplexity, self-BLEU, and decoding quality).",
+      "8. Prompt Engineering and Soft Tuning: Engineering patterns (Chain-of-Thought, few-shot), Parameter-Efficient Fine-Tuning (PEFT) using LoRA and adapters, and evaluation of prompt sensitivity and fluency.",
+      "9. Pre-training and Transfer Learning Paradigms: Large-scale pre-training, LoRA, BitFit, and evaluating fine-tuning loss curves and downstream performance gains.",
+      "10. Reinforcement Learning (RL) for Generative Models: Policy gradients, Proximal Policy Optimization (PPO), and Reinforcement Learning from Human Feedback (RLHF) including reward modeling and applications like ChatGPT.",
+      "11. Multimodal Embeddings: CLIP, shared latent spaces, text-to-image generation (DALL·E), image captioning (BLIP), and evaluation via CLIPScore and retrieval accuracy.",
+      "12. Discrete Latent Variable Models: VQ-VAE theory, implementation, and evaluation based on reconstruction accuracy and codebook usage.",
+      "13. Unified Evaluation Metrics: A comprehensive overview of BLEU, FID, CLIPScore, IS, MOS, SDR, human evaluation frameworks, fairness, and robustness."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan konsep-konsep dasar dan fondasi matematis dari model AI generatif (KA 9=100%).",
+      "2. Mampu memformulasikan abstraksi permasalahan yang diberikan ke dalam tugas pembelajaran mesin yang dipecahkan oleh model AI generatif (KA 5=100%).",
+      "3. Mampu mengimplementasikan dan bekerja dengan model-model AI generatif baik model bahasa, model citra, ataupun model multimodal, menggunakan teknik-teknik pre-training, continual pre-training, ataupun transfer learning (KA 6=100%).",
+      "4. Mampu menerapkan dan men-deploy model AI generatif dalam suatu sistem berbasis AI untuk memecahkan permasalahan (KA 7=100%).",
+      "5. Mampu melakukan evaluasi kinerja model AI generatif menggunakan metrik-metrik yang sesuai dengan permasalahan yang diberikan serta menjelaskan makna dari capaian kinerja model tersebut (KA 8=100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSAM602232",
+      "CSAM602251"
+    ]
+  },
+  "CSGE604097": {
+    "code": "CSGE604097",
+    "name": "Kerja Praktik",
+    "credits": 6,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini memberikan kesempatan kepada mahasiswa untuk memperoleh pengalaman dalam penyelesaian permasalahan yang terdapat pada sebuah organisasi menggunakan Teknologi Informasi dan Komunikasi (TIK) dengan cara terjun secara langsung ke dunia kerja.",
+    "topics": [
+      "Disesuaikan dengan peran yang dilakukan ketika melakukan kerja praktik berdasarkan arahan pemberi kerja."
+    ],
+    "learningOutcomes": [
+      "1. Mampu berkolaborasi dan berkoordinasi dengan orang lain dalam pekerjaan yang terkait TI (KA 1=100%, KA 2=100%, KA 3=100%).",
+      "2. Mampu menerapkan ilmu yang telah dipelajari selama kuliah untuk menyelesaikan tugas yang diberikan perusahaan tempat kerja praktik (KA 4=100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "97 SKS"
+    ]
+  },
+  "CSGE614093": {
+    "code": "CSGE614093",
+    "name": "Komputer dan Masyarakat",
     "credits": 3,
     "state": "Wajib Fakultas",
-    "category": "AI MODELING AND ETHICS",
-    "description": "Overview of social, ethical, legal, and safety implications of designing and deploying artificial intelligence systems.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini bertujuan untuk meningkatkan kesadaran dan kepekaan mahasiswa terhadap berbagai permasalahan sosial dan ekonomi yang terkait dengan implementasi teknologi komputer dalam kehidupan sehari-hari. Mahasiswa akan dihadapkan pada beberapa isu terkait teknologi informasi dan dituntut untuk menganalisis isu tersebut serta merekomendasikan solusi dari sudut pandang mereka sebagai mahasiswa kecerdasan artificial. Kuliah ini disampaikan dalam Bahasa Inggris untuk mengasah kemampuan komunikasi Mahasiswa dalam bahasa lingua franca.",
+    "topics": [
+      "1. Understanding the history and origin of computing;",
+      "2. Understanding the social impacts of computer’s technology;",
+      "3. Understanding computer scientists’ responsibility;",
+      "4. Dealing with evolving new technology;",
+      "5. Understanding the intellectual property issues."
+    ],
+    "learningOutcomes": [
+      "1. Mampu berkomunikasi secara tertulis dan oral dengan Bahasa Inggris (KA 2 = 50%).",
+      "2. Mampu berkomunikasi secara efektif ketika membawa isu sosial-budaya pada konteks bidang Ilmu Komputer (KA 2 = 50%).",
+      "3. Mampu memahami isu terkait prinsip legal, seperti copyright (KA 1 = 50%).",
+      "4. Mampu memahami isu terkait prinsip etika (KA 1 = 50%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": [
+      "Semester 7"
+    ]
   },
-  "AI_AME_02": {
-    "code": "AI_AME_02",
-    "name": "Data Science and Machine Learning",
+  "CSAM601010": {
+    "code": "CSAM601010",
+    "name": "Logika dan Struktur Diskret",
     "credits": 4,
     "state": "Wajib Program Studi",
-    "category": "AI MODELING AND ETHICS",
-    "description": "Comprehensive introduction to data analysis, machine learning algorithms, model evaluation, and regression/classification tasks.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas logika formal dasar (logika proposisi dan logika predikat) dimulai dari sintaks, semantik, sifat suatu formula logika, aturan inferensi dan penerapannya untuk memformulasikan suatu pernyataan dan membangun argumentasi valid dalam memecahkan permasalahan. Mata kuliah ini juga membahas berbagai metode pembuktian untuk dapat digunakan secara tepat dalam membuktikan kebenaran suatu pernyataan. Formula logika dan metode pembuktian ini menjadi dasar dalam memahami berbagai struktur diskret dan operasi pada struktur-struktur diskret, seperti himpunan, fungsi, barisan, dan graf, sifat, dan operasinya, serta penerapannya dalam pemecahan masalah.",
+    "topics": [
+      "1. Propositional Logic a) Introduction to propositional logic b) Propositional logic applications c) Satisfiability, Equivalence",
+      "2. Predicate Logic a) Introduction to predicate logic b) Nested quantifiers c) Translating (natural language) sentences into predicate logic d) Inference rules",
+      "3. Proof techniques a) Direct proof b) Indirect Proof c) Biconditional Proof, d) Equivalence Proof e) Proof by Cases, f) Counterexample",
+      "4. Basic structures a) Sets b) Functions c) Sequences d) Sums e) Countability",
+      "5. Mathematical induction a) Basic principles b) Strong induction",
+      "6. Counting a) Basic rules of counting b) Pigeonhole principles c) Permutations, combinations, and their variations d) Binomial coefficient e) Generating functions",
+      "7. Graphs a) Graph models b) Graph terminology c) Special types of graphs d) Representing graphs e) Connectivity f) Euler and Hamilton paths g) Graph isomorphism"
+    ],
+    "learningOutcomes": [
+      "1. Mampu menerapkan logika formal untuk merepresentasikan pernyataan dan membangun argumentasi logis secara tepat dalam memecahkan permasalahan yang diberikan (KA 9 = 50%).",
+      "2. Mampu menerapkan struktur-struktur diskret dan operasi pada struktur-struktur diskret tersebut secara tepat dalam memecahkan permasalahan yang diberikan (KA 9 = 50%)."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
+    "resources": [
+      "Kenneth H. Rosen. Discrete Mathematics and Its Applications. McGraw-Hill, International edition. Latest is 9th edition (2026), but older editions can be used."
+    ],
     "prerequisites": []
   },
-  "AI_AME_03": {
-    "code": "AI_AME_03",
-    "name": "Knowledge Representation and Reasoning",
+  "CSGE603091": {
+    "code": "CSGE603091",
+    "name": "Metodologi Penelitian dan Penulisan Ilmiah",
     "credits": 3,
-    "state": "Wajib Program Studi",
-    "category": "AI MODELING AND ETHICS",
-    "description": "Formal methods for encoding knowledge in logical, semantic, and rule-based paradigms, enabling automated system reasoning.",
-    "topics": [],
-    "learningOutcomes": [],
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini mencakup bahasan pada metodologi penelitian dan penulisan ilmiah pada bidang Ilmu Komputer, Kecerdasan Artifisial, Sistem Informasi, dan Teknologi Informasi (CS/AI/SI/TI). Di dalamnya, mahasiswa diajarkan cara berpikir yang sistematis, logis, dan ilmiah, lalu menuangkannya dalam bentuk tulisan ilmiah yang baik. Pokok-pokok bahasannya mencakup definisi penelitian dan paradigmanya (kuantitatif dan kualitatif, dasar dan terapan), tipe-tipe tulisan ilmiah, teknik studi literatur, identifikasi celah penelitian dan formulasi pertanyaan penelitian, teknik dan gaya penulisan ilmiah yang baik, etika dalam penulisan, penulisan ulasan literatur serta tinjauan kritis atasnya, teknik berpikir logis dan kritis, perancangan penelitian, serta penulisan metodologi penelitian. Dalam mata kuliah ini peserta diminta untuk melakukan penelitian mini dan menulis karya ilmiah sebagai proses terintegrasi, di bidang CS/AI/SI/TI. Secara garis besar, mata kuliah ini membahas bagaimana melakukan penelitian di bidang CS/AI/SI/TI, sehingga “peneliti” dapat mengelola sumber dayanya secara optimal dan menulis laporan penelitian secara ilmiah. Selain itu, mata kuliah ini akan mengeksplorasi peran penelitian sebagai fungsi inti dalam mendorong pemahaman tentang pengetahuan, keterampilan, dan sikap baru dalam pengembangan keilmuan CS/AI/SI/TI.",
+    "topics": [
+      "1. Basic understanding on research and scientific writing a) What is research? b) Research methodology paradigms in math vs. science vs. engineering. c) Recognizing research papers, essays, and opinion pieces.",
+      "2. Choosing a research topic & refining a research question a) Literature Review b) Searching literature",
+      "3. Structure of literature review.",
+      "4. Problem statements and research gap a) Identifying research gap. b) Argument development towards formulating a good problem statement and/or hypothesis.",
+      "5. Scientific writing: Style, tone, and structure. a) Scientific writing vs. popular writing. b) Structure of scientific papers.",
+      "6. Building coherent paragraphs: unity, transitions, flow, visuals, and styles.",
+      "7. Ethical writing practices. a) Plagiarism, paraphrasing. b) Citation tools. c) Plagiarism checker",
+      "8. Writing coherent literature review. a) Analyze good literature reviews. b) Methods of literature review. c) Drafting a first literature review.",
+      "9. Logical Thinking a) Deductive vs. inductive vs. abductive. b) Logical fallacies.",
+      "10. Research Design a) Formal/analytical research b) Empirical research. c) Design science research. d) Qualitative research. e) Writing Methodology section.",
+      "11. Writing and Presenting Research Proposal: combining problem, literature, and methodology"
+    ],
+    "learningOutcomes": [
+      "1. Mampu menentukan metodologi penelitian yang tepat dan sesuai dengan kaidah ilmiah untuk memecahkan atau menjawab permasalahan di bidang CS/AI/IS/IT. (KA 1=100%).",
+      "2. Mampu menghasilkan tulisan ilmiah untuk menjelaskan ide penelitian yang dapat dilakukan ataupun untuk melaporkan hasil penelitian yang telah dilakukan untuk memecahkan suatu permasalahan di bidang CS/AI/IS/IT (KA 2 =100%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": [
+      "Semester 5"
+    ]
   },
-  "AI_AME_04": {
-    "code": "AI_AME_04",
-    "name": "Search and Optimization",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "AI MODELING AND ETHICS",
-    "description": "Graph search, heuristic methods, and optimization techniques for solving complex state-space decision-making problems.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_AME_05": {
-    "code": "AI_AME_05",
-    "name": "Deep Learning",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "AI MODELING AND ETHICS",
-    "description": "Multi-layer neural network architectures, backpropagation, convolutional networks, sequence models, and training optimization.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_AME_06": {
-    "code": "AI_AME_06",
-    "name": "Computer Vision",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "AI MODELING AND ETHICS",
-    "description": "Image processing, object detection, segmentation, and modern visual recognition models utilizing convolutional architectures.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_AME_07": {
-    "code": "AI_AME_07",
-    "name": "Natural Language Processing",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "AI MODELING AND ETHICS",
-    "description": "Computational linguistics, text classification, word embeddings, transformers, and sequence-to-sequence language processing models.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_AME_08": {
-    "code": "AI_AME_08",
-    "name": "Generative AI",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "AI MODELING AND ETHICS",
-    "description": "State-of-the-art generative architectures, diffusion models, GANs, autoencoders, and large language models (LLMs) techniques.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_PF_01": {
-    "code": "AI_PF_01",
-    "name": "Programming Foundations 1",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "PROGRAMMING FOUNDATIONS",
-    "description": "Introduction to computational thinking, programming syntax, variables, logical statements, control structures, and functional design.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_PF_02": {
-    "code": "AI_PF_02",
-    "name": "Programming Foundations 2",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "PROGRAMMING FOUNDATIONS",
-    "description": "Advanced programming concepts focusing on object-oriented programming (OOP), design principles, and software structure.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_PF_03": {
-    "code": "AI_PF_03",
-    "name": "Data Structures and Algorithms",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "PROGRAMMING FOUNDATIONS",
-    "description": "Design and analysis of basic data structures (lists, trees, graphs) and computational algorithm complexities.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_DSSD_01": {
-    "code": "AI_DSSD_01",
-    "name": "Databases",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "DATA, SYSTEMS, AND SOLUTION DEVELOPMENT",
-    "description": "Relational data model, SQL syntax, database normalization, indexing, transactions, and schema design principles.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_DSSD_02": {
-    "code": "AI_DSSD_02",
-    "name": "Data Engineering Foundations",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "DATA, SYSTEMS, AND SOLUTION DEVELOPMENT",
-    "description": "Data integration, ETL pipelines, big data storage components, stream processing, and analytics architecture paradigms.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_DSSD_03": {
-    "code": "AI_DSSD_03",
-    "name": "Introduction to Computer Architecture and Operating Systems",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "DATA, SYSTEMS, AND SOLUTION DEVELOPMENT",
-    "description": "Fundamentals of hardware structures, assembly language, OS process scheduling, memory management, and file systems.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_DSSD_04": {
-    "code": "AI_DSSD_04",
-    "name": "Architecture, Engineering, and Operations of AI Applications",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "DATA, SYSTEMS, AND SOLUTION DEVELOPMENT",
-    "description": "Deployment, monitoring, scalability, and operations of artificial intelligence models (MLOps) in cloud production ecosystems.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_DSSD_05": {
-    "code": "AI_DSSD_05",
-    "name": "Computer System Networks",
-    "credits": 4,
-    "state": "Wajib Program Studi",
-    "category": "DATA, SYSTEMS, AND SOLUTION DEVELOPMENT",
-    "description": "Principles of computer networks, Internet protocol suite, routing models, network layers, and standard communication security.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_DSSD_06": {
-    "code": "AI_DSSD_06",
-    "name": "AI Product Design",
-    "credits": 3,
-    "state": "Wajib Program Studi",
-    "category": "DATA, SYSTEMS, AND SOLUTION DEVELOPMENT",
-    "description": "Design thinking, user experience design, and methodology for conceiving interactive software applications leveraging AI solutions.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_DSSD_07": {
-    "code": "AI_DSSD_07",
-    "name": "AI Product Development Project",
-    "credits": 6,
-    "state": "Wajib Program Studi",
-    "category": "DATA, SYSTEMS, AND SOLUTION DEVELOPMENT",
-    "description": "Capstone software development project integrating AI components, requirements gathering, design, testing, and implementation.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_GRUR_01": {
-    "code": "AI_GRUR_01",
-    "name": "Religion",
+  "UIGE600004": {
+    "code": "UIGE600004",
+    "name": "MPK Agama",
     "credits": 2,
     "state": "Wajib Universitas",
-    "category": "GENERAL REQUIREMENTS & UNDERGRADUATE RESEARCH",
-    "description": "Foundational values and character building within the student's religious framework.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Setelah selesai mengikuti perkuliahan MPK Agama, mahasiswa mampu menganalisis berbagai permasalahan yang terjadi di masyarakat berdasarkan ajaran agama. Mata kuliah ini disajikan dengan pendekatan Active Learning dengan materi pembelajarannya meliputi sejarah dan makna agama, pokok-pokok ajaran agama, agama dan budaya, serta analisis kasus-kasus nyata yang terjadi di masyarakat. Proses pembelajaran dilakukan dengan menggunakan bahasa Indonesia.",
+    "topics": [
+      "1. Pendahuluan",
+      "2. Sejarah dan Makna Agama a) Sejarah dan Perkembangan Agama b) Makna Agama Bagi Kehidupan c) Manusia Beragama",
+      "3. Pokok-pokok Ajaran Agama a) Keimanan atau Keyakinan b) Ibadah atau Ritual c) Akhlak atau Moral Keagamaan",
+      "4. Agama dan Budaya a) Keluarga Beragama b) Kehidupan Bermasyarakat, Berbangsa, dan Bernegara c) Pengembangan Budaya, Seni, dan IPTEK Berdasarkan Nilai-nilai Agama",
+      "5. Analisa Kasus a) Pemicu ditetapkan dalam rapat tim pengajar MPK Agama UI sebelum UTS b) Menganalisis kasus berdasarkan materi ajar"
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan sejarah dan makna agama (KA 1=12.5%).",
+      "2. Mampu memaknai pokok-pokok ajaran agama (KA 1=12.5%).",
+      "3. Mampu menerapkan pokok-pokok ajaran agama (KA 1=12.5%).",
+      "4. Mampu mengimani pokok -pokok ajaran agama (KA 1=12.5%).",
+      "5. Mampu memaknai hubungan agama dan budaya (KA 1=12.5%).",
+      "6. Mampu mengidentifikasi pokok-pokok ajaran agama dan pengembangannya di bidang budaya, seni, dan IPTEK (KA 1=12.5%).",
+      "7. Mampu menganalisis kasus-kasus yang terjadi di masyarakat berdasarkan ajaran agama (KA 1=12.5%).",
+      "8. Mampu mengkonstrusikan nilai-nilai ajaran agamanya dalam kehidupan sehari hari (KA 1=12.5%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
     "prerequisites": []
   },
-  "AI_GRUR_02": {
-    "code": "AI_GRUR_02",
-    "name": "English",
+  "UIGE600003": {
+    "code": "UIGE600003",
+    "name": "MPK Bahasa Inggris",
     "credits": 2,
     "state": "Wajib Universitas",
-    "category": "GENERAL REQUIREMENTS & UNDERGRADUATE RESEARCH",
-    "description": "Academic English writing, reading comprehension, presentation skills, and scientific communication vocabulary.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Catatan: Mahasiswa tidak perlu mengambil mata kuliah ini dalam bentuk kelas formal apabila memiliki setifikat TOEFL atau IELTS atau yang setara dengan standar skor tertentu, yang ditentukan UI. Jika tidak memenuhi syarat, baru mahasiswa mengambil dalam bentuk kelas formal sesuai perincian di bawah. Capaian pembelajaran dalam mata kuliah ini adalah mahasiswa mampu menerapkan penggunaan Bahasa Inggris secara efektif dalam lingkup akademik dengan penekanan pada keenam nilai luhur karakter. Ruang lingkup dibahas dan dilatihkan dengan menggunakan metode pembelajaran aktif secara mandiri dan berkelompok yang diintegrasikan dalam empat komponen pengajaran bahasa, yaitu: menyimak, berbicara, membaca, dan menulis. Bahasa pengantar yang digunakan dalam kuliah ini adalah bahasa Inggris.",
+    "topics": [
+      "1. Pengenalan Strategi Pembelajaran Bahasa Inggris a) Tipe pembelajaran bahasa b) Latar belakang proses pembelajaran Bahasa Inggris yang telah dilakukan sebelumnya c) Pengenalan Profil pembelajaran yang sukses d) Strategi belajar untuk meningkatkan kemampuan bahasa Inggris",
+      "2. Pemahaman teknik menyimak dalam percakapan bertema akademik dan memahami berita berbahasa Inggris a) Perbedaan hearing dan listening b) Strategi menyimak percakapan: mengidentifikasi garis besar percakapan dan informasi detail c) Strategi menyimak siaran berita: mengidentifikasi headline dan melengkapi informasi dari rekaman berita d) Pengenalan teknik mencatat efektif e) Latihan menyarikan catatan dari rekaman ceramah/kuliah berbahasa Inggris.",
+      "3. Pemahaman teknik-teknik membaca dan menuliskan kembali (merangkum) bacaan akademik bahasa Inggris a) Langkah-langkah membuat rangkuman bacaan b) Latihan menuliskan kembali (merangkum) bacaan akademik bahasa Inggris yang telah dibaca",
+      "4. Penjelasan tata bahasa Inggris yang baik dan benar untuk mendukung penyusunan paragraf bahasa Inggris a) Verb Tenses, Passive and Active b) Compound and Complex sentences c) Adjective Clauses, Reduced Clauses, Noun Clauses d) Topic sentence, irrelevant sentence, pattern of organization and concluding sentence",
+      "5. Pengenalan etiket dan ungkapan yang umum dipakai dalam diskusi beserta penerapannya. a) Pengenalan sikap yang dianjurkan dan tidak dianjurkan saat berdiskusi b) Pengetahuan ungkapan yang umum dipakai dalam diskusi c) Penerapan etiket dan ungkapan tersebut di atas dalam diskusi",
+      "6. Pengenalan strategi membaca, pemilihan strategi membaca dan Penyusunan laporan baca artikel akademik dalam bahasa Inggris a) Strategi membaca b) Membaca referensi c) Kenyataan dan pendapat d) Membaca paragraf e) Membaca artikel f) Intisari artikel akademik g) Pesan atau tujuan penulis artikel h) Komentar kritis pembaca artikel i) Praktik penyusunan laporan baca artikel akademik berbahasa Inggris",
+      "7. Penyusunan esai akademik dalam bahasa Inggris a) Penyusunan Paragraf Pendahuluan b) Penyusunan tiga Paragraf Badan esai c) Penyusunan Paragraf Kesimpulan."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan ingatannya mengenai proses pembelajaran bahasa Inggris yang telah diperoleh sebelumnya (KA 2=14.3%).",
+      "2. Mampu memahami percakapan akademik dan ceramah perkuliahan dalam bahasa Inggris serta menulis kembali dalam bentuk catatan dalam bahasa Inggris (KA 2=14.3%).",
+      "3. Mampu memahami bacaan akademik dalam bahasa Inggris dan menuliskan kembali dalam bentuk rangkuman bacaan (KA 2=14.3%).",
+      "4. Mampu menerapkan pemakaian tata bahasa Inggris yang baik dan benar dalam menyusun paragraf dalam bahasa Inggris akademik (KA 2=14.3%).",
+      "5. Mampu mensimulasikan penggunaan bahasa Inggris akademik dalam diskusi dan bekerja sama untuk menghasilkan presentasi kelompok (KA 2=14.3%, KA 3=100%).",
+      "6. Mampu menyesuaikan strategi membaca yang tepat untuk berbagai jenis teks akademik berbahasa Inggris dan mengemukakan kembali dalam bentuk laporan baca artikel secara kritis (KA 2=14.3%).",
+      "7. Mampu menyusun esai akademik dalam bahasa Inggris (KA 2=14.3%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
     "prerequisites": []
   },
-  "AI_GRUR_03": {
-    "code": "AI_GRUR_03",
-    "name": "Integrated Character Development",
+  "UIGE600007": {
+    "code": "UIGE600007",
+    "name": "MPK Terintegrasi",
     "credits": 6,
     "state": "Wajib Universitas",
-    "category": "GENERAL REQUIREMENTS & UNDERGRADUATE RESEARCH",
-    "description": "Integrated character development course covering national values, ethics, logic, and scientific thinking.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata Kuliah Pengembangan Kepribadian Terintegrasi (MPKT) adalah bagian dari Penyelenggaraan Kuliah Pengembangan Kepribadian Pendidikan Tinggi (PKPT) yang diselenggarakan bagi mahasiswa yang mengandung unsur internalisasi nilai dasar kehidupan, keterampilan interaksi/berelasi, berbangsa dan keterampilan akademik sebagai dasar kepribadian mahasiswa menjalankan pembelajaran sesuai disiplin ilmu. MPKT adalah komponen Mata Kuliah Wajib Universitas untuk membantu mahasiswa dalam mengembangkan kepribadian agar secara konsisten mampu mewujudkan nilai-nilai dasar keagamaan, rasa kebangsaan dan cinta tanah air dalam menguasai, menerapkan dan mengembangkan ilmu pengetahuan, teknologi, seni dan budaya yang dimilikinya dengan rasa tanggung jawab sehingga dapat diterapkan sepanjang hayat. Materi yang diberikan pada MPKT bertujuan untuk membentuk pola berpikir manusia dengan nilai dan moral untuk mewujudkan manusia yang berkepribadian dengan memiliki cara berpikir kritis, logis, kreatif, inovatif, serta memiliki keingintahuan intelektual dan jiwa kewirausahaan. Materi yang diberikan meliputi 9 nilai UI, nilai-nilai kebangsaan, negara, dan warga negara berdasarkan Pancasila. Pemecahan masalah dalam sains, teknologi, kesehatan, dan manusia sebagai manajer alam dengan menggunakan penalaran dan memanfaatkan Teknologi Informasi dan Komunikasi (TIK) untuk mencapai tujuan akhir modul ini. Kegiatan perkuliahan dilakukan dengan pendekatan student centered learning (SCL) menggunakan metode: experiential learning (EL), collaborative learning (CL) dan project based learning. Penggunaan berbagai metode tersebut dilakukan melalui kegiatan diskusi kelompok, latihan tugas mandiri, presentasi, pembuatan makalah dengan Bahasa Indonesia dan diskusi interaktif. Bahasa pengantar dalam perkuliahan ini menggunakan Bahasa Indonesia.",
+    "topics": [
+      "1. Karakter/Nilai dasar UI, Filsafat, Logika dan Etika",
+      "2. Modul Bahasa Indonesia: Laras Ilmiah dan ragam bahasa Ringkasan",
+      "3. Jati Diriku sebagai Warga Negara Indonesia yang Setia pada Pancasila, Kewarganegaraan, dan Dunia Internasional a) Bangsa Indonesia b) Negara Indonesia c) Implementasi Nilai- nilai Pancasila",
+      "4. Kewirausahaan dan Social Entrepreneurship",
+      "5. Revolusi Industri 4,0 a) Perkembangan dan pemanfaatan teknologi terbaru 4,0 meliputi: Cloud Computing, Big Data Analytics, Internet of Things, Autonomous Robots, Cyber Security,Augmented Reality, Additive Manufacturing, Simulation, System integration b) Computational thinking, Coding, AI",
+      "6. Mahasiswa sebagai pengelola kesehatan diri sendiri dan lingkungan a) Perkembangan psikososial remaja dan dewasa muda b) Pengelolaan wellbeing untuk remaja dan dewasa muda",
+      "7. Elektif berbasis Massive Open Online Course (MOOC)",
+      "8. Proyek Akhir Semester berdasarkan topik MPKT"
+    ],
+    "learningOutcomes": [
+      "1. Mampu menganalisis masalah berdasarkan prinsip filsafat, logika, etika dan nilai-nilai UI sebagai warganegara Indonesia yang berjiwa wiraswasta dan setia kepada Pancasila serta menghasilkan solusi yang logis dan etis menggunakan pengetahuan kewirausahaan, melalui keterampilan belajar mandiri dan menggunakan Bahasa Indonesia, Teknologi Informasi dan Komunikasi secara bijaksana (KA 1=25%, KA 2=20%, KA 3=25%, KA 4=25%).",
+      "2. Mampu mengidentifikasi ragam upaya wirausaha yang bercirikan inovasi dan kemandirian yang berlandaskan etika (KA 2=20%, KA 3=25%, KA 4=25%).",
+      "3. Mampu mengevaluasi perkembangan dan pemanfaatan teknologi terbaru dari industri 4.0 pada bidang keilmuan berdasarkan prinsip filsafat, logika, etika dan nilai-nilai UI sebagai warganegara Indonesia yang berjiwa wiraswasta dan setiap kepada Pancasila menggunakan Bahasa Indonesia, Teknologi Informasi dan Komunikasi secara bijaksana (KA 1=25%, KA 2=20%, KA 3=25%, KA 4=25%).",
+      "4. Mampu menyusun refleksi rencana mengelola kebugaran dalam menjalankan peran sebagai mahasiswa UI berdasarkan pengetahuan tentang perkembangan kesehatan mental dan fisik remaja dan dewasa muda (KA 1=25%, KA 2=20%).",
+      "5. Mampu mendemonstrasikan karakter sebagai mahasiswa UI warganegara Indonesia yang cinta tanah air dengan menunjukkan kreativitas, pemikiran kritis, disiplin diri secara kolaboratif melalui pengelolaan belajar mandiri (self-regulated learning) (KA 1=25%, KA 2=20%, KA 3=25%, KA 4=25%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
     "prerequisites": []
   },
-  "AI_GRUR_04": {
-    "code": "AI_GRUR_04",
-    "name": "Internship",
+  "CSAM602232": {
+    "code": "CSAM602232",
+    "name": "Pemelajaran Dalam",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini menyajikan pembahasan yang mendalam dan berfokus pada implementasi mengenai teori serta praktik deep neural networks. Dirancang khusus untuk mahasiswa jurusan AI, kurikulum ini diawali dengan merumuskan kembali supervised learning melalui Bayesian decision theory, serta menurunkan jaringan single-layer fundamental untuk regression dan classification. Mahasiswa akan mempelajari transisi matematis dari fixed basis functions menuju penemuan hierarchical representations dari raw data. Mata kuliah ini menelusuri evolusi arsitektur saraf mulai dari multilayer perceptron hingga spatial hierarchies (CNNs), temporal dependencies (RNNs dan Transformers), serta generative modeling (VAEs), berdampingan dengan skala Large Language Model (LLM) dan perancangan sistem otonom menggunakan kerangka kerja multi-arm bandit.",
+    "topics": [
+      "1. Introduction and Regression: Representation Learning vs. Feature Engineering; Tensors & Computation Graphs; Decision Theory for Regression.",
+      "2. Classification & Perceptrons: Decision Theory for Classification; Single-layer Networks; Generative vs. Discriminative Classifiers; Framework Setup.",
+      "3. Multilayer Perceptrons: From Linear to Non-Linear; Hidden Layers; Activation Functions (ReLU, GeLU); Universal Approximation Theorem.",
+      "4. Backpropagation: Automatic Differentiation; Chain Rule on Graphs; Jacobian-Vector Products; Implementing Autograd from scratch.",
+      "5. Optimization: SGD with Momentum; RMSProp; Adam/AdamW; Learning Rate Schedulers; Non-convex Landscape Analysis.",
+      "6. Generalization: Weight Initialization (He/Xavier); L1/L2 Regularization; Dropout; Batch vs. Layer Normalization.",
+      "7. Deep Learning for Vision: Convolutions; Kernels; Padding/Stride; Pooling; Translation Invariance; Feature Map Visualization; Residual Connections (ResNet); Transfer Learning; Object Detection (YOLO); Semantic Segmentation.",
+      "8. Sequence Modeling: Recurrence; Vanishing Gradients; LSTMs and GRUs; Sequence-to- Sequence (Seq2Seq) logic.",
+      "9. Attention & Transformers: Scaled Dot-Product Attention; Multihead Attention; Positional Encoding; The Transformer Block.",
+      "10. Language Models & LLMs: BERT vs. GPT; Scaling Laws; Finetuning (LoRA/QLoRA); Prompt Engineering; Model Quantization.",
+      "11. Generative Model Foundations: Variational Autoencoders (VAEs); Reparameterization Trick; Latent Space Interpolation.",
+      "12. Decision AI & Bandits: Multi-Arm Bandits (MAB); ExplorationExploitation; Bridge to RL and RLHF (Preference Bandits)."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan berbagai terminologi dasar pada studi pemelajaran dalam secara formal matematis (KA 9=33,3%).",
+      "2. Mampu menurunkan bentuk formal dari berbagai model pemelajaran dalam dasar, yakni regresi linear, regresi logistik, regresi softmax, multilayer perceptron, convolutional neural network, recurrent neural network, Transformer, dan large language model, serta mengimplementasikannya sebagai solusi untuk tugas-tugas pemelajaran mesin secara tepat (KA 6=50%, KA 9=33,3%)",
+      "3. Mampu menurunkan bentuk formal dari berbagai prosedur optimisasi berbasis gradien serta menerapkannya dengan tepat dalam melatih model pemelajaran dalam (KA 6=50%, KA 9=33,3%).",
+      "4. Mampu menentukan pilihan model yang paling tepat untuk menyelesaikan masalah pemelajaran mesin berdasarkan metrik-metrik kinerja model standar (KA 5=100%, KA 8 = 100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSAM602130",
+      "CSGE602040"
+    ]
+  },
+  "CSAM602241": {
+    "code": "CSAM602241",
+    "name": "Pencarian dan Optimisasi",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini dirancang untuk memberikan fondasi algoritmik yang kuat bagi mahasiswa dalam memahami bagaimana agen cerdas membuat keputusan yang optimal. Pada fase pertama, fokus ditempatkan pada discrete optimization dan heuristics, yang mencakup uninformed dan informed search, metode local search, serta adversarial search. Mahasiswa kemudian bertransisi untuk memodelkan masalah AI dalam kerangka formal seperti linear programming (LP) dan integer programming (IP), yang berfungsi sebagai jembatan menuju pemodelan matematis optimization. Fase kedua mengalihkan fokus ke arah continuous optimization, dengan memanfaatkan fondasi kalkulus peubah banyak (multivariate calculus). Mata kuliah ini mencakup metode tingkat pertama (first-order methods) seperti gradient descent dan pengoptimal adaptif (adaptive optimizers) seperti Adam, berdampingan dengan fondasi teknik tingkat kedua (second-order techniques) seperti Newton’s method. Mahasiswa juga akan mempelajari constrained optimization menggunakan pengali Lagrange (Lagrange multipliers) dan kondisi Karush-Kuhn-Tucker (KKT). Mata kuliah ini diakhiri dengan pengenalan metode berbasis populasi (population-based methods) seperti evolutionary algorithms dan Bayesian optimization untuk menangani tantangan black-box optimization yang kompleks. Melalui pendekatan komprehensif ini, mahasiswa tidak hanya menggunakan alat optimization sebagai sekadar black box. Sebaliknya, mereka akan dibekali kemampuan untuk merumuskan masalah AI secara matematis, memilih algoritma yang paling tepat untuk konteks tertentu, serta melakukan evaluasi performa yang ketat.",
+    "topics": [
+      "1. Intro & Uninformed Search: The distinction between optimization and search, including Breadth-First Search (BFS) and Depth-First Search (DFS) applications on grids.",
+      "2. Informed Search: A* Search, the principles of heuristic admissibility, and consistency.",
+      "3. Local Search: Hill Climbing and Simulated Annealing for navigating complex state spaces.",
+      "4. Adversarial Search: Minimax algorithms and Alpha-Beta Pruning in competitive environments.",
+      "5. Constraint Satisfaction: Formulating problems as Constraint Satisfaction Problems (CSPs) and using Backtracking.",
+      "6. Linear Programming (LP): Formulating AI problems as LPs and the intuition behind the Simplex method.",
+      "7. Integer Programming (IP): Branch and Bound techniques and the relaxation of discrete constraints.",
+      "8. First-Order Optimization I: The fundamentals of Gradient Descent (GD) and the impact of learning rates.",
+      "9. First-Order Optimization II: Momentum and adaptive methods, specifically the Adam optimizer.",
+      "10. Second-Order Foundations: Newton’s Method and the importance of curvature awareness in optimization.",
+      "11. Constrained Optimization I: Utilizing Lagrange Multipliers to solve problems with equality constraints.",
+      "12. Constrained Optimization II: The Karush-Kuhn-Tucker (KKT) conditions for handling inequality constraints.",
+      "13. Population-Based Search: Evolutionary Algorithms (Genetic Algorithms) and the principles of Swarm Intelligence.",
+      "14. Bayesian Optimization: Surrogate modeling using Gaussian Processes (GPs) and the role of acquisition functions."
+    ],
+    "learningOutcomes": [
+      "1. Mampu mengabstraksikan permasalahan yang diberikan ke dalam bentuk tugas/problem pencarian/optimisasi yang sesuai (KA 5 = 100%).",
+      "2. Mampu menjelaskan konsep dan taksonomi dasar optimisasi, baik optimisasi kombinatorial (diskret) maupun optimisasi kontinu (KA 9 = 100%).",
+      "3. Mampu mengimplementasikan metode-metode optimisasi kombinatorial dasar untuk AI yang mencakup graph search, heuristics search, adversarial search, local search, dan constraint programming, serta menerapkannya pada permasalahan yang dihadapi (KA 6 = 50%).",
+      "4. Mampu mengimplementasikan metode-metode optimisasi kontinu dasar untuk AI yang mencakup first order methods, second order methods, constrained optimization, evolutionary algorithms, dan Bayesian optimization, serta menerapkannya pada permasalahan yang dihadapi (KA 6 = 50%).",
+      "5. Mampu menentukan algoritma optimisasi yang sesuai untuk memecahkan permasalahan yang dihadapi serta mengevaluasi kinerjanya secara teoritis maupun praktis (KA 8 = 100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSAM602013",
+      "CSGE602040"
+    ]
+  },
+  "CSAM602150": {
+    "code": "CSAM602150",
+    "name": "Pengantar Arsitektur Komputer dan Sistem Operasi",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "C.19.2. DeskripsiMata kuliah ini mengajarkan konsep-konsep fundamental dari computer architecture, operating systems, dan teknik parallel programming, dengan fokus khusus pada infrastruktur accelerator yang mendukung komputasi AI. Mahasiswa akan memahami prinsip kerja dari komponen komputer, struktur operating system, memory management, serta mendapatkan pengenalan tentang pemograman CUDA GPU. Pengetahuan ini berfungsi sebagai fondasi penting untuk mengimplementasikan kecerdasan buatan dalam sistem high-performance computing.",
+    "topics": [
+      "1. Information & Data: Binary and Two's Complement arithmetic, IEEE 754 Floating-point standards, and reduced precision formats for AI (bfloat16 and INT8 quantization). This section also distinguishes between compilation vs. interpretation and static vs. dynamic typing.",
+      "2. Unix Environment: Mastery of Linux command line basics (navigation and directory management), the development toolchain (GCC, Make), and foundational debugging techniques using GDB.",
+      "3. Low-Level Programming: C language fundamentals tailored for those coming from high-level backgrounds, focusing on pointers, arrays, and strings as byte arrays. It covers manual memory management using malloc and free, and the conceptual difference between variable \"boxes\" and name \"labels.\"",
+      "4. ISA & Toolchain: Exploration of the RISC-V Instruction Set Architecture and assembly language programming. It details the journey of code through compilation, assembly, linking, and loading, including the structure of the ELF binary format.",
+      "5. Processor Microarchitecture: Design of the ALU and datapath, single-cycle execution, and the mechanics of pipelining. It addresses throughput and the management of structural, data, and control hazards through branch prediction.",
+      "6. The Memory Hierarchy: Application of temporal and spatial locality principles, L1/L2/L3 cache organization and mapping, virtual memory systems, page tables, and the function of Translation Lookaside Buffers (TLB).",
+      "7. OS Kernels & Resource Management: The process abstraction and the mechanics of context switching. It covers the boundary between Kernel and User modes via system calls, alongside preemptive scheduling, multitasking, and handling signals or exceptions.",
+      "8. Concurrency & Parallelism: Implementation of multithreading using Pthreads or C++ threads, and the use of synchronization primitives like mutexes, semaphores, and barriers. It also identifies critical issues such as deadlocks, race conditions, and starvation.",
+      "9. AI Hardware Acceleration: Utilization of SIMD and vector processing, GPU architecture (including Streaming Multiprocessors, Warps, and CUDA Cores), and specialized structures like Systolic Arrays and Tensor Processing Units (TPUs).",
+      "10. Storage & Networking: File system organization through Inodes and metadata, network programming using socket interfaces, and the architectural differences between client-server and peer-to-peer models."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan komponen utama dan prinsip kerja arsitektur komputer yang mendukung aplikasi kecerdasan artifisial (KA 7=25%).",
+      "2. Mampu memahami fungsi dan pengelolaan sistem operasi, termasuk manajemen memori, penjadwalan CPU, sistem file, keamanan data, dan virtualisasi (KA 7=25%).",
+      "3. Mampu menerapkan teknik sinkronisasi, penjadwalan, dan mekanisme akses kontrol agar sistem dapat dijalankan dengan selamat (safe) dan aman (secure) (KA 7=25%).",
+      "4. Mampu menerapkan dan mengimplementasikan model pemrograman paralel menggunakan MPI dan CUDA pada sistem multi-core dan GPU untuk akselerasi komputasi AI (KA 7=25%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSAM602233": {
+    "code": "CSAM602233",
+    "name": "Penglihatan Komputer",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini membahas penggunaan data citra 2D untuk memahami adegan 3D (3D scenes) yang terkandung di dalamnya. Computer vision berupaya mengadaptasi kemampuan mata manusia untuk memahami informasi dalam citra melalui pendekatan matematis. Tugas-tugas computer vision dapat dibagi menjadi tiga kategori: recognition, yang berupaya mengidentifikasi apa yang terkandung dalam citra; reconstruction, yang berupaya merekonstruksi citra ke dalam bentuk lain; dan reorganization, yang berupaya menyelaraskan (register) citra dari berbagai domain ke keadaan aslinya. Untuk mencapai hal ini, mahasiswa akan mempelajari konsep-konsep di balik penglihatan manusia (human vision) dan korelasinya dengan penglihatan mesin (machine vision atau computer vision); berbagai teknik dasar pengolahan citra (image processing) baik dalam domain spasial maupun frekuensi; ekstraksi fitur (feature extraction) dan pencocokan fitur (feature matching); serta penerapannya dalam tugas-tugas computer vision. Terakhir, aplikasi terkini di bidang computer vision akan dipaparkan melalui beberapa studi kasus. Mahasiswa juga akan dilatih melalui sesi praktis berupa praktikum laboratorium pemrograman Python individu dan proyek kelompok.",
+    "topics": [
+      "1. Introduction to Computer Vision: 3 Rs of computer vision: recognition, reconstruction, reorganization; 2D vs 3D world, computer vision pipelines and applications.",
+      "2. Human Vision vs Computer Vision: Image formation process, 3 requirements for image formation, image vs perception, potential issues.",
+      "3. Digital Image Acquisition: 3D to 2D transformation, light propagation process, anatomy of digital images, quantization and sampling.",
+      "4. Basic Image Processing: Point processing, mask processing, filtering, sharpening, smoothing, and morphological processing.",
+      "5. Fourier transform: Theory and applications.",
+      "6. Hadamard transform and Wavelet transform: Theory and applications.",
+      "7. Feature Extraction and Selection: Corners, blobs, region descriptors, PCA, LDA, t-SNE, clustering.",
+      "8. Feature Descriptors and Feature Matching: for Object Detection: Geometric feature descriptors, SIFT, matching, RANSAC, invariance and equivariance.",
+      "9. Object Detection: Sliding window, HOG, Viola-Jones, object detection challenges for non- deep learning methods.",
+      "10. Image Segmentation: Otsu, edge detection, K-means, Watershed, region growing, semantic segmentation.",
+      "11. Multi-Camera Vision Systems: Binocular vision, 3D reconstruction, projection matrix, image rectification.",
+      "12. Modern Computer Vision: CNNs, feature hierarchies, transfer learning, YOLO, Faster R-CNN, segmentation nets, Vision Transformers, CV benchmarking and pipelines with COCO, VOC, CLIP.",
+      "13. Computer Vision Ethics: Bias, fairness, Grad-CAM, explainability.",
+      "14. Vision-Language and Hyperspectral Imaging: Integration of visual and textual data and imaging beyond the visible spectrum."
+    ],
+    "learningOutcomes": [
+      "1. Mampu membandingkan berbagai teknik pengolahan citra untuk masalah computer vision (KA 8=50%).",
+      "2. Mampu mengimplementasikan teknik pengolahan citra untuk masalah computer vision (KA 6=100%).",
+      "3. Mampu mengevaluasi solusi masalah computer vision sesuai kebutuhan dan batasan (KA 8=50%).",
+      "4. Mampu merancang abstraksi solusi masalah computer vision (KA 5=100%).",
+      "5. Mampu menjelaskan konsep-konsep dasar computer vision (KA 9=100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSAM602130",
+      "CSGE602040"
+    ]
+  },
+  "CSAM603134": {
+    "code": "CSAM603134",
+    "name": "Pengolahan Bahasa Manusia",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini mengeksplorasi berbagai teknik untuk membangun perangkat lunak yang mampu memproses bahasa manusia. Materi disusun secara sistematis sesuai dengan tingkatan representasi linguistik, dimulai dari morfologi (morphology), yang mencakup finite-state methods, two-level morphology, dan Part-of-Speech tagging. Pembahasan kemudian berlanjut ke sintaksis (syntax) melalui studi tentang Context-Free Grammars, probabilistic parsing, dan dependency parsing. Bahasan lebih lanjut meluas ke semantik (semantics) melalui analisis semantik berbasis aturan (rule-based semantic analysis) dan wacana (discourse), yang berfokus pada struktur wacana dan resolusi koreferensi (coreference resolution). Meskipun penekanan utama dari mata kuliah ini adalah pada Natural Language Understanding (NLU), mata kuliah ini juga memberikan pengenalan singkat tentang Natural Language Generation (NLG). Baik pendekatan simbolis (symbolic) maupun statistik (statistical) dibahas untuk memberikan pandangan yang komprehensif tentang bagaimana berbagai tantangan NLP ditangani.",
+    "topics": [
+      "1. Introduction: An overview of the field and the core challenges in processing natural language.",
+      "2. Basic Text Processing: Mastering fundamental techniques including Regular Expressions, Edit Distance, Tokenization, and Text Normalization, such as word segmentation, normalization, stemming, and lemmatization.",
+      "3. Basic Language Models: Building and evaluating N-gram Language Models, including sampling techniques, smoothing, interpolation, and backoff methods.",
+      "4. Text Classification: Implementing and evaluating classifiers using Naïve Bayes and Logistic Regression frameworks.",
+      "5. Neural Language Models: The transition to modern NLP through Vector Semantics and Embeddings, Feedforward Neural Networks, RNNs, LSTMs, Transformers, Large Language Models (LLMs), and Masked Language Models.",
+      "6. Model Alignment, Prompting, and In-Context Learning: Exploring how to guide LLM behavior through alignment techniques, prompt engineering, and learning from context.",
+      "7. Sequence Labeling: Tasks focused on assigning tags to sequences, specifically Part-of-Speech (POS) Tagging and Named Entity Recognition (NER).",
+      "8. Syntactic Analysis: Analyzing the structural relationships within sentences through Constituency Grammar, Constituency Parsing, and Dependency Parsing.",
+      "9. Complex NLP Tasks: Integrating foundational skills to solve advanced problems such as Information Extraction, Entity Linking, Coreference Resolution, Machine Translation, and the development of Question Answering and Chatbot/Dialogue systems."
+    ],
+    "learningOutcomes": [
+      "1. Mampu membangun model sederhana untuk merepresentasikan pengetahuan linguistik pada tingkat representasi morfologi, sintaksis, semantik, serta wacana, dengan memanfaatkan pendekatan statistik maupun simbolik (KA 5=50%, KA 6=50%, KA 8=50%).",
+      "2. Mampu membangun prototipe sistem yang memanfaatkan model linguistik yang diberikan untuk mengolah masukan bahasa manusia dalam rangka menyelesaikan tugas-tugas pengolahan bahasa secara otomatis (KA 5=50%, KA 6=50%, KA 8=50%).",
+      "3. Mampu menjelaskan fondasi formal dari cara kerja model-model pengolahan bahasa serta perkembangan mutakhirnya di komunitas peneliti NLP serta linguistik komputasional (KA 9=100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSAM602130",
+      "CSGE602040"
+    ]
+  },
+  "CSAM601014": {
+    "code": "CSAM601014",
+    "name": "Probabilitas dan Statistika",
+    "credits": 3,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini memberikan pengenalan matematis dan komputasional yang ketat tentang probabilitas dan inferensi statistik, yang dirancang secara khusus untuk mempersiapkan mahasiswa sarjana menuju penelitian tingkat lanjut dalam machine learning dan sistem otonom (autonomous systems). Mahasiswa akan berkembang mulai dari pencacahan dasar (counting) dan probabilitas aksiomatis hingga pemodelan sistem acak serta kuantifikasi ketidakpastian. Berbeda dengan mata kuliah statistik tradisional, kerangka kerja ini menekankan pendekatan “probability-as-an-experimental-science”, yang menggunakan simulasi berbasis Python untuk validasi konsep teoritis. Sepertiga bagian terakhir dari mata kuliah ini berfokus pada penalaran inferensial (inferential reasoning), yang mencakup paradigma Frequensial (Frequentist) dan Bayesian untuk membekali mahasiswa dengan alat yang dibutuhkan untuk mengestimasi parameter model, menurunkan batas performa algoritmik (algorithmic performance bounds), serta melakukan eksperimen komparatif yang ketat.",
+    "topics": [
+      "1. Axiomatic Foundations: Combinatorial counting principles (sum and product rules); Kolmogorov axioms; sample spaces and event relationships; the logic of equally likely outcomes.",
+      "2. Conditional Probability and Bayes: Definition of conditional probability; independence vs. dependence; Law of Total Probability; Bayes’ Theorem as an iterative belief update mechanism for AI.",
+      "3. Discrete Random Variables: Probability Mass Functions (PMFs); Cumulative Distribution Functions (CDFs); Expectation and the Linearity of Expectation property.",
+      "4. Discrete Distribution Zoo: Characterization of Bernoulli, Binomial, Poisson, and Geometric distributions; modeling event arrivals in computing environments.",
+      "5. Continuous Random Variables: Probability Density Functions (PDFs); Expected value and moments; techniques for transforming continuous random variables.",
+      "6. Multiple Random Variables: Joint distributions; marginalization and conditioning; quantifying linear relationships via covariance and correlation.",
+      "7. Limit Theorems and Convolution: The Law of Large Numbers (LLN); the Central Limit Theorem (CLT); Moment Generating Functions (MGFs) and their role in convolution.",
+      "8. Information Theory: Measuring uncertainty through Entropy; Shared information via Mutual Information; Kullback-Leibler (KL) Divergence and Cross-Entropy loss functions for neural networks.",
+      "9. Estimation Theory: Point estimation using Maximum Likelihood Estimation (MLE) and the Method of Moments (MoM).",
+      "10. Estimation Theory: Maximum a Posteriori (MAP) estimation utilizing Beta and Dirichlet conjugate priors for regularization; properties of consistency and unbiasedness.",
+      "11. Estimation Theory: Uncertainty Quantification (UQ); frequentist Confidence Intervals vs. Bayesian Credible Intervals; deriving exact performance bounds via concentration inequalities.",
+      "12. Experimental Design (Comparative Analysis): Analysis of Variance (ANOVA) for model comparison; checking assumptions (normality and homoscedasticity); post-hoc analysis using Tukey’s Honestly Significant Difference (HSD)."
+    ],
+    "learningOutcomes": [
+      "Mampu menerapkan konsep-konsep probabilitas dan statistika untuk menginterpretasikan data guna mendukung pemecahan masalah (KA 9=100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSAM601010",
+      "CSAM601011"
+    ]
+  },
+  "CSAM603223": {
+    "code": "CSAM603223",
+    "name": "Proyek Pengembangan Produk Kecerdasan Artifisial",
     "credits": 6,
     "state": "Wajib Program Studi",
-    "category": "GENERAL REQUIREMENTS & UNDERGRADUATE RESEARCH",
-    "description": "Hands-on industrial work experience implementing computer science and artificial intelligence solutions in professional projects.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini bertujuan untuk memberikan pengalaman dalam mengembangkan produk AI mulai dari perancangan hingga penyebaran (deployment) di lingkungan produksi. Mahasiswa mempelajari dan mempraktikkan secara langsung proses AI product lifecycle untuk menyelesaikan masalah dunia nyata bagi pengguna atau pemangku kepentingan, yang mencakup penyiapan data, pemodelan, parallel training, deployment, pemantauan (monitoring), dan pelatihan ulang (retraining). Mata kuliah ini menggunakan pembelajaran berbasis proyek (project-based learning) dengan hanya beberapa sesi kuliah tatap muka untuk memfasilitasi praktik di lingkungan produksi yang sebenarnya. Dalam kerangka kerja ini, mahasiswa mengintegrasikan keterampilan pemodelan AI, perancangan produk (product design), product deployment, dan operasional MLOps dalam konteks pengembangan AI yang berkelanjutan, aman, dan beretika. Mahasiswa diharapkan dapat menghasilkan produk AI yang berpusat pada pengguna (user-centric), siap disebarkan (deployment-ready), serta memiliki kemampuan untuk mempresentasikan produk mereka secara profesional.",
+    "topics": [
+      "1. Course Orientation & Team Formation. Introduction to AI product lifecycle, tools (e.g., PyTorch, FastAPI, Docker), and stakeholder problem briefs. Team formation and project topic selection.",
+      "2. Requirement Gathering, Scoping, and Charter Finalization. Students meet stakeholders, clarify needs, identify ethical/privacy risks, outline system architecture, and finalize project charter and sprint plan.",
+      "3. Data Pipeline & Backend Skeleton. Implement data ingestion, transformation, and validation pipeline. Set up backend API skeleton and begin version-controlled codebase.",
+      "4. Baseline Model & Inference Pipeline. Train initial model, test pipeline with sample data, and begin integration with backend.",
+      "5. End-to-End Integration Early Version Demo. Backend wired to model, data flows end-to- end. Stakeholder check-in to validate early progress and product direction.",
+      "6. UI & Inference Integration. Begin UI development, connect frontend to backend, manage user input/output flow. Incorporate simple data logging or metric hooks.",
+      "7. MVP Readiness & Logging. From full data to model to backend to UI integration. Add structured logs and monitoring stubs. TA reviews system architecture and MVP functionality.",
+      "8. MVP Presentation & Feedback. Teams present MVP to instructors and peers, discuss reproducibility and ethical implementation. Stakeholders may attend.",
+      "9. Monitoring & Retraining Design. Implement inference logging, design retraining strategy, define pipeline triggers, configure cloud deployment or CI/CD if applicable.",
+      "10. Security, Privacy, and Threat Modeling. Apply adversarial defense, implement authentication, data anonymization, and privacy safeguards. Conduct stakeholder review on safety and usability.",
+      "11. Fairness, Explainability, and UX Review. Integrate SHAP or LIME for explainability, audit bias and fairness, improve UX design. TA validates functionality and ethical compliance.",
+      "12. System Integration & Optimization. Final integration of all components: AI model, backend, UI, and data pipeline. Conduct performance optimization such as pruning or caching.",
+      "13. Testing & Validation. Conduct reproducibility tests, A/B testing if applicable, and finalize monitoring and alerts. TA signs off system integration and stability.",
+      "14. Documentation & Deployment. Complete technical documentation, test cases, deployment scripts (e.g., Docker Compose). Prepare reproducibility guide and evaluation checklist.",
+      "15. Final Polishing. Final debugging and user flow testing.",
+      "16. Final Presentation & Delivery. Teams present final product demo and pitch to instructors, TAs, and optionally stakeholders. Submit final report, GitHub repo, and deployment artifacts."
+    ],
+    "learningOutcomes": [
+      "1. Mampu merancang arsitektur produk kecerdasan artifisial yang efektif untuk tujuan aplikasi tertentu, termasuk implementasi paralel dan optimisasi model AI (KA 5=50%, KA 7=33,3%).",
+      "2. Mampu menerapkan dan mengelola pipeline data yang efisien, mulai dari persiapan, augmentasi, hingga distribusi data pada skala besar (KA 7=33,3%).",
+      "3. Mampu memahami dan mengimplementasikan metodologi untuk pelatihan, tuning hyperparameter, dan evaluasi kinerja model AI dalam skala besar menggunakan teknologi pemrograman paralel (KA 6=100%, KA 8=100%).",
+      "4. Mampu melakukan deployment model AI dan memanfaatkan pendekatan MLOps untuk pemantauan, pembaruan, dan pemeliharaan model secara berkelanjutan di lingkungan produksi (KA 7=33,3%).",
+      "5. Mampu mengidentifikasi, menganalisis, dan mengelola risiko keamanan dalam produk AI, termasuk serangan adversarial dan pelanggaran privasi (KA 1=50%, KA 5=50%).",
+      "6. Mampu mengembangkan produk AI yang etis, user-centric, dan bebas dari bias, serta sesuai dengan regulasi privasi data (KA 1=50%, KA 4=100%).",
+      "7. Mampu mendokumentasikan proses pengembangan dan melakukan reproduksi eksperimen model AI secara konsisten untuk evaluasi yang akurat (KA 2=50%).",
+      "8. Mampu mengomunikasikan produk AI dalam bentuk presentasi dan pitch yang efektif kepada pemangku kepentingan dengan penyampaian nilai tambah produk yang jelas (KA 2=50%).",
+      "9. Mampu bekerja sama dalam kelompok dalam merancang, mengimplementasikan, men- deploy, dan mengevaluasi produk AI secara end-to-end (KA 3=100%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": [
+      "CSAM603152",
+      "CSAM602251",
+      "CSAM603090",
+      "CSAM603135",
+      "CSAM602271"
+    ]
   },
-  "AI_GRUR_05": {
-    "code": "AI_GRUR_05",
-    "name": "Research Methodology and Scientific Writing",
+  "CSAM602251": {
+    "code": "CSAM602251",
+    "name": "Rekayasa dan Operasi Sistem Kecerdasan Artifisial",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini mencakup konsep-konsep rekayasa dan operasional untuk sistem Artificial Intelligence (AI). Materi yang dibahas meliputi prinsip-prinsip dasar rekayasa perangkat lunak (software engineering), pengelolaan alur pipa data (data pipeline management), pengembangan dan pengelolaan model AI, serta penyebaran (deployment) aplikasi AI dalam skala besar. Fokus utamanya adalah membekali mahasiswa dengan pengetahuan dan keterampilan yang diperlukan untuk mengelola seluruh siklus hidup (lifecycle) aplikasi AI. Hal ini mencakup integrasi alat-alat modern seperti Docker, Kubernetes, dan MLflow. Melalui mata kuliah ini, mahasiswa akan mampu merancang dan mengoperasikan aplikasi AI secara efisien dan andal.",
+    "topics": [
+      "1. Overview of AI Applications in Production: Understanding the full system lifecycle, primary architectural components, and the infrastructure view required for real-world deployment.",
+      "2. Model Lifecycle in Production: Managing model versioning, promotion strategies across environments, and implementing reliable rollback procedures.",
+      "3. Model Serving Techniques: Exploring REST and gRPC protocols, microservices architecture, and the trade-offs between real-time and batch inference.",
+      "4. Infrastructure: Utilizing Docker for containerization, Kubernetes for orchestration, and exploring various cloud deployment patterns.",
+      "5. Production Data Pipelines: Designing data handling at inference time, including real-time transformations and automated data validation.",
+      "6. CI/CD for AI Systems: Implementing automation for testing and deployment using tools like GitHub Actions or Jenkins tailored for machine learning.",
+      "7. Model Registry and Management: Systems for tracking experiments, staging models for production, and maintaining a centralized repository for model assets.",
+      "8. Monitoring and Observability: Establishing metrics, structured logging, and anomaly alerts to ensure system health and model reliability.",
+      "9. Model Maintenance: Identifying and addressing data drift, implementing model reloading mechanisms, and setting up automated retraining hooks.",
+      "10. Security and Risk: Implementing robust access control, simulating potential attacks, and integrating privacy safeguards.",
+      "11. System Integration: Connecting model services to frontend and backend systems and ensuring the architecture scales to meet user demand.",
+      "12. Performance Evaluation: Measuring and optimizing for latency, operational costs, scalability, and the implementation of autoscaling policies."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan konsep dan prinsip arsitektur aplikasi kecerdasan artifisial (AI), termasuk komponen-komponen utama dan alur kerja dari sistem berbasis AI (KA 7 = 15%).",
+      "2. Mampu merancang dan mengimplementasikan pipeline sistem AI yang terintegrasi, dari proses pengumpulan data hingga penyebaran model (KA 5 = 50%, KA 7 = 35%).",
+      "3. Mampu menggunakan dan mengelola alat serta platform untuk operasi sistem AI seperti MLOps, CI/CD, dan monitoring sistem berbasis AI (KA 7 = 15%).",
+      "4. Mampu mengevaluasi performa aplikasi AI serta mengidentifikasi dan menyelesaikan tantangan seperti keamanan, etika, dan keberlanjutan dalam operasi AI (KA 8 = 50%).",
+      "5. Mampu merancang dan mengimplementasikan sistem berbasis AI yang tahan terhadap perubahan lingkungan operasional dan berskala besar untuk kebutuhan produksi melalui kerja tim (KA 3 = 100%, KA 5 = 50%, KA 7 = 35%, KA 8 = 50%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSAM601022",
+      "CSAM602150",
+      "CSAM602130"
+    ]
+  },
+  "CSAM602271": {
+    "code": "CSAM602271",
+    "name": "Rekayasa Data",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini membekali mahasiswa dengan keterampilan praktis untuk membangun, mengelola, dan mengotomatiskan alur pipa data (data pipelines) ujung ke ujung (end-to-end) yang efisien. Mahasiswa akan mengeksplorasi seluruh siklus hidup data (data lifecycle), dimulai dari teknik akuisisi data terstruktur dan tidak terstruktur melalui RDBMS, API, dan web scraping, diikuti oleh proses validasi dan profiling menggunakan perangkat lunak modern untuk memastikan integritas data. Pembelajaran ini juga mencakup metode pembersihan data (data cleaning) yang kompleks untuk berbagai jenis data, mulai dari teks dan data numerik hingga jenis spesifik seperti data temporal dan spasial (geospatial). Selain aspek pemrosesan, mata kuliah ini menekankan pada implementasi transformasi dan pengayaan data (data transformation and enrichment) menggunakan teknologi cloud-native seperti Spark, dbt, dan Airbyte, serta optimasi performa melalui pemilihan format penyimpanan seperti Parquet dan Avro. Mahasiswa juga akan mempelajari cara mengorkestrasikan alur kerja data berbasis DAG (DAG-based data workflows) menggunakan kerangka kerja alur kerja data seperti Airflow atau Dagster, mengelola sistem berbasis peristiwa (event-driven systems) menggunakan kerangka kerja seperti Kafka atau Flink, serta menyediakan data yang siap pakai melalui pengembangan API ringan seperti memanfaatkan FastAPI atau Flask. Melalui proyek kelompok yang intensif, mahasiswa diharapkan mampu mengintegrasikan semua komponen ini ke dalam sistem rekayasa data (data engineering system) yang modular dan tangguh untuk mendukung kebutuhan analitikal skala besar.",
+    "topics": [
+      "1. Introduction to Data Engineering: Overview, lifecycle/stages, roles, and tools.",
+      "2. Data Acquisition I: Structured ingestion (relational DBs and CSV), schema, encoding, and file structure.",
+      "3. Data Acquisition II: APIs and Web Scraping, REST API ingestion (JSON), web scraping basics (HTML), and unstructured data considerations.",
+      "4. Data Validation & Profiling: Review of validation basics, schema profiling, type and range checks, and data validation tools.",
+      "5. Data Cleaning I: Text and Structured data, text normalization, HTML stripping, handling missing values, and category standardization.",
+      "6. Data Cleaning II: Non-Text & Specialized data, dates and timestamps, boolean and numeric flags, geospatial & sensor logs, and outlier handling.",
+      "7. Data Transformation & Enrichment: Join, merge, aggregate, pivot/unpivot, derived fields & feature creation, Spark on Cloud, and Airbyte, dbt, or Dagster.",
+      "8. Storage Systems & Formats: RDBMS, NoSQL, Object Storage, formats (CSV, JSON, Parquet, Avro), compression, indexing, and query performance.",
+      "9. Serving, Monitoring & Orchestration: FastAPI/Flask basics, logging and pipeline monitoring, DAG orchestration with Airflow, and lightweight APIs and data delivery.",
+      "10. Pipeline Integration: Combining stages from ingestion to storage, modularizing pipelines, and error handling and edge cases."
+    ],
+    "learningOutcomes": [
+      "1. Mampu memahami dan menjelaskan konsep dasar data engineering, termasuk proses ETL (Extract, Transform, Load) dan manajemen alur data (KA 5=50%).",
+      "2. Mampu merancang dan membangun pipeline data yang efisien untuk mengintegrasikan, membersihkan, dan mengolah data dari berbagai sumber sesuai kebutuhan pengguna dan lingkungan operasional (KA 3=50%, KA 5=50%, KA 7=25%).",
+      "3. Mampu menggunakan platform dan alat data engineering, atau tools berbasis cloud untuk memproses data berskala besar (KA 7=25%).",
+      "4. Mampu mengimplementasikan solusi penyimpanan dan pengolahan data yang sesuai untuk kebutuhan analitik dan pemelajaran mesin (KA 7=25%).",
+      "5. Mampu mengevaluasi kinerja pipeline data serta mengoptimalkan proses berdasarkan kebutuhan pengguna dan lingkungan operasional (KA 3=50%, KA 7=50%, KA 8 =100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSGE602070",
+      "CSAM602130"
+    ]
+  },
+  "CSAM602131": {
+    "code": "CSAM602131",
+    "name": "Representasi Pengetahuan dan Penalaran",
     "credits": 3,
     "state": "Wajib Program Studi",
-    "category": "GENERAL REQUIREMENTS & UNDERGRADUATE RESEARCH",
-    "description": "Scientific thinking, research formulation, literature review, bibliography management, and academic paper structure.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini mengeksplorasi bidang Artificial Intelligence yang berfokus pada bagaimana pengetahuan direpresentasikan secara simbolis sehingga dapat dimanipulasi secara otomatis oleh prosedur yang melakukan penalaran (reasoning). Mahasiswa akan dibekali dengan konsep- konsep dasar knowledge representation and reasoning (KRR), yang menjadi landasan untuk memahami topik-topik lanjutan dan perkembangan terkini di bidang tersebut. Mata kuliah ini bertujuan agar mahasiswa dapat mengembangkan aplikasi AI yang memanfaatkan metode AI simbolik. Dengan menguasai cara mengagihkan informasi ke dalam sistem formal, mahasiswa akan belajar membangun agen yang mampu melakukan deduksi logis dan pengambilan keputusan yang kompleks berdasarkan pengetahuan yang telah ditetapkan.",
+    "topics": [
+      "1. Knowledge Representation & Reasoning (KRR): An Introduction: An overview of the core principles of symbolic AI, exploring how information is structured and manipulated to enable automated decision-making.",
+      "2. First-Order Logic (FOL): Mastering the formal syntax and semantics of first-order logic, including quantifiers, predicates, and functions.",
+      "3. Knowledge Representation & Reasoning with FOL: Techniques for encoding complex real- world domains into formal logical statements for computational processing.",
+      "4. Resolution: Implementing the resolution principle as a powerful and sound inference rule for automated theorem proving.",
+      "5. Reasoning on Horn Clauses: Exploring restricted logical forms that allow for efficient computation, forming the basis of logic programming.",
+      "6. Description Logic: Studying a family of formal knowledge representation languages used to describe concepts and roles, particularly in the context of the Semantic Web and ontologies.",
+      "7. Nonmonotonic Reasoning: Handling systems where new information can invalidate previous conclusions, reflecting how human knowledge and defaults evolve.",
+      "8. Probabilistic Reasoning: Integrating uncertainty into logical frameworks to handle incomplete or noisy information.",
+      "9. Abductive Reasoning: Explanation and Diagnosis: Understanding the process of “reasoning to the best explanation” for diagnostic tasks and causal analysis.",
+      "10. Actions: Representing and reasoning about change, planning, and the effects of an agent’s interventions within an environment."
+    ],
+    "learningOutcomes": [
+      "1. Mampu mengidentifikasi permasalahan yang dapat diabstraksikan sebagai suatu problem komputasi untuk diselesaikan dengan pendekatan representasi pengetahuan dan penalaran (KA 5=100%, KA 9=100%).",
+      "2. Mampu merancang dan mengimplementasikan basis pengetahuan (knowledge base) dengan representasi yang tepat dan prosedur untuk proses penalarannya dalam memecahkan permasalahan yang diidentifikasi (KA 6=100%, KA 8=100%)."
+    ],
     "sublearningOutcomes": [],
     "resources": [],
+    "prerequisites": [
+      "CSAM601010"
+    ]
+  },
+  "CSAM602130": {
+    "code": "CSAM602130",
+    "name": "Sains Data dan Pemelajaran Mesin",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah ini memberikan pengenalan matematis yang ketat terhadap fondasi data science dan machine learning, dengan merumuskan kembali algorithmic heuristics sebagai masalah statistical inference dan probabilistic estimation. Mahasiswa akan bertransisi dari prasyarat matematis tahun pertama menuju applied modeling yang diperlukan untuk spesialisasi AI tingkat lanjut. Mata kuliah ini menekankan pada “tiga bahan” utama dari pemelajaran mesin: hypothesis classes, loss functions, dan prosedur optimasi (optimization procedures). Topik-topik utama mencakup penurunan generalized linear models (GLMs) dari exponential family, induksi teori informasi (information-theoretic induction) dari decision trees, serta ensemble methods yang dirumuskan melalui sampling theory dan functional gradient descent. Dengan memperlakukan model sebagai estimator dari conditional probability distributions, mata kuliah ini membekali mahasiswa dengan kematangan matematis untuk menalar tentang ketidakpastian, bias, dan generalisasi, serta memberikan jalur teoretis langsung menuju multi- layer neural architectures.",
+    "topics": [
+      "1. Data Science Lifecycle Foundations: The Data Science Process; raw data collection and ingestion; data wrangling techniques including merging, reshaping, basic imputation, and initial cleaning of noisy records; Python DS stack (Pandas, NumPy); AI Ethics basics.",
+      "2. High-Dimensional Exploratory Data Analysis and Cleaning: Multivariate relationships; exploratory cleaning to identify structural anomalies; the covariance matrix and correlation; detect multicollinearity; graphical and non-graphical EDA.",
+      "3. Advanced Parameter Estimation and Generative Models: Maximum Likelihood Estimation (MLE); Maximum a Posteriori (MAP); Naive Bayes Classifiers (Discrete/ Gaussian).",
+      "4. Linear and Polynomial Regression: Simple/Multiple Linear Regression; Ordinary Least Square derivation; Polynomial Regression and basis expansion.",
+      "5. Generalized Linear Models (GLMs): The Exponential Family template; link functions; application to Poisson, Gamma, and Logistic regression; gradient descent algorithm.",
+      "6. Softmax Regression for Multiclass Classification: Multinomial distributions; Softmax link function; Cross-Entropy loss; gradient-based optimization for multiclass outputs.",
+      "7. Supervised Model Evaluation for Regression and Classification: Error analysis for continuous output (MSE, R-squared) and categorical metrics (F1-score, ROC-AUC, PR curves).",
+      "8. Handling Imbalanced Classification and Boundary Cleaning: Data-level rebalancing (SMOTE); boundary cleaning (Tomek Links, NearMiss); algorithmic cost-sensitive learning; selection of metrics for skewed data.",
+      "9. Model Selection and Validation Frameworks: Mathematical decomposition of error; overfitting/underfitting; with K-Nearest Neighbors as case study; K-fold Cross-validation; A/B testing; Bootstrapping; Model selection criteria including AIC and BIC.",
+      "10. Advanced Feature Engineering and Model-Centric Preprocessing: Data transformation (scaling, normalization, log-transforms); Principal Component Analysis (PCA); handling missing values via advanced imputation; encoding categorical variables (one-hot, ordinal, target); feature selection (filters, wrappers, embedded).",
+      "11. Information-Theoretic Decision Trees: Recursive space partitioning; Shannon Entropy and Gini Impurity; Information Gain; leaf nodes as localized Maximum Likelihood distributions.",
+      "12. Bagging and Boosting for Variance Reduction and Function Space Optimization: Bootstrap Aggregating; Random Forest architectures; Gradient Boosting as functional gradient descent; regularization in XGBoost and LightGBM.",
+      "13. Unsupervised Learning, Latent Variable Models, and Evaluation: K-means clustering; soft clustering via Gaussian Mixture Models (GMMs); the Expectation-Maximization (EM) algorithm, Internal validation (Silhouette score); external indices (ARI, NMI)."
+    ],
+    "learningOutcomes": [
+      "1. Mampu memodelkan permasalahan dunia nyata berskala sederhana yang diberikan menjadi tugas sains data atau pemelajaran mesin yang tepat (KA 5=100%).",
+      "2. Mampu bekerja mandiri dan bekerja dalam tim dalam mengembangkan solusi sains data (KA 3=100%).",
+      "3. Mampu membangun model analisis data deskriptif dan prediktif berbasis pemelajaran mesin yang tepat untuk permasalahan yang diberikan (KA 6=100%).",
+      "4. Mampu melakukan evaluasi kinerja solusi sains data terhadap suatu permasalahan menggunakan ukuran-ukuran evaluasi yang tepat (KA 8=100%).",
+      "5. Mampu menjelaskan fondasi matematika dari model-model sains data berdasarkan konsep-konsep aljabar dan struktur linear, kalkulus, serta statistika dan probabilitas (KA 9=100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSGE601020",
+      "CSAM601014",
+      "CSAM601012"
+    ]
+  },
+  "CSGE602040": {
+    "code": "CSGE602040",
+    "name": "Struktur Data dan Algoritma",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini membahas teknik-teknik dasar untuk abstraksi data (data abstraction) dan manipulasi struktur abstrak tersebut melalui algoritma yang tepat. Mata kuliah ini juga mencakup analisis kompleksitas (complexity analysis) dari alokasi ruang dan waktu dalam implementasi algoritma.",
+    "topics": [
+      "1. Algorithm Analysis: Algorithm analysis steps, algorithm complexity groups (linear, logarithmic, quadratic, cubic), and algorithm analysis case studies.",
+      "2. Abstract Data Type: List, Stack, Queue, Deque, Priority Queue, Set, and Map.",
+      "3. Recursion: Fundamentals of recursion (definitions, recursive rules, mathematical induction) and advanced recursion (Divide and Conquer, case study: Maximum Contiguous Subsequence Sum, Dynamic Programming, Backtracking).",
+      "4. Sorting: Bubble Sort, Selection Sort, Insertion Sort, Shell Sort, Merge Sort, and Quick Sort.",
+      "5. Linked-list: Singly, doubly, and circular variants and their operations (insert, delete, search).",
+      "6. Tree: Tree definitions, applications, and tree traversal.",
+      "7. Binary Search Tree: Characteristics, insert, delete, and search operations, and complexity analysis.",
+      "8. AVL Tree: Characteristics, insert, delete, and search operations, and complexity analysis.",
+      "9. Binary Heap: Characteristics, insert, delete, and search operations, and complexity analysis.",
+      "10. Graph: Breadth-First Search, Depth-First Search, Dijkstra’s Algorithm, Topological Sort, and Minimum Spanning Tree.",
+      "11. Hash Table: Hash functions, collision resolution, primary and secondary clustering, and lazy deletion."
+    ],
+    "learningOutcomes": [
+      "1. Mampu memilih dan menerapkan struktur data dan algoritma yang tepat untuk membangun komponen dasar dalam solusi komputasi (KA 5=100%, KA 6=100%).",
+      "2. Mampu menganalisis kompleksitas algoritma dan memilih algoritma yang paling efisien untuk diterapkan dalam solusi komputasi (KA 8=100%).",
+      "3. Mampu merancang dan mengimplementasikan struktur data yang efisien untuk mendukung algoritma komputasi, dengan mempertimbangkan kendala komputasi dan penyimpanan (KA 7=100%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSGE601020"
+    ]
+  },
+  "CSAM601012": {
+    "code": "CSAM601012",
+    "name": "Struktur Linear",
+    "credits": 4,
+    "state": "Wajib Program Studi",
+    "description": "Mata kuliah Struktur Linear membekali mahasiswa dengan kemampuan untuk merepresentasikan dan mentransformasikan data dalam ruang berdimensi tinggi menggunakan pendekatan berbasis ruang vektor (vector-space-first). Berbeda dari metode tradisional, fokus utama bergeser dari prosedur kalkulasi rutin menuju penguasaan abstraksi aritmetika dan intuisi geometris, yang membentuk fondasi dari arsitektur AI. Materi pembelajaran disusun secara sistematis, dimulai dari aksioma ruang vektor (vector spaces) dan pemetaan linier (linear mappings) sebagai logika pemrosesan informasi, diikuti oleh penggunaan matriks sebagai alat untuk menyandikan fungsi-fungsi tersebut. Topik-topik utama mencakup basis dan dimensi, penerapan sistem linier sebagai alat untuk penyederhanaan struktural, eigensystems, dan singular value decomposition (SVD) untuk kompresi data, serta determinan yang dipandang sebagai skala volume geometris. Mata kuliah ini dirancang untuk membangun kematangan matematis yang krusial bagi mahasiswa dalam memahami dan merancang model AI di semester-semester berikutnya. Dengan memprioritaskan penalaran bebas koordinat (coordinate-free reasoning) dan sifat-sifat struktural dibandingkan sekadar aritmetika sederhana, mahasiswa mengembangkan kedalaman analitis yang diperlukan untuk aplikasi machine learning dan deep learning tingkat lanjut.",
+    "topics": [
+      "1. Data as Vectors (R n ): Introduction to n -tuples as the fundamental unit of data records; vector addition as combining attributes; scalar multiplication as adjusting intensity; linear combinations as weighted data synthesis.",
+      "2. Measuring Relationships: Geometric foundations of Euclidean length (Norm); distance between data points; the Dot Product as a measure of alignment (directional overlap) and similarity; angles between vectors; the Cauchy-Schwarz inequality.",
+      "3. Arithmetic Abstraction (The Axioms): Moving from concrete numbers to abstract sets; formalizing the “rules of the game” (closure, identity, inverse); identifying signals, polynomials, and arrays as vectors.",
+      "4. Data Boundaries (Subspaces & Span): Defining subsets that behave like full spaces; identifying “latent subspaces”; the Span as the total “reach” or range of a dataset; intersections and sums of subspaces.",
+      "5. Linear Functions as Data Maps: Defining the transformation T : V → W ; properties of linearity (additivity and homogeneity); visualizing geometric actions like rotations and scaling in 2D and 3D space.",
+      "6. Information Flow (Kernel & Image): The Null Space (Kernel) as a measure of redundant or \"lost\" information during processing; the Range (Image) as the space of all possible outputs; injectivity and surjectivity in data recovery.",
+      "7. Space Complexity (Basis & Dimension): Linear independence as a test for removing redundancy; introduction to Systems of Equations as a tool to check independence; finding a minimal Basis; Dimension as \"degrees of freedom\"; the Rank-Nullity Theorem.",
+      "8. Encoding Functions as Matrices (Solving Linear Systems): Representing abstract maps as coordinate grids; the core mechanics of solving \\(Ax = b\\); Gaussian Elimination and Row Echelon Form (REF) as simplification tools.",
+      "9. Map Chaining & Basis Shifts: Matrix multiplication derived from composing two functions; the Identity matrix; Inverse functions and Invertible matrices; Change of Basis (shifting coordinate \"viewpoints\").",
+      "10. Invariant Directions (Eigenvalues): Defining Eigenvectors as directions that stay on their own span; Eigenvalues as scaling factors; Eigenspaces as stable subspaces within a transformation.",
+      "11. Simplifying Matrices (Diagonalization): Matrix Similarity; transforming complex grids into Diagonal form for fast computation; conditions for diagonalizability; introduction to powers of matrices.",
+      "12. Projections & Best Fits (Inner Product Spaces): Orthonormal bases and the Gram-Schmidt process; Projection operators; Geometric foundations for finding the \"closest\" solution to inconsistent data models via Least Squares.",
+      "13. Data Compression (The Singular Value Decomposition): The SVD as a three-part map (rotation-scaling-rotation); Singular Values as energy metrics; Low-rank matrix approximation for reducing data size.",
+      "14. The Determinant as a Volume Scale: The geometric determinant; volume scaling factors; orientation preservation (flips); connecting the determinant to matrix invertibility and the product of eigenvalues."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan fondasi teoretis dari ruang vektor, transformasi linear, dan sifat-sifat struktural dari matriks (KA 9=33,3%).",
+      "2. Mampu menyelesaikan problem yang terkait sistem persamaan linear, nilai dan vektor Eigen, dan operasi-operasi matriks (KA 9=33,3%).",
+      "3. Mampu menerapkan prinsip-prinsip geometri vektor dan dekomposisi struktur matriks pada beberapa area aplikasi (KA 9=33,3%)."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "1. Giordano, T., Jessup, B., and Nevins, M. Vector Spaces First: An Introduction to Linear Algebra, 4th Ed. Ottawa: University of Ottawa, 2021. Available from https://doi.org/10.20381/ruor-28168.",
+      "2. Axler, Sheldon. Linear Algebra Done Right, 4th Ed. Springer, 2024. Available from https://linear.axler.net/"
+    ],
     "prerequisites": []
   },
-  "AI_GRUR_06": {
-    "code": "AI_GRUR_06",
-    "name": "Undergraduate Thesis",
+  "CSGE604099": {
+    "code": "CSGE604099",
+    "name": "Tugas Akhir Individu",
     "credits": 6,
-    "state": "Wajib Program Studi",
-    "category": "GENERAL REQUIREMENTS & UNDERGRADUATE RESEARCH",
-    "description": "Independent academic research project representing the culmination of the undergraduate program.",
-    "topics": [],
-    "learningOutcomes": [],
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini adalah mata kuliah wajib yang bertujuan melatih kemampuan mahasiswa untuk menerapkan pengetahuan dalam bidang ilmu komputer dan/atau sistem informasi pada satu kegiatan penelitian maupun penyelesaian masalah di suatu organisasi, industri dan masyarakat. Setelah mengikuti mata kuliah ini mahasiswa dapat menghasilkan tulisan ilmiah berbahasa Indonesia maupun Inggris dalam bentuk skripsi, makalah maupun technical report. Kegiatan dilakukan secara mandiri atau berkelompok dengan jumlah anggota maksimum 3 orang dibawah bimbingan oleh minimal seorang dosen dalam waktu maksimum dua semester.",
+    "topics": [
+      "Tergantung topik Tugas Akhir yang dikerjakan."
+    ],
+    "learningOutcomes": [
+      "1. Mampu berkomunikasi secara tertulis dan oral dengan menggunakan standar di bidang komputasi; (KA 2=100%)",
+      "2. Mampu untuk melakukan pembelajaran mandiri untuk pengembangan berkelanjutan sebagai seorang profesional di bidang komputasi; (KA 1=50%, KA 3=100%, KA 4=33,3%)",
+      "3. Mampu memecahkan masalah secara kreatif dan inovatif, serta menunjukkan keingintahuan intelektual; (KA 4=33,3%)",
+      "4. Mampu menerapkan ilmu dan teknologi informasi dalam proses penyelesaian masalah untuk menjawab kebutuhan Masyarakat; (KA 1=50%, KA 4=33,3%)",
+      "5. Mampu menerapkan fondasi pengembangan perangkat lunak untuk menyelesaikan sebuah permasalahan komputasi; (KA 9=100%)",
+      "6. Mampu menganalisis dan merancang sistem berbasis komputasi yang efisien. (KA 5=100%, KA 6=100%, KA 7=100%, KA 8=100%)"
+    ],
     "sublearningOutcomes": [],
     "resources": [],
-    "prerequisites": []
+    "prerequisites": [
+      "CSGE603091"
+    ]
   },
-  "AI_PE_01": {
-    "code": "AI_PE_01",
-    "name": "AI Databases",
+  "CSGE604098": {
+    "code": "CSGE604098",
+    "name": "Tugas Akhir Proyek Kelompok",
+    "credits": 4,
+    "state": "Wajib Fakultas",
+    "description": "Mata kuliah ini adalah mata kuliah wajib yang bertujuan melatih kemampuan mahasiswa untuk menerapkan pengetahuan dalam bidang ilmu komputer dan/atau sistem informasi pada satu kegiatan penelitian maupun penyelesaian masalah di suatu organisasi, industri dan masyarakat. Setelah mengikuti mata kuliah ini mahasiswa dapat menghasilkan tulisan ilmiah berbahasa Indonesia maupun Inggris dalam bentuk skripsi, makalah maupun technical report. Kegiatan dilakukan secara mandiri atau berkelompok dengan jumlah anggota maksimum 3 orang dibawah bimbingan oleh minimal seorang dosen dalam waktu maksimum dua semester.",
+    "topics": [
+      "Tergantung topik Tugas Akhir yang dikerjakan."
+    ],
+    "learningOutcomes": [
+      "1. Mampu berkomunikasi secara tertulis dan oral dengan menggunakan standar di bidang komputasi; (KA 2=100%)",
+      "2. Mampu untuk melakukan pembelajaran mandiri untuk pengembangan berkelanjutan sebagai seorang profesional di bidang komputasi; (KA 1=50%, KA 3=100%, KA 4=33,3%)",
+      "3. Mampu memecahkan masalah secara kreatif dan inovatif, serta menunjukkan keingintahuan intelektual; (KA 4=33,3%)",
+      "4. Mampu menerapkan ilmu dan teknologi informasi dalam proses penyelesaian masalah untuk menjawab kebutuhan Masyarakat; (KA 1=50%, KA 4=33,3%)",
+      "5. Mampu menerapkan fondasi pengembangan perangkat lunak untuk menyelesaikan sebuah permasalahan komputasi; (KA 9=100%)",
+      "6. Mampu menganalisis dan merancang sistem berbasis komputasi yang efisien. (KA 5=100%, KA 6=100%, KA 7=100%, KA 8=100%)"
+    ],
+    "sublearningOutcomes": [],
+    "resources": [],
+    "prerequisites": [
+      "CSGE603091"
+    ]
+  },
+  "CSAE604236": {
+    "code": "CSAE604236",
+    "name": "Analitika Data Sosial",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course covering database structures designed to store, retrieve, and operate on AI structures and vectors.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Analitika Data Sosial membahas pendekatan komputasional end-to-end untuk memahami perilaku sosial manusia dari data digital, termasuk media sosial, data terbuka, dan jejak digital lainnya. Mata kuliah ini mencakup pengumpulan data yang bertanggung jawab, penilaian dan persiapan kualitas data, analitika konten (pemrosesan bahasa alami, analisis sentimen, pemodelan topik), analitika jejaring (representasi graf, sentralitas, deteksi komunitas), serta penerapan metode machine learning prediktif. Mata kuliah ini menekankan penguasaan teknik komputasional dan evaluasi kritis terhadap hasilnya, untuk mendukung pengambilan keputusan berbasis data pada konteks bisnis, pemerintahan, maupun kemasyarakatan.",
+    "topics": [
+      "1. Pengantar Analitika Data Sosial a) Ruang lingkup dan sumber data sosial (media sosial, data terbuka, jejak digital lainnya). b) Etika dan privasi data sosial.",
+      "2. Pengumpulan Data Sosial a) Pengumpulan data menggunakan Application Programming Interface (API). b) Penggunaan teknik web scraping. c) Pemanfaatan portal data terbuka.",
+      "3. Kualitas dan Persiapan Data a) Pembersihan data. b) Representasi fitur. c) Bias dalam data.",
+      "4. Analitika Konten a) Pemrosesan bahasa alami untuk data sosial. b) Analisis sentimen. c) Pemodelan topik.",
+      "5. Analitika Jejaring a) Representasi graf untuk data sosial. b) Metrik sentralitas. c) Deteksi komunitas.",
+      "6. Metode Prediktif dan Isu Terapan a) Machine learning terapan pada data sosial. b) Deteksi misinformasi/anomali pada jejaring sebagai studi kasus. c) Evaluasi model.",
+      "7. Visualisasi dan Proyek a) Visualisasi dan komunikasi hasil analisis. b) Proyek analitika data sosial end-to-end."
+    ],
+    "learningOutcomes": [
+      "1. Mampu merancang dan melaksanakan pengumpulan data sosial secara bertanggung jawab dari berbagai sumber (API, web scraping, data terbuka).",
+      "2. Mampu melakukan pembersihan, representasi fitur, dan penilaian kualitas data sosial.",
+      "3. Mampu menerapkan analitika konten (pemrosesan bahasa alami, analisis sentimen, pemodelan topik) pada data sosial.",
+      "4. Mampu menerapkan analitika jejaring (representasi graf, sentralitas, deteksi komunitas) dan metode machine learning prediktif, serta mengevaluasi hasilnya secara kritis.",
+      "5. Mampu merancang, melaksanakan, dan mengomunikasikan sebuah proyek analitika data sosial end-to-end."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Matthew A. Russell and Mikhail Klassen. Mining the Social Web: Data Mining Facebook, Twitter, LinkedIn, Instagram, GitHub, and More, 3rd Ed. O’Reilly Media, 2019.",
+      "2. Lam Thuy Vo. Mining Social Media: Finding Stories in Internet Data. No Starch Press, San Francisco, CA, 2019.",
+      "3. Filippo Menczer, Santo Fortunato, and Clayton A. Davis. A First Course in Network Science. Cambridge University Press, 2020.",
+      "4. Jure Leskovec, Anand Rajaraman, and Jeffrey D. Ullman. Mining of Massive Datasets, 3rd Ed. Cambridge University Press, 2020. Available from http://www.mmds.org/"
+    ],
+    "prerequisites": [
+      "CSAM603134"
+    ]
   },
-  "AI_PE_02": {
-    "code": "AI_PE_02",
-    "name": "Bioinformatics",
+  "CSAE604070": {
+    "code": "CSAE604070",
+    "name": "Basis Data Kecerdasan Artifisial",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course applying computational algorithms and AI models to analyze biological sequence data.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas prinsip perancangan dan pengelolaan infrastruktur data untuk aplikasi berbasis Kecerdasan Artifisial dari sudut pandang rekayasa sistem, mencakup vector database dan pengindeksan kemiripan, basis data graf sebagai backend penyimpanan, penyimpanan data multimodal, feature store, serta arsitektur lapisan data untuk sistem seperti Retrieval-Augmented Generation (RAG) dan rekomendasi. Mahasiswa akan mempelajari bagaimana fondasi basis data relasional dan rekayasa data yang telah dikuasai dapat diperlukan untuk melayani beban kerja Kecerdasan Artifisial modern yang berskala besar, berlatensi rendah, dan beragam bentuk data (vektor, graf, dan multimodal).",
+    "topics": [
+      "1. Pendahuluan: dari basis data relasional menuju infrastruktur data untuk Kecerdasan Artifisial, tinjauan karakteristik beban kerja AI modern (terstruktur, vektor, graf, multimodal).",
+      "2. Representasi vektor sebagai data: pengantar singkat embedding dan ruang vektor sebagai representasi kesamaan semantik, tanpa mendalami arsitektur pembelajaran mendalam yang menghasilkannya.",
+      "3. Pencarian Kemiripan (Similarity Search) a) Metrik jarak (cosine, Euclidean, dot product) dan formulasi nearest neighbor. b) Exact versus Approximate Nearest Neighbor (ANN) search.",
+      "4. Pengindeksan Vektor a) Indeks berbasis graf (HNSW) dan berbasis cluster (IVF). b) Locality-Sensitive Hashing (LSH) dan teknik kuantisasi/kompresi vektor. c) Trade-off antara recall, latensi, dan penggunaan memori.",
+      "5. Arsitektur Sistem Vector Database a) Vector database khusus versus ekstensi vektor pada basis data relasional (mis. pgevctor) dan basis data NoSQL. b) Pertimbangan skalabilitas dan disagregasi penyimpanan-komputasi.",
+      "6. Hybrid Search dan Filtered Query: eksekusi kueri gabungan pencarian vektor, predikat metadata terstruktur, dan pencarian leksikal (BM25/keyword) pada mesin basis data.",
+      "7. Basis Data Graf sebagai Infrastruktur Kecerdasan Artifisial a) Property graph sebagai backend penyimpanan: struktur, pengindeksan, dan karakteristik kinerja kueri. b) Pemanfaatan graf pengetahuan sebagai sumber data eksternal untuk aplikasi Kecerdasan Artifisial.",
+      "8. Penyimpanan dan Pengindeksan Data Multimodal a) Representasi dan penyimpanan citra, audio, dan video sebagai objek besar (object/ blob storage). b) Ruang embedding multimodal (mis. CLIP) sebagai representasi lintas modalitas. c) Pertimbangan pengindeksan dan pencarian lintas modalitas.",
+      "9. Feature Store: kebutuhan konsistensi fitur antara jalur pelatihan (offline) dan jalur penyajian (online), studi arsitektur feature store.",
+      "10. Arsitektur Lapisan Data untuk Sistem Retrieval-Augmented Generation (RAG) a) Alur data: ingestion, chunking sebagai keputusan penyimpanan, dan pipeline pengindeksan. b) Anggaran latensi dan pertimbangan arsitektural pada sistem RAG berskala produksi.",
+      "11. Sistem Rekomendasi Berbasis Basis Data: penyimpanan dan penyajian embedding pengguna/item untuk pencarian kemiripan berskala besar.",
+      "12. Skalabilitas dan Operasional Infrastruktur Data Kecerdasan Artifisial: sharding, replikasi, konsistensi, serta pemantauan sistem produksi.",
+      "13. Evaluasi Infrastruktur Data untuk Kecerdasan Artifisial dan Tren Terkini: metrik recall/ latensi/throughput, serta perbandingan platform (Milvus, Pinecone, Weaviate, pgvector)."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan karakteristik beban kerja data pada aplikasi Kecerdasan Artifisial (vektor, graf, multimodal) dan perbedaannya dengan beban kerja basis data relasional konvensional.",
+      "2. Mampu merancang dan mengimplementasikan skema pengindeksan pencarian kemiripan vektor (ANN) beserta analisis trade-off recall, latensi, dan penggunaan memori.",
+      "3. Mampu merancang basis data graf sebagai backend penyimpanan serta mengintegrasikan graf pengetahuan eksternal sebagai sumber data bagi aplikasi Kecerdasan Artifisial.",
+      "4. Mampu merancang strategi penyimpanan dan pengindeksan data multimodal (citra, audio, video) sebagai bagian dari infrastruktur data Kecerdasan Artifisial.",
+      "5. Mampu merancang arsitektur lapisan data untuk feature store dan pipeline RAG yang konsisten dan efisien.",
+      "6. Mampu mengevaluasi kinerja dan skalabilitas infrastruktur data untuk aplikasi Kecerdasan Artifisial menggunakan metrik yang sesuai."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Ian Robinson, Jim Webber, and Emil Eifrem. Graph Databases, 2nd Ed. O’Reilly Media, 2015.",
+      "2. Yury A. Malkov and Dmitry A. Yashunin. “Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs.” IEEE Transactions on Pattern Analysis and Machine Intelligence, 42(4), 2020. Available from https://arxiv. org/abs/1603.09320",
+      "3. Jeff Johnson, Matthijs Douze, and Hervé Jégou. “Billion-Scale Similarity Search with GPUs.” IEEE Transactions on Big Data, 7(3), 2021. Available from https://arxiv.org/abs/ 1702.08734",
+      "4. Aidan Hogan et al. “Knowledge Graphs.” ACM Computing Surveys, 54(4), 2021. Available from https://arxiv.org/abs/2003.02320",
+      "5. Patrick Lewis et al. “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.” Advances in Neural Information Processing Systems (NeurIPS), 2020. Available from https://arxiv.org/abs/2005.11401",
+      "6. Mohammad Mahdi Abootorabi et al. “Ask in Any Modality: A Comprehensive Survey on Multimodal Retrieval-Augmented Generation.” arXiv:2502.08826, 2025. Available from https://arxiv.org/abs/2502.08826",
+      "7. Dokumentasi resmi pgvector: Open-source Vector Similarity Search for PostgreSQL. Available from https://github.com/pgvector/pgvector"
+    ],
+    "prerequisites": [
+      "CSGE602070",
+      "CSAM602271"
+    ]
   },
-  "AI_PE_03": {
-    "code": "AI_PE_03",
-    "name": "Data & Information Visualization",
+  "CSAE604240": {
+    "code": "CSAE604240",
+    "name": "Bioinformatika",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course exploring concepts and techniques to design interactive graphical dashboards mapping data.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas prinsip dan algoritma komputasional untuk menganalisis data biologis molekuler, mencakup dasar biologi molekuler yang diperlukan, algoritma penjajaran sekuens, perakitan genom, filogenetika, penerapan pemelajaran mesin klasik, serta pemelajaran dalam modern (protein language model, model bahasa genomik, dan AlphaFold) untuk analisis data beromik dan prediksi struktur protein. Mahasiswa memanfaatkan penguasaan struktur data, algoritma, pemelajaran mesin, dan pemelajaran dalam yang telah dimiliki untuk memecahkan permasalahan biologi komputasional secara mendalam, termasuk praktik langsung memprediksi struktur protein menggunakan ColabFold.",
+    "topics": [
+      "1. Pendahuluan Bioinformatika: sejarah, ruang lingkup, dan peran Kecerdasan Artifisial dalam biologi komputasional.",
+      "2. Dasar Biologi Molekuler: DNA, RNA, protein, dogma sentral, serta format data biologis (FASTA, FASTQ).",
+      "3. Algoritma Penjajaran Sekuens (Sequence Alignment) a) Penjajaran global (Needleman-Wunsch) dan lokal (Smith-Waterman) berbasis pemrograman dinamis. b) Penjajaran ganda (multiple sequence alignment) dan heuristik pencarian basis data (BLAST). c) Protein language model (mis. ESM) sebagai pendekatan modern untuk deteksi homologi jarak jauh berbasis embedding.",
+      "4. Struktur Data String untuk Bioinformatika: suffix tree, suffix array, Burrows-Wheeler transform, dan FM-index.",
+      "5. Perakitan Genom (Genome Assembly) a) Graf De Bruijn dan graf overlap-layout-consensus. b) Karakteristik data next-generation sequencing dan tantangan komputasinya.",
+      "6. Anotasi Genom dan Gene Finding a) Hidden Markov Model (HMM) untuk anotasi genom dan gene finding klasik. b) Model bahasa genomik (mis. DNABERT) sebagai pendekatan modern berbasis pemelajaran dalam.",
+      "7. Filogenetika Komputasional a) Rekonstruksi pohon filogenetik berbasis jarak, parsimoni, dan likelihood.",
+      "8. Pemelajaran Mesin Klasik dan Modern untuk Data Biologis a) Klasifikasi dan klasterisasi data ekspresi gen, seleksi fitur pada data beromik. b) Model fondasi untuk data beromik (mis. data single-cell RNA-seq) sebagai pendekatan modern berbasis pemelajaran dalam.",
+      "9. Prediksi Struktur Protein dengan Pemelajaran Dalam a) Representasi struktur protein: pendekatan berbasis energi versus pendekatan berbasis data. b) Arsitektur AlphaFold: representasi multiple sequence alignment, blok Evoformer, dan modul struktur berbasis atensi geometris. c) Praktik: prediksi struktur protein menggunakan ColabFold.",
+      "10. Analisis Data Beromik Skala Besar: gambaran umum RNA-seq, variant calling, dan genetika populasi.",
+      "11. Tren Terkini dan Studi Kasus: pemelajaran mesin untuk desain protein/obat, serta isu etika dan privasi data genomik."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan konsep dasar biologi molekuler dan representasinya sebagai data komputasional yang relevan untuk analisis bioinformatika.",
+      "2. Mampu merancang dan mengimplementasikan algoritma penjajaran sekuens berbasis pemrograman dinamis, struktur data string, dan pendekatan berbasis protein language model untuk pencarian pola dan homologi pada data biologis.",
+      "3. Mampu menerapkan algoritma graf dan model probabilistik (HMM, model bahasa genomik) untuk menyelesaikan permasalahan perakitan genom, anotasi genom, dan rekonstruksi filogenetik.",
+      "4. Mampu menerapkan teknik pemelajaran mesin klasik dan model fondasi berbasis pemelajaran dalam pada data beromik untuk analisis ekspresi gen dan anotasi fungsi biologis.",
+      "5. Mampu menjelaskan arsitektur model pemelajaran dalam modern (mis. AlphaFold) untuk prediksi struktur protein serta menerapkannya secara praktis menggunakan perangkat yang tersedia (mis. ColabFold).",
+      "6. Mampu mengevaluasi kinerja metode komputasional klasik maupun berbasis pemelajaran dalam pada studi kasus bioinformatika dan mengomunikasikan hasil analisis secara ilmiah."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Neil C. Jones and Pavel A. Pevzner. An Introduction to Bioinformatics Algorithms. MIT Press, 2004.",
+      "2. Phillip Compeau and Pavel Pevzner. Bioinformatics Algorithms: An Active Learning Approach, 3rd Ed. Active Learning Publishers, 2018. Available from https://www.bioinfor maticsalgorithms.org/",
+      "3. Manolis Kellis et al. Computational Biology: Genomes, Networks, Evolution (materi terbuka MIT 6.047/6.878). MIT OpenCourseWare, 2015. Available from https://ocw.mit.edu/ courses/6- 047- computational- biology- fall- 2015/pages/open- textbook/",
+      "4. John Jumper et al. \"Highly Accurate Protein Structure Prediction with AlphaFold.\" Nature, 596, 2021, hlm. 583- 589.",
+      "5. Zeming Lin et al. \"Evolutionary- Scale Prediction of Atomic- Level Protein Structure with a Language Model.\" Science, 379(6637), 2023, hlm. 1123- 1130.",
+      "6. Yanrong Ji, Zhihan Zhou, Han Liu, and Ramana V. Davuluri. \"DNABERT: Pre- Trained Bidirectional Encoder Representations from Transformers Model for DNA- Language in Genome.\" Bioinformatics, 37(15), 2021, hlm. 2112- 2120.",
+      "7. Milot Mirdita, Konstantin Schütze, Yoshitaka Moriwaki, Lim Heo, Sergey Ovchinnikov, and Martin Steinegger. \"ColabFold: Making Protein Folding Accessible to All.\" Nature Methods, 19, 2022, hlm. 679- 682."
+    ],
+    "prerequisites": [
+      "CSAM602130",
+      "CSGE602040",
+      "CSAM602232"
+    ]
   },
-  "AI_PE_04": {
-    "code": "AI_PE_04",
-    "name": "Data Mining",
+  "CSAE604131": {
+    "code": "CSAE604131",
+    "name": "Graf Pengetahuan",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course analyzing pattern extraction methodologies, association rules, and dataset clustering techniques.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini memperkenalkan teknologi representasi data dan pengetahuan berbasis graf pengetahuan (knowledge graph), mencakup dua model data graf yang paling banyak dipakai saat ini, RDF dan property graph, beserta bahasa kueri, bahasa ontologi/skema, dan mekanisme validasinya masing-masing. Mata kuliah ini juga mencakup teknik konstruksi graf pengetahuan dari data teks, termasuk pemanfaatan Large Language Model (LLM), serta metode penilaian kualitas dan perbaikan (refinement) suatu graf pengetahuan, untuk mendukung integrasi data/ pengetahuan yang berasal dari sumber-sumber yang terpisah.",
+    "topics": [
+      "1. Pengantar Graf Pengetahuan a) Web versus Semantic Web. b) Model-model data graf: RDF dan property graph.",
+      "2. Model Data RDF a) Pengidentifikasi persisten (IRI), tipe data, dan existential node. b) Sintaks RDF. c) Semantik data graf dan RDFS.",
+      "3. Model Data Property Graph a) Struktur: node, edge, label, dan properti. b) Perbandingan dengan model RDF.",
+      "4. Kueri Data Graf RDF: SPARQL a) Kueri data graf dengan SPARQL. b) Publikasi linked data.",
+      "5. Kueri Data Graf Property Graph: Cypher dan GQL a) Bahasa kueri Cypher. b) Standar QQL (ISO/IEC 39075:2024).",
+      "6. Ontologi dan Skema Graf Pengetahuan a) Kosakata (vocabularies) standar: SKOS, Schema.org. b) OWL sebagai bahasa ontologi dan penalaran (reasoning) berbasis description logic. c) Pemodelan ontologi dengan Protégé. d) Skema property graph (PG-Schema) sebagai analog yang masih berkembang.",
+      "7. Konstruksi Graf Pengetahuan dari Teks a) Ekstraksi entitas dan relasi dari teks tak terstruktur. b) Pemanfaatan Large Language Model (LLM) untuk konstruksi dan pengayaan graf pengetahuan, baik untuk RDF maupun property graph.",
+      "8. Validasi Graf Pengetahuan a) Validasi data RDF dengan SHACL. b) Validasi/batasan pada property graph dengan PG-Schema.",
+      "9. Kualitas dan Perbaikan Graf Pengetahuan a) Dimensi kualitas graf pengetahuan: akurasi, cakupan, koherensi, keringkasan. b) Perbaikan (refinement): pelengkapan (completion) dan koreksi, secara konseptual.",
+      "10. Graf Pengetahuan dalam Praktik a) Graf pengetahuan terbuka berbasis RDF (mis. Wikidata). b) Penerapan property graph pada graf pengetahuan skala enterprise."
+    ],
+    "learningOutcomes": [
+      "1. Mampu merepresentasikan data dan pengetahuan dalam bentuk graf menggunakan model RDF (RDF/RDFS) maupun property graph.",
+      "2. Mampu melakukan kueri terhadap graf pengetahuan menggunakan SPARQL (RDF) maupun Cypher/GQL (property graph).",
+      "3. Mampu merancang dan memodelkan skema/ontologi graf pengetahuan, termasuk OWL dan penalaran (reasoning) untuk RDF serta skema property graph (PG-Schema).",
+      "4. Mampu menerapkan teknik ekstraksi informasi, termasuk pemanfaatan Large Language Model (LLM), untuk mengonstruksi dan memperkaya graf pengetahuan dari data teks.",
+      "5. Mampu memvalidasi dan menilai kualitas graf pengetahuan menggunakan SHACL (RDF) maupun pendekatan berbasis constraint pada property graph.",
+      "6. Mampu menjelaskan isu perbaikan (refinement) graf pengetahuan serta penerapannya dalam praktik, baik pada graf pengetahuan terbuka maupun skala enterprise."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Aidan Hogan et al. Knowledge Graphs. Morgan & Claypool, 2021. Available from https:// kgbook.org/",
+      "2. Dean Allemang, James Hendler, and Fabien Gandon. Semantic Web for the Working Ontologist: Effective Modeling in RDFS and OWL, 3rd Ed. Morgan Kaufmann, 2020.",
+      "3. Jose Emilio Labra Gayo et al. Validating RDF Data. Morgan & Claypool, 2018. Available from https://book.validatingrdf.com/",
+      "4. Dokumen standar teknis dari W3C untuk RDF, RDFS, SPARQL, dan Linked Data (mis. RDF 1.1 Primer, RDF Schema 1.1, SPARQL 1.1 Query Language). Available from https:// www.w3.org/standards/",
+      "5. Haonan Bian. LLM-Empowered Knowledge Graph Construction: A Survey. arXiv:2510.20345, 2025. Available from https://arxiv.org/abs/2510.20345",
+      "6. Angela Bonifati, George Fletcher, Hannes Voigt, and Nikolay Yakovets. Querying Graphs. Morgan & Claypool, 2018.",
+      "7. Renzo Angles et al. PG-Schema: Schemas for Property Graphs. Proceedings of the ACM on Management of Data (SIGMOD), 2023. Available from https://arxiv.org/abs/2211.10962"
+    ],
+    "prerequisites": [
+      "CSGE602070",
+      "CSAM602131"
+    ]
   },
-  "AI_PE_05": {
-    "code": "AI_PE_05",
-    "name": "Classical Machine Learning",
+  "CSAE604034": {
+    "code": "CSAE604034",
+    "name": "Kecerdasan Artifisial Tepi",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course investigating non-neural networks machine learning models, decision trees, and SVMs.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas prinsip dan teknik perancangan sistem Kecerdasan Artifisial yang berjalan pada perangkat dengan sumber daya terbatas (edge devices), mencakup kompresi model, kuantisasi, kompilasi dan runtime inferensi, hingga strategi penyebaran dan pemantauan model pada arsitektur edge-cloud. Mahasiswa akan mempelajari bagaimana prinsip jaringan komputer dan praktik operasi sistem Kecerdasan Artifisial (MLOps) yang telah dipelajari sebelumnya diperlukan untuk konteks edge computing, termasuk pertimbangan latensi, bandwidth, privasi melalui pemelajaran terdistribusi (federated learning), dan keterbatasan daya serta memori perangkat, dengan praktik langsung menggunakan mikrokontroler (Arduino/ STM32).",
+    "topics": [
+      "1. Pendahuluan Edge AI: motivasi dan taksonomi (cloud, edge server, on-device), spektrum perangkat tepi, tantangan utama (daya, memori, latensi, konektivitas).",
+      "2. Dari MLOps menuju Edge Deployment a) Perbedaan siklus hidup model pada infrastruktur cloud versus perangkat edge. b) Strategi pembaruan model over-the-air (OTA) dan versioning pada perangkat terdistribusi.",
+      "3. Kompresi Model a) Pruning terstruktur dan tidak terstruktur. b) Knowledge distillation.",
+      "4. Kuantisasi Model a) Post-training quantization. b) Quantization-aware training.",
+      "5. Arsitektur Jaringan Saraf Efisien untuk Perangkat Tepi: MobileNet dan EfficientNet.",
+      "6. Kompilasi dan Runtime Inferensi Edge a) Representasi graf komputasi dan optimisasi (operator fusion, memory planning). b) Kerangka kerja: TensorFlow Lite/LiteRT, ONNX Runtime, Apache TVM.",
+      "7. Akselerasi Perangkat Keras untuk Inferensi: karakteristik compute-bound versus memory- bound, NPU/TPU edge, GPU mobile.",
+      "8. TinyML pada Mikrokontroler (praktik dengan kit Arduino/STM32): akuisisi data sensor, pemrosesan sinyal sederhana, dan deployment model berukuran sangat kecil (studi kasus keyword spotting/deteksi gerakan).",
+      "9. Pertimbangan Jaringan Komputer untuk Edge AI a) Skema edge-cloud offloading dan split computing. b) Trade-off latensi, bandwidth, dan keandalan pada jaringan IoT/5G.",
+      "10. Pemelajaran Terdistribusi: federated learning, agregasi model, serta tantangan heterogenitas data dan perangkat.",
+      "11. Pemantauan, Keamanan, dan Pemeliharaan Model pada Edge: deteksi drift dengan sumber daya terbatas, ancaman adversarial, dan pembaruan model berkelanjutan.",
+      "12. Tren Terkini dan Studi Kasus: computer vision dan generative AI/LLM berukuran kecil pada perangkat edge, robotika dan IoT berbasis Edge AI."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan karakteristik dan batasan perangkat edge serta implikasinya terhadap desain sistem Kecerdasan Artifisial.",
+      "2. Mampu menerapkan teknik kompresi model (pruning, kuantisasi, distillation) untuk mengoptimalkan model pemelajaran mesin agar dapat dijalankan pada perangkat dengan sumber daya terbatas.",
+      "3. Mampu memilih dan menggunakan kerangka kerja kompilasi/runtime inferensi edge untuk men-deploy model pada perangkat target, termasuk praktik langsung pada perangkat mikrokontroler (mis. Arduino/STM32).",
+      "4. Mampu merancang arsitektur sistem edge-cloud yang mempertimbangkan trade-off jaringan, latensi, dan alokasi komputasi.",
+      "5. Mampu menerapkan prinsip pemelajaran terdistribusi (federated learning) serta strategi pemantauan model pada lingkungan edge.",
+      "6. Mampu mengevaluasi kinerja (akurasi, latensi, konsumsi daya/memori) sistem Edge AI dan mengusulkan perbaikan berdasarkan hasil evaluasi."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Pete Warden and Daniel Situnayake. TinyML: Machine Learning with TensorFlow Lite on Arduino and Ultra-Low-Power Microcontrollers. O’Reilly Media, 2019.",
+      "2. Song Han et al. EfficientML.ai: TinyML and Efficient Deep Learning Computing (materi kuliah MIT 6.5940). MIT, 2024. Available from https://efficientml.ai",
+      "3. Vijay Janapa Reddi et al. Machine Learning Systems (materi kolaboratif Harvard CS249r). 2024. Available from https://mlsysbook.ai",
+      "4. Xubin Wang and Weijia Jia. “Optimizing Edge AI: A Comprehensive Survey on Data, Model, and System Strategies.” arXiv:2501.03265, 2025. Available from https://arxiv.org/ abs/2501.03265"
+    ],
+    "prerequisites": [
+      "CSAM603152",
+      "CSAM602251"
+    ]
   },
-  "AI_PE_06": {
-    "code": "AI_PE_06",
-    "name": "Edge AI",
+  "CSAE604030": {
+    "code": "CSAE604030",
+    "name": "Pemelajaran Mesin Klasik",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course deploying and optimizing light machine learning models on microcontrollers and embedded devices.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas metode pemelajaran mesin klasik secara mendalam dan rigorous, mencakup teori pemelajaran statistik, Support Vector Machine dan metode kernel, metode ensemble (bagging dan boosting), serta model grafis probabilistik dan pemelajaran Bayesian. Mahasiswa akan memperdalam pemahaman teoretis atas trade-off bias-variance, regularisasi, dan generalisasi model dengan memanfaatkan fondasi optimisasi yang telah dikuasai, sebagai pelengkap topik pemelajaran mendalam yang dibahas pada mata kuliah lain.",
+    "topics": [
+      "1. Penyegaran dan Pembingkaian Formal: bias-variance dan regularisasi ditinjau ulang secara matematis sebagai jembatan dari mata kuliah pengantar, bukan pengajaran ulang materi dasar.",
+      "2. Teori Pemelajaran Statistik: kerangka Probably Approximately Correct (PAC) dan dimensi Vapnik-Chervonenkis (VC) sebagai dasar formal batas generalisasi, dengan derivasi bukti formal.",
+      "3. Optimisasi Konveks untuk Pemelajaran Mesin: dari KKT menuju Dualitas a) Penyegaran kondisi optimalitas dan KKT (dari mata kuliah Pencarian dan Optimisasi) sebagai titik tolak. b) Fungsi dan masalah dual Lagrange, strong duality, dan syarat Slater.",
+      "4. Support Vector Machine (SVM) a) Margin maksimal dan penurunan formulasi primal-dual. b) Kernel trick dan kondisi kernel Mercer (RBF, polinomial).",
+      "5. Metode Kernel Lanjutan: Kernel Ridge Regression dan pengantar Gaussian Process untuk regresi.",
+      "6. Metode Ensemble (Bagging) a) Random Forest dan analisis pengurangan varians.",
+      "7. Metode Ensemble (Boosting) a) AdaBoost dan Gradient Boosting. b) Landasan teoretis: forward stagewise additive modeling dan teori margin.",
+      "8. Pemelajaran Bayesian a) Estimasi Maximum A Posteriori (MAP) versus Maximum Likelihood (MLE). b) Model campuran (mixture models) dan algoritma Expectation-Maximization (EM).",
+      "9. Model Grafis Probabilistik a) Bayesian network: representasi dan independensi kondisional. b) Markov Random Field sebaqai pengantar model tak terarah.",
+      "10. Inferensi pada Model Grafis: exact inference (variable elimination) dan pengantar singkat approximate inference (sampling, variasional).",
+      "11. Model Sekuens Klasik: Hidden Markov Model, algoritma forward-backward, dan algoritma Viterbi sebagai penerapan model grafis.",
+      "12. Pemilihan dan Evaluasi Model Lanjutan: nested cross-validation, structural risk minimization, dan uji statistik untuk perbandingan model.",
+      "13. Studi Kasus Integrasi: memilih dan mengombinasikan metode klasik (kernel, ensemble, model grafis) untuk permasalahan nyata, serta diskusi batasan dibandingkan pemelajaran mendalam."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan dan menerapkan kerangka teori pemelajaran statistik (PAC, dimensi VC) untuk menganalisis kemampuan generalisasi suatu model.",
+      "2. Mampu merumuskan dan menyelesaikan permasalahan pemelajaran mesin sebagai masalah optimisasi konveks, termasuk penurunan formulasi dual dan penerapan metode berbasis gradien.",
+      "3. Mampu merancang dan mengimplementasikan Support Vector Machine dan metode kernel lain untuk permasalahan klasifikasi dan regresi non-linear.",
+      "4. Mampu merancang dan menganalisis metode ensemble (bagging dan boosting) serta menjelaskan landasan teoretis di balik kinerjanya.",
+      "5. Mampu memodelkan ketergantungan probabilistik antar variabel menggunakan model grafis probabilistik dan melakukan inferensi di atasnya.",
+      "6. Mampu memilih, membandingkan, dan mengevaluasi metode pemelajaran mesin klasik secara rigorous untuk permasalahan nyata berdasarkan prinsip bias-variance dan regularisasi."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Trevor Hastie, Robert Tibshirani, and Jerome Friedman. The Elements of Statistical Learning: Data Mining, Inference, and Prediction, 2nd Ed. Springer, 2009. Available from https://hastie.su.domains/ElemStatLearn/",
+      "2. Christopher M. Bishop. Pattern Recognition and Machine Learning. Springer, 2006.",
+      "3. Shai Shalev-Shwartz and Shai Ben-David. Understanding Machine Learning: From Theory to Algorithms. Cambridge University Press, 2014. Available from https://www.cs.huji.ac.il/\\~shais/UnderstandingMachineLearning/",
+      "4. Daphne Koller and Nir Friedman. Probabilistic Graphical Models: Principles and Techniques. MIT Press, 2009.",
+      "5. Stephen Boyd and Lieven Vandenberghe. Convex Optimization. Cambridge University Press, 2004. Available from https://web.stanford.edu/\\~boyd/cvxbook/",
+      "6. Kevin P. Murphy. Probabilistic Machine Learning: An Introduction. MIT Press, 2022. Available from https://probml.github.io/pml-book/book1. html"
+    ],
+    "prerequisites": [
+      "CSAM602241",
+      "CSAM602130"
+    ]
   },
-  "AI_PE_07": {
-    "code": "AI_PE_07",
-    "name": "Graph Machine Learning",
+  "CSAE604233": {
+    "code": "CSAE604233",
+    "name": "Pemelajaran Penguatan",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course teaching Graph Neural Networks (GNNs) and topological data analysis paradigms.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas prinsip dan algoritma pemelajaran penguatan (reinforcement learning), mulai dari formalisasi Proses Keputusan Markov (Markov Decision Process) dan persamaan Bellman, metode tabular seperti dynamic programming, Monte Carlo, dan temporal difference learning, hingga pendekatan fungsi dan pemelajaran penguatan mendalam (deep reinforcement learning) seperti DQN, policy gradient, dan actor-critic. Mahasiswa memanfaatkan bekal jaringan saraf dari Pemelajaran Dalam serta teknik pencarian dan optimisasi yang telah dipelajari sebelumnya untuk menyelesaikan masalah pengambilan keputusan sekuensial di bawah ketidakpastian, serta merancang dan mengevaluasi agen yang belajar melalui interaksi dengan lingkungan.",
+    "topics": [
+      "1. Pendahuluan Pemelajaran Penguatan: perbedaan dengan pemelajaran terawasi dan tak terawasi, komponen agent-environment, reward hypothesis, contoh aplikasi.",
+      "2. Multi-Armed Bandits dan Dilema Eksplorasi-Eksploitasi a) Strategi epsilon-greedy dan pemilihan aksi optimistis. b) Upper Confidence Bound (UCB) dan Thompson sampling.",
+      "3. Proses Keputusan Markov (Markov Decision Process/MDP): state, aksi, reward, kebijakan, fungsi nilai, dan persamaan Bellman.",
+      "4. Dynamic Programming untuk MDP dengan Model Diketahui a) Policy evaluation dan policy improvement. b) Policy iteration dan value iteration.",
+      "5. Metode Monte Carlo untuk prediksi dan kontrol tanpa model lingkungan.",
+      "6. Pemelajaran Temporal Difference (TD) a) TD(0) untuk prediksi, SARSA untuk kontrol on-policy. b) Q-learning dan expected SARSA sebagai kontrol off-policy.",
+      "7. Trade-off on-policy versus off-policy, serta n-step TD dan eligibility traces sebagai penyeimbang bias-varians.",
+      "8. Pendekatan Fungsi (Function Approximation) a) Representasi nilai dengan fitur linear untuk ruang state besar/kontinu, sebagai jembatan dari metode tabular. b) Pemanfaatan jaringan saraf (bekal Pemelajaran Dalam) sebagai pendekatan fungsi non-linear, serta tantangan deadly triad (bootstrapping, off-policy, pendekatan fungsi).",
+      "9. Deep Q-Network (DQN): experience replay, target network, varian (Double DQN, Dueling DQN), studi kasus permainan Atari.",
+      "10. Metode Policy Gradient: penurunan teorema gradien kebijakan, algoritma REINFORCE, penggunaan baseline untuk reduksi varians.",
+      "11. Metode Actor-Critic: advantage actor-critic (A2C) dan Proximal Policy Optimization (PPO) sebagai algoritma RL umum.",
+      "12. Topik Lanjutan: pengantar model-based RL, pengantar multi-agent RL, serta RL berbasis preferensi manusia (RLHF) sebagai kelas masalah – penerapan mendalamnya pada model generatif/LLM (reward modeling, ChatGPT) dibahas pada mata kuliah Kecerdasan Artifisial Generatif.",
+      "13. Praktik Eksperimen dan Evaluasi: penggunaan pustaka benchmark (mis. Gymnasium), desain eksperimen, dan reprodusibilitas hasil RL; eksperimen inti pada lingkungan ringan (CartPole, GridWorld, LunarLander) yang berjalan pada CPU biasa, dengan eksperimen deep RL berskala lebih besar (Atari, PPO) sebagai perluasan opsional bagi mahasiswa yang berminat."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan formalisasi Proses Keputusan Markov (MDP) dan menurunkan persamaan Bellman untuk fungsi nilai dan fungsi aksi-nilai.",
+      "2. Mampu menerapkan algoritma dynamic programming (policy iteration, value iteration) untuk menyelesaikan MDP dengan model diketahui.",
+      "3. Mampu merancang dan mengimplementasikan algoritma pemelajaran bebas model (Monte Carlo, TD, SARSA, Q-learning) untuk masalah kontrol dengan model lingkungan tidak diketahui.",
+      "4. Mampu menerapkan pendekatan fungsi, termasuk jaringan saraf, untuk mengatasi ruang state/aksi berukuran besar atau kontinu, serta menjelaskan tantangan stabilitas yang muncul darinya (deadly triad).",
+      "5. Mampu menurunkan teorema gradien kebijakan serta mengimplementasikan algoritma deep RL (DQN, REINFORCE, actor-critic/PPO).",
+      "6. Mampu merancang eksperimen RL yang reprodusibel dan mengevaluasi kinerja agen pada benchmark standar."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Richard S. Sutton and Andrew G. Barto. Reinforcement Learning: An Introduction, 2nd Ed. MIT Press, 2018. Available from http://incompleteideas.net/book/the-book-2nd.html",
+      "2. Csaba Szepesvári. Algorithms for Reinforcement Learning. Morgan & Claypool, 2010. Available from https://sites.ualberta.ca/~szepesva/papers/RLAlgsInMDPs.pdf",
+      "3. Joshua Achiam. Spinning Up in Deep RL. OpenAI, 2018. Available from https:// spinningup.openai.com",
+      "4. Mark Towers et al. “Gymnasium: A Standard Interface for Reinforcement Learning Environments.” arXiv:2407.17032, 2024. Available from https://arxiv.org/abs/2407.17032"
+    ],
+    "prerequisites": [
+      "CSAM602130",
+      "CSAM602241",
+      "CSAM602232"
+    ]
   },
-  "AI_PE_08": {
-    "code": "AI_PE_08",
-    "name": "Information Retrieval",
+  "CSAE604222": {
+    "code": "CSAE604222",
+    "name": "Pemrograman Logika",
+    "credits": 4,
+    "state": "Pilihan",
+    "description": "Mata kuliah ini memperkenalkan paradigmam perogroman logika sebagai cara baru merepresentasikan dan menyelesaikan masalah komputasi, dengan Prolog sebagai bahasa utama, mencakup unifikasi, resolusi SLD, backtracking, serta teknik pemrograman deklaratif tingkat lanjut. Mahasiswa akan menghubungkan fondasi logika predikat yang telah dipelajari pada mata kuliah Representasi Pengetahuan dan Penalaran dengan implementasi komputasionalnya melalui studi kasus pencarian, sistem berbasis aturan, dan constraint logic programming.",
+    "topics": [
+      "1. Pengantar Paradigma Deklaratif dan Pemrograman Logika a) Perbandingan dengan paradigma imperatif/prosedural yang telah dipelajari. b) Hubungan pemrograman logika dengan logika predikat orde pertama. c) Sejarah dan posisi Prolog dalam keluarga bahasa deklaratif.",
+      "2. Sintaks Dasar Prolog: fakta, aturan (rules), query, term, atom, variabel, dan struktur.",
+      "3. Unifikasi dan Resolusi SLD sebagai Mesin Inferensi Prolog a) Algoritma unifikasi dan substitusi. b) Resolusi SLD dan pohon pencarian (SLD tree).",
+      "4. Strategi Eksekusi dan Kendali Pencarian a) Backtracking dan strategi pencarian depth-first bawaan Prolog. b) Operator cut (1) dan negasi sebagai kegagalan (negation as failure).",
+      "5. Struktur Data dan Rekursi di Prolog a) Representasi dan manipulasi list (append, member, reverse, dan sejenisnya). b) Rekursi sebagai mekanisme kontrol utama, akumulator, dan difference list.",
+      "6. Predikat Tingkat Tinggi dan Meta-Programming: findall, bagof, setof, serta representasi program sebagai data (term Prolog).",
+      "7. Fitur Praktis Prolog: built-in predicate, penanganan input/output, penanganan pengecualian (exception handling), modul.",
+      "8. Studi Kasus Penyelesaian Masalah dengan Prolog a) Masalah pencarian dan kombinatorial klasik (N-Queens, penyelesaian puzzle, pencarian graf). b) Sistem pakar dan basis pengetahuan berbasis aturan, menghubungkan kembali ke Representasi Pengetahuan dan Penalaran.",
+      "9. Constraint Logic Programming (CLP)",
+      "10. Pengantar Answer Set Programming (ASP): semantik stable model, penalaran non- monoton, dan perbandingannya dengan Prolog.",
+      "11. Semantik Formal Pemrograman Logika: semantik model-teoretis, kebenaran (soundness), dan kelengkapan (completeness) resolusi SLD.",
+      "12. Tren dan Aplikasi Terkini: penalaran neuro-simbolik (neuro-symbolic reasoning) dan posisi pemrograman logika dalam sistem Kecerdasan Artifisial kontemporer."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan perbedaan paradigma pemrograman logika dengan paradigma imperatif serta keterkaitannya dengan logika predikat yang telah dipelajari sebelumnya.",
+      "2. Mampu menerapkan mekanisme unifikasi, resolusi SLD, dan backtracking untuk merancang dan menelusuri eksekusi program Prolog.",
+      "3. Mampu merancang program Prolog rekursif untuk memanipulasi struktur data dan menyelesaikan permasalahan pencarian serta kombinatorial.",
+      "4. Mampu menggunakan predikat tingkat tinggi dan teknik meta-programming untuk membangun sistem berbasis aturan atau basis pengetahuan sederhana.",
+      "5. Mampu menerapkan Constraint Logic Programming dan/atau Answer Set Programming untuk menyelesaikan permasalahan yang sulit diselesaikan secara prosedural murni.",
+      "6. Mampu menganalisis semantik formal pemrograman logika (soundness/completeness) untuk menilai kesesuaian pendekatan deklaratif terhadap suatu kelas masalah."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "1. Leon Sterling and Ehud Shapiro. The Art of Prolog, 2nd Ed. MIT Press, 1994.",
+      "2. Ivan Bratko. Prolog Programming for Artificial Intelligence, 4th Ed. Addison-Wesley, 2011.",
+      "3. William F. Clocksin and Christopher S. Mellish. Programming in Prolog, 5th Ed. Springer, 2003.",
+      "4. Krzysztof R. Apt. From Logic Programming to Prolog. Prentice Hall, 1997.",
+      "5. Martin Gebser, Roland Kaminski, Benjamin Kaufmann, and Torsten Schaub. Answer Set Solving in Practice. Morgan & Claypool, 2012.",
+      "6. SWI-Prolog Reference Manual. Available from https://www.swi-prolog.org/pldoc/doc_for?object=manual"
+    ],
+    "prerequisites": [
+      "CSGE601020",
+      "CSAM602131"
+    ]
+  },
+  "CSAE604032": {
+    "code": "CSAE604032",
+    "name": "Pemrosesan Bahasa Lisan",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course analyzing search engine architectures, indexing, tf-idf, and vector search strategies.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Pemrosesan Bahasa Lisan (Spoken Language Processing) merupakan bagian dari cabang ilmu natural language processing (NLP) yang secara khusus mempelajari bagaimana komputer melakukan pemrosesan suara (speech processing) sebagai sarana komunikasi verbal yang paling alami dan mudah dipahami manusia. Mata kuliah ini mempelajari teori pemrosesan sinyal suara serta berbagai teknik untuk membangun perangkat lunak yang mengolah bahasa lisan dalam bentuk suara. Secara umum, materi mata kuliah meliputi (i) teori sinyal suara, (ii) pengenalan suara (automatic speech recognition atau ASR), (iii) sintesis suara (speech synthesis atau text- to-speech/TTS), dan (iv) sistem dialog (spoken language dialogue system atau SLDS), dengan pendekatan machine learning untuk menyelesaikan permasalahan pengolahan bahasa lisan. Mahasiswa mengerjakan sejumlah tugas dan praktikum untuk memahami pemodelan bahasa lisan, termasuk membangun sistem ASR dan TTS, serta menyelesaikan sebuah tugas akhir bertopik bebas untuk mengeksplorasi lebih lanjut permasalahan dan teknik pemecahannya dalam pengolahan bahasa lisan.",
+    "topics": [
+      "1. Pengantar pemrosesan suara (speech processing) dan aplikasinya.",
+      "2. Pengantar Deep Learning a) Jaringan saraf tiruan, RNN, dan LSTM. b) Transformer serta Large Language Model.",
+      "3. Pemrosesan sinyal suara (fonetik).",
+      "4. Pengenalan Suara Otomatis (Automatic Speech Recognition/ASR) a) Sistem HMM-DNN. b) Connectionist Temporal Classification (CTC). c) ASR neural end-to-end. d) Model fondasi ujaran (speech foundation model) berbasis self-supervised learning: wav2vec 2.0, HuBERT, dan Whisper.",
+      "5. Pengenalan dan Verifikasi Penutur (Speaker Recognition and Verification) a) Representasi penutur: dari GMM-UBM hingga speaker embedding (x-vector, ECAPA- TDNN). b) Identifikasi versus verifikasi penutur; metrik evaluasi (Equal Error Rate/EER).",
+      "6. Sintesis suara (Text-to-Speech/TTS).",
+      "7. Sistem dialog bahasa lisan (Spoken Language Dialogue System/SLDS): sistem dialog dan chatbot."
+    ],
+    "learningOutcomes": [
+      "1. Mampu membangun model pengolahan bahasa lisan untuk merepresentasikan pengetahuan pengolahan bahasa lisan menggunakan pendekatan deep learning.",
+      "2. Mampu membangun sistem ASR untuk mengolah masukan bahasa lisan manusia secara otomatis dan menghasilkan teks yang sesuai, termasuk memanfaatkan model fondasi ujaran mutakhir.",
+      "3. Mampu membangun sistem TTS untuk mengolah masukan teks dan membangkitkan bahasa lisan manusia secara otomatis.",
+      "4. Mampu membangun sistem pengenalan dan verifikasi penutur (speaker recognition and verification) serta mengevaluasi kinerjanya.",
+      "5. Mampu menjelaskan isu-isu riset mutakhir yang sedang berkembang pada komunitas peneliti Spoken Language Processing (SLP)."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Daniel Jurafsky and James H. Martin. Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition, 3rd Ed. Available from https://web.stanford.edu/~jurafsky/slp3/",
+      "2. Lawrence Rabiner and Biing-Hwang Juang. Fundamentals of Speech Recognition. Prentice- Hall International, 1993.",
+      "3. Paul Taylor. Text-to-Speech Synthesis. University of Cambridge, 2009.",
+      "4. Kumpulan makalah riset terkini dari konferensi dan jurnal NLP/speech (mis. ACL, ICASSP, NeurIPS).",
+      "5. Alexei Baevski, Yuhao Zhou, Abdelrahman Mohamed, and Michael Auli. wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations. Advances in Neural Information Processing Systems (NeurIPS), 2020. Available from https://arxiv.org/abs/ 2006.11477",
+      "6. Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever. Robust Speech Recognition via Large-Scale Weak Supervision. Proceedings of the 40th International Conference on Machine Learning (ICML), 2023. Available from https:// proceedings.mlr.press/v202/radford23a/radford23a.pdf",
+      "7. Brecht Desplanques, Jenthe Thienpondt, and Kris Demuynck. ECAPA-TDNN: Emphasized Channel Attention, Propagation and Aggregation in TDNN Based Speaker Verification. Interspeech 2020. Available from https://arxiv.org/abs/2005.07143"
+    ],
+    "prerequisites": [
+      "CSAM602232",
+      "CSAM603134"
+    ]
   },
-  "AI_PE_09": {
-    "code": "AI_PE_09",
-    "name": "Knowledge Graph",
+  "CSAE604037": {
+    "code": "CSAE604037",
+    "name": "Penambangan Data",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course modeling relationships and semantic facts into queryable structural databases.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Penambangan Data mempelajari metodologi dan teknik untuk menemukan pola, aturan, dan pengetahuan yang tersembunyi pada kumpulan data berukuran besar, mengikuti kerangka proses CRISP-DM (Cross-Industry Standard Process for Data Mining) serta memperhatikan aspek etika data. Mata kuliah ini mencakup teknik penambangan pada data tabular, klastering lanjut dan deteksi outlier/anomali, penambangan aturan asosiasi, analisis deret waktu dan data graf, serta penambangan pada berbagai modalitas data seperti teks, web, citra, video, audio, dan data multimodal.",
+    "topics": [
+      "1. Pengantar Penambangan Data a) Data dan metadata. b) Kerangka proses CRISP-DM (Cross-Industry Standard Process for Data Mining). c) Etika data dan studi kasus.",
+      "2. Penambangan Data Tabular a) Penyegaran konsep basis data. b) Kueri SQL/DataFrame tingkat lanjut.",
+      "3. Klastering Lanjut dan Deteksi Outlier/Anomali a) Klastering berbasis kepadatan: DBSCAN, OPTICS, HDBSCAN. b) Klastering berbasis model: Gaussian Mixture Model. c) Evaluasi klaster: silhouette score, Davies-Bouldin index. d) Deteksi outlier/anomali: Tukey fence, isolation forest, serta pemanfaatan DBSCAN untuk deteksi outlier.",
+      "4. Penambangan Aturan (Rule Mining) a) Metrik asosiasi. b) Algoritma Apriori.",
+      "5. Analisis Deret Waktu dan Penambangan Graf a) Analisis deret waktu (temporal data mining). b) Penambangan graf (graph mining).",
+      "6. Penambangan Teks dan Web.",
+      "7. Penambangan Citra dan Video.",
+      "8. Penambangan Audio dan Multimodal."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menerapkan metodologi CRISP-DM dan mempertimbangkan aspek etika data dalam suatu proyek penambangan data.",
+      "2. Mampu melakukan penambangan data tabular, termasuk kueri lanjut menggunakan SQL/ DataFrame.",
+      "3. Mampu menerapkan teknik klastering lanjut (berbasis kepadatan dan berbasis model) serta mendeteksi outlier/anomali pada suatu kumpulan data.",
+      "4. Mampu menambang aturan asosiasi (rule mining) pada suatu kumpulan data.",
+      "5. Mampu menerapkan teknik penambangan pada data deret waktu dan data graf.",
+      "6. Mampu menerapkan teknik penambangan pada berbagai modalitas data: teks, web, citra, video, audio, dan data multimodal."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Pang-Ning Tan, Michael Steinbach, Anuj Karpatne, and Vipin Kumar. Introduction to Data Mining, 2nd Ed. Pearson, 2019.",
+      "2. Charu C. Aggarwal. Data Mining: The Textbook. Springer, 2015.",
+      "3. Pete Chapman et al. CRISP-DM 1.0: Step-by-Step Data Mining Guide. SPSS Inc., 2000.",
+      "4. Tadas Baltrusaitis, Chaitanya Ahuja, and Louis-Philippe Morency. Multimodal Machine Learning: A Survey and Taxonomy. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2019.",
+      "5. Leland McInnes, John Healy, and Steve Astels. hdbscan: Hierarchical Density Based Clustering. Journal of Open Source Software, 2017."
+    ],
+    "prerequisites": [
+      "CSGE602070",
+      "CSAM602130"
+    ]
   },
-  "AI_PE_10": {
-    "code": "AI_PE_10",
-    "name": "Large-scale Social Data Analytics",
+  "CSAE604033": {
+    "code": "CSAE604033",
+    "name": "Peramalan Kuantitatif",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course applying models to investigate patterns in large-scale social networks and text trends.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas peramalan kuantitatif atas data deret waktu, dimulai dari fondasi statistik klasik (dekomposisi, pemulusan eksponensial, model ARIMA/SARIMA) menuju pendekatan berbasis pembelajaran mesin dan pembelajaran mendalam (peramalan berbasis fitur, gradient-boosted trees, serta pengantar model neural dan model fondasi deret waktu). Mahasiswa akan mempelajari cara memilih, membangun, mengevaluasi, dan mengomunikasikan hasil model peramalan pada konteks aplikasi bisnis seperti peramalan permintaan dan peramalan finansial.",
+    "topics": [
+      "1. Pendahuluan Peramalan Kuantitatif a) Karakteristik deret waktu dan komponen tren, musiman, siklus, dan galat. b) Kriteria evaluasi peramalan (MAE, RMSE, MAPE) dan skema validasi silang deret waktu.",
+      "2. Analisis Eksploratif dan Dekomposisi Deret Waktu a) Plot autokorelasi (ACF) dan autokorelasi parsial (PACF). b) Uji stasioneritas (Augmented Dickey-Fuller, KPSS) dan transformasi data (Box-Cox, differencing).",
+      "3. Metode Pemulusan (Smoothing) a) Rata-rata bergerak dan exponential smoothing sederhana. b) Model Holt (tren) dan Holt-Winters (musiman).",
+      "4. Model ARIMA a) Model autoregresif (AR), rata-rata bergerak (MA), dan ARMA. b) Metodologi Box-Jenkins: identifikasi, estimasi, dan diagnostik model.",
+      "5. Model SARIMA dan Model Regresi dengan Variabel Eksogen (SARIMAX/ARIMAX) untuk deret waktu musiman.",
+      "6. Model Ruang Keadaan (State-Space Model) dan Filter Kalman: pengantar sebagai kelanjutan dan generalisasi kerangka ARIMA/SARIMA.",
+      "7. Peramalan Finansial: Model Volatilitas ARCH/GARCH a) Karakteristik data finansial dan volatility clustering. b) Model ARCH dan GARCH: estimasi dan penerapan pada peramalan risiko.",
+      "8. Peramalan Berbasis Fitur (Feature-Based Forecasting) a) Rekayasa fitur deret waktu: fitur kalender, lag, dan statistik bergulir (rolling statistics). b) Ekstraksi fitur untuk karakterisasi dan pengelompokan deret waktu.",
+      "9. Peramalan dengan Pembelajaran Mesin: pohon keputusan berpenguat gradien (gradient- boosted trees, mis. XGBoost/LightGBM) untuk peramalan multi-horizon.",
+      "10. Peramalan Hierarkis dan Rekonsiliasi (Hierarchical/Grouped Forecasting), serta peramalan probabilistik dan interval prediksi.",
+      "11. Pengantar Peramalan Berbasis Pembelajaran Mendalam a) Arsitektur dasar berbasis recurrent neural network (RNN/LSTM) untuk deret waktu. b) Model modern seperti N-BEATS dan Temporal Fusion Transformer secara intuitif.",
+      "12. Model Fondasi (Foundation Model) untuk Deret Waktu a) Prinsip kerja zero-shot forecasting pada model fondasi (mis. Chronos, TimeGPT) dan pertimbangan penggunaannya. b) Praktik inferensi zero-shot menggunakan model pralathi Chronos.",
+      "13. Evaluasi, Pemilihan, dan Kombinasi Model a) Backtesting dan validasi silang deret waktu. b) Kombinasi dan ensemble forecasting.",
+      "14. Studi Kasus Aplikasi: peramalan permintaan (demand forecasting), termasuk penanganan data hilang, pencilan (outlier), dan perubahan rezim."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan komponen deret waktu dan memilih teknik dekomposisi serta pengujian stasioneritas yang sesuai untuk suatu permasalahan peramalan.",
+      "2. Mampu merancang dan menerapkan model pemulusan eksponensial, model ARIMA/ SARIMA, dan model ruang keadaan/filter Kalman untuk peramalan deret waktu univariat.",
+      "3. Mampu menerapkan model volatilitas ARCH/GARCH untuk peramalan dan analisis risiko pada deret waktu finansial.",
+      "4. Mampu merancang fitur deret waktu dan menerapkan model pembelajaran mesin untuk peramalan multi-horizon dan peramalan hierarkis.",
+      "5. Mampu menjelaskan prinsip kerja model peramalan berbasis pembelajaran mendalam dan model fondasi deret waktu, serta menerapkan inferensi zero-shot menggunakan model fondasi pralathi (mis. Chronos).",
+      "6. Mampu mengevaluasi dan membandingkan kinerja berbagai model peramalan menggunakan metode backtesting dan metrik yang sesuai dengan konteks permasalahan.",
+      "7. Mampu menerapkan teknik peramalan kuantitatif pada studi kasus permintaan atau data finansial dan mengomunikasikan hasil serta ketidakpastiannya kepada pemangku kepentingan."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Rob J. Hyndman and George Athanasopoulos. Forecasting: Principles and Practice, 3rd Ed. OTexts, 2021. Available from https://texts.com/fpp3/",
+      "2. George E. P. Box, Gwilym M. Jenkins, Gregory C. Reinsel, and Greta M. Ljung. Time Series Analysis: Forecasting and Control, 5th Ed. Wiley, 2015.",
+      "3. James D. Hamilton. Time Series Analysis. Princeton University Press, 1994.",
+      "4. Konstantinos Benidis et al. \"Deep Learning for Time Series Forecasting: Tutorial and Literature Survey.\" ACM Computing Surveys, 55(6), 2022.",
+      "5. Abdul Fatir Ansari et al. \"Chronos: Learning the Language of Time Series.\" arXiv:2403.07815, 2024. Available from https://arxiv.org/abs/2403.07815"
+    ],
+    "prerequisites": [
+      "CSAM602130"
+    ]
   },
-  "AI_PE_11": {
-    "code": "AI_PE_11",
-    "name": "Logic Programming",
+  "CSAE604232": {
+    "code": "CSAE604232",
+    "name": "Robotika",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course studying logic programming concepts, Prolog syntax, and declarative computational reasoning.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Robotika mempelajari dasar-dasar perancangan, pemodelan, dan pemrograman robot bergerak, mencakup wheeled mobile robot maupun quadcopter/drone, dengan Robot Operating System (ROS) sebagai kerangka kerja pengembangan utama. Mata kuliah ini mencakup lokomosi, kinematika, persepsi menggunakan sensor, navigasi dan lokalisasi probabilistik (Bayes filter, Kalman filter, particle filter), perencanaan (path planning), serta kendali umpan balik (feedback control) untuk mengeksekusi lintasan gerak robot, yang diintegrasikan pada sebuah proyek akhir pengembangan robot dalam simulasi.",
+    "topics": [
+      "1. Pengantar Robotika a) Latar belakang masalah, contoh, dan sejarah aplikasi. b) Tantangan pada robotika.",
+      "2. Pengantar Wheeled Mobile Robot.",
+      "3. Pengantar Quadcopter/Drone.",
+      "4. Lokomosi (Locomotion).",
+      "5. Kinematika Wheeled Mobile Robot dan Pengantar ROS a) Kinematika wheeled mobile robot. b) Pengantar Robot Operating System (ROS).",
+      "6. Kinematika Quadcopter/Drone dengan ROS.",
+      "7. Persepsi (Perception): Sensor.",
+      "8. Pengembangan Robot dalam Simulasi Menggunakan ROS.",
+      "9. Navigasi: Representasi Peta (Map Representation).",
+      "10. Lokalisasi (Localization) a) Estimasi keadaan rekursif (Bayes filter). b) Kalman filter. c) Particle filter.",
+      "11. Perencanaan (Planning): Path Planning.",
+      "12. Kendali (Control) a) Kendali umpan balik (feedback control): PID controller. b) Pelacakan lintasan (trajectory tracking) pada wheeled mobile robot dan quadcopter/ drone, disimulasikan menggunakan ROS/Gazebo.",
+      "13. Proyek Akhir."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan latar belakang, aplikasi, dan tantangan pada robotika, termasuk platform wheeled mobile robot dan quadcopter/drone.",
+      "2. Mampu menerapkan konsep lokomosi dan kinematika pada wheeled mobile robot maupun quadcopter/drone menggunakan Robot Operating System (ROS).",
+      "3. Mampu menerapkan teknik persepsi (sensor) serta mengembangkan dan menguji robot dalam lingkungan simulasi.",
+      "4. Mampu menerapkan teknik navigasi dan lokalisasi probabilistik (Bayes filter, Kalman filter, particle filter) pada robot bergerak.",
+      "5. Mampu menerapkan teknik perencanaan (path planning) dan kendali umpan balik (feedback control) untuk menghasilkan dan mengeksekusi lintasan gerak robot.",
+      "6. Mampu merancang, mengimplementasikan, dan menguji sebuah proyek robotika secara end-to-end dalam simulasi."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Roland Siegwart, Illah Reza Nourbakhsh, and Davide Scaramuzza. Introduction to Autonomous Mobile Robots, 2nd Ed. MIT Press, 2011.",
+      "2. Sebastian Thrun, Wolfram Burgard, and Dieter Fox. Probabilistic Robotics. MIT Press, 2005.",
+      "3. Nikolaus Correll, Bradley Hayes, Christoffer Heckman, and Alessandro Roncone. Introduction to Autonomous Robots: Mechanisms, Sensors, Actuators, and Algorithms. MIT Press, 2022. Available from https://introduction-to-autonomous-robots.github.io/",
+      "4. Dokumentasi resmi Robot Operating System (ROS). Available from https://docs.ros.org/"
+    ],
+    "prerequisites": [
+      "CSAM602130",
+      "CSAM602150"
+    ]
   },
-  "AI_PE_12": {
-    "code": "AI_PE_12",
-    "name": "Quantitative Forecasting",
+  "CSEA604031": {
+    "code": "CSEA604031",
+    "name": "Pemelajaran Mesin Graf",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course detailing mathematical models for time-series forecasting, ARIMA, and modern sequence predictors.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas metode pemelajaran mesin pada data berstruktur graf, mencakup embedding graf, arsitektur graph neural network (GCN, GraphSAGE, GAT), graf transformer, pemelajaran mandiri (self-supervised learning), serta teknik skalabilitas untuk graf berukuran besar. Mahasiswa membangun kemampuan ini di atas fondasi pemelajaran dalam yang telah dikuasai untuk merancang, melatih, dan mengevaluasi model graf pada aplikasi seperti sistem rekomendasi dan prediksi properti molekul.",
+    "topics": [
+      "1. Pendahuluan Pemelajaran Mesin pada Graf: representasi graf dan tantangan komputasional yang membedakannya dari data grid/sekuesial.",
+      "2. Embedding Graf Klasik a) Metode berbasis random walk: DeepWalk, node2vec, dan analogi dengan word embedding. b) Model embedding basis pengetahuan translasional/bilinear klasik: TransE, ComplEx.",
+      "3. Pemelajaran Berbasis Message Passing dan Graph Neural Network (GNN) a) Graph Convolutional Network (GCN). b) GraphSAGE dan agregasi berbasis sampling. c) Graph Attention Network (GAT).",
+      "4. Ekspresivitas dan Teori GNN a) Uji Weisfeiler-Lehman (WL) sebagai kerangka analisis ekspresivitas. b) Teorema batas ekspresivitas GNN berbasis message-passing: derivasi formal hubungannya dengan uji 1-WL. c) Keterbatasan arsitektur dan arah mengatasinya (mis. GNN orde tinggi, positional encoding) secara sekilas.",
+      "5. Graf Transformer dan mekanisme atensi global pada data graf.",
+      "6. Graf Heterogen dan Relasional a) Representasi multi-tipe simpul/sisi. b) GNN untuk graf heterogen: R-GCN dan Heterogeneous Graph Transformer (HGT) sebagai contoh arsitektur. c) Gambaran umum prediksi tautan (link prediction) berbasis GNN, tanpa masuk ke pemodelan ontologi/SPARQL/konstruksi graf pengetahuan yang menjadi domain mata kuliah Graf Pengetahuan.",
+      "7. Pemelajaran Mandiri dan Kontrastif (Self-Supervised/Contrastive Learning) pada Graf.",
+      "8. Teknik Skalabilitas untuk Graf Besar a) Strategi sampling dan partitioning (mis. Cluster-GCN). b) Pertimbangan pelatihan pada graf berskala industri.",
+      "9. Model Generatif untuk Graf: variational autoencoder untuk graf dan model difusi untuk molekul.",
+      "10. Aplikasi: Sistem Rekomendasi Berbasis GNN.",
+      "11. Aplikasi: Prediksi Properti Molekul dan Graf pada Kimia Komputasional/Penemuan Obat.",
+      "12. Tren Terkini: Integrasi Model Bahasa Besar (LLM) dengan Graf.",
+      "13. Tren Terkini: Graf sebagai Struktur Penalaran (Reasoning).",
+      "14. Studi Kasus dan Evaluasi: interpretabilitas dan analisis kegagalan model pemelajaran mesin graf."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan representasi data graf dan tantangan komputasional yang membedakannya dari data terstruktur lain.",
+      "2. Mampu merancang dan mengimplementasikan arsitektur graph neural network (GCN, GraphSAGE, GAT) untuk tugas klasifikasi simpul, prediksi tautan, dan klasifikasi graf.",
+      "3. Mampu menurunkan hubungan formal antara ekspresivitas GNN berbasis message-passing dengan uji Weisfeiler-Lehman, serta menganalisis keterbatasan arsitekturnya berdasarkan batas tersebut.",
+      "4. Mampu menerapkan teknik pemelajaran mandiri dan strategi skalabilitas untuk melatih model graf pada graf berskala besar.",
+      "5. Mampu merancang solusi pemelajaran mesin graf untuk permasalahan aplikatif seperti sistem rekomendasi dan prediksi properti molekul.",
+      "6. Mampu mengevaluasi tren terkini pemelajaran mesin graf, termasuk graf transformer dan integrasi dengan model bahasa besar."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. William L. Hamilton. Graph Representation Learning. Morgan & Claypool, 2020. Available from https://www.cs.mcgill.ca/~wlh/grl_book/files/GRL_Book.pdf",
+      "2. Michael M. Bronstein, Joan Bruna, Taco Cohen, and Petar Veličković. Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges, 2021. Available from https://geometricdeeplearning.com/",
+      "3. Thomas N. Kipf and Max Welling. \"Semi-Supervised Classification with Graph Convolutional Networks.\" ICLR, 2017.",
+      "4. Petar Veličković et al. \"Graph Attention Networks.\" ICLR, 2018.",
+      "5. Keyulu Xu, Weihua Hu, Jure Leskovec, and Stefanie Jegelka. \"How Powerful are Graph Neural Networks?\" ICLR, 2019. Available from https://arxiv.org/abs/1810.00826",
+      "6. Jure Leskovec. CS224W: Machine Learning with Graphs (materi kuliah). Stanford University. Available from https://web.stanford.edu/class/cs224w/"
+    ],
+    "prerequisites": [
+      "CSAM602232",
+      "CSAM602241"
+    ]
   },
-  "AI_PE_13": {
-    "code": "AI_PE_13",
-    "name": "Reinforcement Learning",
+  "CSAE604135": {
+    "code": "CSAE604135",
+    "name": "Temu-Balik Informasi",
+    "credits": 4,
+    "state": "Pilihan",
+    "description": "Mata kuliah ini membahas prinsip dan teknik temu-balik informasi (information retrieval), mulai dari pengindeksan dan model klasik berbasis statistik teks hingga pendekatan neural modern seperti dense retrieval, learned sparse retrieval, dan retrieval-augmented generation (RAG). Mahasiswa akan memanfaatkan fondasi Pemelajaran Dalam yang telah dikuasai untuk merancang, mengimplementasikan, dan mengevaluasi sistem pencarian informasi berskala besar pada studi kasus nyata.",
+    "topics": [
+      "1. Pengantar Temu-Balik Informasi: definisi, arsitektur sistem IR, dan posisinya relatif terhadap Pemelajaran Dalam dan pemrosesan bahasa alami.",
+      "2. Representasi Teks dan Pengindeksan a) Tokenisasi, stemming, konstruksi inverted index dan kamus (dictionary). b) Kompresi indeks dan pemrosesan query Boolean.",
+      "3. Model Ruang Vektor dan Pembobotan Term: TF-IDF dan cosine similarity.",
+      "4. Model Probabilistik untuk IR: BM25 dan variannya, model bahasa (language model) untuk retrieval.",
+      "5. Evaluasi Sistem IR a) Metrik precision, recall, Mean Average Precision (MAP), normalized Discounted Cumulative Gain (nDCG). b) Konstruksi test collection dan relevance judgment, uji signifikansi statistik.",
+      "6. Representasi Semantik Teks: word embeddings dan keterkaitannya dengan representasi yang dipelajari pada Pemelajaran Dalam.",
+      "7. Dense Retrieval dan Neural Ranking a) Arsitektur bi-encoder/dual-encoder (mis. Dense Passage Retrieval). b) Cross-encoder untuk re-ranking berbasis Transformer, model late-interaction (mis. ColBERT).",
+      "8. Learning to Rank: pendekatan pointwise, pairwise, dan listwise.",
+      "9. Learned Sparse Retrieval dan pendekatan hybrid (kombinasi sinyal sparse dan dense).",
+      "10. Retrieval Efisien Berskala Besar a) Approximate Nearest Neighbor (ANN) search. b) Struktur indeks vektor (HNSW) dan kuantisasi.",
+      "11. Pemahaman Query: ekspansi query, relevance feedback, dan penulisan ulang query (query rewriting).",
+      "12. Retrieval-Augmented Generation (RAG): integrasi retrieval dengan large language model untuk penjawaban pertanyaan dan pembangkitan teks berbasis bukti.",
+      "13. Topik Lanjutan: retrieval multimodal, pencarian percakapan (conversational search), dan keterkaitannya dengan sistem rekomendasi.",
+      "14. Isu Etika dan Bias dalam Sistem Temu-Balik Informasi serta evaluasi keadilan (fairness) hasil pencarian."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan arsitektur sistem temu-balik informasi dan teknik pengindeksan teks.",
+      "2. Mampu menerapkan model klasik (ruang vektor, probabilistik/BM25) untuk pemeringkatan relevansi dokumen.",
+      "3. Mampu merancang dan mengevaluasi sistem temu-balik informasi menggunakan metrik standar (precision, recall, nDCG).",
+      "4. Mampu menerapkan teknik dense retrieval dan neural ranking berbasis model Pemelajaran Dalam untuk meningkatkan kualitas pencarian.",
+      "5. Mampu merancang komponen sistem retrieval berskala besar yang efisien menggunakan pendekatan approximate nearest neighbor dan/atau learned sparse retrieval.",
+      "6. Mampu mengimplementasikan dan mengevaluasi pendekatan retrieval-augmented generation dalam konteks aplikasi berbasis large language model."
+    ],
+    "sublearningOutcomes": [],
+    "resources": [
+      "1. Christopher D. Manning, Prabhakar Raghavan, and Hinrich Schütze. Introduction to Information Retrieval. Cambridge University Press, 2008. Available from https://nlp. stanford.edu/IR-book/information-retrieval-book.html",
+      "2. W. Bruce Croft, Donald Metzler, and Trevor Strohman. Search Engines: Information Retrieval in Practice. Pearson, 2015. Available from https://ciir.cs.umass.edu/irbook/",
+      "3. Jimmy Lin, Rodrigo Nogueira, and Andrew Yates. Pretrained Transformers for Text Ranking: BERT and Beyond. Morgan & Claypool, 2021. Available from https://arxiv.org/ abs/2010.06467",
+      "4. Vladimir Karpukhin et al. “Dense Passage Retrieval for Open-Domain Question Answering.” Proceedings of EMNLP, 2020. Available from https://arxiv.org/abs/2004. 04906",
+      "5. Patrick Lewis et al. \"Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.\" Advances in Neural Information Processing Systems (NeurIPS), 2020. Available from https://arxiv.org/abs/2005.11401",
+      "6. Wayne Xin Zhao et al. \"Dense Text Retrieval Based on Pretrained Language Models: A Survey.\" ACM Transactions on Information Systems, 42(4), 2024. Available from https://arxiv.org/abs/2211.14876"
+    ],
+    "prerequisites": [
+      "CSAM602232"
+    ]
+  },
+  "CSAE604035": {
+    "code": "CSAE604035",
+    "name": "Visualisasi Data dan Informasi",
     "credits": 3,
     "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course exploring Markov Decision Processes, policy gradients, Q-learning, and deep RL applications.",
-    "topics": [],
-    "learningOutcomes": [],
+    "description": "Mata kuliah ini membahas prinsip persepsi dan kognisi, tata bahasa grafik (Grammar of Graphics), serta teknik visualisasi interaktif dan dashboard untuk mengomunikasikan data dan informasi secara efektif, dengan menekankan konteks khusus Kecerdasan Artifisial seperti visualisasi embedding, interpretabilitas model, dan ketidakpastian prediksi. Mahasiswa akan membangun kemampuan ini di atas fondasi desain-berpusat-pengguna dan sains data yang telah diperoleh pada mata kuliah prasyarat, tanpa mengulang materi dasar UX atau statistika deskriptif.",
+    "topics": [
+      "1. Pendahuluan Visualisasi Data dan Informasi: peran visualisasi dalam alur kerja Kecerdasan Artifisial (dari eksplorasi data hingga komunikasi hasil model) serta studi kasus historis (peta John Snow, diagram Minard, Florence Nightingale).",
+      "2. Prinsip Persepsi dan Kognisi untuk Visualisasi a) Prinsip Gestalt dan atribut preattentive. b) Hierarki keakuratan penilaian visual (peringkat Cleveland dan McGill).",
+      "3. Tata Bahasa Grafik (Grammar of Graphics) a) Komponen data, geometri (geom), pemetaan estetika (aesthetic mapping), dan skala. b) Sistem koordinat dan faceting untuk small multiples.",
+      "4. Pemilihan Bentuk Visualisasi berdasarkan jenis data (kategorikal, numerik, temporal, spasial) dan tugas analitik (perbandingan, komposisi, distribusi, hubungan).",
+      "5. Visualisasi Data Hierarkis dan Jaringan (Network), serta visualisasi data spasial dan kartografi dasar.",
+      "6. Visualisasi Data Multidimensi dan Reduksi Dimensi a) t-distributed Stochastic Neighbor Embedding (t-SNE) dan Uniform Manifold Approximation and Projection (UMAP) untuk visualisasi ruang fitur berdimensi tinggi, dibangun di atas bekal Principal Component Analysis (PCA) dari Sains Data dan Pemelajaran Mesin, termasuk jebakan interpretasi proyeksi (ukuran klaster dan jarak yang tidak selalu bermakna, sensitivitas parameter). b) Visualisasi embedding pada representasi model Kecerdasan Artifisial.",
+      "7. Visualisasi Ketidakpastian (Uncertainty Visualization): interval kepercayaan, distribusi prediktif, dan representasi risiko.",
+      "8. Visualisasi untuk Interpretabilitas Model Kecerdasan Artifisial a) Desain visual untuk output interpretabilitas yang sudah dihitung: feature importance dan peta saliency/atensi. b) Alat interpretabilitas interaktif (mis. SHAP, What-If Tool): prinsip desain eksplorasi dan interaksinya.",
+      "9. Visualisasi Interaktif a) Prinsip interaksi: overview+detail, brushing and linking, drill-down. b) Implementasi berbasis Python menggunakan pustaka deklaratif (Altair/Vega-Lite) dan pustaka berbasis pemrograman (Plotly).",
+      "10. Desain Dashboard dan Narrative Visualization: prinsip tata letak, penataan informasi, dan storytelling dengan data.",
+      "11. Etika Visualisasi dan visualisasi yang menyesatkan (deceptive visualization): bias representasi dan aksesibilitas (mis. buta warna).",
+      "12. Evaluasi Visualisasi: metodologi evaluasi (studi pengguna, evaluasi heuristik) dan studi kasus kritik visualisasi.",
+      "13. Studi Kasus dan Proyek Akhir: merancang sistem visualisasi atau dashboard untuk mendukung pemantauan dan pengambilan keputusan berbasis Kecerdasan Artifisial."
+    ],
+    "learningOutcomes": [
+      "1. Mampu menjelaskan prinsip persepsi dan kognisi manusia yang mendasari perancangan visualisasi data yang efektif.",
+      "2. Mampu menerapkan tata bahasa grafik dan prinsip pemetaan visual untuk merancang visualisasi yang sesuai dengan jenis data dan tujuan analitik.",
+      "3. Mampu merancang visualisasi untuk data multidimensi, hasil reduksi dimensi, dan ketidakpastian pada konteks Kecerdasan Artifisial.",
+      "4. Mampu merancang visualisasi untuk mendukung interpretabilitas model Kecerdasan Artifisial, termasuk feature importance, embedding, dan hasil prediksi probabilistik.",
+      "5. Mampu merancang dan mengimplementasikan visualisasi interaktif serta dashboard menggunakan perangkat visualisasi yang sesuai.",
+      "6. Mampu mengevaluasi kualitas dan etika suatu visualisasi data, termasuk aspek aksesibilitas dan potensi bias representasi."
+    ],
     "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_PE_14": {
-    "code": "AI_PE_14",
-    "name": "Robotics",
-    "credits": 3,
-    "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course mapping sensory input, kinematic algorithms, and AI agent control loops in robotic environments.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
-  },
-  "AI_PE_15": {
-    "code": "AI_PE_15",
-    "name": "Spoken Language Processing",
-    "credits": 3,
-    "state": "Pilihan",
-    "category": "Mata Kuliah Pilihan",
-    "description": "Elective course addressing audio signal analysis, automatic speech recognition, and speech synthesis systems.",
-    "topics": [],
-    "learningOutcomes": [],
-    "sublearningOutcomes": [],
-    "resources": [],
-    "prerequisites": []
+    "resources": [
+      "1. Tamara Munzner. Visualization Analysis and Design. CRC Press, 2014.",
+      "2. Claus O. Wilke. Fundamentals of Data Visualization. O'Reilly Media, 2019. Available from https://clauswilke.com/dataviz/",
+      "3. Hadley Wickham. \"A Layered Grammar of Graphics.\" Journal of Computational and Graphical Statistics, 19(1), 2010.",
+      "4. Fred Hohman, Minsuk Kahng, Robert Pienta, and Duen Horng Chau. \"Visual Analytics in Deep Learning: An Interrogative Survey for the Next Frontiers.\" IEEE Transactions on Visualization and Computer Graphics, 25(8), 2019.",
+      "5. Arvind Satyanarayan, Dominik Moritz, Kanit Wongsuphasawat, and Jeffrey Heer. \"Vega- Lite: A Grammar of Interactive Graphics.\" IEEE Transactions on Visualization and Computer Graphics, 23(1), 2017. Available from https://vega.github.io/vega- lite/"
+    ],
+    "prerequisites": [
+      "CSAM601022",
+      "CSAM602130"
+    ]
   }
 }

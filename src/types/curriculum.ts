@@ -1,5 +1,13 @@
 // Updated classification labels
-export type CourseState = 'Wajib Universitas' | 'Wajib Fakultas' | 'Wajib Program Studi' | 'Pilihan';
+export type CourseState =
+  | 'Wajib Universitas'
+  | 'Wajib Fakultas'
+  | 'Wajib Program Studi'
+  | 'Pilihan'
+  | 'University Mandatory'
+  | 'Faculty Mandatory'
+  | 'Program Study Mandatory'
+  | 'Elective';
 
 // Expanded study programs
 export type StudyProgram = 'CS' | 'IS' | 'AI' | 'CS_KKI' | 'IS_KKI';
